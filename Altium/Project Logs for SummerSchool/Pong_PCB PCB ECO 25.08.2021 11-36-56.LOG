@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetLCD1_22 Pin=U1-2
+Removed Pin From Net: NetName=NetLCD1_23 Pin=U1-3
+Removed Pin From Net: NetName=NetLCD1_24 Pin=U1-4
+Removed Pin From Net: NetName=NetLCD1_25 Pin=U1-5
+Removed Pin From Net: NetName=NetLCD1_26 Pin=U1-6
+Removed Pin From Net: NetName=NetLCD1_27 Pin=U1-7
+Removed Pin From Net: NetName=NetLCD1_13 Pin=U1-9
+Removed Pin From Net: NetName=NetLCD1_12 Pin=U1-10
+Added Pin To Net: NetName=NetLCD1_12 Pin=U1-2
+Added Pin To Net: NetName=NetLCD1_13 Pin=U1-3
+Added Pin To Net: NetName=NetLCD1_22 Pin=U1-4
+Added Pin To Net: NetName=NetLCD1_23 Pin=U1-5
+Added Pin To Net: NetName=NetLCD1_24 Pin=U1-6
+Added Pin To Net: NetName=NetLCD1_25 Pin=U1-7
+Added Pin To Net: NetName=NetLCD1_27 Pin=U1-9
+Added Pin To Net: NetName=NetLCD1_26 Pin=U1-10
+Added Room: Name=PongSchematic

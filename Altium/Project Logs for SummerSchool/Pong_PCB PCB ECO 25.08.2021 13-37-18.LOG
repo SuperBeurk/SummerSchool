@@ -1,0 +1,6 @@
+Added Component: Designator=TP7(Test Point Vogt 1016L.68M)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=TP7-1
+Added Member To Class: ClassName=PongSchematic Member=Component TP7 *
+Added Room: Name=PongSchematic
