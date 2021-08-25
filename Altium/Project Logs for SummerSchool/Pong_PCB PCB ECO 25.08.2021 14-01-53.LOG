@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=G? Old Footprint=1.5V Cell 4LR44 New Footprint=1.5V Cell AAA/LR03
+Change Component Footprint: Designator=G? Old Footprint=1.5V Cell 4LR44 New Footprint=1.5V Cell AAA/LR03
+Added Member To Class: ClassName=PongSchematic Member=Component G? *
+Added Room: Name=PongSchematic

@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=G? NewDesignator=G1
+Change Component Designator: OldDesignator=G? NewDesignator=G2
+Change Net Name : Old Net Name=NetG?_1 New Net Name=NetG1_2
+Change Net Name : Old Net Name=NetG?_2 New Net Name=NetG2_2
+Added Member To Class: ClassName=PongSchematic Member=Component G1 *
+Added Room: Name=PongSchematic

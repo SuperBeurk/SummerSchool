@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=+3V Pin=G1-1
+Removed Member From Class: ClassName=PongSchematic Member=G1
+Added Component: Designator=G?(1.5V Cell 4LR44)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=G?(1.5V Cell 4LR44)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3V Pin=G?-1
+Added Pin To Net: NetName=+3V Pin=G?-1
+Added Pin To Net: NetName=NetG?_1 Pin=G?-1
+Added Pin To Net: NetName=NetG?_1 Pin=G?-1
+Added Pin To Net: NetName=NetG?_1 Pin=G?-2
+Added Pin To Net: NetName=NetG?_1 Pin=G?-2
+Added Net: Name=NetG?_1
+Added Pin To Net: NetName=NetG?_2 Pin=G?-2
+Added Pin To Net: NetName=NetG?_2 Pin=G?-2
+Added Pin To Net: NetName=NetG?_2 Pin=T1-3
+Added Net: Name=NetG?_2
+Added Member To Class: ClassName=PongSchematic Member=Component G? *
+Added Member To Class: ClassName=PongSchematic Member=Component G? *
+Added Room: Name=PongSchematic
