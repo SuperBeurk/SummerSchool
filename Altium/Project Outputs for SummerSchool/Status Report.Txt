@@ -1,0 +1,13 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [SummerSchool.PrjPcb]
+   Generated File[Pong_PCB.GBL]
+   Generated File[Pong_PCB.RUL]
+   Generated File[Pong_PCB.EXTREP]
+   Generated File[Pong_PCB.REP]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:22:53 On 26.08.2021
