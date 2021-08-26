@@ -2,10 +2,10 @@
 FileName = Pong_PCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Layer
-      File : Pong_PCB.GBL
+Generating : Top Layer
+      File : Pong_PCB.GTL
 
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Top Layer
 
     Adding Layer      : Mechanical 1
 
@@ -33,5 +33,7 @@ Used DCodes :
     D27
     D28
     D29
+    D30
+    D31
 *************************************************************
 
