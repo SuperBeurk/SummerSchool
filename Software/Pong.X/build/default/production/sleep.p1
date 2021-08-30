@@ -1,0 +1,98 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"10 sleep.c
+[; ;sleep.c: 10: enum state sleepState;
+[c E71 0 1 2 .. ]
+[n E71 state WAKEUP BACKLIGHTOFF SLEEP  ]
+"4 ./sleep.h
+[; ;./sleep.h: 4: void sleepController();
+[v _sleepController `(v ~T0 @X0 0 e? ]
+"10 sleep.c
+[; ;sleep.c: 10: enum state sleepState;
+[v _sleepState `E71 ~T0 @X0 1 e ]
+"12
+[; ;sleep.c: 12: void sleepInit()
+[v _sleepInit `(v ~T0 @X0 1 ef ]
+"13
+[; ;sleep.c: 13: {
+{
+[e :U _sleepInit ]
+[f ]
+"14
+[; ;sleep.c: 14:     sleepState=WAKEUP;
+[e = _sleepState . `E71 0 ]
+"15
+[; ;sleep.c: 15:     sleepController();
+[e ( _sleepController ..  ]
+"16
+[; ;sleep.c: 16: }
+[e :UE 3 ]
+}
+"17
+[; ;sleep.c: 17: void sleepSM(Event ev)
+[v _sleepSM `(v ~T0 @X0 1 ef1`uc ]
+"18
+[; ;sleep.c: 18: {
+{
+[e :U _sleepSM ]
+"17
+[; ;sleep.c: 17: void sleepSM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"18
+[; ;sleep.c: 18: {
+[f ]
+"20
+[; ;sleep.c: 20: }
+[e :UE 4 ]
+}
+"21
+[; ;sleep.c: 21: void sleepController()
+[v _sleepController `(v ~T0 @X0 1 ef ]
+"22
+[; ;sleep.c: 22: {
+{
+[e :U _sleepController ]
+[f ]
+"23
+[; ;sleep.c: 23:     switch(sleepState)
+[e $U 7  ]
+"24
+[; ;sleep.c: 24:     {
+{
+"25
+[; ;sleep.c: 25:         case WAKEUP:
+[e :U 8 ]
+"26
+[; ;sleep.c: 26:             break;
+[e $U 6  ]
+"27
+[; ;sleep.c: 27:         case BACKLIGHTOFF:
+[e :U 9 ]
+"28
+[; ;sleep.c: 28:             break;
+[e $U 6  ]
+"29
+[; ;sleep.c: 29:         case SLEEP:
+[e :U 10 ]
+"30
+[; ;sleep.c: 30:             break;
+[e $U 6  ]
+"31
+[; ;sleep.c: 31:         default:
+[e :U 11 ]
+"32
+[; ;sleep.c: 32:             break;
+[e $U 6  ]
+"33
+[; ;sleep.c: 33:     }
+}
+[e $U 6  ]
+[e :U 7 ]
+[e [\ -> _sleepState `ui , $ -> . `E71 0 `ui 8
+ , $ -> . `E71 1 `ui 9
+ , $ -> . `E71 2 `ui 10
+ 11 ]
+[e :U 6 ]
+"34
+[; ;sleep.c: 34: }
+[e :UE 5 ]
+}

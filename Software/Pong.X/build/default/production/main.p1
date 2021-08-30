@@ -1,5 +1,23 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"50 ./xf.h
+[; ;./xf.h: 50: void XF_init();
+[v _XF_init `(v ~T0 @X0 0 e? ]
+"2 ./sleep.h
+[; ;./sleep.h: 2: void sleepInit();
+[v _sleepInit `(v ~T0 @X0 0 e? ]
+"2 ./touchScreen.h
+[; ;./touchScreen.h: 2: void touchScreenInit();
+[v _touchScreenInit `(v ~T0 @X0 0 e? ]
 [p mainexit ]
+"65 ./xf.h
+[; ;./xf.h: 65: Event XF_popEvent(_Bool inISR);
+[v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
+"3 ./sleep.h
+[; ;./sleep.h: 3: void sleepSM(Event ev);
+[v _sleepSM `(v ~T0 @X0 0 ef1`uc ]
+"3 ./touchScreen.h
+[; ;./touchScreen.h: 3: void touchScreenSM(Event ev);
+[v _touchScreenSM `(v ~T0 @X0 0 ef1`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -732,17 +750,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"15 main.c
+[; ;main.c: 15: void init()
+[v _init `(v ~T0 @X0 1 ef ]
+"16
+[; ;main.c: 16: {
+{
+[e :U _init ]
+[f ]
+"17
+[; ;main.c: 17:     XF_init();
+[e ( _XF_init ..  ]
+"18
+[; ;main.c: 18:     sleepInit();
+[e ( _sleepInit ..  ]
+"19
+[; ;main.c: 19:     touchScreenInit();
+[e ( _touchScreenInit ..  ]
+"20
+[; ;main.c: 20: }
+[e :UE 828 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"11 main.c
-[; ;main.c: 11: void main(void) {
+"21
+[; ;main.c: 21: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"12
-[; ;main.c: 12:     return;
-[e $UE 826  ]
-"13
-[; ;main.c: 13: }
-[e :UE 826 ]
+"22
+[; ;main.c: 22:     init();
+[e ( _init ..  ]
+"23
+[; ;main.c: 23:     Event ev=0;
+[v _ev `uc ~T0 @X0 1 a ]
+[e = _ev -> -> 0 `i `uc ]
+"24
+[; ;main.c: 24:     while(1)
+[e :U 831 ]
+"25
+[; ;main.c: 25:     {
+{
+"26
+[; ;main.c: 26:         ev=XF_popEvent(0);
+[e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
+"27
+[; ;main.c: 27:         if(ev!=0)
+[e $ ! != -> _ev `i -> 0 `i 833  ]
+"28
+[; ;main.c: 28:         {
+{
+"29
+[; ;main.c: 29:             sleepSM(ev);
+[e ( _sleepSM (1 _ev ]
+"30
+[; ;main.c: 30:             touchScreenSM(ev);
+[e ( _touchScreenSM (1 _ev ]
+"31
+[; ;main.c: 31:         }
+}
+[e :U 833 ]
+"32
+[; ;main.c: 32:     }
+}
+[e :U 830 ]
+[e $U 831  ]
+[e :U 832 ]
+"33
+[; ;main.c: 33:     return;
+[e $UE 829  ]
+"34
+[; ;main.c: 34: }
+[e :UE 829 ]
 }

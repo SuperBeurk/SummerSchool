@@ -1,0 +1,91 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"10 touchScreen.c
+[; ;touchScreen.c: 10: enum state touchScreenState;
+[c E67 0 1 .. ]
+[n E67 state WAITING CALCULATEPOSITION  ]
+"4 ./touchScreen.h
+[; ;./touchScreen.h: 4: void touchScreenController();
+[v _touchScreenController `(v ~T0 @X0 0 e? ]
+"10 touchScreen.c
+[; ;touchScreen.c: 10: enum state touchScreenState;
+[v _touchScreenState `E67 ~T0 @X0 1 e ]
+"12
+[; ;touchScreen.c: 12: void touchScreenInit()
+[v _touchScreenInit `(v ~T0 @X0 1 ef ]
+"13
+[; ;touchScreen.c: 13: {
+{
+[e :U _touchScreenInit ]
+[f ]
+"14
+[; ;touchScreen.c: 14:     touchScreenState=WAITING;
+[e = _touchScreenState . `E67 0 ]
+"15
+[; ;touchScreen.c: 15:     touchScreenController();
+[e ( _touchScreenController ..  ]
+"16
+[; ;touchScreen.c: 16: }
+[e :UE 3 ]
+}
+"17
+[; ;touchScreen.c: 17: void touchScreenSM(Event ev)
+[v _touchScreenSM `(v ~T0 @X0 1 ef1`uc ]
+"18
+[; ;touchScreen.c: 18: {
+{
+[e :U _touchScreenSM ]
+"17
+[; ;touchScreen.c: 17: void touchScreenSM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"18
+[; ;touchScreen.c: 18: {
+[f ]
+"20
+[; ;touchScreen.c: 20: }
+[e :UE 4 ]
+}
+"21
+[; ;touchScreen.c: 21: void touchScreenController()
+[v _touchScreenController `(v ~T0 @X0 1 ef ]
+"22
+[; ;touchScreen.c: 22: {
+{
+[e :U _touchScreenController ]
+[f ]
+"23
+[; ;touchScreen.c: 23:     switch(touchScreenState)
+[e $U 7  ]
+"24
+[; ;touchScreen.c: 24:     {
+{
+"25
+[; ;touchScreen.c: 25:         case WAITING:
+[e :U 8 ]
+"26
+[; ;touchScreen.c: 26:             break;
+[e $U 6  ]
+"27
+[; ;touchScreen.c: 27:         case CALCULATEPOSITION:
+[e :U 9 ]
+"28
+[; ;touchScreen.c: 28:             break;
+[e $U 6  ]
+"29
+[; ;touchScreen.c: 29:         default:
+[e :U 10 ]
+"30
+[; ;touchScreen.c: 30:             break;
+[e $U 6  ]
+"31
+[; ;touchScreen.c: 31:     }
+}
+[e $U 6  ]
+[e :U 7 ]
+[e [\ -> _touchScreenState `ui , $ -> . `E67 0 `ui 8
+ , $ -> . `E67 1 `ui 9
+ 10 ]
+[e :U 6 ]
+"32
+[; ;touchScreen.c: 32: }
+[e :UE 5 ]
+}

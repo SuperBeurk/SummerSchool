@@ -9201,7 +9201,104 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
+# 1 "./xf.h" 1
+# 15 "./xf.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 16 "./xf.h" 2
 
+typedef uint8_t Event;
+typedef uint16_t Time;
+typedef uint8_t TimerID;
+
+
+typedef struct Timer
+{
+    Time tm;
+    Event ev;
+} Timer;
+# 36 "./xf.h"
+typedef struct XF
+{
+    Timer timerList[8];
+    Event eventQueue[12];
+    uint8_t in;
+    uint8_t out;
+} XF;
+
+
+
+
+
+
+
+void XF_init();
+
+
+
+
+
+
+
+_Bool XF_pushEvent(Event ev, _Bool inISR);
+
+
+
+
+
+
+Event XF_popEvent(_Bool inISR);
+# 74 "./xf.h"
+TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
+
+
+
+
+
+
+
+void XF_unscheduleTimer(TimerID id, _Bool inISR);
+
+
+
+
+
+
+void XF_decrementAndQueueTimers();
+# 10 "main.c" 2
+
+# 1 "./sleep.h" 1
+
+void sleepInit();
+void sleepSM(Event ev);
+void sleepController();
+# 11 "main.c" 2
+
+# 1 "./touchScreen.h" 1
+
+void touchScreenInit();
+void touchScreenSM(Event ev);
+void touchScreenController();
+# 12 "main.c" 2
+
+enum myEvents{nullEvent,evPress,evRelease};
+
+void init()
+{
+    XF_init();
+    sleepInit();
+    touchScreenInit();
+}
 void main(void) {
+    init();
+    Event ev=0;
+    while(1)
+    {
+        ev=XF_popEvent(0);
+        if(ev!=0)
+        {
+            sleepSM(ev);
+            touchScreenSM(ev);
+        }
+    }
     return;
 }
