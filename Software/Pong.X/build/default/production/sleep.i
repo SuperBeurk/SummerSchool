@@ -13,7 +13,6 @@
 
 
 
-# 1 "./sleep.h" 1
 # 1 "./xf.h" 1
 # 14 "./xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
@@ -130,6 +129,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos};
 
 typedef struct Timer
 {
@@ -184,14 +184,15 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 
 
 void XF_decrementAndQueueTimers();
-# 1 "./sleep.h" 2
+# 7 "sleep.c" 2
+
+# 1 "./sleep.h" 1
 
 void sleepInit();
 void sleepSM(Event ev);
 void sleepController();
-# 7 "sleep.c" 2
+# 8 "sleep.c" 2
 
-extern enum myEvents{nullEvent,evPress,evRelease};
 enum state{WAKEUP,BACKLIGHTOFF,SLEEP};
 enum state sleepState;
 
@@ -202,17 +203,53 @@ void sleepInit()
 }
 void sleepSM(Event ev)
 {
-
+   switch(sleepState)
+    {
+        case WAKEUP:
+            if(ev==evTimer30)
+            {
+               sleepState=BACKLIGHTOFF;
+               sleepController();
+            }
+            break;
+        case BACKLIGHTOFF:
+            if(ev==evTimer30)
+            {
+               sleepState=SLEEP;
+               sleepController();
+            }
+            if(ev==evPress)
+            {
+               sleepState=WAKEUP;
+               sleepController();
+            }
+            break;
+        case SLEEP:
+            if(ev==evPress)
+            {
+               sleepState=WAKEUP;
+               sleepController();
+            }
+            break;
+        default:
+            break;
+    }
 }
 void sleepController()
 {
     switch(sleepState)
     {
         case WAKEUP:
+
+
+
             break;
         case BACKLIGHTOFF:
+
             break;
         case SLEEP:
+
+
             break;
         default:
             break;

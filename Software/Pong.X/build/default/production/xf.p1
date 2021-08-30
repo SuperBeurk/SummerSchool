@@ -1,13 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"23 ./xf.h
-[; ;./xf.h: 23: {
+"24 ./xf.h
+[; ;./xf.h: 24: {
 [s S826 `us 1 `uc 1 ]
 [n S826 Timer tm ev ]
 "37
 [; ;./xf.h: 37: {
 [s S827 `S826 -> 8 `i `uc -> 12 `i `uc 1 `uc 1 ]
 [n S827 XF timerList eventQueue in out ]
-"17 xf.c
+"30 xf.c
+[; ;xf.c: 30:         theXF.eventQueue[i] = NULLEVENT;
+[c E5738 0 1 2 3 4 .. ]
+[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
+"17
 [; ;xf.c: 17: static void ENTERCRITICAL(_Bool inISR);
 [v _ENTERCRITICAL `(v ~T0 @X0 0 sf1`a ]
 "18
@@ -773,8 +777,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 29:     {
 {
 "30
-[; ;xf.c: 30:         theXF.eventQueue[i] = 0;
-[e = *U + &U . _theXF 1 * -> -> _i `ui `ux -> -> # *U &U . _theXF 1 `ui `ux -> -> 0 `i `uc ]
+[; ;xf.c: 30:         theXF.eventQueue[i] = NULLEVENT;
+[e = *U + &U . _theXF 1 * -> -> _i `ui `ux -> -> # *U &U . _theXF 1 `ui `ux -> . `E5738 0 `uc ]
 "31
 [; ;xf.c: 31:     }
 }
@@ -796,8 +800,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 35:         theXF.timerList[i].tm = 0;
 [e = . *U + &U . _theXF 0 * -> -> _i `ui `ux -> -> # *U &U . _theXF 0 `ui `ux 0 -> -> 0 `i `us ]
 "36
-[; ;xf.c: 36:         theXF.timerList[i].ev = 0;
-[e = . *U + &U . _theXF 0 * -> -> _i `ui `ux -> -> # *U &U . _theXF 0 `ui `ux 1 -> -> 0 `i `uc ]
+[; ;xf.c: 36:         theXF.timerList[i].ev = NULLEVENT;
+[e = . *U + &U . _theXF 0 * -> -> _i `ui `ux -> -> # *U &U . _theXF 0 `ui `ux 1 -> . `E5738 0 `uc ]
 "37
 [; ;xf.c: 37:     }
 }
@@ -889,8 +893,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 74:     Event ev;
 [v _ev `uc ~T0 @X0 1 a ]
 "75
-[; ;xf.c: 75:     ev = 0;
-[e = _ev -> -> 0 `i `uc ]
+[; ;xf.c: 75:     ev = NULLEVENT;
+[e = _ev -> . `E5738 0 `uc ]
 "76
 [; ;xf.c: 76:     ENTERCRITICAL(inISR);
 [e ( _ENTERCRITICAL (1 _inISR ]
@@ -960,8 +964,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 102:     {
 {
 "103
-[; ;xf.c: 103:         if (theXF.timerList[i].ev == 0)
-[e $ ! == -> . *U + &U . _theXF 0 * -> _i `ux -> -> # *U &U . _theXF 0 `ui `ux 1 `i -> 0 `i 843  ]
+[; ;xf.c: 103:         if (theXF.timerList[i].ev == NULLEVENT)
+[e $ ! == -> . *U + &U . _theXF 0 * -> _i `ux -> -> # *U &U . _theXF 0 `ui `ux 1 `i -> . `E5738 0 `i 843  ]
 "104
 [; ;xf.c: 104:         {
 {
@@ -1017,8 +1021,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 128:     theXF.timerList[id].tm = 0;
 [e = . *U + &U . _theXF 0 * -> _id `ux -> -> # *U &U . _theXF 0 `ui `ux 0 -> -> 0 `i `us ]
 "129
-[; ;xf.c: 129:     theXF.timerList[id].ev = 0;
-[e = . *U + &U . _theXF 0 * -> _id `ux -> -> # *U &U . _theXF 0 `ui `ux 1 -> -> 0 `i `uc ]
+[; ;xf.c: 129:     theXF.timerList[id].ev = NULLEVENT;
+[e = . *U + &U . _theXF 0 * -> _id `ux -> -> # *U &U . _theXF 0 `ui `ux 1 -> . `E5738 0 `uc ]
 "130
 [; ;xf.c: 130:     LEAVECRITICAL(inISR);
 [e ( _LEAVECRITICAL (1 _inISR ]
@@ -1048,8 +1052,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;xf.c: 143:     {
 {
 "144
-[; ;xf.c: 144:         if (theXF.timerList[i].ev != 0)
-[e $ ! != -> . *U + &U . _theXF 0 * -> -> _i `ui `ux -> -> # *U &U . _theXF 0 `ui `ux 1 `i -> 0 `i 849  ]
+[; ;xf.c: 144:         if (theXF.timerList[i].ev != NULLEVENT)
+[e $ ! != -> . *U + &U . _theXF 0 * -> -> _i `ui `ux -> -> # *U &U . _theXF 0 `ui `ux 1 `i -> . `E5738 0 `i 849  ]
 "145
 [; ;xf.c: 145:         {
 {

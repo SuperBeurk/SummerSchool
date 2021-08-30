@@ -18,6 +18,7 @@ typedef  uint8_t  Event;    // event type
 typedef  uint16_t Time;     // time type
 typedef  uint8_t  TimerID;  // identifier of timer (position in buffer)
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos};
 
 typedef struct Timer        // timer structure
 {
@@ -29,7 +30,6 @@ typedef struct Timer        // timer structure
 /*----------------------------------------------------------------------------*/
 #define MAXTIMER 8          // number of timers in our system
 #define MAXEVENT 12         // number of events in our system 
-#define NULLEVENT 0         // no event
 #define NULLTIMER 0         // no value for time
 
 /*----------------------------------------------------------------------------*/

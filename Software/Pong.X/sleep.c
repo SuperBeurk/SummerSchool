@@ -4,8 +4,8 @@
  *
  * Created on 30. août 2021, 12:40
  */
+#include "xf.h"
 #include "sleep.h"
-extern enum myEvents{nullEvent,evPress,evRelease,evTimer30,evTimer60};
 enum state{WAKEUP,BACKLIGHTOFF,SLEEP};
 enum state sleepState;
 
@@ -16,17 +16,53 @@ void sleepInit()
 }
 void sleepSM(Event ev)
 {
-    
+   switch(sleepState)
+    {
+        case WAKEUP: 
+            if(ev==evTimer30)
+            {
+               sleepState=BACKLIGHTOFF;
+               sleepController(); 
+            }
+            break;
+        case BACKLIGHTOFF:
+            if(ev==evTimer30)
+            {
+               sleepState=SLEEP;
+               sleepController(); 
+            }
+            if(ev==evPress)
+            {
+               sleepState=WAKEUP;
+               sleepController(); 
+            }
+            break;
+        case SLEEP:
+            if(ev==evPress)
+            {
+               sleepState=WAKEUP;
+               sleepController(); 
+            }
+            break;
+        default:
+            break;
+    } 
 }
 void sleepController()
 {
     switch(sleepState)
     {
         case WAKEUP:
+            //1.WAKEUP PIC
+            //2.Init all SM
+            //3.Init Backlight
             break;
         case BACKLIGHTOFF:
+            //1. Backlight OFF
             break;
         case SLEEP:
+            //1.Mode Sleep
+            //2.Reset X-Y for waiting touch
             break;
         default:
             break;

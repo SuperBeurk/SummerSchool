@@ -815,338 +815,426 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;lcd_highlevel.c: 22:   uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"25
-[; ;lcd_highlevel.c: 25:   LCD_Lowlevel_Init();
+"86
+[; ;lcd_highlevel.c: 86:   LCD_Lowlevel_Init();
 [e ( _LCD_Lowlevel_Init ..  ]
-"26
-[; ;lcd_highlevel.c: 26:   PORTA = 0x01; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 1 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"27
-[; ;lcd_highlevel.c: 27:   _delay((unsigned long)((10)*(64000000L/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"28
-[; ;lcd_highlevel.c: 28:   PORTA = 0x28; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 40 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"29
-[; ;lcd_highlevel.c: 29:   PORTA = 0x11; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+"87
+[; ;lcd_highlevel.c: 87:   PORTA = 0x11; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
 [e = _PORTA -> -> 17 `i `uc ]
 [e = _LATC1 -> -> 0 `i `b ]
 [e = _LATB4 -> -> 0 `i `b ]
 [e = _LATB4 -> -> 1 `i `b ]
 [e = _LATC1 -> -> 1 `i `b ]
-"30
-[; ;lcd_highlevel.c: 30:   PORTA = 0xCB; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 203 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"31
-[; ;lcd_highlevel.c: 31:   PORTA = 0x39; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 57 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"32
-[; ;lcd_highlevel.c: 32:   PORTA = 0x2C; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 44 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"33
-[; ;lcd_highlevel.c: 33:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"34
-[; ;lcd_highlevel.c: 34:   PORTA = 0x34; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 52 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"35
-[; ;lcd_highlevel.c: 35:   PORTA = 0x02; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 2 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"36
-[; ;lcd_highlevel.c: 36:   PORTA = 0xCF; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 207 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"37
-[; ;lcd_highlevel.c: 37:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"38
-[; ;lcd_highlevel.c: 38:   PORTA = 0x81; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 129 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"39
-[; ;lcd_highlevel.c: 39:   PORTA = 0x30; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 48 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"40
-[; ;lcd_highlevel.c: 40:   PORTA = 0xC0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 192 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"41
-[; ;lcd_highlevel.c: 41:   PORTA = 0x26; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 38 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"42
-[; ;lcd_highlevel.c: 42:   PORTA = 0x04; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 4 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"43
-[; ;lcd_highlevel.c: 43:   PORTA = 0xC1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 193 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"44
-[; ;lcd_highlevel.c: 44:   PORTA = 0x11; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 17 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"45
-[; ;lcd_highlevel.c: 45:   PORTA = 0xC5; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 197 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"46
-[; ;lcd_highlevel.c: 46:   PORTA = 0x35; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 53 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"47
-[; ;lcd_highlevel.c: 47:   PORTA = 0x3E; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 62 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"48
-[; ;lcd_highlevel.c: 48:   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 54 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"49
-[; ;lcd_highlevel.c: 49:   PORTA = 0xA8; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 168 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"50
-[; ;lcd_highlevel.c: 50:   PORTA = 0xB1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 177 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"51
-[; ;lcd_highlevel.c: 51:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"52
-[; ;lcd_highlevel.c: 52:   PORTA = 0x18; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 24 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"53
-[; ;lcd_highlevel.c: 53:   PORTA = 0xB6; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 182 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"54
-[; ;lcd_highlevel.c: 54:   PORTA = 0x0A; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 10 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"55
-[; ;lcd_highlevel.c: 55:   PORTA = 0xA2; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 162 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"56
-[; ;lcd_highlevel.c: 56:   PORTA = 0xC7; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 199 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"57
-[; ;lcd_highlevel.c: 57:   PORTA = 0xBE; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 190 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"58
-[; ;lcd_highlevel.c: 58:   PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 58 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"59
-[; ;lcd_highlevel.c: 59:   PORTA = 0x55; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 85 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"60
-[; ;lcd_highlevel.c: 60:   PORTA = 0xF2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 242 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"61
-[; ;lcd_highlevel.c: 61:   PORTA = 0x02; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 2 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"62
-[; ;lcd_highlevel.c: 62:   PORTA = 0x26; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 38 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"63
-[; ;lcd_highlevel.c: 63:   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 1 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"64
-[; ;lcd_highlevel.c: 64:   PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 42 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"65
-[; ;lcd_highlevel.c: 65:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"66
-[; ;lcd_highlevel.c: 66:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"67
-[; ;lcd_highlevel.c: 67:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"68
-[; ;lcd_highlevel.c: 68:   PORTA = 0xEF; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 239 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"69
-[; ;lcd_highlevel.c: 69:   PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 43 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"70
-[; ;lcd_highlevel.c: 70:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"71
-[; ;lcd_highlevel.c: 71:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 0 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"72
-[; ;lcd_highlevel.c: 72:   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 1 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"73
-[; ;lcd_highlevel.c: 73:   PORTA = 0x3F; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 63 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"74
-[; ;lcd_highlevel.c: 74:   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 54 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"75
-[; ;lcd_highlevel.c: 75:   PORTA = 0b00001000; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 8 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"76
-[; ;lcd_highlevel.c: 76:   PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 58 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"77
-[; ;lcd_highlevel.c: 77:   PORTA = 0xC5; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 197 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-"78
-[; ;lcd_highlevel.c: 78:   PORTA = 0x29; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-[e = _PORTA -> -> 41 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
-"79
-[; ;lcd_highlevel.c: 79:   TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
-"80
-[; ;lcd_highlevel.c: 80:   LATC2 = 0;
-[e = _LATC2 -> -> 0 `i `b ]
-"81
-[; ;lcd_highlevel.c: 81:   for(i=0;i<10;i++)
+"88
+[; ;lcd_highlevel.c: 88:   for(i=0;i<10;i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 10 `i 833  ]
 [e $U 834  ]
 [e :U 833 ]
-"82
-[; ;lcd_highlevel.c: 82:   {
+"89
+[; ;lcd_highlevel.c: 89:   {
 {
-"83
-[; ;lcd_highlevel.c: 83:     _delay((unsigned long)((10)*(64000000L/4000.0)));
+"90
+[; ;lcd_highlevel.c: 90:     _delay((unsigned long)((10)*(64000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"84
-[; ;lcd_highlevel.c: 84:   }
+"91
+[; ;lcd_highlevel.c: 91:   }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 10 `i 833  ]
 [e :U 834 ]
 }
+"92
+[; ;lcd_highlevel.c: 92:   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 54 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"93
+[; ;lcd_highlevel.c: 93:   PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"94
+[; ;lcd_highlevel.c: 94:   PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 58 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"95
+[; ;lcd_highlevel.c: 95:   PORTA = 0x55; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 85 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"96
+[; ;lcd_highlevel.c: 96:   PORTA = 0xB2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 178 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"97
+[; ;lcd_highlevel.c: 97:   PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 12 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"98
+[; ;lcd_highlevel.c: 98:   PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 12 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"99
+[; ;lcd_highlevel.c: 99:   PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 51 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"100
+[; ;lcd_highlevel.c: 100:   PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 51 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"101
+[; ;lcd_highlevel.c: 101:   PORTA = 0xB7; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 183 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"102
+[; ;lcd_highlevel.c: 102:   PORTA = 0x35; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 53 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"103
+[; ;lcd_highlevel.c: 103:   PORTA = 0xBB; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 187 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"104
+[; ;lcd_highlevel.c: 104:   PORTA = 0x2B; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 43 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"105
+[; ;lcd_highlevel.c: 105:   PORTA = 0xC0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 192 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"106
+[; ;lcd_highlevel.c: 106:   PORTA = 0x2C; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 44 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"107
+[; ;lcd_highlevel.c: 107:   PORTA = 0xC2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 194 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"108
+[; ;lcd_highlevel.c: 108:   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 1 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"109
+[; ;lcd_highlevel.c: 109:   PORTA = 0xFF; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 255 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"110
+[; ;lcd_highlevel.c: 110:   PORTA = 0XC3; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 195 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"111
+[; ;lcd_highlevel.c: 111:   PORTA = 0x11; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 17 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"112
+[; ;lcd_highlevel.c: 112:   PORTA = 0xC4; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 196 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"113
+[; ;lcd_highlevel.c: 113:   PORTA = 0x20; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 32 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"114
+[; ;lcd_highlevel.c: 114:   PORTA = 0xC6; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 198 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"115
+[; ;lcd_highlevel.c: 115:   PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 9 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"116
+[; ;lcd_highlevel.c: 116:   PORTA = 0xD0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 208 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"117
+[; ;lcd_highlevel.c: 117:   PORTA = 0xA4; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 164 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"118
+[; ;lcd_highlevel.c: 118:   PORTA = 0xA1; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 161 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"119
+[; ;lcd_highlevel.c: 119:   PORTA = 0xE0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 224 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"120
+[; ;lcd_highlevel.c: 120:   PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 208 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"121
+[; ;lcd_highlevel.c: 121:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"122
+[; ;lcd_highlevel.c: 122:   PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 5 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"123
+[; ;lcd_highlevel.c: 123:   PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 14 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"124
+[; ;lcd_highlevel.c: 124:   PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 21 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"125
+[; ;lcd_highlevel.c: 125:   PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 13 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"126
+[; ;lcd_highlevel.c: 126:   PORTA = 0x37; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 55 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"127
+[; ;lcd_highlevel.c: 127:   PORTA = 0x43; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 67 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"128
+[; ;lcd_highlevel.c: 128:   PORTA = 0x47; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 71 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"129
+[; ;lcd_highlevel.c: 129:   PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 9 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"130
+[; ;lcd_highlevel.c: 130:   PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 21 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"131
+[; ;lcd_highlevel.c: 131:   PORTA = 0x12; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 18 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"132
+[; ;lcd_highlevel.c: 132:   PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 22 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"133
+[; ;lcd_highlevel.c: 133:   PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 25 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"134
+[; ;lcd_highlevel.c: 134:   PORTA = 0xE1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 225 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"135
+[; ;lcd_highlevel.c: 135:   PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 208 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"136
+[; ;lcd_highlevel.c: 136:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"137
+[; ;lcd_highlevel.c: 137:   PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 5 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"138
+[; ;lcd_highlevel.c: 138:   PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 13 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"139
+[; ;lcd_highlevel.c: 139:   PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 12 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"140
+[; ;lcd_highlevel.c: 140:   PORTA = 0x06; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 6 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"141
+[; ;lcd_highlevel.c: 141:   PORTA = 0x2D; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 45 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"142
+[; ;lcd_highlevel.c: 142:   PORTA = 0x44; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 68 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"143
+[; ;lcd_highlevel.c: 143:   PORTA = 0x40; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 64 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"144
+[; ;lcd_highlevel.c: 144:   PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 14 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"145
+[; ;lcd_highlevel.c: 145:   PORTA = 0x1C; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 28 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"146
+[; ;lcd_highlevel.c: 146:   PORTA = 0x18; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 24 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"147
+[; ;lcd_highlevel.c: 147:   PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 22 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"148
+[; ;lcd_highlevel.c: 148:   PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 25 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"149
+[; ;lcd_highlevel.c: 149:   PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 42 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"150
+[; ;lcd_highlevel.c: 150:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"151
+[; ;lcd_highlevel.c: 151:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"152
+[; ;lcd_highlevel.c: 152:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"153
+[; ;lcd_highlevel.c: 153:   PORTA = 0xEF; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 239 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"154
+[; ;lcd_highlevel.c: 154:   PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 43 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"155
+[; ;lcd_highlevel.c: 155:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"156
+[; ;lcd_highlevel.c: 156:   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"157
+[; ;lcd_highlevel.c: 157:   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 1 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"158
+[; ;lcd_highlevel.c: 158:   PORTA = 0x3F; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 63 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"159
+[; ;lcd_highlevel.c: 159:   PORTA = 0x26; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 38 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"160
+[; ;lcd_highlevel.c: 160:   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 1 `i `uc ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+"161
+[; ;lcd_highlevel.c: 161:   PORTA = 0x29; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[e = _PORTA -> -> 41 `i `uc ]
+[e = _LATC1 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 0 `i `b ]
+[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC1 -> -> 1 `i `b ]
+"162
+[; ;lcd_highlevel.c: 162:   TRISC2 = 0;
+[e = _TRISC2 -> -> 0 `i `b ]
+"163
+[; ;lcd_highlevel.c: 163:   LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
 "207
 [; ;lcd_highlevel.c: 207: }
 [e :UE 832 ]
@@ -3027,8 +3115,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _LATB4 -> -> 1 `i `b ]
 [e = _LATC1 -> -> 1 `i `b ]
 "855
-[; ;lcd_highlevel.c: 855:   PORTA = 0b10001000; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 136 `i `uc ]
+[; ;lcd_highlevel.c: 855:   PORTA = 0b10000000; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 128 `i `uc ]
 [e = _LATB4 -> -> 0 `i `b ]
 [e = _LATB4 -> -> 1 `i `b ]
 "857
@@ -3437,8 +3525,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _LATB4 -> -> 1 `i `b ]
 [e = _LATC1 -> -> 1 `i `b ]
 "957
-[; ;lcd_highlevel.c: 957:   PORTA = 0b00001000; LATB4 = 0; LATB4 = 1;;
-[e = _PORTA -> -> 8 `i `uc ]
+[; ;lcd_highlevel.c: 957:   PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
+[e = _PORTA -> -> 0 `i `uc ]
 [e = _LATB4 -> -> 0 `i `b ]
 [e = _LATB4 -> -> 1 `i `b ]
 "958

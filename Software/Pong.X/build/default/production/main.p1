@@ -5,10 +5,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2 ./sleep.h
 [; ;./sleep.h: 2: void sleepInit();
 [v _sleepInit `(v ~T0 @X0 0 e? ]
-"2 ./touchScreen.h
-[; ;./touchScreen.h: 2: void touchScreenInit();
-[v _touchScreenInit `(v ~T0 @X0 0 e? ]
 [p mainexit ]
+"22 main.c
+[; ;main.c: 22:     Event ev=NULLEVENT;
+[c E5738 0 1 2 3 4 .. ]
+[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
 "65 ./xf.h
 [; ;./xf.h: 65: Event XF_popEvent(_Bool inISR);
 [v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
@@ -750,6 +751,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"7 ./configuration_bits.c
+[p x FOSC  =  INTIO67    ]
+"8
+[p x PLLCFG  =  ON       ]
+"9
+[p x PRICLKEN  =  ON     ]
+"10
+[p x FCMEN  =  OFF       ]
+"11
+[p x IESO  =  OFF        ]
+"14
+[p x PWRTEN  =  OFF      ]
+"15
+[p x BOREN  =  SBORDIS   ]
+"16
+[p x BORV  =  190        ]
+"19
+[p x WDTEN  =  SWON      ]
+"20
+[p x WDTPS  =  32768     ]
+"23
+[p x CCP2MX  =  PORTC1   ]
+"24
+[p x PBADEN  =  OFF      ]
+"25
+[p x CCP3MX  =  PORTB5   ]
+"26
+[p x HFOFST  =  ON       ]
+"27
+[p x T3CMX  =  PORTC0    ]
+"28
+[p x P2BMX  =  PORTB5    ]
+"29
+[p x MCLRE  =  EXTMCLR   ]
+"32
+[p x STVREN  =  ON       ]
+"33
+[p x LVP  =  ON          ]
+"34
+[p x XINST  =  OFF       ]
+"37
+[p x CP0  =  OFF         ]
+"38
+[p x CP1  =  OFF         ]
+"39
+[p x CP2  =  OFF         ]
+"40
+[p x CP3  =  OFF         ]
+"43
+[p x CPB  =  OFF         ]
+"44
+[p x CPD  =  OFF         ]
+"47
+[p x WRT0  =  OFF        ]
+"48
+[p x WRT1  =  OFF        ]
+"49
+[p x WRT2  =  OFF        ]
+"50
+[p x WRT3  =  OFF        ]
+"53
+[p x WRTC  =  OFF        ]
+"54
+[p x WRTB  =  OFF        ]
+"55
+[p x WRTD  =  OFF        ]
+"58
+[p x EBTR0  =  OFF       ]
+"59
+[p x EBTR1  =  OFF       ]
+"60
+[p x EBTR2  =  OFF       ]
+"61
+[p x EBTR3  =  OFF       ]
+"64
+[p x EBTRB  =  OFF       ]
 "15 main.c
 [; ;main.c: 15: void init()
 [v _init `(v ~T0 @X0 1 ef ]
@@ -765,61 +842,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 18:     sleepInit();
 [e ( _sleepInit ..  ]
 "19
-[; ;main.c: 19:     touchScreenInit();
-[e ( _touchScreenInit ..  ]
-"20
-[; ;main.c: 20: }
+[; ;main.c: 19: }
 [e :UE 828 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"21
-[; ;main.c: 21: void main(void) {
+"20
+[; ;main.c: 20: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"22
-[; ;main.c: 22:     init();
+"21
+[; ;main.c: 21:     init();
 [e ( _init ..  ]
-"23
-[; ;main.c: 23:     Event ev=0;
+"22
+[; ;main.c: 22:     Event ev=NULLEVENT;
 [v _ev `uc ~T0 @X0 1 a ]
-[e = _ev -> -> 0 `i `uc ]
-"24
-[; ;main.c: 24:     while(1)
+[e = _ev -> . `E5738 0 `uc ]
+"23
+[; ;main.c: 23:     while(1)
 [e :U 831 ]
+"24
+[; ;main.c: 24:     {
+{
 "25
-[; ;main.c: 25:     {
-{
-"26
-[; ;main.c: 26:         ev=XF_popEvent(0);
+[; ;main.c: 25:         ev=XF_popEvent(0);
 [e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
+"26
+[; ;main.c: 26:         if(ev!=NULLEVENT)
+[e $ ! != -> _ev `i -> . `E5738 0 `i 833  ]
 "27
-[; ;main.c: 27:         if(ev!=0)
-[e $ ! != -> _ev `i -> 0 `i 833  ]
-"28
-[; ;main.c: 28:         {
+[; ;main.c: 27:         {
 {
-"29
-[; ;main.c: 29:             sleepSM(ev);
+"28
+[; ;main.c: 28:             sleepSM(ev);
 [e ( _sleepSM (1 _ev ]
-"30
-[; ;main.c: 30:             touchScreenSM(ev);
+"29
+[; ;main.c: 29:             touchScreenSM(ev);
 [e ( _touchScreenSM (1 _ev ]
-"31
-[; ;main.c: 31:         }
+"30
+[; ;main.c: 30:         }
 }
 [e :U 833 ]
-"32
-[; ;main.c: 32:     }
+"31
+[; ;main.c: 31:     }
 }
 [e :U 830 ]
 [e $U 831  ]
 [e :U 832 ]
-"33
-[; ;main.c: 33:     return;
+"32
+[; ;main.c: 32:     return;
 [e $UE 829  ]
-"34
-[; ;main.c: 34: }
+"33
+[; ;main.c: 33: }
 [e :UE 829 ]
 }

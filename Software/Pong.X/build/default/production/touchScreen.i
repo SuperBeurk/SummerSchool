@@ -13,7 +13,6 @@
 
 
 
-# 1 "./touchScreen.h" 1
 # 1 "./xf.h" 1
 # 14 "./xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
@@ -130,6 +129,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos};
 
 typedef struct Timer
 {
@@ -184,13 +184,14 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 
 
 void XF_decrementAndQueueTimers();
-# 1 "./touchScreen.h" 2
+# 7 "touchScreen.c" 2
+
+# 1 "./touchScreen.h" 1
 
 void touchScreenInit();
 void touchScreenSM(Event ev);
 void touchScreenController();
-# 7 "touchScreen.c" 2
-
+# 8 "touchScreen.c" 2
 
 enum state{WAITING,CALCULATEPOSITION};
 enum state touchScreenState;
@@ -202,15 +203,43 @@ void touchScreenInit()
 }
 void touchScreenSM(Event ev)
 {
-
+    switch(touchScreenState)
+    {
+        case WAITING:
+            if(ev==evPress)
+            {
+                touchScreenState=CALCULATEPOSITION;
+                touchScreenController();
+            }
+            break;
+        case CALCULATEPOSITION:
+            if(ev==evRelease)
+            {
+                touchScreenState=WAITING;
+                touchScreenController();
+            }
+            if(ev==evTimerPos)
+            {
+                touchScreenController();
+            }
+            break;
+        default:
+            break;
+    }
 }
 void touchScreenController()
 {
     switch(touchScreenState)
     {
         case WAITING:
+
+
+
             break;
         case CALCULATEPOSITION:
+
+
+
             break;
         default:
             break;

@@ -9201,6 +9201,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos};
 
 typedef struct Timer
 {
@@ -9272,13 +9273,13 @@ void XF_init()
     int i;
     for (i=0; i<12; i++)
     {
-        theXF.eventQueue[i] = 0;
+        theXF.eventQueue[i] = NULLEVENT;
     }
 
     for (i=0; i<8; i++)
     {
         theXF.timerList[i].tm = 0;
-        theXF.timerList[i].ev = 0;
+        theXF.timerList[i].ev = NULLEVENT;
     }
     theXF.in = 0;
     theXF.out = 0;
@@ -9310,7 +9311,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR)
 Event XF_popEvent(_Bool inISR)
 {
     Event ev;
-    ev = 0;
+    ev = NULLEVENT;
     ENTERCRITICAL(inISR);
     if(theXF.in == theXF.out)
     {
@@ -9330,7 +9331,7 @@ TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR)
     ENTERCRITICAL(inISR);
     for (i=0; i<8; i++)
     {
-        if (theXF.timerList[i].ev == 0)
+        if (theXF.timerList[i].ev == NULLEVENT)
         {
             theXF.timerList[i].tm = tm;
             theXF.timerList[i].ev = ev;
@@ -9349,7 +9350,7 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR)
 {
     ENTERCRITICAL(inISR);
     theXF.timerList[id].tm = 0;
-    theXF.timerList[id].ev = 0;
+    theXF.timerList[id].ev = NULLEVENT;
     LEAVECRITICAL(inISR);
 }
 
@@ -9364,7 +9365,7 @@ void XF_decrementAndQueueTimers()
     int i;
     for (i=0; i<8; i++)
     {
-        if (theXF.timerList[i].ev != 0)
+        if (theXF.timerList[i].ev != NULLEVENT)
         {
 
             theXF.timerList[i].tm-=1;

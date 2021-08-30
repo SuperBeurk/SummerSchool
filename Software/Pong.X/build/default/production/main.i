@@ -9201,6 +9201,73 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
+# 1 "./configuration_bits.c" 1
+
+
+
+
+
+
+#pragma config FOSC = INTIO67
+#pragma config PLLCFG = ON
+#pragma config PRICLKEN = ON
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
+
+
+#pragma config PWRTEN = OFF
+#pragma config BOREN = SBORDIS
+#pragma config BORV = 190
+
+
+#pragma config WDTEN = SWON
+#pragma config WDTPS = 32768
+
+
+#pragma config CCP2MX = PORTC1
+#pragma config PBADEN = OFF
+#pragma config CCP3MX = PORTB5
+#pragma config HFOFST = ON
+#pragma config T3CMX = PORTC0
+#pragma config P2BMX = PORTB5
+#pragma config MCLRE = EXTMCLR
+
+
+#pragma config STVREN = ON
+#pragma config LVP = ON
+#pragma config XINST = OFF
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+
+#pragma config EBTRB = OFF
+# 10 "main.c" 2
+
 # 1 "./xf.h" 1
 # 15 "./xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
@@ -9210,6 +9277,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos};
 
 typedef struct Timer
 {
@@ -9264,37 +9332,35 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 
 
 void XF_decrementAndQueueTimers();
-# 10 "main.c" 2
+# 11 "main.c" 2
 
 # 1 "./sleep.h" 1
 
 void sleepInit();
 void sleepSM(Event ev);
 void sleepController();
-# 11 "main.c" 2
+# 12 "main.c" 2
 
 # 1 "./touchScreen.h" 1
 
 void touchScreenInit();
 void touchScreenSM(Event ev);
 void touchScreenController();
-# 12 "main.c" 2
+# 13 "main.c" 2
 
-enum myEvents{nullEvent,evPress,evRelease};
 
 void init()
 {
     XF_init();
     sleepInit();
-    touchScreenInit();
 }
 void main(void) {
     init();
-    Event ev=0;
+    Event ev=NULLEVENT;
     while(1)
     {
         ev=XF_popEvent(0);
-        if(ev!=0)
+        if(ev!=NULLEVENT)
         {
             sleepSM(ev);
             touchScreenSM(ev);

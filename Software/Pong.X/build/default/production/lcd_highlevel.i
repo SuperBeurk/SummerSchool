@@ -9419,47 +9419,70 @@ uint16_t LCD_Read(uint16_t posX, uint16_t posY);
 void LCD_Init(void)
 {
   uint8_t i;
-
-
+# 86 "lcd_highlevel.c"
   LCD_Lowlevel_Init();
-  PORTA = 0x01; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  _delay((unsigned long)((10)*(64000000L/4000.0)));
-  PORTA = 0x28; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
   PORTA = 0x11; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xCB; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x39; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x2C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x34; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x02; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xCF; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x81; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x30; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x26; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x04; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x11; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC5; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x35; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x3E; LATB4 = 0; LATB4 = 1;;
+  for(i=0;i<10;i++)
+  {
+    _delay((unsigned long)((10)*(64000000L/4000.0)));
+  }
   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xA8; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xB1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x18; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xB6; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x0A; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xA2; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC7; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xBE; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
   PORTA = 0x55; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xF2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x02; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x26; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0xB2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xB7; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x35; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xBB; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2B; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xC0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2C; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xC2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xFF; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0XC3; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x11; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xC4; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x20; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xC6; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xD0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0xA4; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xA1; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xE0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x37; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x43; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x47; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x12; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0xE1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x06; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2D; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x44; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x40; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x1C; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x18; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
@@ -9470,17 +9493,11 @@ void LCD_Init(void)
   PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x3F; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0b00001000; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xC5; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x26; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
   PORTA = 0x29; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
   TRISC2 = 0;
   LATC2 = 0;
-  for(i=0;i<10;i++)
-  {
-    _delay((unsigned long)((10)*(64000000L/4000.0)));
-  }
 # 207 "lcd_highlevel.c"
 }
 # 218 "lcd_highlevel.c"
@@ -10039,7 +10056,7 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
 
   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
 
-  PORTA = 0b10001000; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0b10000000; LATB4 = 0; LATB4 = 1;;
 
   colorTablePtr = (uint8_t *)bmpPtr + 54;
   bmpPtr += bfOffBits;
@@ -10141,6 +10158,6 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
   }while(endOfImage == 0);
   PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
 
-  PORTA = 0b00001000; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
   return 0;
 }

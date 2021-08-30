@@ -7,16 +7,15 @@
 
 
 #include <xc.h>
+#include "configuration_bits.c"
 #include "xf.h"
 #include "sleep.h"
 #include "touchScreen.h"
-enum myEvents{nullEvent,evPress,evRelease,evTimer30,evTimer60};
 
 void init()
 {
     XF_init();
     sleepInit();
-    touchScreenInit();
 }
 void main(void) {
     init();

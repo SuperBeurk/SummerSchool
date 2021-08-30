@@ -1,14 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "10 sleep.c
 [; ;sleep.c: 10: enum state sleepState;
-[c E71 0 1 2 .. ]
-[n E71 state WAKEUP BACKLIGHTOFF SLEEP  ]
+[c E73 0 1 2 .. ]
+[n E73 state WAKEUP BACKLIGHTOFF SLEEP  ]
 "4 ./sleep.h
 [; ;./sleep.h: 4: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
+"22 sleep.c
+[; ;sleep.c: 22:             if(ev==evTimer30)
+[c E39 0 1 2 3 4 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
 "10 sleep.c
 [; ;sleep.c: 10: enum state sleepState;
-[v _sleepState `E71 ~T0 @X0 1 e ]
+[v _sleepState `E73 ~T0 @X0 1 e ]
 "12
 [; ;sleep.c: 12: void sleepInit()
 [v _sleepInit `(v ~T0 @X0 1 ef ]
@@ -19,7 +23,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "14
 [; ;sleep.c: 14:     sleepState=WAKEUP;
-[e = _sleepState . `E71 0 ]
+[e = _sleepState . `E73 0 ]
 "15
 [; ;sleep.c: 15:     sleepController();
 [e ( _sleepController ..  ]
@@ -40,59 +44,163 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;sleep.c: 18: {
 [f ]
+"19
+[; ;sleep.c: 19:    switch(sleepState)
+[e $U 6  ]
 "20
-[; ;sleep.c: 20: }
+[; ;sleep.c: 20:     {
+{
+"21
+[; ;sleep.c: 21:         case WAKEUP:
+[e :U 7 ]
+"22
+[; ;sleep.c: 22:             if(ev==evTimer30)
+[e $ ! == -> _ev `i -> . `E39 3 `i 8  ]
+"23
+[; ;sleep.c: 23:             {
+{
+"24
+[; ;sleep.c: 24:                sleepState=BACKLIGHTOFF;
+[e = _sleepState . `E73 1 ]
+"25
+[; ;sleep.c: 25:                sleepController();
+[e ( _sleepController ..  ]
+"26
+[; ;sleep.c: 26:             }
+}
+[e :U 8 ]
+"27
+[; ;sleep.c: 27:             break;
+[e $U 5  ]
+"28
+[; ;sleep.c: 28:         case BACKLIGHTOFF:
+[e :U 9 ]
+"29
+[; ;sleep.c: 29:             if(ev==evTimer30)
+[e $ ! == -> _ev `i -> . `E39 3 `i 10  ]
+"30
+[; ;sleep.c: 30:             {
+{
+"31
+[; ;sleep.c: 31:                sleepState=SLEEP;
+[e = _sleepState . `E73 2 ]
+"32
+[; ;sleep.c: 32:                sleepController();
+[e ( _sleepController ..  ]
+"33
+[; ;sleep.c: 33:             }
+}
+[e :U 10 ]
+"34
+[; ;sleep.c: 34:             if(ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 11  ]
+"35
+[; ;sleep.c: 35:             {
+{
+"36
+[; ;sleep.c: 36:                sleepState=WAKEUP;
+[e = _sleepState . `E73 0 ]
+"37
+[; ;sleep.c: 37:                sleepController();
+[e ( _sleepController ..  ]
+"38
+[; ;sleep.c: 38:             }
+}
+[e :U 11 ]
+"39
+[; ;sleep.c: 39:             break;
+[e $U 5  ]
+"40
+[; ;sleep.c: 40:         case SLEEP:
+[e :U 12 ]
+"41
+[; ;sleep.c: 41:             if(ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 13  ]
+"42
+[; ;sleep.c: 42:             {
+{
+"43
+[; ;sleep.c: 43:                sleepState=WAKEUP;
+[e = _sleepState . `E73 0 ]
+"44
+[; ;sleep.c: 44:                sleepController();
+[e ( _sleepController ..  ]
+"45
+[; ;sleep.c: 45:             }
+}
+[e :U 13 ]
+"46
+[; ;sleep.c: 46:             break;
+[e $U 5  ]
+"47
+[; ;sleep.c: 47:         default:
+[e :U 14 ]
+"48
+[; ;sleep.c: 48:             break;
+[e $U 5  ]
+"49
+[; ;sleep.c: 49:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 7
+ , $ -> . `E73 1 `ui 9
+ , $ -> . `E73 2 `ui 12
+ 14 ]
+[e :U 5 ]
+"50
+[; ;sleep.c: 50: }
 [e :UE 4 ]
 }
-"21
-[; ;sleep.c: 21: void sleepController()
+"51
+[; ;sleep.c: 51: void sleepController()
 [v _sleepController `(v ~T0 @X0 1 ef ]
-"22
-[; ;sleep.c: 22: {
+"52
+[; ;sleep.c: 52: {
 {
 [e :U _sleepController ]
 [f ]
-"23
-[; ;sleep.c: 23:     switch(sleepState)
-[e $U 7  ]
-"24
-[; ;sleep.c: 24:     {
+"53
+[; ;sleep.c: 53:     switch(sleepState)
+[e $U 17  ]
+"54
+[; ;sleep.c: 54:     {
 {
-"25
-[; ;sleep.c: 25:         case WAKEUP:
-[e :U 8 ]
-"26
-[; ;sleep.c: 26:             break;
-[e $U 6  ]
-"27
-[; ;sleep.c: 27:         case BACKLIGHTOFF:
-[e :U 9 ]
-"28
-[; ;sleep.c: 28:             break;
-[e $U 6  ]
-"29
-[; ;sleep.c: 29:         case SLEEP:
-[e :U 10 ]
-"30
-[; ;sleep.c: 30:             break;
-[e $U 6  ]
-"31
-[; ;sleep.c: 31:         default:
-[e :U 11 ]
-"32
-[; ;sleep.c: 32:             break;
-[e $U 6  ]
-"33
-[; ;sleep.c: 33:     }
+"55
+[; ;sleep.c: 55:         case WAKEUP:
+[e :U 18 ]
+"59
+[; ;sleep.c: 59:             break;
+[e $U 16  ]
+"60
+[; ;sleep.c: 60:         case BACKLIGHTOFF:
+[e :U 19 ]
+"62
+[; ;sleep.c: 62:             break;
+[e $U 16  ]
+"63
+[; ;sleep.c: 63:         case SLEEP:
+[e :U 20 ]
+"66
+[; ;sleep.c: 66:             break;
+[e $U 16  ]
+"67
+[; ;sleep.c: 67:         default:
+[e :U 21 ]
+"68
+[; ;sleep.c: 68:             break;
+[e $U 16  ]
+"69
+[; ;sleep.c: 69:     }
 }
-[e $U 6  ]
-[e :U 7 ]
-[e [\ -> _sleepState `ui , $ -> . `E71 0 `ui 8
- , $ -> . `E71 1 `ui 9
- , $ -> . `E71 2 `ui 10
- 11 ]
-[e :U 6 ]
-"34
-[; ;sleep.c: 34: }
-[e :UE 5 ]
+[e $U 16  ]
+[e :U 17 ]
+[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 18
+ , $ -> . `E73 1 `ui 19
+ , $ -> . `E73 2 `ui 20
+ 21 ]
+[e :U 16 ]
+"70
+[; ;sleep.c: 70: }
+[e :UE 15 ]
 }
