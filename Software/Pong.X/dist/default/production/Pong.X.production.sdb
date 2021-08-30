@@ -1,0 +1,159 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18LF25K22 ]
+[d frameptr 4065 ]
+"501 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\lcd_highlevel.c
+[e E355 . `uc
+A_LEFT 0
+A_RIGHT 1
+A_CENTER 2
+]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"319 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\lcd_highlevel.c
+[v _LCD_SliderUpdate LCD_SliderUpdate `(v  1 e 1 0 ]
+"425
+[v _LCD_ButtonUpdate LCD_ButtonUpdate `(v  1 e 1 0 ]
+"514
+[v _LCD_InButton LCD_InButton `(uc  1 e 1 0 ]
+"546
+[v _LCD_InSlider LCD_InSlider `(uc  1 e 1 0 ]
+"584
+[v _LCD_DrawRect LCD_DrawRect `(v  1 e 1 0 ]
+"713
+[v _LCD_DrawText LCD_DrawText `(v  1 e 1 0 ]
+"799
+[v _RGB2LCD RGB2LCD `(us  1 e 2 0 ]
+"823
+[v _LCD_Bitmap LCD_Bitmap `(uc  1 e 1 0 ]
+"17 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\lcd_lowlevel.c
+[v _LCD_Lowlevel_Init LCD_Lowlevel_Init `(v  1 e 1 0 ]
+"64
+[v _LCD_Read LCD_Read `(us  1 e 2 0 ]
+"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"124 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\tsc.c
+[v _TscWrite TscWrite `(v  1 e 1 0 ]
+"155
+[v _TscRead TscRead `(v  1 e 1 0 ]
+"49 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\xf.c
+[v _XF_pushEvent XF_pushEvent `(a  1 e 1 0 ]
+"125
+[v _XF_unscheduleTimer XF_unscheduleTimer `(v  1 e 1 0 ]
+"172
+[v _ENTERCRITICAL ENTERCRITICAL `(v  1 s 1 ENTERCRITICAL ]
+"186
+[v _LEAVECRITICAL LEAVECRITICAL `(v  1 s 1 LEAVECRITICAL ]
+"6175 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"7581
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"13312
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"14434
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"17232
+[v _CKE1 CKE1 `VEb  1 e 0 @32318 ]
+"17583
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"17694
+[v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
+"17730
+[v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
+"17865
+[v _LATB3 LATB3 `VEb  1 e 0 @31827 ]
+"17868
+[v _LATB4 LATB4 `VEb  1 e 0 @31828 ]
+"17871
+[v _LATB5 LATB5 `VEb  1 e 0 @31829 ]
+"17880
+[v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
+"17883
+[v _LATC1 LATC1 `VEb  1 e 0 @31833 ]
+"17886
+[v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
+"17889
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
+"17892
+[v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
+"17895
+[v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
+"17898
+[v _LATC6 LATC6 `VEb  1 e 0 @31838 ]
+"18855
+[v _SSPEN1 SSPEN1 `VEb  1 e 0 @32309 ]
+"18864
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
+"19476
+[v _TRISB1 TRISB1 `VEb  1 e 0 @31897 ]
+"19482
+[v _TRISB3 TRISB3 `VEb  1 e 0 @31899 ]
+"19485
+[v _TRISB4 TRISB4 `VEb  1 e 0 @31900 ]
+"19488
+[v _TRISB5 TRISB5 `VEb  1 e 0 @31901 ]
+"19497
+[v _TRISC0 TRISC0 `VEb  1 e 0 @31904 ]
+"19500
+[v _TRISC1 TRISC1 `VEb  1 e 0 @31905 ]
+"19503
+[v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
+"19506
+[v _TRISC3 TRISC3 `VEb  1 e 0 @31907 ]
+"19509
+[v _TRISC4 TRISC4 `VEb  1 e 0 @31908 ]
+"19512
+[v _TRISC5 TRISC5 `VEb  1 e 0 @31909 ]
+"19515
+[v _TRISC6 TRISC6 `VEb  1 e 0 @31910 ]
+[s S535 . 6 `uc 1 pressed 1 0 `uc 1 released 1 1 `us 1 posX 2 2 `us 1 posY 2 4 ]
+"12 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\tsc.c
+[v _tsc tsc `S535  1 e 6 0 ]
+"13
+[v _dummy dummy `VEuc  1 e 1 0 ]
+[s S688 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
+"15 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\xf.c
+[s S691 XF 38 `[8]S688 1 timerList 24 0 `[12]uc 1 eventQueue 12 24 `uc 1 in 1 36 `uc 1 out 1 37 ]
+[v _theXF theXF `S691  1 e 38 0 ]
+"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\Pong.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"13
+} 0
