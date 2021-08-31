@@ -216,17 +216,17 @@
 //------------------------------------------------------------------------------
 // LCD connected pins definitions
 //------------------------------------------------------------------------------
-#define LCD_nRD           LATB3
-#define LCD_nWR           LATB4
-#define LCD_DnC           LATC1
-#define LCD_nRES          LATC0
-#define LCD_nCS           LATB5
+#define LCD_nRD           LATC2
+#define LCD_nWR           LATC3
+#define LCD_DnC           LATC4
+//#define LCD_nRES          LATC0
+#define LCD_nCS           LATC5
 
-#define DIR_LCD_nRD       TRISB3
-#define DIR_LCD_nWR       TRISB4
-#define DIR_LCD_DnC       TRISC1
-#define DIR_LCD_nRES      TRISC0
-#define DIR_LCD_nCS       TRISB5
+#define DIR_LCD_nRD       TRISC2
+#define DIR_LCD_nWR       TRISC3
+#define DIR_LCD_DnC       TRISC4
+//#define DIR_LCD_nRES      TRISC0
+#define DIR_LCD_nCS       TRISC5
 
 #define LCD_DATA_BUS      PORTA
 #define DIR_LCD_DATA_BUS  TRISA

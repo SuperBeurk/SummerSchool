@@ -21,10 +21,10 @@ void LCD_Lowlevel_Init(void)
   DIR_LCD_nRD = 0;
   DIR_LCD_nWR = 0;
   DIR_LCD_DnC = 0;
-  DIR_LCD_nRES = 0;
+  //DIR_LCD_nRES = 0;
   DIR_LCD_DATA_BUS = 0x00;
 
-	LCD_nRES = 0;			// Reset the LCD-MODULE
+	//LCD_nRES = 0;			// Reset the LCD-MODULE
 	LCD_nCS = 0;			// chip select
 	LCD_nRD = 1;			// Disable the Read mode
 	LCD_nWR = 1;			// Disable the Write mode
@@ -34,7 +34,7 @@ void LCD_Lowlevel_Init(void)
   {
     __delay_ms(10);
   }  
-	LCD_nRES = 1;			// Disable the Reset
+	//LCD_nRES = 1;			// Disable the Reset
   for(i=0;i<12;i++) // delay 120 ms
   {
     __delay_ms(10);

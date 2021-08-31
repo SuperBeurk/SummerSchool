@@ -9421,81 +9421,81 @@ void LCD_Init(void)
   uint8_t i;
 # 86 "libraries/lcd_highlevel.c"
   LCD_Lowlevel_Init();
-  PORTA = 0x11; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x11; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   for(i=0;i<10;i++)
   {
     _delay((unsigned long)((10)*(64000000L/4000.0)));
   }
-  PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x3A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x55; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xB2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x33; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xB7; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x35; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xBB; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x2B; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x2C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC2; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xFF; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0XC3; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x11; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC4; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x20; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xC6; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xD0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xA4; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xA1; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xE0; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x37; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x43; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x47; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x09; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x15; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x12; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xE1; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0xD0; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x05; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0D; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x06; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x2D; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x44; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x40; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x0E; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x1C; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x18; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x16; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x19; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0xEF; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x3F; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x26; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x01; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x29; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x36; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0b00000000; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x3A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x55; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xB2; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x0C; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0C; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x33; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x33; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xB7; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x35; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xBB; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x2B; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xC0; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x2C; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xC2; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x01; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xFF; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0XC3; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x11; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xC4; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x20; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xC6; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x09; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xD0; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0xA4; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xA1; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xE0; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0xD0; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x05; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0E; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x15; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0D; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x37; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x43; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x47; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x09; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x15; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x12; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x16; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x19; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xE1; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0xD0; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x05; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0D; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0C; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x06; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x2D; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x44; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x40; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x0E; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x1C; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x18; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x16; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x19; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0xEF; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x01; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x3F; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x26; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x01; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x29; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   TRISC2 = 0;
   LATC2 = 0;
 # 207 "libraries/lcd_highlevel.c"
@@ -9509,29 +9509,29 @@ void LCD_Fill(uint16_t color)
   colorH = color >> 8;
   colorL = color;
 
-  PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = 0x00; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = 0x00; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   for(column=0; column<320; column++)
   {
     for(page=0; page<240; page++)
     {
       PORTA = colorH;
-      LATB4 = 0;
-      LATB4 = 1;
+      LATC3 = 0;
+      LATC3 = 1;
       PORTA = colorL;
-      LATB4 = 0;
-      LATB4 = 1;
+      LATC3 = 0;
+      LATC3 = 1;
     }
   }
 }
@@ -9545,21 +9545,21 @@ void LCD_Fill(uint16_t color)
 void LCD_SetPixel(uint16_t posX,uint16_t posY, uint16_t color)
 {
 
-  PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posX; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posX; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = posY>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posY; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = posY>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posY; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = color>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = color; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = color>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = color; LATC3 = 0; LATC3 = 1;;
 }
 # 291 "libraries/lcd_highlevel.c"
 void LCD_SliderCreate(uint16_t posX, uint16_t posY,
@@ -9845,25 +9845,25 @@ void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
   if(fill==1)
   {
 
-    PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posX1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX1; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2; LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posX1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX1; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2; LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posY1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posY1; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posY1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posY1; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
     for(i=posX1;i<=posX2;i++)
     {
       for(j=posY1;j<=posY2;j++)
       {
-        PORTA = colorH; LATB4 = 0; LATB4 = 1;;
-        PORTA = colorL; LATB4 = 0; LATB4 = 1;;
+        PORTA = colorH; LATC3 = 0; LATC3 = 1;;
+        PORTA = colorL; LATC3 = 0; LATC3 = 1;;
       }
     }
   }
@@ -9871,64 +9871,64 @@ void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
   else
   {
 
-    PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posX1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX1; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2; LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posX1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX1; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2; LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posY1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posY1; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posY1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posY1; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 
     for(i=posX1;i<=posX2;i++)
     {
-      PORTA = colorH; LATB4 = 0; LATB4 = 1;;
-      PORTA = colorL; LATB4 = 0; LATB4 = 1;;
+      PORTA = colorH; LATC3 = 0; LATC3 = 1;;
+      PORTA = colorL; LATC3 = 0; LATC3 = 1;;
     }
 
-    PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posY2>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posY2; LATB4 = 0; LATB4 = 1;;
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posY2>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posY2; LATC3 = 0; LATC3 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
     for(i=posX1;i<=posX2;i++)
     {
-      PORTA = colorH; LATB4 = 0; LATB4 = 1;;
-      PORTA = colorL; LATB4 = 0; LATB4 = 1;;
+      PORTA = colorH; LATC3 = 0; LATC3 = 1;;
+      PORTA = colorL; LATC3 = 0; LATC3 = 1;;
     }
 
-    PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posX1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX1; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX1; LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posX1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX1; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX1; LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posY1>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posY1; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-    PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posY1>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posY1; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+    PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
     for(i=posY1;i<=posY2;i++)
     {
-      PORTA = colorH; LATB4 = 0; LATB4 = 1;;
-      PORTA = colorL; LATB4 = 0; LATB4 = 1;;
+      PORTA = colorH; LATC3 = 0; LATC3 = 1;;
+      PORTA = colorL; LATC3 = 0; LATC3 = 1;;
     }
 
-    PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posX2>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX2; LATB4 = 0; LATB4 = 1;;
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posX2>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX2; LATC3 = 0; LATC3 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
     for(i=posY1;i<=posY2;i++)
     {
-      PORTA = colorH; LATB4 = 0; LATB4 = 1;;
-      PORTA = colorL; LATB4 = 0; LATB4 = 1;;
+      PORTA = colorH; LATC3 = 0; LATC3 = 1;;
+      PORTA = colorL; LATC3 = 0; LATC3 = 1;;
     }
   }
 }
@@ -9968,20 +9968,20 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 
 
 
-    PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posX; LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posX; LATC3 = 0; LATC3 = 1;;
     posXEnd = posX+width-1+2;
-    PORTA = posXEnd>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posXEnd; LATB4 = 0; LATB4 = 1;;
+    PORTA = posXEnd>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posXEnd; LATC3 = 0; LATC3 = 1;;
 
-    PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-    PORTA = posY>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posY; LATB4 = 0; LATB4 = 1;;
+    PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+    PORTA = posY>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posY; LATC3 = 0; LATC3 = 1;;
     posYEnd = posY + font->height-1;
-    PORTA = posYEnd>>8; LATB4 = 0; LATB4 = 1;;
-    PORTA = posYEnd; LATB4 = 0; LATB4 = 1;;
-    PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+    PORTA = posYEnd>>8; LATC3 = 0; LATC3 = 1;;
+    PORTA = posYEnd; LATC3 = 0; LATC3 = 1;;
+    PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 
     for(y=0;y<font->height;y++)
     {
@@ -9992,19 +9992,19 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
         fontPixel = fontByte & (0x80 >> (x%8));
         if(fontPixel != 0)
         {
-          PORTA = color>>8; LATB4 = 0; LATB4 = 1;;
-          PORTA = color; LATB4 = 0; LATB4 = 1;;
+          PORTA = color>>8; LATC3 = 0; LATC3 = 1;;
+          PORTA = color; LATC3 = 0; LATC3 = 1;;
         }
         else
         {
-          PORTA = bg_color>>8; LATB4 = 0; LATB4 = 1;;
-          PORTA = bg_color; LATB4 = 0; LATB4 = 1;;
+          PORTA = bg_color>>8; LATC3 = 0; LATC3 = 1;;
+          PORTA = bg_color; LATC3 = 0; LATC3 = 1;;
         }
       }
       for(x=0;x<2;x++)
       {
-        PORTA = bg_color>>8; LATB4 = 0; LATB4 = 1;;
-        PORTA = bg_color; LATB4 = 0; LATB4 = 1;;
+        PORTA = bg_color>>8; LATC3 = 0; LATC3 = 1;;
+        PORTA = bg_color; LATC3 = 0; LATC3 = 1;;
       }
     }
     posX = posX + 2 + width;
@@ -10054,31 +10054,31 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
     return 2;
   }
 
-  PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x36; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 
-  PORTA = 0b10000000; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0b10000000; LATC3 = 0; LATC3 = 1;;
 
   colorTablePtr = (uint8_t *)bmpPtr + 54;
   bmpPtr += bfOffBits;
   endOfImage = 0;
   jumpColor = RGB2LCD(colorTablePtr);
 
-  PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posX; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posX; LATC3 = 0; LATC3 = 1;;
   posX = posX + biWidth-1;
-  PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posX; LATB4 = 0; LATB4 = 1;;
+  PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posX; LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   newY = 320 - posY - biHeight;
-  PORTA = newY>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = newY; LATB4 = 0; LATB4 = 1;;
+  PORTA = newY>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = newY; LATC3 = 0; LATC3 = 1;;
   newY = newY + biHeight-1;
-  PORTA = newY>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = newY; LATB4 = 0; LATB4 = 1;;
+  PORTA = newY>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = newY; LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2C; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2C; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   curXPos = 0;
   curYPos = 0;
   do
@@ -10091,8 +10091,8 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
           bmpPtr += 2;
           for(i=0;i<biWidth - curXPos;i++)
           {
-            PORTA = jumpColor >> 8; LATB4 = 0; LATB4 = 1;;
-            PORTA = jumpColor; LATB4 = 0; LATB4 = 1;;
+            PORTA = jumpColor >> 8; LATC3 = 0; LATC3 = 1;;
+            PORTA = jumpColor; LATC3 = 0; LATC3 = 1;;
           }
           curXPos = 0;
           curYPos++;
@@ -10100,13 +10100,13 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
         case 1:
           for(i=0;i<biWidth - curXPos;i++)
           {
-            PORTA = jumpColor >> 8; LATB4 = 0; LATB4 = 1;;
-            PORTA = jumpColor; LATB4 = 0; LATB4 = 1;;
+            PORTA = jumpColor >> 8; LATC3 = 0; LATC3 = 1;;
+            PORTA = jumpColor; LATC3 = 0; LATC3 = 1;;
           }
           for(i=0;i<(biHeight - curYPos -1)*biWidth;i++)
           {
-            PORTA = jumpColor >> 8; LATB4 = 0; LATB4 = 1;;
-            PORTA = jumpColor; LATB4 = 0; LATB4 = 1;;
+            PORTA = jumpColor >> 8; LATC3 = 0; LATC3 = 1;;
+            PORTA = jumpColor; LATC3 = 0; LATC3 = 1;;
           }
           endOfImage = 1;
         break;
@@ -10115,8 +10115,8 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
           for(i=0;i<jumpCount;i++)
           {
             curXPos++;
-            PORTA = jumpColor >> 8; LATB4 = 0; LATB4 = 1;;
-            PORTA = jumpColor; LATB4 = 0; LATB4 = 1;;
+            PORTA = jumpColor >> 8; LATC3 = 0; LATC3 = 1;;
+            PORTA = jumpColor; LATC3 = 0; LATC3 = 1;;
           }
           curYPos = curYPos + (jumpCount / biWidth);
           curXPos = curXPos % biWidth;
@@ -10128,8 +10128,8 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
           {
             color = RGB2LCD(colorTablePtr+(bmpPtr[2+i]*4));
             curXPos++;
-            PORTA = color >> 8; LATB4 = 0; LATB4 = 1;;
-            PORTA = color; LATB4 = 0; LATB4 = 1;;
+            PORTA = color >> 8; LATC3 = 0; LATC3 = 1;;
+            PORTA = color; LATC3 = 0; LATC3 = 1;;
           }
           if(pixelCount < 255)
           {
@@ -10150,14 +10150,14 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY)
       for(i=0;i < pixelCount;i++)
       {
         curXPos++;
-        PORTA = color >> 8; LATB4 = 0; LATB4 = 1;;
-        PORTA = color; LATB4 = 0; LATB4 = 1;;
+        PORTA = color >> 8; LATC3 = 0; LATC3 = 1;;
+        PORTA = color; LATC3 = 0; LATC3 = 1;;
       }
       bmpPtr+=2;
     }
   }while(endOfImage == 0);
-  PORTA = 0x36; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x36; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 
-  PORTA = 0b00000000; LATB4 = 0; LATB4 = 1;;
+  PORTA = 0b00000000; LATC3 = 0; LATC3 = 1;;
   return 0;
 }

@@ -9211,24 +9211,24 @@ uint16_t LCD_Read(uint16_t posX, uint16_t posY);
 void LCD_Lowlevel_Init(void)
 {
   uint32_t i;
-  TRISB5 = 0;
-  TRISB3 = 0;
-  TRISB4 = 0;
-  TRISC1 = 0;
-  TRISC0 = 0;
+  TRISC5 = 0;
+  TRISC2 = 0;
+  TRISC3 = 0;
+  TRISC4 = 0;
+
   TRISA = 0x00;
 
- LATC0 = 0;
- LATB5 = 0;
- LATB3 = 1;
- LATB4 = 1;
- LATC1 = 1;
+
+ LATC5 = 0;
+ LATC2 = 1;
+ LATC3 = 1;
+ LATC4 = 1;
 
   for(i=0;i<12;i++)
   {
     _delay((unsigned long)((10)*(64000000L/4000.0)));
   }
- LATC0 = 1;
+
   for(i=0;i<12;i++)
   {
     _delay((unsigned long)((10)*(64000000L/4000.0)));
@@ -9246,40 +9246,40 @@ uint16_t LCD_Read(uint16_t posX, uint16_t posY)
   uint16_t color;
 
 
-  PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posX; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (240 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posX; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (240 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
-  PORTA = posY>>8; LATB4 = 0; LATB4 = 1;;
-  PORTA = posY; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
-  PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+  PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
+  PORTA = posY>>8; LATC3 = 0; LATC3 = 1;;
+  PORTA = posY; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
+  PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 
-  PORTA = 0x2E; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+  PORTA = 0x2E; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
  TRISA = 0xFF;
- LATB3 = 0;
+ LATC2 = 0;
   __nop();
- LATB3 = 1;
+ LATC2 = 1;
  TRISA = 0xFF;
- LATB3 = 0;
+ LATC2 = 0;
   __nop();
  temp16 = PORTA;
- LATB3 = 1;
+ LATC2 = 1;
   temp16 = temp16 >> 3;
   color = temp16 << 11;
- LATB3 = 0;
+ LATC2 = 0;
   __nop();
  temp16 = PORTA;
- LATB3 = 1;
+ LATC2 = 1;
   temp16 = temp16 >> 2;
   color |= temp16 << 5;
- LATB3 = 0;
+ LATC2 = 0;
   __nop();
  temp16 |= PORTA;
- LATB3 = 1;
+ LATC2 = 1;
   temp16 = temp16 >> 3;
   color |= temp16;
  TRISA = 0x00;
