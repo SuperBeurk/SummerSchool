@@ -1,0 +1,138 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 stateMachine/display.c
+[; ;stateMachine/display.c: 9: enum state displayState;
+[c E77 0 1 2 .. ]
+[n E77 state WELCOME PARAMETERS INGAME  ]
+"4 stateMachine/display.h
+[; ;stateMachine/display.h: 4: void displayController();
+[v _displayController `(v ~T0 @X0 0 e? ]
+"9 stateMachine/display.c
+[; ;stateMachine/display.c: 9: enum state displayState;
+[v _displayState `E77 ~T0 @X0 1 e ]
+"11
+[; ;stateMachine/display.c: 11: void displayInit()
+[v _displayInit `(v ~T0 @X0 1 ef ]
+"12
+[; ;stateMachine/display.c: 12: {
+{
+[e :U _displayInit ]
+[f ]
+"13
+[; ;stateMachine/display.c: 13:     displayState=WELCOME;
+[e = _displayState . `E77 0 ]
+"14
+[; ;stateMachine/display.c: 14:     displayController();
+[e ( _displayController ..  ]
+"15
+[; ;stateMachine/display.c: 15: }
+[e :UE 3 ]
+}
+"16
+[; ;stateMachine/display.c: 16: void displaySM(Event ev)
+[v _displaySM `(v ~T0 @X0 1 ef1`uc ]
+"17
+[; ;stateMachine/display.c: 17: {
+{
+[e :U _displaySM ]
+"16
+[; ;stateMachine/display.c: 16: void displaySM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"17
+[; ;stateMachine/display.c: 17: {
+[f ]
+"18
+[; ;stateMachine/display.c: 18:    switch(displayState)
+[e $U 6  ]
+"19
+[; ;stateMachine/display.c: 19:     {
+{
+"20
+[; ;stateMachine/display.c: 20:         case WELCOME:
+[e :U 7 ]
+"21
+[; ;stateMachine/display.c: 21:             break;
+[e $U 5  ]
+"22
+[; ;stateMachine/display.c: 22:         case PARAMETERS:
+[e :U 8 ]
+"23
+[; ;stateMachine/display.c: 23:             break;
+[e $U 5  ]
+"24
+[; ;stateMachine/display.c: 24:         case INGAME:
+[e :U 9 ]
+"25
+[; ;stateMachine/display.c: 25:             break;
+[e $U 5  ]
+"26
+[; ;stateMachine/display.c: 26:         default:
+[e :U 10 ]
+"27
+[; ;stateMachine/display.c: 27:             break;
+[e $U 5  ]
+"28
+[; ;stateMachine/display.c: 28:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _displayState `ui , $ -> . `E77 0 `ui 7
+ , $ -> . `E77 1 `ui 8
+ , $ -> . `E77 2 `ui 9
+ 10 ]
+[e :U 5 ]
+"29
+[; ;stateMachine/display.c: 29: }
+[e :UE 4 ]
+}
+"30
+[; ;stateMachine/display.c: 30: void displayController()
+[v _displayController `(v ~T0 @X0 1 ef ]
+"31
+[; ;stateMachine/display.c: 31: {
+{
+[e :U _displayController ]
+[f ]
+"32
+[; ;stateMachine/display.c: 32:     switch(displayState)
+[e $U 13  ]
+"33
+[; ;stateMachine/display.c: 33:     {
+{
+"34
+[; ;stateMachine/display.c: 34:         case WELCOME:
+[e :U 14 ]
+"36
+[; ;stateMachine/display.c: 36:             break;
+[e $U 12  ]
+"37
+[; ;stateMachine/display.c: 37:         case PARAMETERS:
+[e :U 15 ]
+"39
+[; ;stateMachine/display.c: 39:             break;
+[e $U 12  ]
+"40
+[; ;stateMachine/display.c: 40:         case INGAME:
+[e :U 16 ]
+"44
+[; ;stateMachine/display.c: 44:             break;
+[e $U 12  ]
+"45
+[; ;stateMachine/display.c: 45:         default:
+[e :U 17 ]
+"46
+[; ;stateMachine/display.c: 46:             break;
+[e $U 12  ]
+"47
+[; ;stateMachine/display.c: 47:     }
+}
+[e $U 12  ]
+[e :U 13 ]
+[e [\ -> _displayState `ui , $ -> . `E77 0 `ui 14
+ , $ -> . `E77 1 `ui 15
+ , $ -> . `E77 2 `ui 16
+ 17 ]
+[e :U 12 ]
+"48
+[; ;stateMachine/display.c: 48: }
+[e :UE 11 ]
+}

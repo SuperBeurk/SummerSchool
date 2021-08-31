@@ -1,18 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/touchScreenSM.c
 [; ;stateMachine/touchScreenSM.c: 9: state touchScreenState;
-[c E73 0 1 .. ]
-[n E73 state WAITING CALCULATEPOSITION  ]
+[c E77 0 1 .. ]
+[n E77 state WAITING CALCULATEPOSITION  ]
 "4 stateMachine/touchScreenSM.h
 [; ;stateMachine/touchScreenSM.h: 4: void touchScreenController();
 [v _touchScreenController `(v ~T0 @X0 0 e? ]
 "24 stateMachine/touchScreenSM.c
 [; ;stateMachine/touchScreenSM.c: 24:             if(ev==evPress)
-[c E39 0 1 2 3 4 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
+[c E39 0 1 2 3 4 5 6 7 8 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParameters  ]
 "9 stateMachine/touchScreenSM.c
 [; ;stateMachine/touchScreenSM.c: 9: state touchScreenState;
-[v _touchScreenState `E73 ~T0 @X0 1 e ]
+[v _touchScreenState `E77 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/touchScreenSM.c: 11: void touchScreenInit()
 [v _touchScreenInit `(v ~T0 @X0 1 ef ]
@@ -23,7 +23,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/touchScreenSM.c: 13:     touchScreenState=WAITING;
-[e = _touchScreenState . `E73 0 ]
+[e = _touchScreenState . `E77 0 ]
 "14
 [; ;stateMachine/touchScreenSM.c: 14:     touchScreenController();
 [e ( _touchScreenController ..  ]
@@ -61,7 +61,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "26
 [; ;stateMachine/touchScreenSM.c: 26:                 touchScreenState=CALCULATEPOSITION;
-[e = _touchScreenState . `E73 1 ]
+[e = _touchScreenState . `E77 1 ]
 "27
 [; ;stateMachine/touchScreenSM.c: 27:                 touchScreenController();
 [e ( _touchScreenController ..  ]
@@ -83,7 +83,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "33
 [; ;stateMachine/touchScreenSM.c: 33:                 touchScreenState=WAITING;
-[e = _touchScreenState . `E73 0 ]
+[e = _touchScreenState . `E77 0 ]
 "34
 [; ;stateMachine/touchScreenSM.c: 34:                 touchScreenController();
 [e ( _touchScreenController ..  ]
@@ -118,8 +118,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 5  ]
 [e :U 6 ]
-[e [\ -> _touchScreenState `ui , $ -> . `E73 0 `ui 7
- , $ -> . `E73 1 `ui 9
+[e [\ -> _touchScreenState `ui , $ -> . `E77 0 `ui 7
+ , $ -> . `E77 1 `ui 9
  12 ]
 [e :U 5 ]
 "44
@@ -163,8 +163,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 14  ]
 [e :U 15 ]
-[e [\ -> _touchScreenState `ui , $ -> . `E73 0 `ui 16
- , $ -> . `E73 1 `ui 17
+[e [\ -> _touchScreenState `ui , $ -> . `E77 0 `ui 16
+ , $ -> . `E77 1 `ui 17
  18 ]
 [e :U 14 ]
 "65

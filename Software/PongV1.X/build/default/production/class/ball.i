@@ -278,18 +278,19 @@ uint16_t RGB2LCD(uint8_t * colorTableEntry);
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
 # 1 "class/ball.h" 2
 
-struct Ball
+typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
     uint16_t r;
     uint16_t color;
-};
+}Ball;
 void Ball_init(struct Ball* b);
 void Ball_setRadius(struct Ball* b, uint16_t value);
 void Ball_setPosX(struct Ball* b, uint16_t value);
 void Ball_setPosY(struct Ball* b, uint16_t value);
 void Ball_setColor(struct Ball* b, uint16_t value);
+void Ball_draw(struct Ball* b);
 # 1 "class/ball.c" 2
 
 void Ball_init(struct Ball* b)
@@ -314,4 +315,8 @@ void Ball_setPosY(struct Ball* b, uint16_t value)
 void Ball_setColor(struct Ball* b, uint16_t value)
 {
     b->color = value;
+}
+void Ball_draw(struct Ball* b)
+{
+
 }

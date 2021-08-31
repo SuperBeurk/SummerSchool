@@ -22,3 +22,7 @@ void Ball_setColor(struct Ball* b, uint16_t value)
 {
     b->color = value;
 }
+void Ball_draw(struct Ball* b)
+{
+    
+}

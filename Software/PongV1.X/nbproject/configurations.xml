@@ -13,12 +13,18 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="class" projectFiles="true">
-        <itemPath>class/tsc.c</itemPath>
-        <itemPath>class/tsc.h</itemPath>
         <itemPath>class/ball.c</itemPath>
         <itemPath>class/ball.h</itemPath>
         <itemPath>class/paddle.c</itemPath>
         <itemPath>class/paddle.h</itemPath>
+        <itemPath>class/factory.c</itemPath>
+        <itemPath>class/factory.h</itemPath>
+        <itemPath>class/score.c</itemPath>
+        <itemPath>class/score.h</itemPath>
+        <itemPath>class/welcomeMenu.c</itemPath>
+        <itemPath>class/welcomeMenu.h</itemPath>
+        <itemPath>class/gameParameters.c</itemPath>
+        <itemPath>class/gameParameters.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="libraries" projectFiles="true">
         <itemPath>libraries/arialNarrow_12ptBitmaps.c</itemPath>
@@ -33,6 +39,10 @@
         <itemPath>stateMachine/sleepSM.h</itemPath>
         <itemPath>stateMachine/touchScreenSM.c</itemPath>
         <itemPath>stateMachine/touchScreenSM.h</itemPath>
+        <itemPath>stateMachine/display.c</itemPath>
+        <itemPath>stateMachine/display.h</itemPath>
+        <itemPath>stateMachine/gameController.c</itemPath>
+        <itemPath>stateMachine/gameController.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="xf" projectFiles="true">
         <itemPath>xf/xf.c</itemPath>

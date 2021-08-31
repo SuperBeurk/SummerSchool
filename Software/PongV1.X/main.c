@@ -11,23 +11,14 @@
 #include "xf/xf.h"
 #include "stateMachine/sleepSM.h"
 #include "stateMachine/touchScreenSM.h"
+#include "class/factory.h"
 
-void init()
+void main(void) 
 {
-    XF_init();
-    sleepInit();
-}
-void main(void) {
-    init();
-    Event ev=NULLEVENT;
+    Factory_init();
     while(true)
     {
-        ev=XF_popEvent(false);
-        if(ev!=NULLEVENT)
-        {
-            sleepSM(ev);
-            touchScreenSM(ev);
-        }
+        Factory_exec();
     }
     return;
 }

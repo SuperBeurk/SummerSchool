@@ -140,3 +140,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/paddle.c: 29: }
 [e :UE 12 ]
 }
+"30
+[; ;class/paddle.c: 30: void Paddle_draw(struct Paddle* p)
+[v _Paddle_draw `(v ~T0 @X0 1 ef1`*S6 ]
+"31
+[; ;class/paddle.c: 31: {
+{
+[e :U _Paddle_draw ]
+"30
+[; ;class/paddle.c: 30: void Paddle_draw(struct Paddle* p)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+"31
+[; ;class/paddle.c: 31: {
+[f ]
+"33
+[; ;class/paddle.c: 33: }
+[e :UE 13 ]
+}

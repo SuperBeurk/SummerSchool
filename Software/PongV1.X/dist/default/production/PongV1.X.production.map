@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\PongV1.X.production.sym \
   --cmf=dist/default/production\PongV1.X.production.cmf -z -Q18LF25K22 \
-  -oC:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAscbg.4 \
+  -oC:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs970.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/PongV1.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=060h-05FFh -pstack=STACK -ACODE=00h-07FFFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAscbg.o \
+  C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs970.o \
   dist/default/production\PongV1.X.production.o 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Machine type is 18LF25K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAscbg.o
+C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs970.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  0        0        4        0       0
@@ -41,42 +41,48 @@ dist/default/production\PongV1.X.production.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 mediumconst                        66AA     66AA     1956     3355       0
-                text12                             62D4     62D4       16     316A       0
-                text11                             62EA     62EA       16     3175       0
-                text10                             6544     6544       B0     32A2       0
-                text9                              63CC     63CC       5C     31E6       0
-                text8                              6316     6316       26     318B       0
-                text7                              65F4     65F4       B6     32FA       0
-                text6                              6398     6398       34     31CC       0
-                text5                              62C0     62C0        A     3160       0
-                text4                              62CA     62CA        A     3165       0
-                text3                              64A6     64A6       9E     3253       0
-                text2                              633C     633C       2C     319E       0
-                text1                              6428     6428       7E     3214       0
-                text0                              6368     6368       30     31B4       0
-                cstackCOMRAM                         30       30        9        1       1
-                bssCOMRAM                             1        1       2F        1       1
-                cinit                              6300     6300       16     3180       0
+                text15                             6200     6200       16     3100       0
+                text14                             6216     6216       16     310B       0
+                text13                             6544     6544       B0     32A2       0
+                text12                             636A     636A       5C     31B5       0
+                text11                             62E8     62E8       34     3174       0
+                text10                             64A6     64A6       9E     3253       0
+                text9                              628E     628E       2C     3147       0
+                text8                              6428     6428       7E     3214       0
+                text7                              6242     6242       26     3121       0
+                text6                              631C     631C       4E     318E       0
+                text5                              63C6     63C6       62     31E3       0
+                text4                              6268     6268       26     3134       0
+                text3                              65F4     65F4       B6     32FA       0
+                text2                              61E6     61E6        A     30F3       0
+                text1                              62BA     62BA       2E     315D       0
+                text0                              61F0     61F0       10     30F8       0
+                cstackCOMRAM                         4F       4F        9        1       1
+                bssCOMRAM                             1        1       4E        1       1
+                cinit                              622C     622C       16     3116       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text12                             62D4     62D4       16         0
-                text11                             62EA     62EA       16         0
-                text10                             6544     6544       B0         0
-                text9                              63CC     63CC       5C         0
-                text8                              6316     6316       26         0
-                text7                              65F4     65F4       B6         0
-                text6                              6398     6398       34         0
-                text5                              62C0     62C0        A         0
-                text4                              62CA     62CA        A         0
-                text3                              64A6     64A6       9E         0
-                text2                              633C     633C       2C         0
-                text1                              6428     6428       7E         0
-                text0                              6368     6368       30         0
-                cinit                              6300     6300       16         0
+                text15                             6200     6200       16         0
+                text14                             6216     6216       16         0
+                text13                             6544     6544       B0         0
+                text12                             636A     636A       5C         0
+                text11                             62E8     62E8       34         0
+                text10                             64A6     64A6       9E         0
+                text9                              628E     628E       2C         0
+                text8                              6428     6428       7E         0
+                text7                              6242     6242       26         0
+                text6                              631C     631C       4E         0
+                text5                              63C6     63C6       62         0
+                text4                              6268     6268       26         0
+                text3                              65F4     65F4       B6         0
+                text2                              61E6     61E6        A         0
+                text1                              62BA     62BA       2E         0
+                text0                              61F0     61F0       10         0
+                cinit                              622C     622C       16         0
 
         CLASS   CONST          
 
@@ -86,8 +92,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 mediumconst                        66AA     66AA     1956         0
 
         CLASS   COMRAM         
-                cstackCOMRAM                         30       30        9         1
-                bssCOMRAM                             1        1       2F         1
+                cstackCOMRAM                         4F       4F        9         1
+                bssCOMRAM                             1        1       4E         1
 
         CLASS   ABS1           
 
@@ -124,21 +130,24 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                bssCOMRAM                      000001  000038  000039         1       1  COMRAM  
-                text5                          0062C0  00000A  0062CA      3160       0  CODE    
-                text4                          0062CA  00000A  0062D4      3165       0  CODE    
-                text12                         0062D4  000016  0062EA      316A       0  CODE    
-                text11                         0062EA  000016  006300      3175       0  CODE    
-                cinit                          006300  000016  006316      3180       0  CODE    
-                text8                          006316  000026  00633C      318B       0  CODE    
-                text2                          00633C  00002C  006368      319E       0  CODE    
-                text0                          006368  000030  006398      31B4       0  CODE    
-                text6                          006398  000034  0063CC      31CC       0  CODE    
-                text9                          0063CC  00005C  006428      31E6       0  CODE    
-                text1                          006428  00007E  0064A6      3214       0  CODE    
-                text3                          0064A6  00009E  006544      3253       0  CODE    
-                text10                         006544  0000B0  0065F4      32A2       0  CODE    
-                text7                          0065F4  0000B6  0066AA      32FA       0  CODE    
+                bssCOMRAM                      000001  000057  000058         1       1  COMRAM  
+                text2                          0061E6  00000A  0061F0      30F3       0  CODE    
+                text0                          0061F0  000010  006200      30F8       0  CODE    
+                text15                         006200  000016  006216      3100       0  CODE    
+                text14                         006216  000016  00622C      310B       0  CODE    
+                cinit                          00622C  000016  006242      3116       0  CODE    
+                text7                          006242  000026  006268      3121       0  CODE    
+                text4                          006268  000026  00628E      3134       0  CODE    
+                text9                          00628E  00002C  0062BA      3147       0  CODE    
+                text1                          0062BA  00002E  0062E8      315D       0  CODE    
+                text11                         0062E8  000034  00631C      3174       0  CODE    
+                text6                          00631C  00004E  00636A      318E       0  CODE    
+                text12                         00636A  00005C  0063C6      31B5       0  CODE    
+                text5                          0063C6  000062  006428      31E3       0  CODE    
+                text8                          006428  00007E  0064A6      3214       0  CODE    
+                text10                         0064A6  00009E  006544      3253       0  CODE    
+                text13                         006544  0000B0  0065F4      32A2       0  CODE    
+                text3                          0065F4  0000B6  0066AA      32FA       0  CODE    
                 mediumconst                    0066AA  001956  008000      3355       0  MEDIUMCO
 
 
@@ -151,61 +160,52 @@ UNUSED ADDRESS RANGES
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
         BANK5            000500-0005FF              100
-        BIGRAM           000039-0005FF              5C7
-        CODE             000004-0062BF             62BC
-        COMRAM           000039-00005F               27
-        CONST            000004-0062BF             62BC
+        BIGRAM           000058-0005FF              5A8
+        CODE             000004-0061E5             61E2
+        COMRAM           000058-00005F                8
+        CONST            000004-0061E5             61E2
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000600-0062BF             5CC0
+        MEDIUMCONST      000600-0061E5             5BE6
         RAM              000060-0005FF              100
         SFR              000F38-000FFF               28
-        SMALLCONST       000600-0062BF              100
+        SMALLCONST       000600-0061E5              100
         STACK            000060-0005FF              5A0
 
                                   Symbol Table
 
-?___awmod                                  cstackCOMRAM 000030
-?___wmul                                   cstackCOMRAM 000030
-ENTERCRITICAL@inISR                        cstackCOMRAM 000030
-LEAVECRITICAL@inISR                        cstackCOMRAM 000030
-XF_init@i                                  cstackCOMRAM 000036
-XF_popEvent@ev                             cstackCOMRAM 000036
-XF_popEvent@inISR                          cstackCOMRAM 000037
-_CKE1                                      (abs)        007E3E
-_ENTERCRITICAL                             text12       0062D4
+?___awmod                                  cstackCOMRAM 00004F
+?___wmul                                   cstackCOMRAM 00004F
+Ball_init@b                                cstackCOMRAM 00004F
+ENTERCRITICAL@inISR                        cstackCOMRAM 00004F
+Factory_exec@ev                            cstackCOMRAM 000057
+LEAVECRITICAL@inISR                        cstackCOMRAM 00004F
+Paddle_init@p                              cstackCOMRAM 00004F
+XF_init@i                                  cstackCOMRAM 000055
+XF_popEvent@ev                             cstackCOMRAM 000055
+XF_popEvent@inISR                          cstackCOMRAM 000056
+_Ball_init                                 text6        00631C
+_ENTERCRITICAL                             text15       006200
+_Factory_exec                              text7        006242
+_Factory_init                              text1        0062BA
 _GIE                                       (abs)        007F97
-_INT1IE                                    (abs)        007F83
-_INTEDG1                                   (abs)        007F8D
 _LATB3                                     (abs)        007C53
 _LATB4                                     (abs)        007C54
 _LATB5                                     (abs)        007C55
 _LATC0                                     (abs)        007C58
 _LATC1                                     (abs)        007C59
 _LATC2                                     (abs)        007C5A
-_LATC3                                     (abs)        007C5B
-_LATC4                                     (abs)        007C5C
-_LATC5                                     (abs)        007C5D
-_LATC6                                     (abs)        007C5E
-_LEAVECRITICAL                             text11       0062EA
+_LEAVECRITICAL                             text14       006216
 _PORTA                                     (abs)        000F80
-_SSPBUF                                    (abs)        000FC9
-_SSPCON1                                   (abs)        000FC6
-_SSPEN1                                    (abs)        007E35
-_SSPIF                                     (abs)        007CF3
+_Paddle_init                               text5        0063C6
 _TRISA                                     (abs)        000F92
-_TRISB1                                    (abs)        007C99
 _TRISB3                                    (abs)        007C9B
 _TRISB4                                    (abs)        007C9C
 _TRISB5                                    (abs)        007C9D
 _TRISC0                                    (abs)        007CA0
 _TRISC1                                    (abs)        007CA1
 _TRISC2                                    (abs)        007CA2
-_TRISC3                                    (abs)        007CA3
-_TRISC4                                    (abs)        007CA4
-_TRISC5                                    (abs)        007CA5
-_TRISC6                                    (abs)        007CA6
-_XF_init                                   text7        0065F4
-_XF_popEvent                               text9        0063CC
+_XF_init                                   text3        0065F4
+_XF_popEvent                               text12       00636A
 __HRAM                                     (abs)        000000
 __Habs1                                    abs1         000000
 __Hbank0                                   bank0        000000
@@ -257,7 +257,7 @@ __Hrparam                                  rparam       000000
 __Hsfr                                     sfr          000000
 __Hsmallconst                              smallconst   000000
 __Hspace_0                                 (abs)        008000
-__Hspace_1                                 (abs)        000039
+__Hspace_1                                 (abs)        000058
 __Hspace_2                                 (abs)        000000
 __Hspace_4                                 (abs)        60000E
 __Hstack                                   stack        000000
@@ -269,6 +269,9 @@ __Htext1                                   text1        000000
 __Htext10                                  text10       000000
 __Htext11                                  text11       000000
 __Htext12                                  text12       000000
+__Htext13                                  text13       000000
+__Htext14                                  text14       000000
+__Htext15                                  text15       000000
 __Htext2                                   text2        000000
 __Htext3                                   text3        000000
 __Htext4                                   text4        000000
@@ -340,6 +343,9 @@ __Ltext1                                   text1        000000
 __Ltext10                                  text10       000000
 __Ltext11                                  text11       000000
 __Ltext12                                  text12       000000
+__Ltext13                                  text13       000000
+__Ltext14                                  text14       000000
+__Ltext15                                  text15       000000
 __Ltext2                                   text2        000000
 __Ltext3                                   text3        000000
 __Ltext4                                   text4        000000
@@ -349,73 +355,82 @@ __Ltext7                                   text7        000000
 __Ltext8                                   text8        000000
 __Ltext9                                   text9        000000
 __S0                                       (abs)        008000
-__S1                                       (abs)        000039
+__S1                                       (abs)        000058
 __S2                                       (abs)        000000
 __S4                                       (abs)        000000
 __S5                                       (abs)        000000
-___awmod                                   text10       006544
-___awmod@counter                           cstackCOMRAM 000034
-___awmod@dividend                          cstackCOMRAM 000030
-___awmod@divisor                           cstackCOMRAM 000032
-___awmod@sign                              cstackCOMRAM 000035
+___awmod                                   text13       006544
+___awmod@counter                           cstackCOMRAM 000053
+___awmod@dividend                          cstackCOMRAM 00004F
+___awmod@divisor                           cstackCOMRAM 000051
+___awmod@sign                              cstackCOMRAM 000054
 ___inthi_sp                                stack        000000
 ___intlo_sp                                stack        000000
 ___param_bank                              (abs)        000000
 ___rparam_used                             (abs)        000001
 ___sp                                      stack        000000
-___wmul                                    text8        006316
-___wmul@multiplicand                       cstackCOMRAM 000032
-___wmul@multiplier                         cstackCOMRAM 000030
-___wmul@product                            cstackCOMRAM 000034
+___wmul                                    text4        006268
+___wmul@multiplicand                       cstackCOMRAM 000051
+___wmul@multiplier                         cstackCOMRAM 00004F
+___wmul@product                            cstackCOMRAM 000053
 __accesstop                                (abs)        000060
 __activetblptr                             (abs)        000002
-__end_of_ENTERCRITICAL                     text12       0062EA
-__end_of_LEAVECRITICAL                     text11       006300
-__end_of_XF_init                           text7        0066AA
-__end_of_XF_popEvent                       text9        006428
-__end_of___awmod                           text10       0065F4
-__end_of___wmul                            text8        00633C
-__end_of__initialization                   cinit        00630C
+__end_of_Ball_init                         text6        00636A
+__end_of_ENTERCRITICAL                     text15       006216
+__end_of_Factory_exec                      text7        006268
+__end_of_Factory_init                      text1        0062E8
+__end_of_LEAVECRITICAL                     text14       00622C
+__end_of_Paddle_init                       text5        006428
+__end_of_XF_init                           text3        0066AA
+__end_of_XF_popEvent                       text12       0063C6
+__end_of___awmod                           text13       0065F4
+__end_of___wmul                            text4        00628E
+__end_of__initialization                   cinit        006238
 __end_of_arialNarrow_12ptBitmaps           mediumconst  007DC5
 __end_of_arialNarrow_12ptDescriptors       mediumconst  007FFF
 __end_of_arialNarrow_12ptFontInfo          mediumconst  0066B9
 __end_of_arialRoundedMTBold18ptBitmaps     mediumconst  00779E
 __end_of_arialRoundedMTBold18ptDescriptors mediumconst  007EE2
 __end_of_arialRoundedMTBold18ptFontInfo    mediumconst  0066B2
-__end_of_init                              text4        0062D4
-__end_of_main                              text0        006398
-__end_of_sleepController                   text6        0063CC
-__end_of_sleepInit                         text5        0062CA
-__end_of_sleepSM                           text3        006544
-__end_of_touchScreenController             text2        006368
-__end_of_touchScreenSM                     text1        0064A6
-__initialization                           cinit        006300
+__end_of_main                              text0        006200
+__end_of_sleepController                   text11       00631C
+__end_of_sleepInit                         text2        0061F0
+__end_of_sleepSM                           text10       006544
+__end_of_touchScreenController             text9        0062BA
+__end_of_touchScreenSM                     text8        0064A6
+__initialization                           cinit        00622C
 __mediumconst                              mediumconst  0066AA
 __pbssCOMRAM                               bssCOMRAM    000001
-__pcinit                                   cinit        006300
-__pcstackCOMRAM                            cstackCOMRAM 000030
+__pcinit                                   cinit        00622C
+__pcstackCOMRAM                            cstackCOMRAM 00004F
 __pmediumconst                             mediumconst  0066AA
-__ptext0                                   text0        006368
-__ptext1                                   text1        006428
-__ptext10                                  text10       006544
-__ptext11                                  text11       0062EA
-__ptext12                                  text12       0062D4
-__ptext2                                   text2        00633C
-__ptext3                                   text3        0064A6
-__ptext4                                   text4        0062CA
-__ptext5                                   text5        0062C0
-__ptext6                                   text6        006398
-__ptext7                                   text7        0065F4
-__ptext8                                   text8        006316
-__ptext9                                   text9        0063CC
+__ptext0                                   text0        0061F0
+__ptext1                                   text1        0062BA
+__ptext10                                  text10       0064A6
+__ptext11                                  text11       0062E8
+__ptext12                                  text12       00636A
+__ptext13                                  text13       006544
+__ptext14                                  text14       006216
+__ptext15                                  text15       006200
+__ptext2                                   text2        0061E6
+__ptext3                                   text3        0065F4
+__ptext4                                   text4        006268
+__ptext5                                   text5        0063C6
+__ptext6                                   text6        00631C
+__ptext7                                   text7        006242
+__ptext8                                   text8        006428
+__ptext9                                   text9        00628E
 __ramtop                                   ramtop       000600
+__size_of_Ball_init                        (abs)        000000
 __size_of_ENTERCRITICAL                    (abs)        000000
+__size_of_Factory_exec                     (abs)        000000
+__size_of_Factory_init                     (abs)        000000
 __size_of_LEAVECRITICAL                    (abs)        000000
+__size_of_Paddle_init                      (abs)        000000
 __size_of_XF_init                          (abs)        000000
 __size_of_XF_popEvent                      (abs)        000000
 __size_of___awmod                          (abs)        000000
 __size_of___wmul                           (abs)        000000
-__size_of_init                             (abs)        000000
 __size_of_main                             (abs)        000000
 __size_of_sleepController                  (abs)        000000
 __size_of_sleepInit                        (abs)        000000
@@ -425,51 +440,60 @@ __size_of_touchScreenSM                    (abs)        000000
 __smallconst                               smallconst   000000
 _arialNarrow_12ptFontInfo                  mediumconst  0066B2
 _arialRoundedMTBold18ptFontInfo            mediumconst  0066AB
-_dummy                                     bssCOMRAM    00002F
-_init                                      text4        0062CA
-_main                                      text0        006368
-_sleepController                           text6        006398
-_sleepInit                                 text5        0062C0
-_sleepSM                                   text3        0064A6
-_sleepState                                bssCOMRAM    00002E
+_b1                                        bssCOMRAM    000047
+_displayState                              bssCOMRAM    000030
+_g1                                        bssCOMRAM    000027
+_gameControllerState                       bssCOMRAM    00002F
+_main                                      text0        0061F0
+_p1                                        bssCOMRAM    00003D
+_p2                                        bssCOMRAM    000033
+_s1                                        bssCOMRAM    00002B
+_sleepController                           text11       0062E8
+_sleepInit                                 text2        0061E6
+_sleepSM                                   text10       0064A6
+_sleepState                                bssCOMRAM    000032
 _theXF                                     bssCOMRAM    000001
-_touchScreenController                     text2        00633C
-_touchScreenSM                             text1        006428
-_touchScreenState                          bssCOMRAM    00002D
-_tsc                                       bssCOMRAM    000027
-end_of_initialization                      cinit        00630C
+_touchScreenController                     text9        00628E
+_touchScreenSM                             text8        006428
+_touchScreenState                          bssCOMRAM    000031
+end_of_initialization                      cinit        006238
 intlevel0                                  text         000000
 intlevel1                                  text         000000
 intlevel2                                  text         000000
 intlevel3                                  text         000000
 isa$std                                    (abs)        000001
 isa$xinst                                  (abs)        000000
-main@ev                                    cstackCOMRAM 000038
-sleepSM@ev                                 cstackCOMRAM 000034
+sleepSM@ev                                 cstackCOMRAM 000053
 stackhi                                    (abs)        0005FF
 stacklo                                    (abs)        000060
 start                                      init         000000
-start_initialization                       cinit        006300
-touchScreenSM@ev                           cstackCOMRAM 000034
+start_initialization                       cinit        00622C
+touchScreenSM@ev                           cstackCOMRAM 000053
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+class/factory.c
+		_Factory_exec  		CODE           	6242	0000	38
+		_Factory_init  		CODE           	62BA	0000	46
+
+class/factory.c estimated size: 84
+
 stateMachine/sleepSM.c
 		_sleepSM       		CODE           	64A6	0000	158
-		_sleepInit     		CODE           	62C0	0000	10
-		_sleepController		CODE           	6398	0000	52
+		_sleepInit     		CODE           	61E6	0000	10
+		_sleepController		CODE           	62E8	0000	52
 
 stateMachine/sleepSM.c estimated size: 220
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
-		___wmul        		CODE           	6316	0000	38
+		___wmul        		CODE           	6268	0000	38
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c estimated size: 38
 
 stateMachine/touchScreenSM.c
-		_touchScreenController		CODE           	633C	0000	44
+		_touchScreenController		CODE           	628E	0000	44
 		_touchScreenSM 		CODE           	6428	0000	126
 
 stateMachine/touchScreenSM.c estimated size: 170
@@ -479,7 +503,7 @@ shared
 		_arialRoundedMTBold18ptDescriptors		MEDIUMCONST    	0000	0000	0
 		_arialNarrow_12ptBitmaps		MEDIUMCONST    	0000	0000	0
 		_arialRoundedMTBold18ptFontInfo		MEDIUMCONST    	66AB	0000	7
-		__initialization		CODE           	6300	0000	12
+		__initialization		CODE           	622C	0000	12
 		_arialRoundedMTBold18ptBitmaps		MEDIUMCONST    	0000	0000	0
 		_arialNarrow_12ptDescriptors		MEDIUMCONST    	0000	0000	0
 
@@ -491,16 +515,25 @@ C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c estimated size: 176
 
 xf/xf.c
-		_XF_popEvent   		CODE           	63CC	0000	92
+		_XF_popEvent   		CODE           	636A	0000	92
 		_XF_init       		CODE           	65F4	0000	182
-		_ENTERCRITICAL 		CODE           	62D4	0000	22
-		_LEAVECRITICAL 		CODE           	62EA	0000	22
+		_ENTERCRITICAL 		CODE           	6200	0000	22
+		_LEAVECRITICAL 		CODE           	6216	0000	22
 
 xf/xf.c estimated size: 318
 
-main.c
-		_init          		CODE           	62CA	0000	10
-		_main          		CODE           	6368	0000	48
+class/ball.c
+		_Ball_init     		CODE           	631C	0000	78
 
-main.c estimated size: 58
+class/ball.c estimated size: 78
+
+main.c
+		_main          		CODE           	61F0	0000	16
+
+main.c estimated size: 16
+
+class/paddle.c
+		_Paddle_init   		CODE           	63C6	0000	98
+
+class/paddle.c estimated size: 98
 

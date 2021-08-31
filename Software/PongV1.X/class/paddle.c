@@ -27,3 +27,7 @@ void Paddle_setColor(struct Paddle* p, uint16_t value)
 {
     p->color = value;
 }
+void Paddle_draw(struct Paddle* p)
+{
+    
+}

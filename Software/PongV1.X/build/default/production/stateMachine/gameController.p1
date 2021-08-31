@@ -1,0 +1,138 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 stateMachine/gameController.c
+[; ;stateMachine/gameController.c: 9: enum state gameControllerState;
+[c E77 0 1 2 .. ]
+[n E77 state NOGAME LOCAL ONLINE  ]
+"4 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 4: void gameControllerController();
+[v _gameControllerController `(v ~T0 @X0 0 e? ]
+"9 stateMachine/gameController.c
+[; ;stateMachine/gameController.c: 9: enum state gameControllerState;
+[v _gameControllerState `E77 ~T0 @X0 1 e ]
+"11
+[; ;stateMachine/gameController.c: 11: void gameControllerInit()
+[v _gameControllerInit `(v ~T0 @X0 1 ef ]
+"12
+[; ;stateMachine/gameController.c: 12: {
+{
+[e :U _gameControllerInit ]
+[f ]
+"13
+[; ;stateMachine/gameController.c: 13:     gameControllerState=NOGAME;
+[e = _gameControllerState . `E77 0 ]
+"14
+[; ;stateMachine/gameController.c: 14:     gameControllerController();
+[e ( _gameControllerController ..  ]
+"15
+[; ;stateMachine/gameController.c: 15: }
+[e :UE 3 ]
+}
+"16
+[; ;stateMachine/gameController.c: 16: void gameControllerSM(Event ev)
+[v _gameControllerSM `(v ~T0 @X0 1 ef1`uc ]
+"17
+[; ;stateMachine/gameController.c: 17: {
+{
+[e :U _gameControllerSM ]
+"16
+[; ;stateMachine/gameController.c: 16: void gameControllerSM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"17
+[; ;stateMachine/gameController.c: 17: {
+[f ]
+"18
+[; ;stateMachine/gameController.c: 18:    switch(gameControllerState)
+[e $U 6  ]
+"19
+[; ;stateMachine/gameController.c: 19:     {
+{
+"20
+[; ;stateMachine/gameController.c: 20:         case NOGAME:
+[e :U 7 ]
+"22
+[; ;stateMachine/gameController.c: 22:             break;
+[e $U 5  ]
+"23
+[; ;stateMachine/gameController.c: 23:         case LOCAL:
+[e :U 8 ]
+"25
+[; ;stateMachine/gameController.c: 25:             break;
+[e $U 5  ]
+"26
+[; ;stateMachine/gameController.c: 26:         case ONLINE:
+[e :U 9 ]
+"28
+[; ;stateMachine/gameController.c: 28:             break;
+[e $U 5  ]
+"29
+[; ;stateMachine/gameController.c: 29:         default:
+[e :U 10 ]
+"30
+[; ;stateMachine/gameController.c: 30:             break;
+[e $U 5  ]
+"31
+[; ;stateMachine/gameController.c: 31:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _gameControllerState `ui , $ -> . `E77 0 `ui 7
+ , $ -> . `E77 1 `ui 8
+ , $ -> . `E77 2 `ui 9
+ 10 ]
+[e :U 5 ]
+"32
+[; ;stateMachine/gameController.c: 32: }
+[e :UE 4 ]
+}
+"33
+[; ;stateMachine/gameController.c: 33: void gameControllerController()
+[v _gameControllerController `(v ~T0 @X0 1 ef ]
+"34
+[; ;stateMachine/gameController.c: 34: {
+{
+[e :U _gameControllerController ]
+[f ]
+"35
+[; ;stateMachine/gameController.c: 35:     switch(gameControllerState)
+[e $U 13  ]
+"36
+[; ;stateMachine/gameController.c: 36:     {
+{
+"37
+[; ;stateMachine/gameController.c: 37:         case NOGAME:
+[e :U 14 ]
+"38
+[; ;stateMachine/gameController.c: 38:             break;
+[e $U 12  ]
+"39
+[; ;stateMachine/gameController.c: 39:         case LOCAL:
+[e :U 15 ]
+"40
+[; ;stateMachine/gameController.c: 40:             break;
+[e $U 12  ]
+"41
+[; ;stateMachine/gameController.c: 41:         case ONLINE:
+[e :U 16 ]
+"42
+[; ;stateMachine/gameController.c: 42:             break;
+[e $U 12  ]
+"43
+[; ;stateMachine/gameController.c: 43:         default:
+[e :U 17 ]
+"44
+[; ;stateMachine/gameController.c: 44:             break;
+[e $U 12  ]
+"45
+[; ;stateMachine/gameController.c: 45:     }
+}
+[e $U 12  ]
+[e :U 13 ]
+[e [\ -> _gameControllerState `ui , $ -> . `E77 0 `ui 14
+ , $ -> . `E77 1 `ui 15
+ , $ -> . `E77 2 `ui 16
+ 17 ]
+[e :U 12 ]
+"46
+[; ;stateMachine/gameController.c: 46: }
+[e :UE 11 ]
+}

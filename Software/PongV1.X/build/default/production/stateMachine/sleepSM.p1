@@ -1,18 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[c E73 0 1 2 .. ]
-[n E73 state WAKEUP BACKLIGHTOFF SLEEP  ]
+[c E77 0 1 2 .. ]
+[n E77 state WAKEUP BACKLIGHTOFF SLEEP  ]
 "4 stateMachine/sleepSM.h
 [; ;stateMachine/sleepSM.h: 4: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
 "21 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 21:             if(ev==evTimer30)
-[c E39 0 1 2 3 4 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
+[c E39 0 1 2 3 4 5 6 7 8 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParameters  ]
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[v _sleepState `E73 ~T0 @X0 1 e ]
+[v _sleepState `E77 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit()
 [v _sleepInit `(v ~T0 @X0 1 ef ]
@@ -23,7 +23,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E73 0 ]
+[e = _sleepState . `E77 0 ]
 "14
 [; ;stateMachine/sleepSM.c: 14:     sleepController();
 [e ( _sleepController ..  ]
@@ -61,7 +61,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "23
 [; ;stateMachine/sleepSM.c: 23:                sleepState=BACKLIGHTOFF;
-[e = _sleepState . `E73 1 ]
+[e = _sleepState . `E77 1 ]
 "24
 [; ;stateMachine/sleepSM.c: 24:                sleepController();
 [e ( _sleepController ..  ]
@@ -83,7 +83,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "30
 [; ;stateMachine/sleepSM.c: 30:                sleepState=SLEEP;
-[e = _sleepState . `E73 2 ]
+[e = _sleepState . `E77 2 ]
 "31
 [; ;stateMachine/sleepSM.c: 31:                sleepController();
 [e ( _sleepController ..  ]
@@ -99,7 +99,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "35
 [; ;stateMachine/sleepSM.c: 35:                sleepState=WAKEUP;
-[e = _sleepState . `E73 0 ]
+[e = _sleepState . `E77 0 ]
 "36
 [; ;stateMachine/sleepSM.c: 36:                sleepController();
 [e ( _sleepController ..  ]
@@ -121,7 +121,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "42
 [; ;stateMachine/sleepSM.c: 42:                sleepState=WAKEUP;
-[e = _sleepState . `E73 0 ]
+[e = _sleepState . `E77 0 ]
 "43
 [; ;stateMachine/sleepSM.c: 43:                sleepController();
 [e ( _sleepController ..  ]
@@ -143,9 +143,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 5  ]
 [e :U 6 ]
-[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 7
- , $ -> . `E73 1 `ui 9
- , $ -> . `E73 2 `ui 12
+[e [\ -> _sleepState `ui , $ -> . `E77 0 `ui 7
+ , $ -> . `E77 1 `ui 9
+ , $ -> . `E77 2 `ui 12
  14 ]
 [e :U 5 ]
 "49
@@ -195,9 +195,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 16  ]
 [e :U 17 ]
-[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 18
- , $ -> . `E73 1 `ui 19
- , $ -> . `E73 2 `ui 20
+[e [\ -> _sleepState `ui , $ -> . `E77 0 `ui 18
+ , $ -> . `E77 1 `ui 19
+ , $ -> . `E77 2 `ui 20
  21 ]
 [e :U 16 ]
 "69

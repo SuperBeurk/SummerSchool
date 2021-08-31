@@ -116,3 +116,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/ball.c: 24: }
 [e :UE 11 ]
 }
+"25
+[; ;class/ball.c: 25: void Ball_draw(struct Ball* b)
+[v _Ball_draw `(v ~T0 @X0 1 ef1`*S6 ]
+"26
+[; ;class/ball.c: 26: {
+{
+[e :U _Ball_draw ]
+"25
+[; ;class/ball.c: 25: void Ball_draw(struct Ball* b)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+"26
+[; ;class/ball.c: 26: {
+[f ]
+"28
+[; ;class/ball.c: 28: }
+[e :UE 12 ]
+}

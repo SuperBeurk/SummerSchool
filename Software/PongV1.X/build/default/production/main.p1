@@ -1,22 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"50 ./stateMachine/../xf/xf.h
-[v _XF_init `(v ~T0 @X0 0 e? ]
-"2 ./stateMachine/sleepSM.h
-[; ;./stateMachine/sleepSM.h: 2: void sleepInit();
-[v _sleepInit `(v ~T0 @X0 0 e? ]
 [p mainexit ]
-"22 main.c
-[; ;main.c: 22:     Event ev=NULLEVENT;
-[c E5738 0 1 2 3 4 .. ]
-[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
-"65 ./stateMachine/../xf/xf.h
-[v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
-"3 ./stateMachine/sleepSM.h
-[; ;./stateMachine/sleepSM.h: 3: void sleepSM(Event ev);
-[v _sleepSM `(v ~T0 @X0 0 ef1`uc ]
-"3 ./stateMachine/touchScreenSM.h
-[; ;./stateMachine/touchScreenSM.h: 3: void touchScreenSM(Event ev);
-[v _touchScreenSM `(v ~T0 @X0 0 ef1`uc ]
+"9 ./class/factory.h
+[; ;./class/factory.h: 9: void Factory_init();
+[v _Factory_init `(v ~T0 @X0 0 e? ]
+"10
+[; ;./class/factory.h: 10: void Factory_exec();
+[v _Factory_exec `(v ~T0 @X0 0 e? ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -825,73 +814,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3  =  OFF       ]
 "64
 [p x EBTRB  =  OFF       ]
-"15 main.c
-[; ;main.c: 15: void init()
-[v _init `(v ~T0 @X0 1 ef ]
-"16
-[; ;main.c: 16: {
-{
-[e :U _init ]
-[f ]
-"17
-[; ;main.c: 17:     XF_init();
-[e ( _XF_init ..  ]
-"18
-[; ;main.c: 18:     sleepInit();
-[e ( _sleepInit ..  ]
-"19
-[; ;main.c: 19: }
-[e :UE 828 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;main.c: 20: void main(void) {
+"16 main.c
+[; ;main.c: 16: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
+"17
+[; ;main.c: 17: {
 {
 [e :U _main ]
 [f ]
+"18
+[; ;main.c: 18:     Factory_init();
+[e ( _Factory_init ..  ]
+"19
+[; ;main.c: 19:     while(1)
+[e :U 839 ]
+"20
+[; ;main.c: 20:     {
+{
 "21
-[; ;main.c: 21:     init();
-[e ( _init ..  ]
+[; ;main.c: 21:         Factory_exec();
+[e ( _Factory_exec ..  ]
 "22
-[; ;main.c: 22:     Event ev=NULLEVENT;
-[v _ev `uc ~T0 @X0 1 a ]
-[e = _ev -> . `E5738 0 `uc ]
+[; ;main.c: 22:     }
+}
+[e :U 838 ]
+[e $U 839  ]
+[e :U 840 ]
 "23
-[; ;main.c: 23:     while(1)
-[e :U 831 ]
+[; ;main.c: 23:     return;
+[e $UE 837  ]
 "24
-[; ;main.c: 24:     {
-{
-"25
-[; ;main.c: 25:         ev=XF_popEvent(0);
-[e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
-"26
-[; ;main.c: 26:         if(ev!=NULLEVENT)
-[e $ ! != -> _ev `i -> . `E5738 0 `i 833  ]
-"27
-[; ;main.c: 27:         {
-{
-"28
-[; ;main.c: 28:             sleepSM(ev);
-[e ( _sleepSM (1 _ev ]
-"29
-[; ;main.c: 29:             touchScreenSM(ev);
-[e ( _touchScreenSM (1 _ev ]
-"30
-[; ;main.c: 30:         }
-}
-[e :U 833 ]
-"31
-[; ;main.c: 31:     }
-}
-[e :U 830 ]
-[e $U 831  ]
-[e :U 832 ]
-"32
-[; ;main.c: 32:     return;
-[e $UE 829  ]
-"33
-[; ;main.c: 33: }
-[e :UE 829 ]
+[; ;main.c: 24: }
+[e :UE 837 ]
 }

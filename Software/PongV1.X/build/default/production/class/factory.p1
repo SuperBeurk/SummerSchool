@@ -1,0 +1,116 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"3 class/paddle.h
+[; ;class/paddle.h: 3: {
+[s S11 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S11 Paddle x y w h color ]
+"3 class/ball.h
+[; ;class/ball.h: 3: {
+[s S6 `us 1 `us 1 `us 1 `us 1 ]
+[n S6 Ball x y r color ]
+"3 class/score.h
+[; ;class/score.h: 3: {
+[s S8 `us 1 `us 1 ]
+[n S8 Score homeScore awayScore ]
+"3 class/gameParameters.h
+[; ;class/gameParameters.h: 3: {
+[s S7 `us 1 `us 1 ]
+[n S7 GameParameters backlight player ]
+"50 class/../xf/xf.h
+[v _XF_init `(v ~T0 @X0 0 e? ]
+"2 class/../stateMachine/sleepSM.h
+[; ;class/../stateMachine/sleepSM.h: 2: void sleepInit();
+[v _sleepInit `(v ~T0 @X0 0 e? ]
+"9 class/ball.h
+[; ;class/ball.h: 9: void Ball_init(struct Ball* b);
+[v _Ball_init `(v ~T0 @X0 0 ef1`*S6 ]
+"10 class/paddle.h
+[; ;class/paddle.h: 10: void Paddle_init(struct Paddle* p);
+[v _Paddle_init `(v ~T0 @X0 0 ef1`*S11 ]
+"65 class/../xf/xf.h
+[v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
+"24 class/factory.c
+[; ;class/factory.c: 24:     if (ev != NULLEVENT)
+[c E244 0 1 2 3 4 5 6 7 8 .. ]
+[n E244 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParameters  ]
+"3 class/../stateMachine/sleepSM.h
+[; ;class/../stateMachine/sleepSM.h: 3: void sleepSM(Event ev);
+[v _sleepSM `(v ~T0 @X0 0 ef1`uc ]
+"3 class/../stateMachine/touchScreenSM.h
+[; ;class/../stateMachine/touchScreenSM.h: 3: void touchScreenSM(Event ev);
+[v _touchScreenSM `(v ~T0 @X0 0 ef1`uc ]
+"4 class/factory.c
+[; ;class/factory.c: 4: Paddle p1;
+[v _p1 `S11 ~T0 @X0 1 e ]
+"5
+[; ;class/factory.c: 5: Paddle p2;
+[v _p2 `S11 ~T0 @X0 1 e ]
+"6
+[; ;class/factory.c: 6: Ball b1;
+[v _b1 `S6 ~T0 @X0 1 e ]
+"7
+[; ;class/factory.c: 7: Score s1;
+[v _s1 `S8 ~T0 @X0 1 e ]
+"8
+[; ;class/factory.c: 8: GameParameters g1;
+[v _g1 `S7 ~T0 @X0 1 e ]
+"10
+[; ;class/factory.c: 10: void Factory_init()
+[v _Factory_init `(v ~T0 @X0 1 ef ]
+"11
+[; ;class/factory.c: 11: {
+{
+[e :U _Factory_init ]
+[f ]
+"13
+[; ;class/factory.c: 13:     XF_init();
+[e ( _XF_init ..  ]
+"14
+[; ;class/factory.c: 14:     sleepInit();
+[e ( _sleepInit ..  ]
+"15
+[; ;class/factory.c: 15:     Ball_init(&b1);
+[e ( _Ball_init (1 &U _b1 ]
+"16
+[; ;class/factory.c: 16:     Paddle_init(&p1);
+[e ( _Paddle_init (1 &U _p1 ]
+"17
+[; ;class/factory.c: 17:     Paddle_init(&p2);
+[e ( _Paddle_init (1 &U _p2 ]
+"18
+[; ;class/factory.c: 18: }
+[e :UE 12 ]
+}
+"19
+[; ;class/factory.c: 19: void Factory_exec()
+[v _Factory_exec `(v ~T0 @X0 1 ef ]
+"20
+[; ;class/factory.c: 20: {
+{
+[e :U _Factory_exec ]
+[f ]
+"22
+[; ;class/factory.c: 22:     Event ev;
+[v _ev `uc ~T0 @X0 1 a ]
+"23
+[; ;class/factory.c: 23:     ev = XF_popEvent(0);
+[e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
+"24
+[; ;class/factory.c: 24:     if (ev != NULLEVENT)
+[e $ ! != -> _ev `i -> . `E244 0 `i 14  ]
+"25
+[; ;class/factory.c: 25:     {
+{
+"26
+[; ;class/factory.c: 26:         sleepSM(ev);
+[e ( _sleepSM (1 _ev ]
+"27
+[; ;class/factory.c: 27:         touchScreenSM(ev);
+[e ( _touchScreenSM (1 _ev ]
+"28
+[; ;class/factory.c: 28:     }
+}
+[e :U 14 ]
+"29
+[; ;class/factory.c: 29: }
+[e :UE 13 ]
+}
