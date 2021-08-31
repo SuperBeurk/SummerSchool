@@ -1,0 +1,173 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 stateMachine/touchScreenSM.c
+[; ;stateMachine/touchScreenSM.c: 9: state touchScreenState;
+[c E73 0 1 .. ]
+[n E73 state WAITING CALCULATEPOSITION  ]
+"4 stateMachine/touchScreenSM.h
+[; ;stateMachine/touchScreenSM.h: 4: void touchScreenController();
+[v _touchScreenController `(v ~T0 @X0 0 e? ]
+"24 stateMachine/touchScreenSM.c
+[; ;stateMachine/touchScreenSM.c: 24:             if(ev==evPress)
+[c E39 0 1 2 3 4 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
+"9 stateMachine/touchScreenSM.c
+[; ;stateMachine/touchScreenSM.c: 9: state touchScreenState;
+[v _touchScreenState `E73 ~T0 @X0 1 e ]
+"11
+[; ;stateMachine/touchScreenSM.c: 11: void touchScreenInit()
+[v _touchScreenInit `(v ~T0 @X0 1 ef ]
+"12
+[; ;stateMachine/touchScreenSM.c: 12: {
+{
+[e :U _touchScreenInit ]
+[f ]
+"13
+[; ;stateMachine/touchScreenSM.c: 13:     touchScreenState=WAITING;
+[e = _touchScreenState . `E73 0 ]
+"14
+[; ;stateMachine/touchScreenSM.c: 14:     touchScreenController();
+[e ( _touchScreenController ..  ]
+"15
+[; ;stateMachine/touchScreenSM.c: 15: }
+[e :UE 3 ]
+}
+"19
+[; ;stateMachine/touchScreenSM.c: 19: void touchScreenSM(Event ev)
+[v _touchScreenSM `(v ~T0 @X0 1 ef1`uc ]
+"20
+[; ;stateMachine/touchScreenSM.c: 20: {
+{
+[e :U _touchScreenSM ]
+"19
+[; ;stateMachine/touchScreenSM.c: 19: void touchScreenSM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"20
+[; ;stateMachine/touchScreenSM.c: 20: {
+[f ]
+"21
+[; ;stateMachine/touchScreenSM.c: 21:     switch(touchScreenState)
+[e $U 6  ]
+"22
+[; ;stateMachine/touchScreenSM.c: 22:     {
+{
+"23
+[; ;stateMachine/touchScreenSM.c: 23:         case WAITING:
+[e :U 7 ]
+"24
+[; ;stateMachine/touchScreenSM.c: 24:             if(ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 8  ]
+"25
+[; ;stateMachine/touchScreenSM.c: 25:             {
+{
+"26
+[; ;stateMachine/touchScreenSM.c: 26:                 touchScreenState=CALCULATEPOSITION;
+[e = _touchScreenState . `E73 1 ]
+"27
+[; ;stateMachine/touchScreenSM.c: 27:                 touchScreenController();
+[e ( _touchScreenController ..  ]
+"28
+[; ;stateMachine/touchScreenSM.c: 28:             }
+}
+[e :U 8 ]
+"29
+[; ;stateMachine/touchScreenSM.c: 29:             break;
+[e $U 5  ]
+"30
+[; ;stateMachine/touchScreenSM.c: 30:         case CALCULATEPOSITION:
+[e :U 9 ]
+"31
+[; ;stateMachine/touchScreenSM.c: 31:             if(ev==evRelease)
+[e $ ! == -> _ev `i -> . `E39 2 `i 10  ]
+"32
+[; ;stateMachine/touchScreenSM.c: 32:             {
+{
+"33
+[; ;stateMachine/touchScreenSM.c: 33:                 touchScreenState=WAITING;
+[e = _touchScreenState . `E73 0 ]
+"34
+[; ;stateMachine/touchScreenSM.c: 34:                 touchScreenController();
+[e ( _touchScreenController ..  ]
+"35
+[; ;stateMachine/touchScreenSM.c: 35:             }
+}
+[e :U 10 ]
+"36
+[; ;stateMachine/touchScreenSM.c: 36:             if(ev==evTimerPos)
+[e $ ! == -> _ev `i -> . `E39 4 `i 11  ]
+"37
+[; ;stateMachine/touchScreenSM.c: 37:             {
+{
+"38
+[; ;stateMachine/touchScreenSM.c: 38:                 touchScreenController();
+[e ( _touchScreenController ..  ]
+"39
+[; ;stateMachine/touchScreenSM.c: 39:             }
+}
+[e :U 11 ]
+"40
+[; ;stateMachine/touchScreenSM.c: 40:             break;
+[e $U 5  ]
+"41
+[; ;stateMachine/touchScreenSM.c: 41:         default:
+[e :U 12 ]
+"42
+[; ;stateMachine/touchScreenSM.c: 42:             break;
+[e $U 5  ]
+"43
+[; ;stateMachine/touchScreenSM.c: 43:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _touchScreenState `ui , $ -> . `E73 0 `ui 7
+ , $ -> . `E73 1 `ui 9
+ 12 ]
+[e :U 5 ]
+"44
+[; ;stateMachine/touchScreenSM.c: 44: }
+[e :UE 4 ]
+}
+"48
+[; ;stateMachine/touchScreenSM.c: 48: void touchScreenController()
+[v _touchScreenController `(v ~T0 @X0 1 ef ]
+"49
+[; ;stateMachine/touchScreenSM.c: 49: {
+{
+[e :U _touchScreenController ]
+[f ]
+"50
+[; ;stateMachine/touchScreenSM.c: 50:     switch(touchScreenState)
+[e $U 15  ]
+"51
+[; ;stateMachine/touchScreenSM.c: 51:     {
+{
+"52
+[; ;stateMachine/touchScreenSM.c: 52:         case WAITING:
+[e :U 16 ]
+"56
+[; ;stateMachine/touchScreenSM.c: 56:             break;
+[e $U 14  ]
+"57
+[; ;stateMachine/touchScreenSM.c: 57:         case CALCULATEPOSITION:
+[e :U 17 ]
+"61
+[; ;stateMachine/touchScreenSM.c: 61:             break;
+[e $U 14  ]
+"62
+[; ;stateMachine/touchScreenSM.c: 62:         default:
+[e :U 18 ]
+"63
+[; ;stateMachine/touchScreenSM.c: 63:             break;
+[e $U 14  ]
+"64
+[; ;stateMachine/touchScreenSM.c: 64:     }
+}
+[e $U 14  ]
+[e :U 15 ]
+[e [\ -> _touchScreenState `ui , $ -> . `E73 0 `ui 16
+ , $ -> . `E73 1 `ui 17
+ 18 ]
+[e :U 14 ]
+"65
+[; ;stateMachine/touchScreenSM.c: 65: }
+[e :UE 13 ]
+}

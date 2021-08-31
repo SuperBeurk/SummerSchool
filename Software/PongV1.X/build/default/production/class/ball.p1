@@ -1,0 +1,118 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"3 class/ball.h
+[; ;class/ball.h: 3: {
+[s S6 `us 1 `us 1 `us 1 `us 1 ]
+[n S6 Ball x y r color ]
+"2 class/ball.c
+[; ;class/ball.c: 2: void Ball_init(struct Ball* b)
+[v _Ball_init `(v ~T0 @X0 1 ef1`*S6 ]
+"3
+[; ;class/ball.c: 3: {
+{
+[e :U _Ball_init ]
+"2
+[; ;class/ball.c: 2: void Ball_init(struct Ball* b)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+"3
+[; ;class/ball.c: 3: {
+[f ]
+"4
+[; ;class/ball.c: 4:     b->x = 0;
+[e = . *U _b 0 -> -> 0 `i `us ]
+"5
+[; ;class/ball.c: 5:     b->y = 0;
+[e = . *U _b 1 -> -> 0 `i `us ]
+"6
+[; ;class/ball.c: 6:     b->r = 0;
+[e = . *U _b 2 -> -> 0 `i `us ]
+"7
+[; ;class/ball.c: 7:     b->color = 0;
+[e = . *U _b 3 -> -> 0 `i `us ]
+"8
+[; ;class/ball.c: 8: }
+[e :UE 7 ]
+}
+"9
+[; ;class/ball.c: 9: void Ball_setRadius(struct Ball* b, uint16_t value)
+[v _Ball_setRadius `(v ~T0 @X0 1 ef2`*S6`us ]
+"10
+[; ;class/ball.c: 10: {
+{
+[e :U _Ball_setRadius ]
+"9
+[; ;class/ball.c: 9: void Ball_setRadius(struct Ball* b, uint16_t value)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"10
+[; ;class/ball.c: 10: {
+[f ]
+"11
+[; ;class/ball.c: 11:     b->r = value;
+[e = . *U _b 2 _value ]
+"12
+[; ;class/ball.c: 12: }
+[e :UE 8 ]
+}
+"13
+[; ;class/ball.c: 13: void Ball_setPosX(struct Ball* b, uint16_t value)
+[v _Ball_setPosX `(v ~T0 @X0 1 ef2`*S6`us ]
+"14
+[; ;class/ball.c: 14: {
+{
+[e :U _Ball_setPosX ]
+"13
+[; ;class/ball.c: 13: void Ball_setPosX(struct Ball* b, uint16_t value)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"14
+[; ;class/ball.c: 14: {
+[f ]
+"15
+[; ;class/ball.c: 15:     b->x = value;
+[e = . *U _b 0 _value ]
+"16
+[; ;class/ball.c: 16: }
+[e :UE 9 ]
+}
+"17
+[; ;class/ball.c: 17: void Ball_setPosY(struct Ball* b, uint16_t value)
+[v _Ball_setPosY `(v ~T0 @X0 1 ef2`*S6`us ]
+"18
+[; ;class/ball.c: 18: {
+{
+[e :U _Ball_setPosY ]
+"17
+[; ;class/ball.c: 17: void Ball_setPosY(struct Ball* b, uint16_t value)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"18
+[; ;class/ball.c: 18: {
+[f ]
+"19
+[; ;class/ball.c: 19:     b->y = value;
+[e = . *U _b 1 _value ]
+"20
+[; ;class/ball.c: 20: }
+[e :UE 10 ]
+}
+"21
+[; ;class/ball.c: 21: void Ball_setColor(struct Ball* b, uint16_t value)
+[v _Ball_setColor `(v ~T0 @X0 1 ef2`*S6`us ]
+"22
+[; ;class/ball.c: 22: {
+{
+[e :U _Ball_setColor ]
+"21
+[; ;class/ball.c: 21: void Ball_setColor(struct Ball* b, uint16_t value)
+[v _b `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"22
+[; ;class/ball.c: 22: {
+[f ]
+"23
+[; ;class/ball.c: 23:     b->color = value;
+[e = . *U _b 3 _value ]
+"24
+[; ;class/ball.c: 24: }
+[e :UE 11 ]
+}

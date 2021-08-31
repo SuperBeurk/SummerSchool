@@ -1,0 +1,142 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"3 class/paddle.h
+[; ;class/paddle.h: 3: {
+[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S6 Paddle x y w h color ]
+"2 class/paddle.c
+[; ;class/paddle.c: 2: void Paddle_init(struct Paddle* p)
+[v _Paddle_init `(v ~T0 @X0 1 ef1`*S6 ]
+"3
+[; ;class/paddle.c: 3: {
+{
+[e :U _Paddle_init ]
+"2
+[; ;class/paddle.c: 2: void Paddle_init(struct Paddle* p)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+"3
+[; ;class/paddle.c: 3: {
+[f ]
+"4
+[; ;class/paddle.c: 4:     p->x = 0;
+[e = . *U _p 0 -> -> 0 `i `us ]
+"5
+[; ;class/paddle.c: 5:     p->y = 0;
+[e = . *U _p 1 -> -> 0 `i `us ]
+"6
+[; ;class/paddle.c: 6:     p->w = 0;
+[e = . *U _p 2 -> -> 0 `i `us ]
+"7
+[; ;class/paddle.c: 7:     p->h = 0;
+[e = . *U _p 3 -> -> 0 `i `us ]
+"8
+[; ;class/paddle.c: 8:     p->color = 0;
+[e = . *U _p 4 -> -> 0 `i `us ]
+"9
+[; ;class/paddle.c: 9: }
+[e :UE 7 ]
+}
+"10
+[; ;class/paddle.c: 10: void Paddle_setWidth(struct Paddle* p, uint16_t value)
+[v _Paddle_setWidth `(v ~T0 @X0 1 ef2`*S6`us ]
+"11
+[; ;class/paddle.c: 11: {
+{
+[e :U _Paddle_setWidth ]
+"10
+[; ;class/paddle.c: 10: void Paddle_setWidth(struct Paddle* p, uint16_t value)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"11
+[; ;class/paddle.c: 11: {
+[f ]
+"12
+[; ;class/paddle.c: 12:     p->w = value;
+[e = . *U _p 2 _value ]
+"13
+[; ;class/paddle.c: 13: }
+[e :UE 8 ]
+}
+"14
+[; ;class/paddle.c: 14: void Paddle_setHeight(struct Paddle* p, uint16_t value)
+[v _Paddle_setHeight `(v ~T0 @X0 1 ef2`*S6`us ]
+"15
+[; ;class/paddle.c: 15: {
+{
+[e :U _Paddle_setHeight ]
+"14
+[; ;class/paddle.c: 14: void Paddle_setHeight(struct Paddle* p, uint16_t value)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"15
+[; ;class/paddle.c: 15: {
+[f ]
+"16
+[; ;class/paddle.c: 16:     p->h = value;
+[e = . *U _p 3 _value ]
+"17
+[; ;class/paddle.c: 17: }
+[e :UE 9 ]
+}
+"18
+[; ;class/paddle.c: 18: void Paddle_setPosX(struct Paddle* p, uint16_t value)
+[v _Paddle_setPosX `(v ~T0 @X0 1 ef2`*S6`us ]
+"19
+[; ;class/paddle.c: 19: {
+{
+[e :U _Paddle_setPosX ]
+"18
+[; ;class/paddle.c: 18: void Paddle_setPosX(struct Paddle* p, uint16_t value)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"19
+[; ;class/paddle.c: 19: {
+[f ]
+"20
+[; ;class/paddle.c: 20:     p->x = value;
+[e = . *U _p 0 _value ]
+"21
+[; ;class/paddle.c: 21: }
+[e :UE 10 ]
+}
+"22
+[; ;class/paddle.c: 22: void Paddle_setPosY(struct Paddle* p, uint16_t value)
+[v _Paddle_setPosY `(v ~T0 @X0 1 ef2`*S6`us ]
+"23
+[; ;class/paddle.c: 23: {
+{
+[e :U _Paddle_setPosY ]
+"22
+[; ;class/paddle.c: 22: void Paddle_setPosY(struct Paddle* p, uint16_t value)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"23
+[; ;class/paddle.c: 23: {
+[f ]
+"24
+[; ;class/paddle.c: 24:     p->y = value;
+[e = . *U _p 1 _value ]
+"25
+[; ;class/paddle.c: 25: }
+[e :UE 11 ]
+}
+"26
+[; ;class/paddle.c: 26: void Paddle_setColor(struct Paddle* p, uint16_t value)
+[v _Paddle_setColor `(v ~T0 @X0 1 ef2`*S6`us ]
+"27
+[; ;class/paddle.c: 27: {
+{
+[e :U _Paddle_setColor ]
+"26
+[; ;class/paddle.c: 26: void Paddle_setColor(struct Paddle* p, uint16_t value)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"27
+[; ;class/paddle.c: 27: {
+[f ]
+"28
+[; ;class/paddle.c: 28:     p->color = value;
+[e = . *U _p 4 _value ]
+"29
+[; ;class/paddle.c: 29: }
+[e :UE 12 ]
+}

@@ -1,0 +1,206 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 9: enum state sleepState;
+[c E73 0 1 2 .. ]
+[n E73 state WAKEUP BACKLIGHTOFF SLEEP  ]
+"4 stateMachine/sleepSM.h
+[; ;stateMachine/sleepSM.h: 4: void sleepController();
+[v _sleepController `(v ~T0 @X0 0 e? ]
+"21 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 21:             if(ev==evTimer30)
+[c E39 0 1 2 3 4 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos  ]
+"9 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 9: enum state sleepState;
+[v _sleepState `E73 ~T0 @X0 1 e ]
+"11
+[; ;stateMachine/sleepSM.c: 11: void sleepInit()
+[v _sleepInit `(v ~T0 @X0 1 ef ]
+"12
+[; ;stateMachine/sleepSM.c: 12: {
+{
+[e :U _sleepInit ]
+[f ]
+"13
+[; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
+[e = _sleepState . `E73 0 ]
+"14
+[; ;stateMachine/sleepSM.c: 14:     sleepController();
+[e ( _sleepController ..  ]
+"15
+[; ;stateMachine/sleepSM.c: 15: }
+[e :UE 3 ]
+}
+"16
+[; ;stateMachine/sleepSM.c: 16: void sleepSM(Event ev)
+[v _sleepSM `(v ~T0 @X0 1 ef1`uc ]
+"17
+[; ;stateMachine/sleepSM.c: 17: {
+{
+[e :U _sleepSM ]
+"16
+[; ;stateMachine/sleepSM.c: 16: void sleepSM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
+"17
+[; ;stateMachine/sleepSM.c: 17: {
+[f ]
+"18
+[; ;stateMachine/sleepSM.c: 18:    switch(sleepState)
+[e $U 6  ]
+"19
+[; ;stateMachine/sleepSM.c: 19:     {
+{
+"20
+[; ;stateMachine/sleepSM.c: 20:         case WAKEUP:
+[e :U 7 ]
+"21
+[; ;stateMachine/sleepSM.c: 21:             if(ev==evTimer30)
+[e $ ! == -> _ev `i -> . `E39 3 `i 8  ]
+"22
+[; ;stateMachine/sleepSM.c: 22:             {
+{
+"23
+[; ;stateMachine/sleepSM.c: 23:                sleepState=BACKLIGHTOFF;
+[e = _sleepState . `E73 1 ]
+"24
+[; ;stateMachine/sleepSM.c: 24:                sleepController();
+[e ( _sleepController ..  ]
+"25
+[; ;stateMachine/sleepSM.c: 25:             }
+}
+[e :U 8 ]
+"26
+[; ;stateMachine/sleepSM.c: 26:             break;
+[e $U 5  ]
+"27
+[; ;stateMachine/sleepSM.c: 27:         case BACKLIGHTOFF:
+[e :U 9 ]
+"28
+[; ;stateMachine/sleepSM.c: 28:             if(ev==evTimer30)
+[e $ ! == -> _ev `i -> . `E39 3 `i 10  ]
+"29
+[; ;stateMachine/sleepSM.c: 29:             {
+{
+"30
+[; ;stateMachine/sleepSM.c: 30:                sleepState=SLEEP;
+[e = _sleepState . `E73 2 ]
+"31
+[; ;stateMachine/sleepSM.c: 31:                sleepController();
+[e ( _sleepController ..  ]
+"32
+[; ;stateMachine/sleepSM.c: 32:             }
+}
+[e :U 10 ]
+"33
+[; ;stateMachine/sleepSM.c: 33:             if(ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 11  ]
+"34
+[; ;stateMachine/sleepSM.c: 34:             {
+{
+"35
+[; ;stateMachine/sleepSM.c: 35:                sleepState=WAKEUP;
+[e = _sleepState . `E73 0 ]
+"36
+[; ;stateMachine/sleepSM.c: 36:                sleepController();
+[e ( _sleepController ..  ]
+"37
+[; ;stateMachine/sleepSM.c: 37:             }
+}
+[e :U 11 ]
+"38
+[; ;stateMachine/sleepSM.c: 38:             break;
+[e $U 5  ]
+"39
+[; ;stateMachine/sleepSM.c: 39:         case SLEEP:
+[e :U 12 ]
+"40
+[; ;stateMachine/sleepSM.c: 40:             if(ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 13  ]
+"41
+[; ;stateMachine/sleepSM.c: 41:             {
+{
+"42
+[; ;stateMachine/sleepSM.c: 42:                sleepState=WAKEUP;
+[e = _sleepState . `E73 0 ]
+"43
+[; ;stateMachine/sleepSM.c: 43:                sleepController();
+[e ( _sleepController ..  ]
+"44
+[; ;stateMachine/sleepSM.c: 44:             }
+}
+[e :U 13 ]
+"45
+[; ;stateMachine/sleepSM.c: 45:             break;
+[e $U 5  ]
+"46
+[; ;stateMachine/sleepSM.c: 46:         default:
+[e :U 14 ]
+"47
+[; ;stateMachine/sleepSM.c: 47:             break;
+[e $U 5  ]
+"48
+[; ;stateMachine/sleepSM.c: 48:     }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 7
+ , $ -> . `E73 1 `ui 9
+ , $ -> . `E73 2 `ui 12
+ 14 ]
+[e :U 5 ]
+"49
+[; ;stateMachine/sleepSM.c: 49: }
+[e :UE 4 ]
+}
+"50
+[; ;stateMachine/sleepSM.c: 50: void sleepController()
+[v _sleepController `(v ~T0 @X0 1 ef ]
+"51
+[; ;stateMachine/sleepSM.c: 51: {
+{
+[e :U _sleepController ]
+[f ]
+"52
+[; ;stateMachine/sleepSM.c: 52:     switch(sleepState)
+[e $U 17  ]
+"53
+[; ;stateMachine/sleepSM.c: 53:     {
+{
+"54
+[; ;stateMachine/sleepSM.c: 54:         case WAKEUP:
+[e :U 18 ]
+"58
+[; ;stateMachine/sleepSM.c: 58:             break;
+[e $U 16  ]
+"59
+[; ;stateMachine/sleepSM.c: 59:         case BACKLIGHTOFF:
+[e :U 19 ]
+"61
+[; ;stateMachine/sleepSM.c: 61:             break;
+[e $U 16  ]
+"62
+[; ;stateMachine/sleepSM.c: 62:         case SLEEP:
+[e :U 20 ]
+"65
+[; ;stateMachine/sleepSM.c: 65:             break;
+[e $U 16  ]
+"66
+[; ;stateMachine/sleepSM.c: 66:         default:
+[e :U 21 ]
+"67
+[; ;stateMachine/sleepSM.c: 67:             break;
+[e $U 16  ]
+"68
+[; ;stateMachine/sleepSM.c: 68:     }
+}
+[e $U 16  ]
+[e :U 17 ]
+[e [\ -> _sleepState `ui , $ -> . `E73 0 `ui 18
+ , $ -> . `E73 1 `ui 19
+ , $ -> . `E73 2 `ui 20
+ 21 ]
+[e :U 16 ]
+"69
+[; ;stateMachine/sleepSM.c: 69: }
+[e :UE 15 ]
+}
