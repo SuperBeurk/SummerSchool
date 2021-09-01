@@ -1,14 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/display.c
 [; ;stateMachine/display.c: 9: enum state displayState;
-[c E77 0 1 2 .. ]
-[n E77 state WELCOME PARAMETERS INGAME  ]
+[c E78 0 1 2 .. ]
+[n E78 state WELCOME PARAMETERS INGAME  ]
 "4 stateMachine/display.h
 [; ;stateMachine/display.h: 4: void displayController();
 [v _displayController `(v ~T0 @X0 0 e? ]
 "9 stateMachine/display.c
 [; ;stateMachine/display.c: 9: enum state displayState;
-[v _displayState `E77 ~T0 @X0 1 e ]
+[v _displayState `E78 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/display.c: 11: void displayInit()
 [v _displayInit `(v ~T0 @X0 1 ef ]
@@ -19,7 +19,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/display.c: 13:     displayState=WELCOME;
-[e = _displayState . `E77 0 ]
+[e = _displayState . `E78 0 ]
 "14
 [; ;stateMachine/display.c: 14:     displayController();
 [e ( _displayController ..  ]
@@ -75,9 +75,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 5  ]
 [e :U 6 ]
-[e [\ -> _displayState `ui , $ -> . `E77 0 `ui 7
- , $ -> . `E77 1 `ui 8
- , $ -> . `E77 2 `ui 9
+[e [\ -> _displayState `ui , $ -> . `E78 0 `ui 7
+ , $ -> . `E78 1 `ui 8
+ , $ -> . `E78 2 `ui 9
  10 ]
 [e :U 5 ]
 "29
@@ -127,9 +127,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 12  ]
 [e :U 13 ]
-[e [\ -> _displayState `ui , $ -> . `E77 0 `ui 14
- , $ -> . `E77 1 `ui 15
- , $ -> . `E77 2 `ui 16
+[e [\ -> _displayState `ui , $ -> . `E78 0 `ui 14
+ , $ -> . `E78 1 `ui 15
+ , $ -> . `E78 2 `ui 16
  17 ]
 [e :U 12 ]
 "48

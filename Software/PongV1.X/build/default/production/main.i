@@ -9277,7 +9277,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParameters};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParameters,evGameUpdate};
 
 typedef struct Timer
 {
@@ -9584,6 +9584,9 @@ void Paddle_setColor(struct Paddle* p, uint16_t value);
 void Paddle_draw(struct Paddle* p);
 # 6 "./class/factory.h" 2
 
+
+# 1 "./class/../libraries/lcd_highlevel.h" 1
+# 8 "./class/factory.h" 2
 
 
 void Factory_init();

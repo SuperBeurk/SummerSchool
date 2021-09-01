@@ -18,7 +18,7 @@ void gameControllerSM(Event ev)
    switch(gameControllerState)
     {
         case NOGAME:
-            //check position du touch voir les event a créer
+            //check position du touch pour créer les event
             break;
         case LOCAL:
             //Update value for ball, both paddle and score for one player

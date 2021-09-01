@@ -1,45 +1,36 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"19488 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19488: extern volatile __bit TRISB5 __attribute__((address(0x7C9D)));
-[v _TRISB5 `Vb ~T0 @X0 0 e@31901 ]
-"19482
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19482: extern volatile __bit TRISB3 __attribute__((address(0x7C9B)));
-[v _TRISB3 `Vb ~T0 @X0 0 e@31899 ]
-"19485
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19485: extern volatile __bit TRISB4 __attribute__((address(0x7C9C)));
-[v _TRISB4 `Vb ~T0 @X0 0 e@31900 ]
-"19500
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19500: extern volatile __bit TRISC1 __attribute__((address(0x7CA1)));
-[v _TRISC1 `Vb ~T0 @X0 0 e@31905 ]
-"19497
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19497: extern volatile __bit TRISC0 __attribute__((address(0x7CA0)));
-[v _TRISC0 `Vb ~T0 @X0 0 e@31904 ]
+"19512 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19512: extern volatile __bit TRISC5 __attribute__((address(0x7CA5)));
+[v _TRISC5 `Vb ~T0 @X0 0 e@31909 ]
+"19503
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19503: extern volatile __bit TRISC2 __attribute__((address(0x7CA2)));
+[v _TRISC2 `Vb ~T0 @X0 0 e@31906 ]
+"19506
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19506: extern volatile __bit TRISC3 __attribute__((address(0x7CA3)));
+[v _TRISC3 `Vb ~T0 @X0 0 e@31907 ]
+"19509
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19509: extern volatile __bit TRISC4 __attribute__((address(0x7CA4)));
+[v _TRISC4 `Vb ~T0 @X0 0 e@31908 ]
 "7581
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 7581: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"17880
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17880: extern volatile __bit LATC0 __attribute__((address(0x7C58)));
-[v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
-"17871
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17871: extern volatile __bit LATB5 __attribute__((address(0x7C55)));
-[v _LATB5 `Vb ~T0 @X0 0 e@31829 ]
-"17865
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17865: extern volatile __bit LATB3 __attribute__((address(0x7C53)));
-[v _LATB3 `Vb ~T0 @X0 0 e@31827 ]
-"17868
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17868: extern volatile __bit LATB4 __attribute__((address(0x7C54)));
-[v _LATB4 `Vb ~T0 @X0 0 e@31828 ]
-"17883
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17883: extern volatile __bit LATC1 __attribute__((address(0x7C59)));
-[v _LATC1 `Vb ~T0 @X0 0 e@31833 ]
+"17895
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17895: extern volatile __bit LATC5 __attribute__((address(0x7C5D)));
+[v _LATC5 `Vb ~T0 @X0 0 e@31837 ]
+"17886
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17886: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
+[v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
+"17889
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17889: extern volatile __bit LATC3 __attribute__((address(0x7C5B)));
+[v _LATC3 `Vb ~T0 @X0 0 e@31835 ]
+"17892
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17892: extern volatile __bit LATC4 __attribute__((address(0x7C5C)));
+[v _LATC4 `Vb ~T0 @X0 0 e@31836 ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
 [p i __delay ]
-"17886 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17886: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
-[v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
-"6175
+"6175 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 6175: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
@@ -789,38 +780,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 19:   uint32_t i;
 [v _i `ul ~T0 @X0 1 a ]
 "20
-[; ;libraries/lcd_lowlevel.c: 20:   TRISB5 = 0;
-[e = _TRISB5 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 20:   TRISC5 = 0;
+[e = _TRISC5 -> -> 0 `i `b ]
 "21
-[; ;libraries/lcd_lowlevel.c: 21:   TRISB3 = 0;
-[e = _TRISB3 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 21:   TRISC2 = 0;
+[e = _TRISC2 -> -> 0 `i `b ]
 "22
-[; ;libraries/lcd_lowlevel.c: 22:   TRISB4 = 0;
-[e = _TRISB4 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 22:   TRISC3 = 0;
+[e = _TRISC3 -> -> 0 `i `b ]
 "23
-[; ;libraries/lcd_lowlevel.c: 23:   TRISC1 = 0;
-[e = _TRISC1 -> -> 0 `i `b ]
-"24
-[; ;libraries/lcd_lowlevel.c: 24:   TRISC0 = 0;
-[e = _TRISC0 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 23:   TRISC4 = 0;
+[e = _TRISC4 -> -> 0 `i `b ]
 "25
 [; ;libraries/lcd_lowlevel.c: 25:   TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
-"27
-[; ;libraries/lcd_lowlevel.c: 27:  LATC0 = 0;
-[e = _LATC0 -> -> 0 `i `b ]
 "28
-[; ;libraries/lcd_lowlevel.c: 28:  LATB5 = 0;
-[e = _LATB5 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 28:  LATC5 = 0;
+[e = _LATC5 -> -> 0 `i `b ]
 "29
-[; ;libraries/lcd_lowlevel.c: 29:  LATB3 = 1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 29:  LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
 "30
-[; ;libraries/lcd_lowlevel.c: 30:  LATB4 = 1;
-[e = _LATB4 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 30:  LATC3 = 1;
+[e = _LATC3 -> -> 1 `i `b ]
 "31
-[; ;libraries/lcd_lowlevel.c: 31:  LATC1 = 1;
-[e = _LATC1 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 31:  LATC4 = 1;
+[e = _LATC4 -> -> 1 `i `b ]
 "33
 [; ;libraries/lcd_lowlevel.c: 33:   for(i=0;i<12;i++)
 {
@@ -841,9 +826,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> -> -> 12 `i `l `ul 827  ]
 [e :U 828 ]
 }
-"37
-[; ;libraries/lcd_lowlevel.c: 37:  LATC0 = 1;
-[e = _LATC0 -> -> 1 `i `b ]
 "38
 [; ;libraries/lcd_lowlevel.c: 38:   for(i=0;i<12;i++)
 {
@@ -904,84 +886,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 67:   uint16_t color;
 [v _color `us ~T0 @X0 1 a ]
 "70
-[; ;libraries/lcd_lowlevel.c: 70:   PORTA = 0x2A; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[; ;libraries/lcd_lowlevel.c: 70:   PORTA = 0x2A; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 [e = _PORTA -> -> 42 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 1 `i `b ]
 "71
-[; ;libraries/lcd_lowlevel.c: 71:   PORTA = posX>>8; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 71:   PORTA = posX>>8; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> >> -> _posX `ui -> 8 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "72
-[; ;libraries/lcd_lowlevel.c: 72:   PORTA = posX; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 72:   PORTA = posX; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> _posX `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "73
-[; ;libraries/lcd_lowlevel.c: 73:   PORTA = (240 -1) >> 8; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 73:   PORTA = (240 -1) >> 8; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> >> - -> 240 `i -> 1 `i -> 8 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "74
-[; ;libraries/lcd_lowlevel.c: 74:   PORTA = (240 -1); LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 74:   PORTA = (240 -1); LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> - -> 240 `i -> 1 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "76
-[; ;libraries/lcd_lowlevel.c: 76:   PORTA = 0x2B; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[; ;libraries/lcd_lowlevel.c: 76:   PORTA = 0x2B; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 [e = _PORTA -> -> 43 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 1 `i `b ]
 "77
-[; ;libraries/lcd_lowlevel.c: 77:   PORTA = posY>>8; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 77:   PORTA = posY>>8; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> >> -> _posY `ui -> 8 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "78
-[; ;libraries/lcd_lowlevel.c: 78:   PORTA = posY; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 78:   PORTA = posY; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> _posY `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "79
-[; ;libraries/lcd_lowlevel.c: 79:   PORTA = (320 -1) >> 8; LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 79:   PORTA = (320 -1) >> 8; LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> >> - -> 320 `i -> 1 `i -> 8 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "80
-[; ;libraries/lcd_lowlevel.c: 80:   PORTA = (320 -1); LATB4 = 0; LATB4 = 1;;
+[; ;libraries/lcd_lowlevel.c: 80:   PORTA = (320 -1); LATC3 = 0; LATC3 = 1;;
 [e = _PORTA -> - -> 320 `i -> 1 `i `uc ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
 "82
-[; ;libraries/lcd_lowlevel.c: 82:   PORTA = 0x2E; LATC1 = 0; LATB4 = 0; LATB4 = 1; LATC1 = 1;;
+[; ;libraries/lcd_lowlevel.c: 82:   PORTA = 0x2E; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
 [e = _PORTA -> -> 46 `i `uc ]
-[e = _LATC1 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 0 `i `b ]
-[e = _LATB4 -> -> 1 `i `b ]
-[e = _LATC1 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 0 `i `b ]
+[e = _LATC3 -> -> 1 `i `b ]
+[e = _LATC4 -> -> 1 `i `b ]
 "83
 [; ;libraries/lcd_lowlevel.c: 83:  TRISA = 0xFF;
 [e = _TRISA -> -> 255 `i `uc ]
 "84
-[; ;libraries/lcd_lowlevel.c: 84:  LATB3 = 0;
-[e = _LATB3 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 84:  LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
 "85
 [; ;libraries/lcd_lowlevel.c: 85:   __nop();
 [e ( ___nop ..  ]
 "86
-[; ;libraries/lcd_lowlevel.c: 86:  LATB3 = 1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 86:  LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
 "87
 [; ;libraries/lcd_lowlevel.c: 87:  TRISA = 0xFF;
 [e = _TRISA -> -> 255 `i `uc ]
 "88
-[; ;libraries/lcd_lowlevel.c: 88:  LATB3 = 0;
-[e = _LATB3 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 88:  LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
 "89
 [; ;libraries/lcd_lowlevel.c: 89:   __nop();
 [e ( ___nop ..  ]
@@ -989,8 +971,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 90:  temp16 = PORTA;
 [e = _temp16 -> _PORTA `us ]
 "91
-[; ;libraries/lcd_lowlevel.c: 91:  LATB3 = 1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 91:  LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
 "92
 [; ;libraries/lcd_lowlevel.c: 92:   temp16 = temp16 >> 3;
 [e = _temp16 -> >> -> _temp16 `ui -> 3 `i `us ]
@@ -998,8 +980,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 93:   color = temp16 << 11;
 [e = _color -> << -> _temp16 `ui -> 11 `i `us ]
 "94
-[; ;libraries/lcd_lowlevel.c: 94:  LATB3 = 0;
-[e = _LATB3 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 94:  LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
 "95
 [; ;libraries/lcd_lowlevel.c: 95:   __nop();
 [e ( ___nop ..  ]
@@ -1007,8 +989,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 96:  temp16 = PORTA;
 [e = _temp16 -> _PORTA `us ]
 "97
-[; ;libraries/lcd_lowlevel.c: 97:  LATB3 = 1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 97:  LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
 "98
 [; ;libraries/lcd_lowlevel.c: 98:   temp16 = temp16 >> 2;
 [e = _temp16 -> >> -> _temp16 `ui -> 2 `i `us ]
@@ -1016,8 +998,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 99:   color |= temp16 << 5;
 [e =| _color -> << -> _temp16 `ui -> 5 `i `us ]
 "100
-[; ;libraries/lcd_lowlevel.c: 100:  LATB3 = 0;
-[e = _LATB3 -> -> 0 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 100:  LATC2 = 0;
+[e = _LATC2 -> -> 0 `i `b ]
 "101
 [; ;libraries/lcd_lowlevel.c: 101:   __nop();
 [e ( ___nop ..  ]
@@ -1025,8 +1007,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;libraries/lcd_lowlevel.c: 102:  temp16 |= PORTA;
 [e =| _temp16 -> _PORTA `us ]
 "103
-[; ;libraries/lcd_lowlevel.c: 103:  LATB3 = 1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;libraries/lcd_lowlevel.c: 103:  LATC2 = 1;
+[e = _LATC2 -> -> 1 `i `b ]
 "104
 [; ;libraries/lcd_lowlevel.c: 104:   temp16 = temp16 >> 3;
 [e = _temp16 -> >> -> _temp16 `ui -> 3 `i `us ]

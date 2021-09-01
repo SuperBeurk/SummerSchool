@@ -3,18 +3,6 @@
 [d edition pro ]
 [d chip 18LF25K22 ]
 [d frameptr 4065 ]
-"24 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
-[e E244 myEvents `uc
-NULLEVENT 0
-evPress 1
-evRelease 2
-evTimer30 3
-evTimerPos 4
-evOnePlayer 5
-evTwoPlayer 6
-evParameters 7
-evLeaveParameters 8
-]
 "501 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
 [e E355 . `uc
 A_LEFT 0
@@ -22,7 +10,7 @@ A_RIGHT 1
 A_CENTER 2
 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[e E77 state `uc
+[e E78 state `uc
 WAKEUP 0
 BACKLIGHTOFF 1
 SLEEP 2
@@ -38,9 +26,10 @@ evOnePlayer 5
 evTwoPlayer 6
 evParameters 7
 evLeaveParameters 8
+evGameUpdate 9
 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[e E77 state `uc
+[e E78 state `uc
 WAITING 0
 CALCULATEPOSITION 1
 ]
@@ -55,6 +44,7 @@ evOnePlayer 5
 evTwoPlayer 6
 evParameters 7
 evLeaveParameters 8
+evGameUpdate 9
 ]
 "30 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
 [e E5738 myEvents `uc
@@ -67,15 +57,16 @@ evOnePlayer 5
 evTwoPlayer 6
 evParameters 7
 evLeaveParameters 8
+evGameUpdate 9
 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/display.c
-[e E77 state `uc
+[e E78 state `uc
 WELCOME 0
 PARAMETERS 1
 INGAME 2
 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
-[e E77 state `uc
+[e E78 state `uc
 NOGAME 0
 LOCAL 1
 ONLINE 2
@@ -116,15 +107,15 @@ ONLINE 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/ball.c
-[v _Ball_init Ball_init `(v  1 e 1 0 ]
-"10 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
+"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
 [v _Factory_init Factory_init `(v  1 e 1 0 ]
-"19
+"25
 [v _Factory_exec Factory_exec `(v  1 e 1 0 ]
-"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/paddle.c
-[v _Paddle_init Paddle_init `(v  1 e 1 0 ]
-"319 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
+"20 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"218
+[v _LCD_Fill LCD_Fill `(v  1 e 1 0 ]
+"319
 [v _LCD_SliderUpdate LCD_SliderUpdate `(v  1 e 1 0 ]
 "425
 [v _LCD_ButtonUpdate LCD_ButtonUpdate `(v  1 e 1 0 ]
@@ -146,22 +137,12 @@ ONLINE 2
 [v _displayController displayController `(v  1 e 1 0 ]
 "33 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
 [v _gameControllerController gameControllerController `(v  1 e 1 0 ]
-"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepInit sleepInit `(v  1 e 1 0 ]
-"16
-[v _sleepSM sleepSM `(v  1 e 1 0 ]
-"50
+"50 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
 [v _sleepController sleepController `(v  1 e 1 0 ]
-"19 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[v _touchScreenSM touchScreenSM `(v  1 e 1 0 ]
-"48
+"48 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
 [v _touchScreenController touchScreenController `(v  1 e 1 0 ]
-"25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[v _XF_init XF_init `(v  1 e 1 0 ]
-"49
+"49 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
 [v _XF_pushEvent XF_pushEvent `(a  1 e 1 0 ]
-"72
-[v _XF_popEvent XF_popEvent `(uc  1 e 1 0 ]
 "125
 [v _XF_unscheduleTimer XF_unscheduleTimer `(v  1 e 1 0 ]
 "172
@@ -172,168 +153,78 @@ ONLINE 2
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "7581
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"15216
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "17583
 [v _GIE GIE `VEb  1 e 0 @32663 ]
-"17865
-[v _LATB3 LATB3 `VEb  1 e 0 @31827 ]
-"17868
-[v _LATB4 LATB4 `VEb  1 e 0 @31828 ]
-"17871
-[v _LATB5 LATB5 `VEb  1 e 0 @31829 ]
-"17880
-[v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
-"17883
-[v _LATC1 LATC1 `VEb  1 e 0 @31833 ]
 "17886
 [v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
-"19482
-[v _TRISB3 TRISB3 `VEb  1 e 0 @31899 ]
-"19485
-[v _TRISB4 TRISB4 `VEb  1 e 0 @31900 ]
-"19488
-[v _TRISB5 TRISB5 `VEb  1 e 0 @31901 ]
-"19497
-[v _TRISC0 TRISC0 `VEb  1 e 0 @31904 ]
-"19500
-[v _TRISC1 TRISC1 `VEb  1 e 0 @31905 ]
+"17889
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
+"17892
+[v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
+"17895
+[v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
 "19503
 [v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
-[s S65 Paddle 10 `us 1 x 2 0 `us 1 y 2 2 `us 1 w 2 4 `us 1 h 2 6 `us 1 color 2 8 ]
-"4 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
-[v _p1 p1 `S65  1 e 10 0 ]
-"5
-[v _p2 p2 `S65  1 e 10 0 ]
-[s S24 Ball 8 `us 1 x 2 0 `us 1 y 2 2 `us 1 r 2 4 `us 1 color 2 6 ]
-"6
-[v _b1 b1 `S24  1 e 8 0 ]
+"19506
+[v _TRISC3 TRISC3 `VEb  1 e 0 @31907 ]
+"19509
+[v _TRISC4 TRISC4 `VEb  1 e 0 @31908 ]
+"19512
+[v _TRISC5 TRISC5 `VEb  1 e 0 @31909 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/display.c
-[v _displayState displayState `E77  1 e 1 0 ]
+[v _displayState displayState `E78  1 e 1 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
-[v _gameControllerState gameControllerState `E77  1 e 1 0 ]
+[v _gameControllerState gameControllerState `E78  1 e 1 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepState sleepState `E77  1 e 1 0 ]
+[v _sleepState sleepState `E78  1 e 1 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[v _touchScreenState touchScreenState `E77  1 e 1 0 ]
-[s S751 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
+[v _touchScreenState touchScreenState `E78  1 e 1 0 ]
+[s S722 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
 "15 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[s S754 XF 38 `[8]S751 1 timerList 24 0 `[12]uc 1 eventQueue 12 24 `uc 1 in 1 36 `uc 1 out 1 37 ]
-[v _theXF theXF `S754  1 e 38 0 ]
+[s S725 XF 38 `[8]S722 1 timerList 24 0 `[12]uc 1 eventQueue 12 24 `uc 1 in 1 36 `uc 1 out 1 37 ]
+[v _theXF theXF `S725  1 e 38 0 ]
 "16 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "24
 } 0
-"10 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
+"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
 [v _Factory_init Factory_init `(v  1 e 1 0 ]
 {
-"18
+"24
 } 0
-"11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepInit sleepInit `(v  1 e 1 0 ]
-{
-"15
-} 0
-"25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[v _XF_init XF_init `(v  1 e 1 0 ]
-{
-"27
-[v XF_init@i i `i  1 a 2 6 ]
-"40
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
-} 0
-"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/paddle.c
-[v _Paddle_init Paddle_init `(v  1 e 1 0 ]
-{
-[s S65 Paddle 10 `us 1 x 2 0 `us 1 y 2 2 `us 1 w 2 4 `us 1 h 2 6 `us 1 color 2 8 ]
-[v Paddle_init@p p `*.39S65  1 p 2 0 ]
-"9
-} 0
-"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/ball.c
-[v _Ball_init Ball_init `(v  1 e 1 0 ]
-{
-[s S24 Ball 8 `us 1 x 2 0 `us 1 y 2 2 `us 1 r 2 4 `us 1 color 2 6 ]
-[v Ball_init@b b `*.39S24  1 p 2 0 ]
-"8
-} 0
-"19 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
-[v _Factory_exec Factory_exec `(v  1 e 1 0 ]
+"20 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
 "22
-[v Factory_exec@ev ev `uc  1 a 1 8 ]
-"29
+[v LCD_Init@i i `uc  1 a 1 6 ]
+"207
 } 0
-"19 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[v _touchScreenSM touchScreenSM `(v  1 e 1 0 ]
+"17 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_lowlevel.c
+[v _LCD_Lowlevel_Init LCD_Lowlevel_Init `(v  1 e 1 0 ]
 {
-[v touchScreenSM@ev ev `uc  1 a 1 wreg ]
-[v touchScreenSM@ev ev `uc  1 a 1 wreg ]
-[v touchScreenSM@ev ev `uc  1 a 1 4 ]
-"44
+"19
+[v LCD_Lowlevel_Init@i i `ul  1 a 4 1 ]
+"42
 } 0
-"48
-[v _touchScreenController touchScreenController `(v  1 e 1 0 ]
+"218 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
+[v _LCD_Fill LCD_Fill `(v  1 e 1 0 ]
 {
-"65
+"221
+[v LCD_Fill@page page `us  1 a 2 6 ]
+"220
+[v LCD_Fill@column column `us  1 a 2 4 ]
+"222
+[v LCD_Fill@colorL colorL `uc  1 a 1 3 ]
+[v LCD_Fill@colorH colorH `uc  1 a 1 2 ]
+"218
+[v LCD_Fill@color color `us  1 p 2 0 ]
+"251
 } 0
-"16 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepSM sleepSM `(v  1 e 1 0 ]
+"25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
+[v _Factory_exec Factory_exec `(v  1 e 1 0 ]
 {
-[v sleepSM@ev ev `uc  1 a 1 wreg ]
-[v sleepSM@ev ev `uc  1 a 1 wreg ]
-[v sleepSM@ev ev `uc  1 a 1 4 ]
-"49
-} 0
-"50
-[v _sleepController sleepController `(v  1 e 1 0 ]
-{
-"69
-} 0
-"72 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[v _XF_popEvent XF_popEvent `(uc  1 e 1 0 ]
-{
-[v XF_popEvent@inISR inISR `a  1 a 1 wreg ]
-"74
-[v XF_popEvent@ev ev `uc  1 a 1 6 ]
-"72
-[v XF_popEvent@inISR inISR `a  1 a 1 wreg ]
-[v XF_popEvent@inISR inISR `a  1 a 1 7 ]
-"86
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"186 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[v _LEAVECRITICAL LEAVECRITICAL `(v  1 s 1 LEAVECRITICAL ]
-{
-[v LEAVECRITICAL@inISR inISR `a  1 a 1 wreg ]
-[v LEAVECRITICAL@inISR inISR `a  1 a 1 wreg ]
-"188
-[v LEAVECRITICAL@inISR inISR `a  1 a 1 0 ]
-"192
-} 0
-"172
-[v _ENTERCRITICAL ENTERCRITICAL `(v  1 s 1 ENTERCRITICAL ]
-{
-[v ENTERCRITICAL@inISR inISR `a  1 a 1 wreg ]
-[v ENTERCRITICAL@inISR inISR `a  1 a 1 wreg ]
-"174
-[v ENTERCRITICAL@inISR inISR `a  1 a 1 0 ]
-"178
+"36
 } 0
