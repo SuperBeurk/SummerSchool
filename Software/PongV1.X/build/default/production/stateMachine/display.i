@@ -130,7 +130,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParameters,evGameUpdate};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParameters,evGameUpdate,evNewGame};
 
 typedef struct Timer
 {
@@ -187,10 +187,166 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 void XF_decrementAndQueueTimers();
 # 1 "stateMachine/display.h" 2
 
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 11 "stateMachine/../libraries/lcd_highlevel.h"
+typedef struct
+{
+    uint8_t width;
+    uint16_t offset;
+}FONT_CHAR_INFO;
+
+typedef struct
+{
+    uint8_t height;
+    uint8_t start_char;
+    uint8_t end_char;
+    const FONT_CHAR_INFO * descriptor;
+    const uint8_t * bitmap;
+
+}FONT_INFO;
+# 50 "stateMachine/../libraries/lcd_highlevel.h"
+typedef enum
+{
+    A_LEFT,
+    A_RIGHT,
+    A_CENTER
+}ALIGN;
+# 64 "stateMachine/../libraries/lcd_highlevel.h"
+typedef struct
+{
+ uint16_t bfType;
+ uint32_t bfSize;
+ uint16_t bfRvd1;
+ uint16_t bfRvd2;
+ uint32_t bfOffBits;
+ uint32_t biSize;
+ uint32_t biWidth;
+ uint32_t biHeight;
+ uint16_t biPlanes;
+ uint16_t biBitCount;
+ uint32_t biCompression;
+ uint32_t biSizeImage;
+ uint32_t biXPelsPerMeter;
+ uint32_t biYPelsPerMeter;
+ uint32_t biClrUsed;
+ uint32_t biClrImportant;
+}BMP_STRUCT;
+
+
+
+
+typedef struct
+{
+  uint16_t posX;
+  uint16_t posY;
+  uint16_t width;
+  uint16_t height;
+  uint16_t txtColor;
+  uint16_t bgColor;
+  const uint8_t *text;
+  FONT_INFO * font;
+  uint8_t pressed;
+  void (*fpPress)(uint8_t);
+  void (*fpReleased)(uint8_t);
+  void (*fpOut)(uint8_t);
+  uint8_t index;
+}btn_t;
+
+
+
+
+typedef struct
+{
+  uint16_t posX;
+  uint16_t posY;
+  uint16_t width;
+  uint16_t height;
+  uint16_t sldColor;
+  uint16_t bgColor;
+  uint16_t borderColor;
+  uint16_t cursorWidth;
+  uint8_t pressed;
+  uint16_t value;
+  uint16_t oldValue;
+  uint16_t steps;
+  void (*fpPress)();
+}sld_t;
+# 138 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_ButtonCreate(uint16_t posX, uint16_t posY,
+                      uint16_t width, uint16_t height,
+                      uint16_t txtColor, uint16_t bgColor,
+                      const uint8_t * textOrBmp, FONT_INFO * font,
+                      void (*fpPress)(uint8_t), void (* fpReleased)(uint8_t), void (* fpOut)(uint8_t),
+                      btn_t * button,
+                      uint8_t index);
+# 153 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_ButtonDraw(btn_t * button);
+
+
+
+
+
+
+
+void LCD_ButtonUpdate(btn_t * button);
+# 175 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_SliderCreate(uint16_t posX, uint16_t posY,
+                      uint16_t width, uint16_t height,
+                      uint16_t sldColor, uint16_t bgColor, uint16_t borderColor,
+                      uint16_t cursorWidth,
+                      uint16_t steps,
+                      void (* fpPress)(),
+                      sld_t * slider);
+
+
+
+
+
+
+
+void LCD_SliderUpdate(sld_t * slider);
+
+
+
+
+
+
+
+void LCD_SliderDraw(sld_t * slider);
+# 206 "stateMachine/../libraries/lcd_highlevel.h"
+uint8_t LCD_InSlider(sld_t * slider, uint16_t posX, uint16_t posY);
+# 215 "stateMachine/../libraries/lcd_highlevel.h"
+uint8_t LCD_InButton(btn_t * button, uint16_t posX, uint16_t posY);
+# 224 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_Init(void);
+# 233 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_Fill(uint16_t color);
+
+
+
+
+
+
+
+void LCD_SetPixel(uint16_t posX,uint16_t posY, uint16_t color);
+# 256 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
+  uint16_t posY2,uint8_t fill,uint16_t color);
+# 271 "stateMachine/../libraries/lcd_highlevel.h"
+void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
+        uint16_t posX, uint16_t posY, uint16_t color, uint16_t bg_color);
+# 281 "stateMachine/../libraries/lcd_highlevel.h"
+uint16_t RGB2LCD(uint8_t * colorTableEntry);
+# 295 "stateMachine/../libraries/lcd_highlevel.h"
+uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
+# 2 "stateMachine/display.h" 2
+
 void displayInit();
 void displaySM(Event ev);
 void displayController();
 # 7 "stateMachine/display.c" 2
+
+extern const FONT_INFO arialNarrow_12ptFontInfo;
 
 typedef enum state{WELCOME,PARAMETERS,INGAME} state;
 enum state displayState;
@@ -205,10 +361,30 @@ void displaySM(Event ev)
    switch(displayState)
     {
         case WELCOME:
+            if((ev==evOnePlayer)||(ev==evTwoPlayer))
+            {
+                displayState=INGAME;
+                displayController();
+            }
+            if(ev==evParameters)
+            {
+                displayState=PARAMETERS;
+                displayController();
+            }
             break;
         case PARAMETERS:
+            if(ev==evLeaveParameters)
+            {
+                displayState=WELCOME;
+                displayController();
+            }
             break;
         case INGAME:
+            if(ev==evNewGame)
+            {
+                displayState=WELCOME;
+                displayController();
+            }
             break;
         default:
             break;
@@ -220,14 +396,20 @@ void displayController()
     {
         case WELCOME:
 
+            LCD_Fill(0b1111111111111111);
+            LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
             break;
         case PARAMETERS:
 
+            LCD_Fill(0b1111111111111111);
+            LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
             break;
         case INGAME:
 
 
 
+            LCD_Fill(0b1111111111111111);
+            LCD_DrawText("INGAME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
             break;
         default:
             break;

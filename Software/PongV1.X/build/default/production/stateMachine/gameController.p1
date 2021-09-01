@@ -1,14 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/gameController.c
 [; ;stateMachine/gameController.c: 9: enum state gameControllerState;
-[c E78 0 1 2 .. ]
-[n E78 state NOGAME LOCAL ONLINE  ]
+[c E79 0 1 2 .. ]
+[n E79 state NOGAME LOCAL ONLINE  ]
 "4 stateMachine/gameController.h
 [; ;stateMachine/gameController.h: 4: void gameControllerController();
 [v _gameControllerController `(v ~T0 @X0 0 e? ]
 "9 stateMachine/gameController.c
 [; ;stateMachine/gameController.c: 9: enum state gameControllerState;
-[v _gameControllerState `E78 ~T0 @X0 1 e ]
+[v _gameControllerState `E79 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/gameController.c: 11: void gameControllerInit()
 [v _gameControllerInit `(v ~T0 @X0 1 ef ]
@@ -19,7 +19,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/gameController.c: 13:     gameControllerState=NOGAME;
-[e = _gameControllerState . `E78 0 ]
+[e = _gameControllerState . `E79 0 ]
 "14
 [; ;stateMachine/gameController.c: 14:     gameControllerController();
 [e ( _gameControllerController ..  ]
@@ -75,9 +75,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 5  ]
 [e :U 6 ]
-[e [\ -> _gameControllerState `ui , $ -> . `E78 0 `ui 7
- , $ -> . `E78 1 `ui 8
- , $ -> . `E78 2 `ui 9
+[e [\ -> _gameControllerState `ui , $ -> . `E79 0 `ui 7
+ , $ -> . `E79 1 `ui 8
+ , $ -> . `E79 2 `ui 9
  10 ]
 [e :U 5 ]
 "32
@@ -127,9 +127,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 12  ]
 [e :U 13 ]
-[e [\ -> _gameControllerState `ui , $ -> . `E78 0 `ui 14
- , $ -> . `E78 1 `ui 15
- , $ -> . `E78 2 `ui 16
+[e [\ -> _gameControllerState `ui , $ -> . `E79 0 `ui 14
+ , $ -> . `E79 1 `ui 15
+ , $ -> . `E79 2 `ui 16
  17 ]
 [e :U 12 ]
 "46

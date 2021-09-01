@@ -858,9 +858,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _LCD_PowerOff ]
 [f ]
-"54
-[; ;libraries/lcd_lowlevel.c: 54:   LATC2 = 1;
-[e = _LATC2 -> -> 1 `i `b ]
 "55
 [; ;libraries/lcd_lowlevel.c: 55: }
 [e :UE 833 ]

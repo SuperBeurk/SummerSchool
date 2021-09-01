@@ -11,6 +11,9 @@ enum state sleepState;
 void sleepInit()
 {
     sleepState=WAKEUP;
+    displayInit();
+    gameControllerInit();
+    touchScreenInit();
     sleepController();    
 }
 void sleepSM(Event ev)

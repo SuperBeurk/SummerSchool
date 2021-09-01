@@ -51,7 +51,7 @@ void LCD_Lowlevel_Init(void)
 /******************************************************************************/
 void LCD_PowerOff(void)
 {
-  LCD_BACKLIGHT = 1;  // turn off backlight
+  //LCD_BACKLIGHT = 1;  // turn off backlight
 }
 /******************************************************************************/
 /* FUNCTION : lcd_read                                                        */

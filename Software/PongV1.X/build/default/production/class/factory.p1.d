@@ -7,5 +7,9 @@ class/gameParameters.h  \
 class/score.h  \
 class/../stateMachine/sleepSM.h  \
 class/../stateMachine/../xf/xf.h  \
+class/../stateMachine/display.h  \
+class/../stateMachine/../libraries/lcd_highlevel.h  \
+class/../stateMachine/gameController.h  \
 class/../stateMachine/touchScreenSM.h  \
-class/paddle.h 
+class/paddle.h  \
+class/../libraries/arialNarrow_12ptBitmaps.c 

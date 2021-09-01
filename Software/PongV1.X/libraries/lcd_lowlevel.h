@@ -231,8 +231,8 @@
 #define LCD_DATA_BUS      PORTA
 #define DIR_LCD_DATA_BUS  TRISA
 
-#define LCD_BACKLIGHT_DIR   TRISC2
-#define LCD_BACKLIGHT       LATC2
+//#define LCD_BACKLIGHT_DIR   TRISC1
+//#define LCD_BACKLIGHT       LATC1
 
 //------------------------------------------------------------------------------
 // Macro definition for very fast access

@@ -159,8 +159,8 @@ void LCD_Init(void)
   LCD_Cmd(GAMMA_CURVE);         //gamma curve 3
   LCD_Data(0x01);
   LCD_Cmd(CMD_DISPON);          //display ON
-  LCD_BACKLIGHT_DIR = 0;
-  LCD_BACKLIGHT = 0;
+  //LCD_BACKLIGHT_DIR = 0;
+  //LCD_BACKLIGHT = 0;
   #elif DISPLAY_NHD == 18
   LCD_Lowlevel_Init();          // ports initialisation
   LCD_Cmd(CMD_SLPOUT);

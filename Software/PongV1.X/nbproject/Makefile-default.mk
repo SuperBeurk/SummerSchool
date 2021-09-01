@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=class/ball.c class/paddle.c class/factory.c libraries/arialNarrow_12ptBitmaps.c libraries/arialRoundedMTBold18ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c xf/xf.c configuration_bits.c main.c stateMachine/display.c stateMachine/gameController.c class/score.c class/welcomeMenu.c class/gameParameters.c
+SOURCEFILES_QUOTED_IF_SPACED=class/ball.c class/paddle.c class/factory.c class/score.c class/welcomeMenu.c class/gameParameters.c libraries/arialNarrow_12ptBitmaps.c libraries/arialRoundedMTBold18ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/welcomeMenu.p1 ${OBJECTDIR}/class/gameParameters.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/class/ball.p1.d ${OBJECTDIR}/class/paddle.p1.d ${OBJECTDIR}/class/factory.p1.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d ${OBJECTDIR}/xf/xf.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/stateMachine/display.p1.d ${OBJECTDIR}/stateMachine/gameController.p1.d ${OBJECTDIR}/class/score.p1.d ${OBJECTDIR}/class/welcomeMenu.p1.d ${OBJECTDIR}/class/gameParameters.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/welcomeMenu.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/class/ball.p1.d ${OBJECTDIR}/class/paddle.p1.d ${OBJECTDIR}/class/factory.p1.d ${OBJECTDIR}/class/score.p1.d ${OBJECTDIR}/class/welcomeMenu.p1.d ${OBJECTDIR}/class/gameParameters.p1.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d ${OBJECTDIR}/stateMachine/display.p1.d ${OBJECTDIR}/stateMachine/gameController.p1.d ${OBJECTDIR}/xf/xf.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/main.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/welcomeMenu.p1 ${OBJECTDIR}/class/gameParameters.p1
+OBJECTFILES=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/welcomeMenu.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1
 
 # Source Files
-SOURCEFILES=class/ball.c class/paddle.c class/factory.c libraries/arialNarrow_12ptBitmaps.c libraries/arialRoundedMTBold18ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c xf/xf.c configuration_bits.c main.c stateMachine/display.c stateMachine/gameController.c class/score.c class/welcomeMenu.c class/gameParameters.c
+SOURCEFILES=class/ball.c class/paddle.c class/factory.c class/score.c class/welcomeMenu.c class/gameParameters.c libraries/arialNarrow_12ptBitmaps.c libraries/arialRoundedMTBold18ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c
 
 
 CFLAGS=
@@ -97,7 +97,7 @@ ${OBJECTDIR}/class/ball.p1: class/ball.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/ball.p1.d 
 	@${RM} ${OBJECTDIR}/class/ball.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/ball.p1 class/ball.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/ball.p1 class/ball.c 
 	@-${MV} ${OBJECTDIR}/class/ball.d ${OBJECTDIR}/class/ball.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/ball.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -105,7 +105,7 @@ ${OBJECTDIR}/class/paddle.p1: class/paddle.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/paddle.p1.d 
 	@${RM} ${OBJECTDIR}/class/paddle.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/paddle.p1 class/paddle.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/paddle.p1 class/paddle.c 
 	@-${MV} ${OBJECTDIR}/class/paddle.d ${OBJECTDIR}/class/paddle.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/paddle.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -113,103 +113,15 @@ ${OBJECTDIR}/class/factory.p1: class/factory.c  nbproject/Makefile-${CND_CONF}.m
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/factory.p1.d 
 	@${RM} ${OBJECTDIR}/class/factory.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/factory.p1 class/factory.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/factory.p1 class/factory.c 
 	@-${MV} ${OBJECTDIR}/class/factory.d ${OBJECTDIR}/class/factory.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/factory.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1: libraries/arialNarrow_12ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 libraries/arialNarrow_12ptBitmaps.c 
-	@-${MV} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1: libraries/arialRoundedMTBold18ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 libraries/arialRoundedMTBold18ptBitmaps.c 
-	@-${MV} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/lcd_highlevel.p1: libraries/lcd_highlevel.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/lcd_highlevel.p1 libraries/lcd_highlevel.c 
-	@-${MV} ${OBJECTDIR}/libraries/lcd_highlevel.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/lcd_lowlevel.p1: libraries/lcd_lowlevel.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/lcd_lowlevel.p1 libraries/lcd_lowlevel.c 
-	@-${MV} ${OBJECTDIR}/libraries/lcd_lowlevel.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/sleepSM.p1: stateMachine/sleepSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/sleepSM.p1 stateMachine/sleepSM.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/sleepSM.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/sleepSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/touchScreenSM.p1: stateMachine/touchScreenSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/touchScreenSM.p1 stateMachine/touchScreenSM.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/touchScreenSM.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/xf/xf.p1: xf/xf.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/xf" 
-	@${RM} ${OBJECTDIR}/xf/xf.p1.d 
-	@${RM} ${OBJECTDIR}/xf/xf.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/xf/xf.p1 xf/xf.c 
-	@-${MV} ${OBJECTDIR}/xf/xf.d ${OBJECTDIR}/xf/xf.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/xf/xf.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/configuration_bits.p1: configuration_bits.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/configuration_bits.p1.d 
-	@${RM} ${OBJECTDIR}/configuration_bits.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/configuration_bits.p1 configuration_bits.c 
-	@-${MV} ${OBJECTDIR}/configuration_bits.d ${OBJECTDIR}/configuration_bits.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/configuration_bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/display.p1: stateMachine/display.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/display.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/display.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/display.p1 stateMachine/display.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/display.d ${OBJECTDIR}/stateMachine/display.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/gameController.p1: stateMachine/gameController.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/gameController.p1 stateMachine/gameController.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/gameController.d ${OBJECTDIR}/stateMachine/gameController.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/gameController.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/class/score.p1: class/score.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/score.p1.d 
 	@${RM} ${OBJECTDIR}/class/score.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/score.p1 class/score.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/score.p1 class/score.c 
 	@-${MV} ${OBJECTDIR}/class/score.d ${OBJECTDIR}/class/score.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/score.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -217,7 +129,7 @@ ${OBJECTDIR}/class/welcomeMenu.p1: class/welcomeMenu.c  nbproject/Makefile-${CND
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/welcomeMenu.p1.d 
 	@${RM} ${OBJECTDIR}/class/welcomeMenu.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/welcomeMenu.p1 class/welcomeMenu.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/welcomeMenu.p1 class/welcomeMenu.c 
 	@-${MV} ${OBJECTDIR}/class/welcomeMenu.d ${OBJECTDIR}/class/welcomeMenu.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/welcomeMenu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -225,16 +137,104 @@ ${OBJECTDIR}/class/gameParameters.p1: class/gameParameters.c  nbproject/Makefile
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/gameParameters.p1.d 
 	@${RM} ${OBJECTDIR}/class/gameParameters.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/gameParameters.p1 class/gameParameters.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/gameParameters.p1 class/gameParameters.c 
 	@-${MV} ${OBJECTDIR}/class/gameParameters.d ${OBJECTDIR}/class/gameParameters.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/gameParameters.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1: libraries/arialNarrow_12ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 libraries/arialNarrow_12ptBitmaps.c 
+	@-${MV} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1: libraries/arialRoundedMTBold18ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 libraries/arialRoundedMTBold18ptBitmaps.c 
+	@-${MV} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/lcd_highlevel.p1: libraries/lcd_highlevel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/lcd_highlevel.p1 libraries/lcd_highlevel.c 
+	@-${MV} ${OBJECTDIR}/libraries/lcd_highlevel.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/lcd_lowlevel.p1: libraries/lcd_lowlevel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/lcd_lowlevel.p1 libraries/lcd_lowlevel.c 
+	@-${MV} ${OBJECTDIR}/libraries/lcd_lowlevel.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/sleepSM.p1: stateMachine/sleepSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/sleepSM.p1 stateMachine/sleepSM.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/sleepSM.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/sleepSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/touchScreenSM.p1: stateMachine/touchScreenSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/touchScreenSM.p1 stateMachine/touchScreenSM.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/touchScreenSM.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/display.p1: stateMachine/display.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/display.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/display.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/display.p1 stateMachine/display.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/display.d ${OBJECTDIR}/stateMachine/display.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/gameController.p1: stateMachine/gameController.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/gameController.p1 stateMachine/gameController.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/gameController.d ${OBJECTDIR}/stateMachine/gameController.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/gameController.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/xf/xf.p1: xf/xf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/xf" 
+	@${RM} ${OBJECTDIR}/xf/xf.p1.d 
+	@${RM} ${OBJECTDIR}/xf/xf.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/xf/xf.p1 xf/xf.c 
+	@-${MV} ${OBJECTDIR}/xf/xf.d ${OBJECTDIR}/xf/xf.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/xf/xf.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/configuration_bits.p1: configuration_bits.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/configuration_bits.p1.d 
+	@${RM} ${OBJECTDIR}/configuration_bits.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/configuration_bits.p1 configuration_bits.c 
+	@-${MV} ${OBJECTDIR}/configuration_bits.d ${OBJECTDIR}/configuration_bits.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/configuration_bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/class/ball.p1: class/ball.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/ball.p1.d 
 	@${RM} ${OBJECTDIR}/class/ball.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/ball.p1 class/ball.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/ball.p1 class/ball.c 
 	@-${MV} ${OBJECTDIR}/class/ball.d ${OBJECTDIR}/class/ball.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/ball.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -242,7 +242,7 @@ ${OBJECTDIR}/class/paddle.p1: class/paddle.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/paddle.p1.d 
 	@${RM} ${OBJECTDIR}/class/paddle.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/paddle.p1 class/paddle.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/paddle.p1 class/paddle.c 
 	@-${MV} ${OBJECTDIR}/class/paddle.d ${OBJECTDIR}/class/paddle.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/paddle.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -250,103 +250,15 @@ ${OBJECTDIR}/class/factory.p1: class/factory.c  nbproject/Makefile-${CND_CONF}.m
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/factory.p1.d 
 	@${RM} ${OBJECTDIR}/class/factory.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/factory.p1 class/factory.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/factory.p1 class/factory.c 
 	@-${MV} ${OBJECTDIR}/class/factory.d ${OBJECTDIR}/class/factory.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/factory.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1: libraries/arialNarrow_12ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 libraries/arialNarrow_12ptBitmaps.c 
-	@-${MV} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1: libraries/arialRoundedMTBold18ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 libraries/arialRoundedMTBold18ptBitmaps.c 
-	@-${MV} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/lcd_highlevel.p1: libraries/lcd_highlevel.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/lcd_highlevel.p1 libraries/lcd_highlevel.c 
-	@-${MV} ${OBJECTDIR}/libraries/lcd_highlevel.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/libraries/lcd_lowlevel.p1: libraries/lcd_lowlevel.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/libraries" 
-	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
-	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/libraries/lcd_lowlevel.p1 libraries/lcd_lowlevel.c 
-	@-${MV} ${OBJECTDIR}/libraries/lcd_lowlevel.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/sleepSM.p1: stateMachine/sleepSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/sleepSM.p1 stateMachine/sleepSM.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/sleepSM.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/sleepSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/touchScreenSM.p1: stateMachine/touchScreenSM.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/touchScreenSM.p1 stateMachine/touchScreenSM.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/touchScreenSM.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/xf/xf.p1: xf/xf.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/xf" 
-	@${RM} ${OBJECTDIR}/xf/xf.p1.d 
-	@${RM} ${OBJECTDIR}/xf/xf.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/xf/xf.p1 xf/xf.c 
-	@-${MV} ${OBJECTDIR}/xf/xf.d ${OBJECTDIR}/xf/xf.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/xf/xf.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/configuration_bits.p1: configuration_bits.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/configuration_bits.p1.d 
-	@${RM} ${OBJECTDIR}/configuration_bits.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/configuration_bits.p1 configuration_bits.c 
-	@-${MV} ${OBJECTDIR}/configuration_bits.d ${OBJECTDIR}/configuration_bits.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/configuration_bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/display.p1: stateMachine/display.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/display.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/display.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/display.p1 stateMachine/display.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/display.d ${OBJECTDIR}/stateMachine/display.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/stateMachine/gameController.p1: stateMachine/gameController.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/stateMachine" 
-	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1.d 
-	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/stateMachine/gameController.p1 stateMachine/gameController.c 
-	@-${MV} ${OBJECTDIR}/stateMachine/gameController.d ${OBJECTDIR}/stateMachine/gameController.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/stateMachine/gameController.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/class/score.p1: class/score.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/score.p1.d 
 	@${RM} ${OBJECTDIR}/class/score.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/score.p1 class/score.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/score.p1 class/score.c 
 	@-${MV} ${OBJECTDIR}/class/score.d ${OBJECTDIR}/class/score.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/score.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -354,7 +266,7 @@ ${OBJECTDIR}/class/welcomeMenu.p1: class/welcomeMenu.c  nbproject/Makefile-${CND
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/welcomeMenu.p1.d 
 	@${RM} ${OBJECTDIR}/class/welcomeMenu.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/welcomeMenu.p1 class/welcomeMenu.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/welcomeMenu.p1 class/welcomeMenu.c 
 	@-${MV} ${OBJECTDIR}/class/welcomeMenu.d ${OBJECTDIR}/class/welcomeMenu.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/welcomeMenu.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -362,9 +274,97 @@ ${OBJECTDIR}/class/gameParameters.p1: class/gameParameters.c  nbproject/Makefile
 	@${MKDIR} "${OBJECTDIR}/class" 
 	@${RM} ${OBJECTDIR}/class/gameParameters.p1.d 
 	@${RM} ${OBJECTDIR}/class/gameParameters.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/class/gameParameters.p1 class/gameParameters.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/class/gameParameters.p1 class/gameParameters.c 
 	@-${MV} ${OBJECTDIR}/class/gameParameters.d ${OBJECTDIR}/class/gameParameters.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/class/gameParameters.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1: libraries/arialNarrow_12ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 libraries/arialNarrow_12ptBitmaps.c 
+	@-${MV} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1: libraries/arialRoundedMTBold18ptBitmaps.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1 libraries/arialRoundedMTBold18ptBitmaps.c 
+	@-${MV} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.d ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/arialRoundedMTBold18ptBitmaps.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/lcd_highlevel.p1: libraries/lcd_highlevel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/lcd_highlevel.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/lcd_highlevel.p1 libraries/lcd_highlevel.c 
+	@-${MV} ${OBJECTDIR}/libraries/lcd_highlevel.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_highlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/libraries/lcd_lowlevel.p1: libraries/lcd_lowlevel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/libraries" 
+	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
+	@${RM} ${OBJECTDIR}/libraries/lcd_lowlevel.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/libraries/lcd_lowlevel.p1 libraries/lcd_lowlevel.c 
+	@-${MV} ${OBJECTDIR}/libraries/lcd_lowlevel.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/sleepSM.p1: stateMachine/sleepSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/sleepSM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/sleepSM.p1 stateMachine/sleepSM.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/sleepSM.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/sleepSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/touchScreenSM.p1: stateMachine/touchScreenSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/touchScreenSM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/touchScreenSM.p1 stateMachine/touchScreenSM.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/touchScreenSM.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/display.p1: stateMachine/display.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/display.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/display.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/display.p1 stateMachine/display.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/display.d ${OBJECTDIR}/stateMachine/display.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/stateMachine/gameController.p1: stateMachine/gameController.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/stateMachine" 
+	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1.d 
+	@${RM} ${OBJECTDIR}/stateMachine/gameController.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/stateMachine/gameController.p1 stateMachine/gameController.c 
+	@-${MV} ${OBJECTDIR}/stateMachine/gameController.d ${OBJECTDIR}/stateMachine/gameController.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/stateMachine/gameController.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/xf/xf.p1: xf/xf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/xf" 
+	@${RM} ${OBJECTDIR}/xf/xf.p1.d 
+	@${RM} ${OBJECTDIR}/xf/xf.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/xf/xf.p1 xf/xf.c 
+	@-${MV} ${OBJECTDIR}/xf/xf.d ${OBJECTDIR}/xf/xf.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/xf/xf.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/configuration_bits.p1: configuration_bits.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/configuration_bits.p1.d 
+	@${RM} ${OBJECTDIR}/configuration_bits.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/configuration_bits.p1 configuration_bits.c 
+	@-${MV} ${OBJECTDIR}/configuration_bits.d ${OBJECTDIR}/configuration_bits.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/configuration_bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

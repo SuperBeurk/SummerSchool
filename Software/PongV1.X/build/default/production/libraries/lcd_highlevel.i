@@ -9496,8 +9496,6 @@ void LCD_Init(void)
   PORTA = 0x26; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
   PORTA = 0x01; LATC3 = 0; LATC3 = 1;;
   PORTA = 0x29; LATC4 = 0; LATC3 = 0; LATC3 = 1; LATC4 = 1;;
-  TRISC2 = 0;
-  LATC2 = 0;
 # 207 "libraries/lcd_highlevel.c"
 }
 # 218 "libraries/lcd_highlevel.c"

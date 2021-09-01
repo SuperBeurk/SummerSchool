@@ -15,12 +15,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF505 ~T0 @X0 0 e ]
 [p i __delay ]
-"19503 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 19503: extern volatile __bit TRISC2 __attribute__((address(0x7CA2)));
-[v _TRISC2 `Vb ~T0 @X0 0 e@31906 ]
-"17886
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h: 17886: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
-[v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
 [v F6075 `(v ~T0 @X0 0 t? ]
 [v F413 `(v ~T0 @X0 0 t? ]
 "108 libraries/lcd_highlevel.h
@@ -1229,12 +1223,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _LATC3 -> -> 0 `i `b ]
 [e = _LATC3 -> -> 1 `i `b ]
 [e = _LATC4 -> -> 1 `i `b ]
-"162
-[; ;libraries/lcd_highlevel.c: 162:   TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
-"163
-[; ;libraries/lcd_highlevel.c: 163:   LATC2 = 0;
-[e = _LATC2 -> -> 0 `i `b ]
 "207
 [; ;libraries/lcd_highlevel.c: 207: }
 [e :UE 832 ]

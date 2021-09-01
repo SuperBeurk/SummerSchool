@@ -3,6 +3,9 @@ main.c  \
 configuration_bits.c  \
 xf/xf.h  \
 stateMachine/sleepSM.h  \
+stateMachine/display.h  \
+stateMachine/../libraries/lcd_highlevel.h  \
+stateMachine/gameController.h  \
 stateMachine/touchScreenSM.h  \
 class/factory.h  \
 class/ball.h  \
@@ -11,4 +14,7 @@ class/gameParameters.h  \
 class/score.h  \
 class/../stateMachine/sleepSM.h  \
 class/../stateMachine/touchScreenSM.h  \
-class/paddle.h 
+class/../stateMachine/display.h  \
+class/../stateMachine/gameController.h  \
+class/paddle.h  \
+class/../libraries/arialNarrow_12ptBitmaps.c 

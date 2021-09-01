@@ -9237,7 +9237,7 @@ void LCD_Lowlevel_Init(void)
 # 52 "libraries/lcd_lowlevel.c"
 void LCD_PowerOff(void)
 {
-  LATC2 = 1;
+
 }
 # 64 "libraries/lcd_lowlevel.c"
 uint16_t LCD_Read(uint16_t posX, uint16_t posY)

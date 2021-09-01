@@ -1,138 +1,248 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 stateMachine/display.c
-[; ;stateMachine/display.c: 9: enum state displayState;
-[c E78 0 1 2 .. ]
-[n E78 state WELCOME PARAMETERS INGAME  ]
-"4 stateMachine/display.h
-[; ;stateMachine/display.h: 4: void displayController();
+"11 stateMachine/display.c
+[; ;stateMachine/display.c: 11: enum state displayState;
+[c E235 0 1 2 .. ]
+[n E235 state WELCOME PARAMETERS INGAME  ]
+"5 stateMachine/display.h
+[; ;stateMachine/display.h: 5: void displayController();
 [v _displayController `(v ~T0 @X0 0 e? ]
-"9 stateMachine/display.c
-[; ;stateMachine/display.c: 9: enum state displayState;
-[v _displayState `E78 ~T0 @X0 1 e ]
-"11
-[; ;stateMachine/display.c: 11: void displayInit()
-[v _displayInit `(v ~T0 @X0 1 ef ]
+"23 stateMachine/display.c
+[; ;stateMachine/display.c: 23:             if((ev==evOnePlayer)||(ev==evTwoPlayer))
+[c E39 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParameters evGameUpdate evNewGame  ]
+"233 stateMachine/../libraries/lcd_highlevel.h
+[; ;stateMachine/../libraries/lcd_highlevel.h: 233: void LCD_Fill(uint16_t color);
+[v _LCD_Fill `(v ~T0 @X0 0 ef1`us ]
 "12
-[; ;stateMachine/display.c: 12: {
+[; ;stateMachine/../libraries/lcd_highlevel.h: 12: {
+[s S3 `uc 1 `us 1 ]
+[n S3 . width offset ]
+"18
+[; ;stateMachine/../libraries/lcd_highlevel.h: 18: {
+[s S4 `uc 1 `uc 1 `uc 1 `*CS3 1 `*Cuc 1 ]
+[n S4 . height start_char end_char descriptor bitmap ]
+"59 stateMachine/display.c
+[; ;stateMachine/display.c: 59:             LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+[c E86 0 1 2 .. ]
+[n E86 . A_LEFT A_RIGHT A_CENTER  ]
+"271 stateMachine/../libraries/lcd_highlevel.h
+[; ;stateMachine/../libraries/lcd_highlevel.h: 271: void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
+[v _LCD_DrawText `(v ~T0 @X0 0 ef7`*Cuc`*CS4`E86`us`us`us`us ]
+"8 stateMachine/display.c
+[; ;stateMachine/display.c: 8: extern const FONT_INFO arialNarrow_12ptFontInfo;
+[v _arialNarrow_12ptFontInfo `CS4 ~T0 @X0 0 e ]
+"11 stateMachine/display.c
+[; ;stateMachine/display.c: 11: enum state displayState;
+[v _displayState `E235 ~T0 @X0 1 e ]
+"13
+[; ;stateMachine/display.c: 13: void displayInit()
+[v _displayInit `(v ~T0 @X0 1 ef ]
+"14
+[; ;stateMachine/display.c: 14: {
 {
 [e :U _displayInit ]
 [f ]
-"13
-[; ;stateMachine/display.c: 13:     displayState=WELCOME;
-[e = _displayState . `E78 0 ]
-"14
-[; ;stateMachine/display.c: 14:     displayController();
-[e ( _displayController ..  ]
 "15
-[; ;stateMachine/display.c: 15: }
-[e :UE 3 ]
-}
+[; ;stateMachine/display.c: 15:     displayState=WELCOME;
+[e = _displayState . `E235 0 ]
 "16
-[; ;stateMachine/display.c: 16: void displaySM(Event ev)
-[v _displaySM `(v ~T0 @X0 1 ef1`uc ]
+[; ;stateMachine/display.c: 16:     displayController();
+[e ( _displayController ..  ]
 "17
-[; ;stateMachine/display.c: 17: {
+[; ;stateMachine/display.c: 17: }
+[e :UE 8 ]
+}
+"18
+[; ;stateMachine/display.c: 18: void displaySM(Event ev)
+[v _displaySM `(v ~T0 @X0 1 ef1`uc ]
+"19
+[; ;stateMachine/display.c: 19: {
 {
 [e :U _displaySM ]
-"16
-[; ;stateMachine/display.c: 16: void displaySM(Event ev)
-[v _ev `uc ~T0 @X0 1 r1 ]
-"17
-[; ;stateMachine/display.c: 17: {
-[f ]
 "18
-[; ;stateMachine/display.c: 18:    switch(displayState)
-[e $U 6  ]
+[; ;stateMachine/display.c: 18: void displaySM(Event ev)
+[v _ev `uc ~T0 @X0 1 r1 ]
 "19
-[; ;stateMachine/display.c: 19:     {
-{
+[; ;stateMachine/display.c: 19: {
+[f ]
 "20
-[; ;stateMachine/display.c: 20:         case WELCOME:
-[e :U 7 ]
+[; ;stateMachine/display.c: 20:    switch(displayState)
+[e $U 11  ]
 "21
-[; ;stateMachine/display.c: 21:             break;
-[e $U 5  ]
+[; ;stateMachine/display.c: 21:     {
+{
 "22
-[; ;stateMachine/display.c: 22:         case PARAMETERS:
-[e :U 8 ]
+[; ;stateMachine/display.c: 22:         case WELCOME:
+[e :U 12 ]
 "23
-[; ;stateMachine/display.c: 23:             break;
-[e $U 5  ]
+[; ;stateMachine/display.c: 23:             if((ev==evOnePlayer)||(ev==evTwoPlayer))
+[e $ ! || == -> _ev `i -> . `E39 5 `i == -> _ev `i -> . `E39 6 `i 13  ]
 "24
-[; ;stateMachine/display.c: 24:         case INGAME:
-[e :U 9 ]
+[; ;stateMachine/display.c: 24:             {
+{
 "25
-[; ;stateMachine/display.c: 25:             break;
-[e $U 5  ]
+[; ;stateMachine/display.c: 25:                 displayState=INGAME;
+[e = _displayState . `E235 2 ]
 "26
-[; ;stateMachine/display.c: 26:         default:
-[e :U 10 ]
+[; ;stateMachine/display.c: 26:                 displayController();
+[e ( _displayController ..  ]
 "27
-[; ;stateMachine/display.c: 27:             break;
-[e $U 5  ]
+[; ;stateMachine/display.c: 27:             }
+}
+[e :U 13 ]
 "28
-[; ;stateMachine/display.c: 28:     }
-}
-[e $U 5  ]
-[e :U 6 ]
-[e [\ -> _displayState `ui , $ -> . `E78 0 `ui 7
- , $ -> . `E78 1 `ui 8
- , $ -> . `E78 2 `ui 9
- 10 ]
-[e :U 5 ]
+[; ;stateMachine/display.c: 28:             if(ev==evParameters)
+[e $ ! == -> _ev `i -> . `E39 7 `i 14  ]
 "29
-[; ;stateMachine/display.c: 29: }
-[e :UE 4 ]
-}
+[; ;stateMachine/display.c: 29:             {
+{
 "30
-[; ;stateMachine/display.c: 30: void displayController()
-[v _displayController `(v ~T0 @X0 1 ef ]
+[; ;stateMachine/display.c: 30:                 displayState=PARAMETERS;
+[e = _displayState . `E235 1 ]
 "31
-[; ;stateMachine/display.c: 31: {
+[; ;stateMachine/display.c: 31:                 displayController();
+[e ( _displayController ..  ]
+"32
+[; ;stateMachine/display.c: 32:             }
+}
+[e :U 14 ]
+"33
+[; ;stateMachine/display.c: 33:             break;
+[e $U 10  ]
+"34
+[; ;stateMachine/display.c: 34:         case PARAMETERS:
+[e :U 15 ]
+"35
+[; ;stateMachine/display.c: 35:             if(ev==evLeaveParameters)
+[e $ ! == -> _ev `i -> . `E39 8 `i 16  ]
+"36
+[; ;stateMachine/display.c: 36:             {
+{
+"37
+[; ;stateMachine/display.c: 37:                 displayState=WELCOME;
+[e = _displayState . `E235 0 ]
+"38
+[; ;stateMachine/display.c: 38:                 displayController();
+[e ( _displayController ..  ]
+"39
+[; ;stateMachine/display.c: 39:             }
+}
+[e :U 16 ]
+"40
+[; ;stateMachine/display.c: 40:             break;
+[e $U 10  ]
+"41
+[; ;stateMachine/display.c: 41:         case INGAME:
+[e :U 17 ]
+"42
+[; ;stateMachine/display.c: 42:             if(ev==evNewGame)
+[e $ ! == -> _ev `i -> . `E39 10 `i 18  ]
+"43
+[; ;stateMachine/display.c: 43:             {
+{
+"44
+[; ;stateMachine/display.c: 44:                 displayState=WELCOME;
+[e = _displayState . `E235 0 ]
+"45
+[; ;stateMachine/display.c: 45:                 displayController();
+[e ( _displayController ..  ]
+"46
+[; ;stateMachine/display.c: 46:             }
+}
+[e :U 18 ]
+"47
+[; ;stateMachine/display.c: 47:             break;
+[e $U 10  ]
+"48
+[; ;stateMachine/display.c: 48:         default:
+[e :U 19 ]
+"49
+[; ;stateMachine/display.c: 49:             break;
+[e $U 10  ]
+"50
+[; ;stateMachine/display.c: 50:     }
+}
+[e $U 10  ]
+[e :U 11 ]
+[e [\ -> _displayState `ui , $ -> . `E235 0 `ui 12
+ , $ -> . `E235 1 `ui 15
+ , $ -> . `E235 2 `ui 17
+ 19 ]
+[e :U 10 ]
+"51
+[; ;stateMachine/display.c: 51: }
+[e :UE 9 ]
+}
+"52
+[; ;stateMachine/display.c: 52: void displayController()
+[v _displayController `(v ~T0 @X0 1 ef ]
+"53
+[; ;stateMachine/display.c: 53: {
 {
 [e :U _displayController ]
 [f ]
-"32
-[; ;stateMachine/display.c: 32:     switch(displayState)
-[e $U 13  ]
-"33
-[; ;stateMachine/display.c: 33:     {
+"54
+[; ;stateMachine/display.c: 54:     switch(displayState)
+[e $U 22  ]
+"55
+[; ;stateMachine/display.c: 55:     {
 {
-"34
-[; ;stateMachine/display.c: 34:         case WELCOME:
-[e :U 14 ]
-"36
-[; ;stateMachine/display.c: 36:             break;
-[e $U 12  ]
-"37
-[; ;stateMachine/display.c: 37:         case PARAMETERS:
-[e :U 15 ]
-"39
-[; ;stateMachine/display.c: 39:             break;
-[e $U 12  ]
-"40
-[; ;stateMachine/display.c: 40:         case INGAME:
-[e :U 16 ]
-"44
-[; ;stateMachine/display.c: 44:             break;
-[e $U 12  ]
-"45
-[; ;stateMachine/display.c: 45:         default:
-[e :U 17 ]
-"46
-[; ;stateMachine/display.c: 46:             break;
-[e $U 12  ]
-"47
-[; ;stateMachine/display.c: 47:     }
+"56
+[; ;stateMachine/display.c: 56:         case WELCOME:
+[e :U 23 ]
+"58
+[; ;stateMachine/display.c: 58:             LCD_Fill(0b1111111111111111);
+[e ( _LCD_Fill (1 -> -> 65535 `ui `us ]
+"59
+[; ;stateMachine/display.c: 59:             LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+[e ( _LCD_DrawText (4 , , , , , , :s 1C &U _arialNarrow_12ptFontInfo . `E86 2 -> -> 50 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+"60
+[; ;stateMachine/display.c: 60:             break;
+[e $U 21  ]
+"61
+[; ;stateMachine/display.c: 61:         case PARAMETERS:
+[e :U 24 ]
+"63
+[; ;stateMachine/display.c: 63:             LCD_Fill(0b1111111111111111);
+[e ( _LCD_Fill (1 -> -> 65535 `ui `us ]
+"64
+[; ;stateMachine/display.c: 64:             LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+[e ( _LCD_DrawText (4 , , , , , , :s 2C &U _arialNarrow_12ptFontInfo . `E86 2 -> -> 50 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+"65
+[; ;stateMachine/display.c: 65:             break;
+[e $U 21  ]
+"66
+[; ;stateMachine/display.c: 66:         case INGAME:
+[e :U 25 ]
+"70
+[; ;stateMachine/display.c: 70:             LCD_Fill(0b1111111111111111);
+[e ( _LCD_Fill (1 -> -> 65535 `ui `us ]
+"71
+[; ;stateMachine/display.c: 71:             LCD_DrawText("INGAME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+[e ( _LCD_DrawText (4 , , , , , , :s 3C &U _arialNarrow_12ptFontInfo . `E86 2 -> -> 50 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+"72
+[; ;stateMachine/display.c: 72:             break;
+[e $U 21  ]
+"73
+[; ;stateMachine/display.c: 73:         default:
+[e :U 26 ]
+"74
+[; ;stateMachine/display.c: 74:             break;
+[e $U 21  ]
+"75
+[; ;stateMachine/display.c: 75:     }
 }
-[e $U 12  ]
-[e :U 13 ]
-[e [\ -> _displayState `ui , $ -> . `E78 0 `ui 14
- , $ -> . `E78 1 `ui 15
- , $ -> . `E78 2 `ui 16
- 17 ]
-[e :U 12 ]
-"48
-[; ;stateMachine/display.c: 48: }
-[e :UE 11 ]
+[e $U 21  ]
+[e :U 22 ]
+[e [\ -> _displayState `ui , $ -> . `E235 0 `ui 23
+ , $ -> . `E235 1 `ui 24
+ , $ -> . `E235 2 `ui 25
+ 26 ]
+[e :U 21 ]
+"76
+[; ;stateMachine/display.c: 76: }
+[e :UE 20 ]
 }
+[a 2C 80 65 82 65 77 69 84 69 82 83 0 ]
+[a 1C 87 69 76 67 79 77 69 0 ]
+[a 3C 73 78 71 65 77 69 0 ]
