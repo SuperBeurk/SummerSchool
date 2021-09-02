@@ -1,3 +1,5 @@
+#ifndef _FACTORY
+#define _FACTORY
 #include "ball.h"
 #include "gameParameters.h"
 #include "score.h"
@@ -13,3 +15,4 @@
 
 void Factory_init();
 void Factory_exec();
+#endif

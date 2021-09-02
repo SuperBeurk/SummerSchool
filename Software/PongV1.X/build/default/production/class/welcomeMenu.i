@@ -8,6 +8,8 @@
 # 2 "<built-in>" 2
 # 1 "class/welcomeMenu.c" 2
 # 1 "class/welcomeMenu.h" 1
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
 
 
@@ -276,7 +278,7 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 1 "class/welcomeMenu.h" 2
+# 3 "class/welcomeMenu.h" 2
 
 void WelcomeMenu_draw();
 # 1 "class/welcomeMenu.c" 2

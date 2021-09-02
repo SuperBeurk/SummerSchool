@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"3 class/paddle.h
-[; ;class/paddle.h: 3: {
+"5 class/paddle.h
+[; ;class/paddle.h: 5: {
 [s S6 `us 1 `us 1 `us 1 `us 1 `us 1 ]
 [n S6 Paddle x y w h color ]
 "2 class/paddle.c

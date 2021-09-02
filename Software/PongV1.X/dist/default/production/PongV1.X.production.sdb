@@ -9,8 +9,8 @@ A_LEFT 0
 A_RIGHT 1
 A_CENTER 2
 ]
-"51
-[e E5943 myEvents `uc
+"63
+[e E5951 myEvents `uc
 NULLEVENT 0
 evPress 1
 evRelease 2
@@ -30,7 +30,7 @@ A_RIGHT 1
 A_CENTER 2
 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[e E5945 state `uc
+[e E5972 state `uc
 WAKEUP 0
 BACKLIGHTOFF 1
 SLEEP 2
@@ -50,7 +50,7 @@ evGameUpdate 9
 evNewGame 10
 ]
 "15 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[e E6418 state `uc
+[e E6445 state `uc
 WAITING 0
 CALCULATEPOSITION 1
 ]
@@ -68,7 +68,7 @@ evLeaveParameters 8
 evGameUpdate 9
 evNewGame 10
 ]
-"129
+"91
 [e E86 . `uc
 A_LEFT 0
 A_RIGHT 1
@@ -198,8 +198,14 @@ evNewGame 10
 [v _Ball_init Ball_init `(v  1 e 1 0 ]
 "14 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
 [v _Factory_init Factory_init `(v  1 e 1 0 ]
-"46
+"58
 [v _Factory_exec Factory_exec `(v  1 e 1 0 ]
+"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
+[v _GameParameters_init GameParameters_init `(v  1 e 1 0 ]
+"21
+[v _GameParameters_setX GameParameters_setX `(v  1 e 1 0 ]
+"25
+[v _GameParameters_setY GameParameters_setY `(v  1 e 1 0 ]
 "2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/paddle.c
 [v _Paddle_init Paddle_init `(v  1 e 1 0 ]
 "20 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
@@ -250,6 +256,10 @@ evNewGame 10
 [v _touchScreenSM touchScreenSM `(v  1 e 1 0 ]
 "54
 [v _touchScreenController touchScreenController `(v  1 e 1 0 ]
+"106
+[v _configTouch configTouch `(v  1 e 1 0 ]
+"120
+[v _configMeasure configMeasure `(v  1 e 1 0 ]
 "25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
 [v _XF_init XF_init `(v  1 e 1 0 ]
 "49
@@ -268,19 +278,29 @@ evNewGame 10
 "186
 [v _LEAVECRITICAL LEAVECRITICAL `(v  1 s 1 LEAVECRITICAL ]
 [v i2_LEAVECRITICAL LEAVECRITICAL `(v  1 s 1 i2_LEAVECRITICAL ]
-"7 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X/libraries/arialNarrow_12ptBitmaps.c
-[v _arialNarrow_12ptBitmaps arialNarrow_12ptBitmaps `C[1575]uc  1 e 1575 0 ]
-[s S120 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
-"1627
-[v _arialNarrow_12ptDescriptors arialNarrow_12ptDescriptors `C[95]S120  1 e 285 0 ]
-"1727
-[s S123 . 7 `uc 1 height 1 0 `uc 1 start_char 1 1 `uc 1 end_char 1 2 `*.25CS120 1 descriptor 2 3 `*.25Cuc 1 bitmap 2 5 ]
-[v _arialNarrow_12ptFontInfo arialNarrow_12ptFontInfo `CS123  1 e 7 0 ]
-"2614 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18lf25k22.h
+"2614 C:/Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+[s S194 . 1 `uc 1 CCP2M 1 0 :4:0 
+`uc 1 DC2B 1 0 :2:4 
+`uc 1 P2M 1 0 :2:6 
+]
+"3189
+[s S198 . 1 `uc 1 CCP2M0 1 0 :1:0 
+`uc 1 CCP2M1 1 0 :1:1 
+`uc 1 CCP2M2 1 0 :1:2 
+`uc 1 CCP2M3 1 0 :1:3 
+`uc 1 DC2B0 1 0 :1:4 
+`uc 1 DC2B1 1 0 :1:5 
+`uc 1 P2M0 1 0 :1:6 
+`uc 1 P2M1 1 0 :1:7 
+]
+[u S207 . 1 `S194 1 . 1 0 `S198 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES207  1 e 1 @3942 ]
+"3256
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @3943 ]
 "6175
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
-[s S873 . 1 `uc 1 RB0 1 0 :1:0 
+[s S981 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -290,7 +310,7 @@ evNewGame 10
 `uc 1 RB7 1 0 :1:7 
 ]
 "6554
-[s S882 . 1 `uc 1 INT0 1 0 :1:0 
+[s S990 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -299,7 +319,7 @@ evNewGame 10
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S891 . 1 `uc 1 AN12 1 0 :1:0 
+[s S999 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -308,7 +328,7 @@ evNewGame 10
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S900 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S1008 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 C12IN3M 1 0 :1:1 
 `uc 1 P1B 1 0 :1:2 
 `uc 1 C12IN2M 1 0 :1:3 
@@ -317,7 +337,7 @@ evNewGame 10
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S909 . 1 `uc 1 SRI 1 0 :1:0 
+[s S1017 . 1 `uc 1 SRI 1 0 :1:0 
 `uc 1 C12IN3N 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 C12IN2N 1 0 :1:3 
@@ -326,36 +346,53 @@ evNewGame 10
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S918 . 1 `uc 1 CCP4 1 0 :1:0 
+[s S1026 . 1 `uc 1 CCP4 1 0 :1:0 
 `uc 1 P1C 1 0 :1:1 
 `uc 1 SDA2 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S925 . 1 `uc 1 SS2 1 0 :1:0 
+[s S1033 . 1 `uc 1 SS2 1 0 :1:0 
 `uc 1 SCL2 1 0 :1:1 
 `uc 1 SDI2 1 0 :1:2 
 `uc 1 P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P3A 1 0 :1:5 
 ]
-[s S932 . 1 `uc 1 NOT_SS2 1 0 :1:0 
+[s S1040 . 1 `uc 1 NOT_SS2 1 0 :1:0 
 ]
-[s S934 . 1 `uc 1 nSS2 1 0 :1:0 
+[s S1042 . 1 `uc 1 nSS2 1 0 :1:0 
 `uc 1 SCK2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SDO2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P2B 1 0 :1:5 
 ]
-[s S941 . 1 `uc 1 . 1 0 :3:0 
+[s S1049 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S944 . 1 `S873 1 . 1 0 `S882 1 . 1 0 `S891 1 . 1 0 `S900 1 . 1 0 `S909 1 . 1 0 `S918 1 . 1 0 `S925 1 . 1 0 `S932 1 . 1 0 `S934 1 . 1 0 `S941 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES944  1 e 1 @3969 ]
+[u S1052 . 1 `S981 1 . 1 0 `S990 1 . 1 0 `S999 1 . 1 0 `S1008 1 . 1 0 `S1017 1 . 1 0 `S1026 1 . 1 0 `S1033 1 . 1 0 `S1040 1 . 1 0 `S1042 1 . 1 0 `S1049 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1052  1 e 1 @3969 ]
 "7581
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+[s S226 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"12423
+[s S230 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S238 . 1 `S226 1 . 1 0 `S230 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES238  1 e 1 @4026 ]
+"12473
+[v _PR2 PR2 `VEuc  1 e 1 @4027 ]
 "12642
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
 "12781
@@ -408,6 +445,8 @@ evNewGame 10
 [v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
 "19290
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
+"19335
+[v _TMR2IF TMR2IF `VEb  1 e 0 @31985 ]
 "19476
 [v _TRISB1 TRISB1 `VEb  1 e 0 @31897 ]
 "19479
@@ -426,6 +465,14 @@ evNewGame 10
 [v _TRISC4 TRISC4 `VEb  1 e 0 @31908 ]
 "19512
 [v _TRISC5 TRISC5 `VEb  1 e 0 @31909 ]
+"7 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X/libraries/arialNarrow_12ptBitmaps.c
+[v _arialNarrow_12ptBitmaps arialNarrow_12ptBitmaps `C[1575]uc  1 e 1575 0 ]
+[s S120 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
+"1627
+[v _arialNarrow_12ptDescriptors arialNarrow_12ptDescriptors `C[95]S120  1 e 285 0 ]
+"1727
+[s S123 . 7 `uc 1 height 1 0 `uc 1 start_char 1 1 `uc 1 end_char 1 2 `*.25CS120 1 descriptor 2 3 `*.25Cuc 1 bitmap 2 5 ]
+[v _arialNarrow_12ptFontInfo arialNarrow_12ptFontInfo `CS123  1 e 7 0 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
@@ -442,6 +489,9 @@ evNewGame 10
 [s S24 Ball 8 `us 1 x 2 0 `us 1 y 2 2 `us 1 r 2 4 `us 1 color 2 6 ]
 "10
 [v _b1 b1 `S24  1 e 8 0 ]
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+"12
+[v _g1 g1 `S143  1 e 8 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/arialRoundedMTBold18ptBitmaps.c
 [v _arialRoundedMTBold18ptBitmaps arialRoundedMTBold18ptBitmaps `C[4325]uc  1 e 4325 0 ]
 "2579
@@ -451,13 +501,13 @@ evNewGame 10
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
 [v _gameControllerState gameControllerState `E79  1 e 1 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepState sleepState `E5945  1 e 1 0 ]
+[v _sleepState sleepState `E5972  1 e 1 0 ]
 "15 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
-[v _touchScreenState touchScreenState `E6418  1 e 1 0 ]
-[s S1123 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
+[v _touchScreenState touchScreenState `E6445  1 e 1 0 ]
+[s S1253 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
 "15 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[s S1126 XF 38 `[8]S1123 1 timerList 24 0 `[12]uc 1 eventQueue 12 24 `uc 1 in 1 36 `uc 1 out 1 37 ]
-[v _theXF theXF `S1126  1 e 38 0 ]
+[s S1256 XF 38 `[8]S1253 1 timerList 24 0 `[12]uc 1 eventQueue 12 24 `uc 1 in 1 36 `uc 1 out 1 37 ]
+[v _theXF theXF `S1256  1 e 38 0 ]
 "49 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -466,7 +516,7 @@ evNewGame 10
 "14 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
 [v _Factory_init Factory_init `(v  1 e 1 0 ]
 {
-"45
+"57
 } 0
 "11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
 [v _sleepInit sleepInit `(v  1 e 1 0 ]
@@ -521,6 +571,13 @@ evNewGame 10
 [v LCD_Lowlevel_Init@i i `ul  1 a 4 18 ]
 "42
 } 0
+"2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
+[v _GameParameters_init GameParameters_init `(v  1 e 1 0 ]
+{
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+[v GameParameters_init@s s `*.39S143  1 p 2 17 ]
+"8
+} 0
 "2 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/ball.c
 [v _Ball_init Ball_init `(v  1 e 1 0 ]
 {
@@ -528,82 +585,87 @@ evNewGame 10
 [v Ball_init@b b `*.39S24  1 p 2 17 ]
 "8
 } 0
-"46 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
+"58 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/factory.c
 [v _Factory_exec Factory_exec `(v  1 e 1 0 ]
 {
-"49
-[v Factory_exec@ev ev `uc  1 a 1 86 ]
-"59
+"61
+[v Factory_exec@ev ev `uc  1 a 1 4 ]
+"71
 } 0
 "25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
 [v _touchScreenSM touchScreenSM `(v  1 e 1 0 ]
 {
 [v touchScreenSM@ev ev `uc  1 a 1 wreg ]
 [v touchScreenSM@ev ev `uc  1 a 1 wreg ]
-[v touchScreenSM@ev ev `uc  1 a 1 60 ]
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+[v touchScreenSM@g g `*.39S143  1 p 2 0 ]
+[v touchScreenSM@ev ev `uc  1 a 1 82 ]
 "50
 } 0
 "54
 [v _touchScreenController touchScreenController `(v  1 e 1 0 ]
 {
-"106
-[v touchScreenController@valueY valueY `us  1 a 2 82 ]
-"92
-[v touchScreenController@valueX valueX `us  1 a 2 80 ]
+"77
+[v touchScreenController@valueY valueY `us  1 a 2 80 ]
+"72
+[v touchScreenController@valueX valueX `us  1 a 2 78 ]
 "56
-[v touchScreenController@s s `[20]uc  1 a 20 60 ]
-"140
+[v touchScreenController@s s `[20]uc  1 a 20 58 ]
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+"54
+[v touchScreenController@g g `*.39S143  1 p 2 54 ]
+"105
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S1671 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S1801 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1671  1 a 6 52 ]
+[v sprintf@f f `S1801  1 a 6 48 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 50 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 46 ]
 "9
-[v sprintf@s s `*.39uc  1 p 2 44 ]
-[v sprintf@fmt fmt `*.25Cuc  1 p 2 46 ]
+[v sprintf@s s `*.39uc  1 p 2 40 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 42 ]
 "23
 } 0
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 42 ]
-[s S1697 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 38 ]
+[s S1827 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S1697  1 p 2 36 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 38 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 40 ]
+[v vfprintf@fp fp `*.39S1827  1 p 2 32 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 34 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 36 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "696
-[v vfpfcnvrt@ll ll `o  1 a 8 28 ]
-[s S1697 _IO_FILE 0 ]
+[v vfpfcnvrt@ll ll `o  1 a 8 24 ]
+[s S1827 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S1697  1 p 2 54 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 56 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 58 ]
+[v vfpfcnvrt@fp fp `*.39S1827  1 p 2 18 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 20 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 22 ]
 "1387
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
 "290
-[v dtoa@n n `o  1 a 8 16 ]
+[v dtoa@n n `o  1 a 8 8 ]
 "289
-[v dtoa@i i `i  1 a 2 24 ]
-[v dtoa@s s `i  1 a 2 14 ]
-[v dtoa@w w `i  1 a 2 12 ]
-[v dtoa@p p `i  1 a 2 10 ]
-[s S1697 _IO_FILE 0 ]
+[v dtoa@i i `i  1 a 2 16 ]
+[v dtoa@s s `i  1 a 2 6 ]
+[v dtoa@w w `i  1 a 2 4 ]
+[v dtoa@p p `i  1 a 2 2 ]
+[s S1827 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S1697  1 p 2 44 ]
+[v dtoa@fp fp `*.39S1827  1 p 2 44 ]
 [v dtoa@d d `o  1 p 8 46 ]
 "328
 } 0
@@ -613,9 +675,9 @@ evNewGame 10
 "74
 [v pad@w w `i  1 a 2 42 ]
 [v pad@i i `i  1 a 2 40 ]
-[s S1697 _IO_FILE 0 ]
+[s S1827 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S1697  1 p 2 33 ]
+[v pad@fp fp `*.39S1827  1 p 2 33 ]
 [v pad@buf buf `*.39uc  1 p 2 35 ]
 [v pad@p p `i  1 p 2 37 ]
 "95
@@ -629,16 +691,16 @@ evNewGame 10
 [v fputs@c c `uc  1 a 1 30 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 26 ]
-[s S1671 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S1671  1 p 2 28 ]
+[s S1801 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1801  1 p 2 28 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 17 ]
-[s S1671 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S1671  1 p 2 19 ]
+[s S1801 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1801  1 p 2 19 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -676,6 +738,20 @@ evNewGame 10
 [v ___aodiv@divisor divisor `o  1 p 8 25 ]
 "43
 } 0
+"106 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
+[v _configTouch configTouch `(v  1 e 1 0 ]
+{
+"119
+} 0
+"120
+[v _configMeasure configMeasure `(v  1 e 1 0 ]
+{
+[v configMeasure@channel channel `a  1 a 1 wreg ]
+[v configMeasure@channel channel `a  1 a 1 wreg ]
+"122
+[v configMeasure@channel channel `a  1 a 1 17 ]
+"147
+} 0
 "96 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
 [v _XF_scheduleTimer XF_scheduleTimer `(uc  1 e 1 0 ]
 {
@@ -686,6 +762,22 @@ evNewGame 10
 [v XF_scheduleTimer@ev ev `uc  1 p 1 20 ]
 [v XF_scheduleTimer@inISR inISR `a  1 p 1 21 ]
 "116
+} 0
+"25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
+[v _GameParameters_setY GameParameters_setY `(v  1 e 1 0 ]
+{
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+[v GameParameters_setY@s s `*.39S143  1 p 2 17 ]
+[v GameParameters_setY@value value `us  1 p 2 19 ]
+"28
+} 0
+"21
+[v _GameParameters_setX GameParameters_setX `(v  1 e 1 0 ]
+{
+[s S143 GameParameters 8 `us 1 backlight 2 0 `us 1 player 2 2 `us 1 x 2 4 `us 1 y 2 6 ]
+[v GameParameters_setX@s s `*.39S143  1 p 2 17 ]
+[v GameParameters_setX@value value `us  1 p 2 19 ]
+"24
 } 0
 "19 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
 [v _sleepSM sleepSM `(v  1 e 1 0 ]

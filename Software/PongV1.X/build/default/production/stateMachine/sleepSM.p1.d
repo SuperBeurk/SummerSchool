@@ -5,4 +5,6 @@ stateMachine/../xf/xf.h  \
 stateMachine/display.h  \
 stateMachine/../libraries/lcd_highlevel.h  \
 stateMachine/gameController.h  \
-stateMachine/touchScreenSM.h 
+stateMachine/touchScreenSM.h  \
+stateMachine/../class/gameParameters.h  \
+stateMachine/../class/../libraries/lcd_highlevel.h 

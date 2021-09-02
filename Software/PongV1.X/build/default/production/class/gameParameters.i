@@ -8,6 +8,9 @@
 # 2 "<built-in>" 2
 # 1 "class/gameParameters.c" 2
 # 1 "class/gameParameters.h" 1
+
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
 
 
@@ -276,23 +279,29 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 1 "class/gameParameters.h" 2
+# 4 "class/gameParameters.h" 2
 
 typedef struct GameParameters
 {
     uint16_t backlight;
     uint16_t player;
+    uint16_t x;
+    uint16_t y;
 }GameParameters;
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBacklight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_draw(struct GameParameters* s);
+void GameParameters_setX(struct GameParameters* s, uint16_t value);
+void GameParameters_setY(struct GameParameters* s, uint16_t value);
 # 1 "class/gameParameters.c" 2
 
 void GameParameters_init(struct GameParameters* s)
 {
     s->backlight = 0;
     s->player = 0;
+    s->x=0;
+    s->y=0;
 }
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
 {
@@ -305,4 +314,12 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
 void GameParameters_draw(struct GameParameters* s)
 {
 
+}
+void GameParameters_setX(struct GameParameters* s, uint16_t value)
+{
+    s->x=value;
+}
+void GameParameters_setY(struct GameParameters* s, uint16_t value)
+{
+    s->y=value;
 }

@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/display.c: 11: enum state displayState;
 [c E235 0 1 2 .. ]
 [n E235 state WELCOME PARAMETERS INGAME  ]
-"5 stateMachine/display.h
-[; ;stateMachine/display.h: 5: void displayController();
+"7 stateMachine/display.h
+[; ;stateMachine/display.h: 7: void displayController();
 [v _displayController `(v ~T0 @X0 0 e? ]
 "23 stateMachine/display.c
 [; ;stateMachine/display.c: 23:             if((ev==evOnePlayer)||(ev==evTwoPlayer))

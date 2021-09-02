@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/gameController.c: 9: enum state gameControllerState;
 [c E79 0 1 2 .. ]
 [n E79 state NOGAME LOCAL ONLINE  ]
-"4 stateMachine/gameController.h
-[; ;stateMachine/gameController.h: 4: void gameControllerController();
+"6 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 6: void gameControllerController();
 [v _gameControllerController `(v ~T0 @X0 0 e? ]
 "9 stateMachine/gameController.c
 [; ;stateMachine/gameController.c: 9: enum state gameControllerState;

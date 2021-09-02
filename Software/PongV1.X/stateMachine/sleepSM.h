@@ -1,3 +1,5 @@
+#ifndef _SLEEPSM
+#define _SLEEPSM
 #include "../xf/xf.h"
 #include "display.h"
 #include "gameController.h"
@@ -5,3 +7,4 @@
 void sleepInit();
 void sleepSM(Event ev);
 void sleepController();
+#endif

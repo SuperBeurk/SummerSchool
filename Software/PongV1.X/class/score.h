@@ -1,3 +1,5 @@
+#ifndef _SCORE
+#define _SCORE
 #include "../libraries/lcd_highlevel.h"
 typedef struct Score
 {
@@ -8,3 +10,4 @@ void Score_init(struct Score* s);
 void Score_setHomeScore(struct Score* s, uint16_t value);
 void Score_setAwayScore(struct Score* s, uint16_t value);
 void Score_draw(struct Score* s);
+#endif

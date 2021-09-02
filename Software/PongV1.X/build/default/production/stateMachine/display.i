@@ -14,6 +14,8 @@
 
 
 # 1 "stateMachine/display.h" 1
+
+
 # 1 "stateMachine/../xf/xf.h" 1
 # 14 "stateMachine/../xf/xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
@@ -185,7 +187,7 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 
 
 void XF_decrementAndQueueTimers();
-# 1 "stateMachine/display.h" 2
+# 3 "stateMachine/display.h" 2
 
 # 1 "stateMachine/../libraries/lcd_highlevel.h" 1
 # 11 "stateMachine/../libraries/lcd_highlevel.h"
@@ -339,7 +341,7 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "stateMachine/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 2 "stateMachine/display.h" 2
+# 4 "stateMachine/display.h" 2
 
 void displayInit();
 void displaySM(Event ev);

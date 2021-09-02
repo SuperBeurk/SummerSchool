@@ -1,3 +1,5 @@
+#ifndef _BALL
+#define _BALL
 #include "../libraries/lcd_highlevel.h"
 typedef struct Ball
 {
@@ -12,3 +14,4 @@ void Ball_setPosX(struct Ball* b, uint16_t value);
 void Ball_setPosY(struct Ball* b, uint16_t value);
 void Ball_setColor(struct Ball* b, uint16_t value);
 void Ball_draw(struct Ball* b);
+#endif

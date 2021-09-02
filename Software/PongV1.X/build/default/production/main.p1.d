@@ -7,14 +7,10 @@ stateMachine/display.h  \
 stateMachine/../libraries/lcd_highlevel.h  \
 stateMachine/gameController.h  \
 stateMachine/touchScreenSM.h  \
+stateMachine/../class/gameParameters.h  \
+stateMachine/../class/../libraries/lcd_highlevel.h  \
 class/factory.h  \
-class/ball.h  \
-class/../libraries/lcd_highlevel.h  \
-class/gameParameters.h  \
-class/score.h  \
-class/../stateMachine/sleepSM.h  \
-class/../stateMachine/touchScreenSM.h  \
-class/../stateMachine/display.h  \
-class/../stateMachine/gameController.h  \
-class/paddle.h  \
-class/../libraries/arialNarrow_12ptBitmaps.c 
+stateMachine/../class/ball.h  \
+stateMachine/../class/score.h  \
+stateMachine/../class/paddle.h  \
+stateMachine/../class/../libraries/arialNarrow_12ptBitmaps.c 

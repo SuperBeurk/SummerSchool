@@ -28,13 +28,24 @@ void Factory_init()
     GIE=1;
     INT1IE=0;
     
-    TRISC1=0;
+
     T0CON=0b10000110;
     TMR0H=0xE7;
     TMR0L=0x95;
     TMR0IE=1;
+    
+    //PWM BACKLIGHT
+    TRISC1=0;
+    PR2=255;
+    CCP2CONbits.CCP2M = 0xC;
+    CCPR2L = 255;         
+    CCP2CONbits.DC2B = 0; 
+    TMR2IF=0;
+    T2CONbits.T2CKPS0 = 1;  // 4. Set TMR2 prescale and enable Timer2
+    T2CONbits.T2CKPS1 = 0;
+    T2CONbits.TMR2ON = 1;
     //AD
-    ADCON2=0b00100110;
+    ADCON2=0b10100110;
     
     //Init pic and all SM
     XF_init();
@@ -42,6 +53,7 @@ void Factory_init()
     Ball_init(&b1);
     Paddle_init(&p1);
     Paddle_init(&p2);
+    GameParameters_init(&g1);
 }
 void Factory_exec()
 {
@@ -51,7 +63,7 @@ void Factory_exec()
     if (ev != NULLEVENT)
     {
         sleepSM(ev);
-        touchScreenSM(ev);
+        touchScreenSM(ev,&g1);
         displaySM(ev);
         gameControllerSM(ev);
     }

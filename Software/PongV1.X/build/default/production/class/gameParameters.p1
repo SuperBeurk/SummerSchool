@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"3 class/gameParameters.h
-[; ;class/gameParameters.h: 3: {
-[s S6 `us 1 `us 1 ]
-[n S6 GameParameters backlight player ]
+"6 class/gameParameters.h
+[; ;class/gameParameters.h: 6: {
+[s S6 `us 1 `us 1 `us 1 `us 1 ]
+[n S6 GameParameters backlight player x y ]
 "2 class/gameParameters.c
 [; ;class/gameParameters.c: 2: void GameParameters_init(struct GameParameters* s)
 [v _GameParameters_init `(v ~T0 @X0 1 ef1`*S6 ]
@@ -23,65 +23,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/gameParameters.c: 5:     s->player = 0;
 [e = . *U _s 1 -> -> 0 `i `us ]
 "6
-[; ;class/gameParameters.c: 6: }
+[; ;class/gameParameters.c: 6:     s->x=0;
+[e = . *U _s 2 -> -> 0 `i `us ]
+"7
+[; ;class/gameParameters.c: 7:     s->y=0;
+[e = . *U _s 3 -> -> 0 `i `us ]
+"8
+[; ;class/gameParameters.c: 8: }
 [e :UE 7 ]
 }
-"7
-[; ;class/gameParameters.c: 7: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
+"9
+[; ;class/gameParameters.c: 9: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
 [v _GameParameters_setBackLight `(v ~T0 @X0 1 ef2`*S6`us ]
-"8
-[; ;class/gameParameters.c: 8: {
+"10
+[; ;class/gameParameters.c: 10: {
 {
 [e :U _GameParameters_setBackLight ]
-"7
-[; ;class/gameParameters.c: 7: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
+"9
+[; ;class/gameParameters.c: 9: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
 [v _s `*S6 ~T0 @X0 1 r1 ]
 [v _value `us ~T0 @X0 1 r2 ]
-"8
-[; ;class/gameParameters.c: 8: {
-[f ]
-"9
-[; ;class/gameParameters.c: 9:     s->backlight = value;
-[e = . *U _s 0 _value ]
 "10
-[; ;class/gameParameters.c: 10: }
+[; ;class/gameParameters.c: 10: {
+[f ]
+"11
+[; ;class/gameParameters.c: 11:     s->backlight = value;
+[e = . *U _s 0 _value ]
+"12
+[; ;class/gameParameters.c: 12: }
 [e :UE 8 ]
 }
-"11
-[; ;class/gameParameters.c: 11: void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
+"13
+[; ;class/gameParameters.c: 13: void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
 [v _GameParameters_setPlayer `(v ~T0 @X0 1 ef2`*S6`us ]
-"12
-[; ;class/gameParameters.c: 12: {
+"14
+[; ;class/gameParameters.c: 14: {
 {
 [e :U _GameParameters_setPlayer ]
-"11
-[; ;class/gameParameters.c: 11: void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
+"13
+[; ;class/gameParameters.c: 13: void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
 [v _s `*S6 ~T0 @X0 1 r1 ]
 [v _value `us ~T0 @X0 1 r2 ]
-"12
-[; ;class/gameParameters.c: 12: {
-[f ]
-"13
-[; ;class/gameParameters.c: 13:     s->player = value;
-[e = . *U _s 1 _value ]
 "14
-[; ;class/gameParameters.c: 14: }
+[; ;class/gameParameters.c: 14: {
+[f ]
+"15
+[; ;class/gameParameters.c: 15:     s->player = value;
+[e = . *U _s 1 _value ]
+"16
+[; ;class/gameParameters.c: 16: }
 [e :UE 9 ]
 }
-"15
-[; ;class/gameParameters.c: 15: void GameParameters_draw(struct GameParameters* s)
+"17
+[; ;class/gameParameters.c: 17: void GameParameters_draw(struct GameParameters* s)
 [v _GameParameters_draw `(v ~T0 @X0 1 ef1`*S6 ]
-"16
-[; ;class/gameParameters.c: 16: {
+"18
+[; ;class/gameParameters.c: 18: {
 {
 [e :U _GameParameters_draw ]
-"15
-[; ;class/gameParameters.c: 15: void GameParameters_draw(struct GameParameters* s)
+"17
+[; ;class/gameParameters.c: 17: void GameParameters_draw(struct GameParameters* s)
 [v _s `*S6 ~T0 @X0 1 r1 ]
-"16
-[; ;class/gameParameters.c: 16: {
-[f ]
 "18
-[; ;class/gameParameters.c: 18: }
+[; ;class/gameParameters.c: 18: {
+[f ]
+"20
+[; ;class/gameParameters.c: 20: }
 [e :UE 10 ]
+}
+"21
+[; ;class/gameParameters.c: 21: void GameParameters_setX(struct GameParameters* s, uint16_t value)
+[v _GameParameters_setX `(v ~T0 @X0 1 ef2`*S6`us ]
+"22
+[; ;class/gameParameters.c: 22: {
+{
+[e :U _GameParameters_setX ]
+"21
+[; ;class/gameParameters.c: 21: void GameParameters_setX(struct GameParameters* s, uint16_t value)
+[v _s `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"22
+[; ;class/gameParameters.c: 22: {
+[f ]
+"23
+[; ;class/gameParameters.c: 23:     s->x=value;
+[e = . *U _s 2 _value ]
+"24
+[; ;class/gameParameters.c: 24: }
+[e :UE 11 ]
+}
+"25
+[; ;class/gameParameters.c: 25: void GameParameters_setY(struct GameParameters* s, uint16_t value)
+[v _GameParameters_setY `(v ~T0 @X0 1 ef2`*S6`us ]
+"26
+[; ;class/gameParameters.c: 26: {
+{
+[e :U _GameParameters_setY ]
+"25
+[; ;class/gameParameters.c: 25: void GameParameters_setY(struct GameParameters* s, uint16_t value)
+[v _s `*S6 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"26
+[; ;class/gameParameters.c: 26: {
+[f ]
+"27
+[; ;class/gameParameters.c: 27:     s->y=value;
+[e = . *U _s 3 _value ]
+"28
+[; ;class/gameParameters.c: 28: }
+[e :UE 12 ]
 }

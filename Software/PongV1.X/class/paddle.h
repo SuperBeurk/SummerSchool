@@ -1,3 +1,5 @@
+#ifndef _PADDLE
+#define _PADDLE
 #include "../libraries/lcd_highlevel.h"
 typedef struct Paddle
 {
@@ -14,3 +16,4 @@ void Paddle_setPosX(struct Paddle* p, uint16_t value);
 void Paddle_setPosY(struct Paddle* p, uint16_t value);
 void Paddle_setColor(struct Paddle* p, uint16_t value);
 void Paddle_draw(struct Paddle* p);
+#endif
