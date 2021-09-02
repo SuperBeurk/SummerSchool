@@ -9,11 +9,7 @@ typedef struct Paddle
     uint16_t h;
     uint16_t color;
 }Paddle;
-void Paddle_init(struct Paddle* p);
-void Paddle_setWidth(struct Paddle* p, uint16_t value);
-void Paddle_setHeight(struct Paddle* p, uint16_t value);
-void Paddle_setPosX(struct Paddle* p, uint16_t value);
-void Paddle_setPosY(struct Paddle* p, uint16_t value);
-void Paddle_setColor(struct Paddle* p, uint16_t value);
+void Paddle_init(struct Paddle* p,uint16_t team);
+void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
 void Paddle_draw(struct Paddle* p);
 #endif

@@ -5,10 +5,6 @@
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 
 //global variable
-Paddle p1;
-Paddle p2;
-Ball b1;
-Score s1;
 GameParameters g1;
 
 void Factory_init()
@@ -49,11 +45,9 @@ void Factory_init()
     
     //Init pic and all SM
     XF_init();
-    sleepInit();
-    Ball_init(&b1);
-    Paddle_init(&p1);
-    Paddle_init(&p2);
     GameParameters_init(&g1);
+    sleepInit(&g1);
+
 }
 void Factory_exec()
 {
@@ -64,8 +58,8 @@ void Factory_exec()
     {
         sleepSM(ev);
         touchScreenSM(ev,&g1);
-        displaySM(ev);
-        gameControllerSM(ev);
+        displaySM(ev,&g1);
+        gameControllerSM(ev,&g1);
     }
         
 }

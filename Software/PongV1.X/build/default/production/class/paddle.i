@@ -288,44 +288,58 @@ typedef struct Paddle
     uint16_t h;
     uint16_t color;
 }Paddle;
-void Paddle_init(struct Paddle* p);
-void Paddle_setWidth(struct Paddle* p, uint16_t value);
-void Paddle_setHeight(struct Paddle* p, uint16_t value);
-void Paddle_setPosX(struct Paddle* p, uint16_t value);
-void Paddle_setPosY(struct Paddle* p, uint16_t value);
-void Paddle_setColor(struct Paddle* p, uint16_t value);
+void Paddle_init(struct Paddle* p,uint16_t team);
+void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
 void Paddle_draw(struct Paddle* p);
 # 1 "class/paddle.c" 2
 
-void Paddle_init(struct Paddle* p)
+
+void Paddle_init(struct Paddle* p,uint16_t team)
 {
-    p->x = 0;
-    p->y = 0;
-    p->w = 0;
-    p->h = 0;
-    p->color = 0;
+    if(team)
+    {
+        p->x = 90;
+        p->y = 20;
+        p->w = 50;
+        p->h = 20;
+        p->color = 0b0000000000011111;
+    }
+    else
+    {
+        p->x = 90;
+        p->y = 280;
+        p->w = 50;
+        p->h = 20;
+        p->color = 0b0000000000011111;
+    }
+
 }
-void Paddle_setWidth(struct Paddle* p, uint16_t value)
+void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 {
-    p->w = value;
-}
-void Paddle_setHeight(struct Paddle* p, uint16_t value)
-{
-    p->h = value;
-}
-void Paddle_setPosX(struct Paddle* p, uint16_t value)
-{
-    p->x = value;
-}
-void Paddle_setPosY(struct Paddle* p, uint16_t value)
-{
-    p->y = value;
-}
-void Paddle_setColor(struct Paddle* p, uint16_t value)
-{
-    p->color = value;
+    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,0b1111111111111111);
+    if(add==1)
+    {
+        p->x=(p->x)+value;
+        if((p->x+p->w)>239)
+        {
+            p->x=239-(p->w);
+        }
+    }
+    else
+    {
+        if((p->x)<9)
+        {
+            p->x=0;
+        }
+        else
+        {
+            p->x=(p->x)-value;
+        }
+
+    }
 }
 void Paddle_draw(struct Paddle* p)
 {
 
+    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,p->color);
 }

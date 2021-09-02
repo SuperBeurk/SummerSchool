@@ -70,12 +70,21 @@ void touchScreenController(GameParameters* g)
             configMeasure(false);
             while((ADCON0&0x02)!=0){};
             uint16_t valueX;
-            valueX=(ADRESH<<8)+ADRESL;            
+            valueX=(ADRESH<<8)+ADRESL;
+            valueX=800-valueX;
+            if(valueX>=150)
+            {
+                valueX=(valueX-150)/2;
+            }else{valueX=0;} 
             //--------------yMeasurement  
             configMeasure(true);                             
             while((ADCON0&0x02)!=0){};            
             uint16_t valueY;
-            valueY=(ADRESH<<8)+ADRESL;                      
+            valueY=(ADRESH<<8)+ADRESL;
+            if(valueY>=125)
+            {
+                valueY=(valueY-125)/2;
+            }else{valueY=0;}
             XF_scheduleTimer(1,evTimerPos,false);
             //------------------------------------------------------------------
             //Pin configuration for realease touch
@@ -88,10 +97,10 @@ void touchScreenController(GameParameters* g)
             if(PORTBbits.RB1 == 0)
             {
                 sprintf(s,"X: %d",valueX);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_CENTER,100,100,BLACK,WHITE);
+                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,BLACK,WHITE);
                 GameParameters_setX(g,valueX);
                 sprintf(s,"Y: %d",valueY);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_CENTER,100,200,BLACK,WHITE);  
+                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,BLACK,WHITE);  
                 GameParameters_setY(g,valueY);
             }
             

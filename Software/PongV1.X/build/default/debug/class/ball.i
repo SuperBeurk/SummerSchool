@@ -1,4 +1,4 @@
-# 1 "class/welcomeMenu.c"
+# 1 "class/ball.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "class/welcomeMenu.c" 2
-# 1 "class/welcomeMenu.h" 1
+# 1 "class/ball.c" 2
+# 1 "class/ball.h" 1
 
 
 # 1 "class/../libraries/lcd_highlevel.h" 1
@@ -278,12 +278,38 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 3 "class/welcomeMenu.h" 2
+# 3 "class/ball.h" 2
 
-void WelcomeMenu_draw();
-# 1 "class/welcomeMenu.c" 2
-
-void WelcomeMenu_draw()
+typedef struct Ball
 {
+    uint16_t x;
+    uint16_t y;
+    uint16_t r;
+    uint16_t color;
+}Ball;
+void Ball_init(struct Ball* b);
+void Ball_setPosX(struct Ball* b, uint16_t value);
+void Ball_setPosY(struct Ball* b, uint16_t value);
+void Ball_draw(struct Ball* b);
+# 1 "class/ball.c" 2
 
+extern const FONT_INFO arialNarrow_12ptFontInfo;
+void Ball_init(struct Ball* b)
+{
+    b->x = 90;
+    b->y = 150;
+    b->r = 10;
+    b->color = 0b1111100000000000;
+}
+void Ball_setPosX(struct Ball* b, uint16_t value)
+{
+    b->x = value;
+}
+void Ball_setPosY(struct Ball* b, uint16_t value)
+{
+    b->y = value;
+}
+void Ball_draw(struct Ball* b)
+{
+    LCD_DrawText("O",&arialNarrow_12ptFontInfo, A_LEFT, b->x, b->y,b->color, 0b1111111111111111);
 }

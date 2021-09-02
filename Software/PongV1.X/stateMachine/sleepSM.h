@@ -4,7 +4,8 @@
 #include "display.h"
 #include "gameController.h"
 #include "touchScreenSM.h"
-void sleepInit();
+#include "../class/gameParameters.h"
+void sleepInit(GameParameters* g);
 void sleepSM(Event ev);
 void sleepController();
 #endif

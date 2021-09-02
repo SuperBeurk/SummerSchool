@@ -3,157 +3,178 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/paddle.h: 5: {
 [s S6 `us 1 `us 1 `us 1 `us 1 `us 1 ]
 [n S6 Paddle x y w h color ]
-"2 class/paddle.c
-[; ;class/paddle.c: 2: void Paddle_init(struct Paddle* p)
-[v _Paddle_init `(v ~T0 @X0 1 ef1`*S6 ]
-"3
-[; ;class/paddle.c: 3: {
+"256 class/../libraries/lcd_highlevel.h
+[; ;class/../libraries/lcd_highlevel.h: 256: void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
+[v _LCD_DrawRect `(v ~T0 @X0 0 ef6`us`us`us`us`uc`us ]
+"3 class/paddle.c
+[; ;class/paddle.c: 3: void Paddle_init(struct Paddle* p,uint16_t team)
+[v _Paddle_init `(v ~T0 @X0 1 ef2`*S6`us ]
+"4
+[; ;class/paddle.c: 4: {
 {
 [e :U _Paddle_init ]
-"2
-[; ;class/paddle.c: 2: void Paddle_init(struct Paddle* p)
-[v _p `*S6 ~T0 @X0 1 r1 ]
 "3
-[; ;class/paddle.c: 3: {
-[f ]
+[; ;class/paddle.c: 3: void Paddle_init(struct Paddle* p,uint16_t team)
+[v _p `*S6 ~T0 @X0 1 r1 ]
+[v _team `us ~T0 @X0 1 r2 ]
 "4
-[; ;class/paddle.c: 4:     p->x = 0;
-[e = . *U _p 0 -> -> 0 `i `us ]
+[; ;class/paddle.c: 4: {
+[f ]
 "5
-[; ;class/paddle.c: 5:     p->y = 0;
-[e = . *U _p 1 -> -> 0 `i `us ]
+[; ;class/paddle.c: 5:     if(team)
+[e $ ! != -> _team `ui -> -> 0 `i `ui 8  ]
 "6
-[; ;class/paddle.c: 6:     p->w = 0;
-[e = . *U _p 2 -> -> 0 `i `us ]
+[; ;class/paddle.c: 6:     {
+{
 "7
-[; ;class/paddle.c: 7:     p->h = 0;
-[e = . *U _p 3 -> -> 0 `i `us ]
+[; ;class/paddle.c: 7:         p->x = 90;
+[e = . *U _p 0 -> -> 90 `i `us ]
 "8
-[; ;class/paddle.c: 8:     p->color = 0;
-[e = . *U _p 4 -> -> 0 `i `us ]
+[; ;class/paddle.c: 8:         p->y = 20;
+[e = . *U _p 1 -> -> 20 `i `us ]
 "9
-[; ;class/paddle.c: 9: }
+[; ;class/paddle.c: 9:         p->w = 50;
+[e = . *U _p 2 -> -> 50 `i `us ]
+"10
+[; ;class/paddle.c: 10:         p->h = 20;
+[e = . *U _p 3 -> -> 20 `i `us ]
+"11
+[; ;class/paddle.c: 11:         p->color = 0b0000000000011111;
+[e = . *U _p 4 -> -> 31 `i `us ]
+"12
+[; ;class/paddle.c: 12:     }
+}
+[e $U 9  ]
+"13
+[; ;class/paddle.c: 13:     else
+[e :U 8 ]
+"14
+[; ;class/paddle.c: 14:     {
+{
+"15
+[; ;class/paddle.c: 15:         p->x = 90;
+[e = . *U _p 0 -> -> 90 `i `us ]
+"16
+[; ;class/paddle.c: 16:         p->y = 280;
+[e = . *U _p 1 -> -> 280 `i `us ]
+"17
+[; ;class/paddle.c: 17:         p->w = 50;
+[e = . *U _p 2 -> -> 50 `i `us ]
+"18
+[; ;class/paddle.c: 18:         p->h = 20;
+[e = . *U _p 3 -> -> 20 `i `us ]
+"19
+[; ;class/paddle.c: 19:         p->color = 0b0000000000011111;
+[e = . *U _p 4 -> -> 31 `i `us ]
+"20
+[; ;class/paddle.c: 20:     }
+}
+[e :U 9 ]
+"22
+[; ;class/paddle.c: 22: }
 [e :UE 7 ]
 }
-"10
-[; ;class/paddle.c: 10: void Paddle_setWidth(struct Paddle* p, uint16_t value)
-[v _Paddle_setWidth `(v ~T0 @X0 1 ef2`*S6`us ]
-"11
-[; ;class/paddle.c: 11: {
+"23
+[; ;class/paddle.c: 23: void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
+[v _Paddle_addX `(v ~T0 @X0 1 ef3`*S6`us`us ]
+"24
+[; ;class/paddle.c: 24: {
 {
-[e :U _Paddle_setWidth ]
-"10
-[; ;class/paddle.c: 10: void Paddle_setWidth(struct Paddle* p, uint16_t value)
+[e :U _Paddle_addX ]
+"23
+[; ;class/paddle.c: 23: void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 [v _p `*S6 ~T0 @X0 1 r1 ]
 [v _value `us ~T0 @X0 1 r2 ]
-"11
-[; ;class/paddle.c: 11: {
+[v _add `us ~T0 @X0 1 r3 ]
+"24
+[; ;class/paddle.c: 24: {
 [f ]
-"12
-[; ;class/paddle.c: 12:     p->w = value;
-[e = . *U _p 2 _value ]
-"13
-[; ;class/paddle.c: 13: }
-[e :UE 8 ]
+"25
+[; ;class/paddle.c: 25:     LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,0b1111111111111111);
+[e ( _LCD_DrawRect (4 , , , , , . *U _p 0 . *U _p 1 -> + -> . *U _p 0 `ui -> . *U _p 2 `ui `us -> + -> . *U _p 1 `ui -> . *U _p 3 `ui `us -> -> 1 `i `uc -> -> 65535 `ui `us ]
+"26
+[; ;class/paddle.c: 26:     if(add==1)
+[e $ ! == -> _add `ui -> -> 1 `i `ui 11  ]
+"27
+[; ;class/paddle.c: 27:     {
+{
+"28
+[; ;class/paddle.c: 28:         p->x=(p->x)+value;
+[e = . *U _p 0 -> + -> . *U _p 0 `ui -> _value `ui `us ]
+"29
+[; ;class/paddle.c: 29:         if((p->x+p->w)>239)
+[e $ ! > + -> . *U _p 0 `ui -> . *U _p 2 `ui -> -> 239 `i `ui 12  ]
+"30
+[; ;class/paddle.c: 30:         {
+{
+"31
+[; ;class/paddle.c: 31:             p->x=239-(p->w);
+[e = . *U _p 0 -> - -> -> 239 `i `ui -> . *U _p 2 `ui `us ]
+"32
+[; ;class/paddle.c: 32:         }
 }
-"14
-[; ;class/paddle.c: 14: void Paddle_setHeight(struct Paddle* p, uint16_t value)
-[v _Paddle_setHeight `(v ~T0 @X0 1 ef2`*S6`us ]
-"15
-[; ;class/paddle.c: 15: {
-{
-[e :U _Paddle_setHeight ]
-"14
-[; ;class/paddle.c: 14: void Paddle_setHeight(struct Paddle* p, uint16_t value)
-[v _p `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"15
-[; ;class/paddle.c: 15: {
-[f ]
-"16
-[; ;class/paddle.c: 16:     p->h = value;
-[e = . *U _p 3 _value ]
-"17
-[; ;class/paddle.c: 17: }
-[e :UE 9 ]
+[e :U 12 ]
+"33
+[; ;class/paddle.c: 33:     }
 }
-"18
-[; ;class/paddle.c: 18: void Paddle_setPosX(struct Paddle* p, uint16_t value)
-[v _Paddle_setPosX `(v ~T0 @X0 1 ef2`*S6`us ]
-"19
-[; ;class/paddle.c: 19: {
+[e $U 13  ]
+"34
+[; ;class/paddle.c: 34:     else
+[e :U 11 ]
+"35
+[; ;class/paddle.c: 35:     {
 {
-[e :U _Paddle_setPosX ]
-"18
-[; ;class/paddle.c: 18: void Paddle_setPosX(struct Paddle* p, uint16_t value)
-[v _p `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"19
-[; ;class/paddle.c: 19: {
-[f ]
-"20
-[; ;class/paddle.c: 20:     p->x = value;
-[e = . *U _p 0 _value ]
-"21
-[; ;class/paddle.c: 21: }
+"36
+[; ;class/paddle.c: 36:         if((p->x)<9)
+[e $ ! < -> . *U _p 0 `ui -> -> 9 `i `ui 14  ]
+"37
+[; ;class/paddle.c: 37:         {
+{
+"38
+[; ;class/paddle.c: 38:             p->x=0;
+[e = . *U _p 0 -> -> 0 `i `us ]
+"39
+[; ;class/paddle.c: 39:         }
+}
+[e $U 15  ]
+"40
+[; ;class/paddle.c: 40:         else
+[e :U 14 ]
+"41
+[; ;class/paddle.c: 41:         {
+{
+"42
+[; ;class/paddle.c: 42:             p->x=(p->x)-value;
+[e = . *U _p 0 -> - -> . *U _p 0 `ui -> _value `ui `us ]
+"43
+[; ;class/paddle.c: 43:         }
+}
+[e :U 15 ]
+"45
+[; ;class/paddle.c: 45:     }
+}
+[e :U 13 ]
+"46
+[; ;class/paddle.c: 46: }
 [e :UE 10 ]
 }
-"22
-[; ;class/paddle.c: 22: void Paddle_setPosY(struct Paddle* p, uint16_t value)
-[v _Paddle_setPosY `(v ~T0 @X0 1 ef2`*S6`us ]
-"23
-[; ;class/paddle.c: 23: {
-{
-[e :U _Paddle_setPosY ]
-"22
-[; ;class/paddle.c: 22: void Paddle_setPosY(struct Paddle* p, uint16_t value)
-[v _p `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"23
-[; ;class/paddle.c: 23: {
-[f ]
-"24
-[; ;class/paddle.c: 24:     p->y = value;
-[e = . *U _p 1 _value ]
-"25
-[; ;class/paddle.c: 25: }
-[e :UE 11 ]
-}
-"26
-[; ;class/paddle.c: 26: void Paddle_setColor(struct Paddle* p, uint16_t value)
-[v _Paddle_setColor `(v ~T0 @X0 1 ef2`*S6`us ]
-"27
-[; ;class/paddle.c: 27: {
-{
-[e :U _Paddle_setColor ]
-"26
-[; ;class/paddle.c: 26: void Paddle_setColor(struct Paddle* p, uint16_t value)
-[v _p `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"27
-[; ;class/paddle.c: 27: {
-[f ]
-"28
-[; ;class/paddle.c: 28:     p->color = value;
-[e = . *U _p 4 _value ]
-"29
-[; ;class/paddle.c: 29: }
-[e :UE 12 ]
-}
-"30
-[; ;class/paddle.c: 30: void Paddle_draw(struct Paddle* p)
+"47
+[; ;class/paddle.c: 47: void Paddle_draw(struct Paddle* p)
 [v _Paddle_draw `(v ~T0 @X0 1 ef1`*S6 ]
-"31
-[; ;class/paddle.c: 31: {
+"48
+[; ;class/paddle.c: 48: {
 {
 [e :U _Paddle_draw ]
-"30
-[; ;class/paddle.c: 30: void Paddle_draw(struct Paddle* p)
+"47
+[; ;class/paddle.c: 47: void Paddle_draw(struct Paddle* p)
 [v _p `*S6 ~T0 @X0 1 r1 ]
-"31
-[; ;class/paddle.c: 31: {
+"48
+[; ;class/paddle.c: 48: {
 [f ]
-"33
-[; ;class/paddle.c: 33: }
-[e :UE 13 ]
+"50
+[; ;class/paddle.c: 50:     LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,p->color);
+[e ( _LCD_DrawRect (4 , , , , , . *U _p 0 . *U _p 1 -> + -> . *U _p 0 `ui -> . *U _p 2 `ui `us -> + -> . *U _p 1 `ui -> . *U _p 3 `ui `us -> -> 1 `i `uc . *U _p 4 ]
+"51
+[; ;class/paddle.c: 51: }
+[e :UE 16 ]
 }

@@ -1,7 +1,9 @@
 #ifndef _GAMECONTROLLER
 #define _GAMECONTROLLER
 #include "../xf/xf.h"
-void gameControllerInit();
-void gameControllerSM(Event ev);
-void gameControllerController();
+#include "../class/gameParameters.h"
+void gameControllerInit(GameParameters* g);
+void gameControllerSM(Event ev,GameParameters* g);
+void gameControllerController(GameParameters* g);
+void backlightController(GameParameters* g);
 #endif

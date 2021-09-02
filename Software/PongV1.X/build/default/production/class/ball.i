@@ -288,23 +288,18 @@ typedef struct Ball
     uint16_t color;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setRadius(struct Ball* b, uint16_t value);
 void Ball_setPosX(struct Ball* b, uint16_t value);
 void Ball_setPosY(struct Ball* b, uint16_t value);
-void Ball_setColor(struct Ball* b, uint16_t value);
 void Ball_draw(struct Ball* b);
 # 1 "class/ball.c" 2
 
+extern const FONT_INFO arialNarrow_12ptFontInfo;
 void Ball_init(struct Ball* b)
 {
-    b->x = 0;
-    b->y = 0;
-    b->r = 0;
-    b->color = 0;
-}
-void Ball_setRadius(struct Ball* b, uint16_t value)
-{
-    b->r = value;
+    b->x = 90;
+    b->y = 150;
+    b->r = 10;
+    b->color = 0b1111100000000000;
 }
 void Ball_setPosX(struct Ball* b, uint16_t value)
 {
@@ -314,11 +309,7 @@ void Ball_setPosY(struct Ball* b, uint16_t value)
 {
     b->y = value;
 }
-void Ball_setColor(struct Ball* b, uint16_t value)
-{
-    b->color = value;
-}
 void Ball_draw(struct Ball* b)
 {
-
+    LCD_DrawText("O",&arialNarrow_12ptFontInfo, A_LEFT, b->x, b->y,b->color, 0b1111111111111111);
 }

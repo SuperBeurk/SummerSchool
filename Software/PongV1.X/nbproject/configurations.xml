@@ -21,14 +21,13 @@
         <itemPath>class/factory.h</itemPath>
         <itemPath>class/score.c</itemPath>
         <itemPath>class/score.h</itemPath>
-        <itemPath>class/welcomeMenu.c</itemPath>
-        <itemPath>class/welcomeMenu.h</itemPath>
         <itemPath>class/gameParameters.c</itemPath>
         <itemPath>class/gameParameters.h</itemPath>
+        <itemPath>class/menu.c</itemPath>
+        <itemPath>class/menu.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="libraries" projectFiles="true">
         <itemPath>libraries/arialNarrow_12ptBitmaps.c</itemPath>
-        <itemPath>libraries/arialRoundedMTBold18ptBitmaps.c</itemPath>
         <itemPath>libraries/lcd_highlevel.c</itemPath>
         <itemPath>libraries/lcd_highlevel.h</itemPath>
         <itemPath>libraries/lcd_lowlevel.c</itemPath>
@@ -189,7 +188,6 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

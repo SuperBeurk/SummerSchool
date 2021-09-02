@@ -8,11 +8,11 @@
 typedef enum state{WAKEUP,BACKLIGHTOFF,SLEEP} state;
 enum state sleepState;
 
-void sleepInit()
+void sleepInit(GameParameters* g)
 {
     sleepState=WAKEUP;
-    displayInit();
-    gameControllerInit();
+    displayInit(g);
+    gameControllerInit(g);
     touchScreenInit();
     sleepController();    
 }

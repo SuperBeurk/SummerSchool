@@ -9,9 +9,7 @@ typedef struct Ball
     uint16_t color;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setRadius(struct Ball* b, uint16_t value);
 void Ball_setPosX(struct Ball* b, uint16_t value);
 void Ball_setPosY(struct Ball* b, uint16_t value);
-void Ball_setColor(struct Ball* b, uint16_t value);
 void Ball_draw(struct Ball* b);
 #endif
