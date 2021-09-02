@@ -1,0 +1,11 @@
+@startuml
+skinparam sequenceParticipant underline
+
+participant "Main" as m
+participant "Factory" as f
+
+m -> f: init()
+m -> f: build()
+
+
+@enduml

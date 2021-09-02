@@ -1,0 +1,39 @@
+@startuml
+
+left to right direction
+actor User as u
+actor Computer as c
+actor User2 as u2
+rectangle Parameters{
+  usecase "Luminosity\n Slider" as ls
+ }
+rectangle Menu{
+  usecase "Parameters" as p
+  usecase "1 Player" as 1p
+  usecase "2 Players" as 2p
+}
+rectangle Game{
+  usecase "Select \nlevel" as lvl
+  usecase "Move player\n paddle" as mp
+  usecase "Move CPU\n paddle" as mc
+  usecase "Manage ball\n movement" as mb
+  usecase "Move player 2\n paddle" as p2
+
+}
+
+p <--> ls
+
+u --> p
+u --> 1p
+u --> 2p
+
+2p --> lvl
+2p --> mp
+1p --> lvl
+1p --> mp
+mc <-- c
+mb <-- c
+
+u2 --> p2
+
+@enduml
