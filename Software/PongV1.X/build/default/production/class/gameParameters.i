@@ -284,34 +284,35 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
 # 1 "class/ball.h" 1
 
 
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
-# 3 "class/ball.h" 2
+# 5 "class/ball.h" 2
 
 typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
-    uint16_t r;
-    uint16_t color;
+    int16_t dx;
+    int16_t dy;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setPosX(struct Ball* b, uint16_t value);
-void Ball_setPosY(struct Ball* b, uint16_t value);
+void Ball_Update(struct Ball* b);
 void Ball_draw(struct Ball* b);
 # 5 "class/gameParameters.h" 2
 
 # 1 "class/paddle.h" 1
 
 
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
-# 3 "class/paddle.h" 2
+# 5 "class/paddle.h" 2
 
 typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
-    uint16_t w;
-    uint16_t h;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);
@@ -9446,6 +9447,7 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+void GameParameters_resetPos(struct GameParameters* s);
 # 1 "class/gameParameters.c" 2
 
 extern FONT_INFO arialNarrow_12ptFontInfo;
@@ -9486,6 +9488,11 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
 void GameParameters_draw(struct GameParameters* s)
 {
 
+}
+void GameParameters_resetPos(struct GameParameters* s)
+{
+    s->x=0;
+    s->y=0;
 }
 void GameParameters_setX(struct GameParameters* s, uint16_t value)
 {

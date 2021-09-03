@@ -1,12 +1,12 @@
 #ifndef _PADDLE
 #define _PADDLE
+#define _PADDLE_WIDTH 50
+#define _PADDLE_HEIGHT 20
 #include "../libraries/lcd_highlevel.h"
 typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
-    uint16_t w;
-    uint16_t h;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);

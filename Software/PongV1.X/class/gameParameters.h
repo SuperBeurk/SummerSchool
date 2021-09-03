@@ -30,4 +30,5 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+void GameParameters_resetPos(struct GameParameters* s);
 #endif

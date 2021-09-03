@@ -20,8 +20,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _XF_pushEvent `(a ~T0 @X0 0 ef2`uc`a ]
 "27 main.c
 [; ;main.c: 27:             XF_pushEvent(evPress,1);
-[c E5738 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame  ]
+[c E5738 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame evGameUpdate  ]
 "19290 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 19290: extern volatile __bit TMR0IF __attribute__((address(0x7F92)));
 [v _TMR0IF `Vb ~T0 @X0 0 e@32658 ]
@@ -30,6 +30,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
 "89 ./stateMachine/../class/../xf/xf.h
 [v _XF_decrementAndQueueTimers `(v ~T0 @X0 0 e? ]
+"74
+[v _XF_scheduleTimer `(uc ~T0 @X0 0 ef3`us`uc`a ]
 "15396 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 15396: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
@@ -2902,12 +2904,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42
 [; ;main.c: 42:         XF_decrementAndQueueTimers();
 [e ( _XF_decrementAndQueueTimers ..  ]
+"43
+[; ;main.c: 43:         XF_scheduleTimer(5,evGameUpdate,1);
+[e ( _XF_scheduleTimer (3 , , -> -> 5 `i `us -> . `E5738 10 `uc -> -> 1 `i `a ]
 "44
-[; ;main.c: 44:         TMR0H=0xE7;
-[e = _TMR0H -> -> 231 `i `uc ]
+[; ;main.c: 44:         TMR0H=0xFB;
+[e = _TMR0H -> -> 251 `i `uc ]
 "45
-[; ;main.c: 45:         TMR0L=0x95;
-[e = _TMR0L -> -> 149 `i `uc ]
+[; ;main.c: 45:         TMR0L=0x1D;
+[e = _TMR0L -> -> 29 `i `uc ]
 "46
 [; ;main.c: 46:         TMR0IF=0;
 [e = _TMR0IF -> -> 0 `i `b ]

@@ -19,14 +19,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/../libraries/lcd_highlevel.h: 108: {
 [s S5 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F105 1 ]
 [n S5 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
-"5 class/ball.h
-[; ;class/ball.h: 5: {
-[s S6 `us 1 `us 1 `us 1 `us 1 ]
-[n S6 Ball x y r color ]
-"5 class/paddle.h
-[; ;class/paddle.h: 5: {
-[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 ]
-[n S7 Paddle x y w h color ]
+"7 class/ball.h
+[; ;class/ball.h: 7: {
+[s S6 `us 1 `us 1 `s 1 `s 1 ]
+[n S6 Ball x y dx dy ]
+"7 class/paddle.h
+[; ;class/paddle.h: 7: {
+[s S7 `us 1 `us 1 `us 1 ]
+[n S7 Paddle x y color ]
 "5 class/score.h
 [; ;class/score.h: 5: {
 [s S8 `us 1 `us 1 ]
@@ -38,8 +38,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3256 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 3256: extern volatile unsigned char CCPR2L __attribute__((address(0xF67)));
 [v _CCPR2L `Vuc ~T0 @X0 0 e@3943 ]
-"11 class/ball.h
-[; ;class/ball.h: 11: void Ball_init(struct Ball* b);
+"13 class/ball.h
+[; ;class/ball.h: 13: void Ball_init(struct Ball* b);
 [v _Ball_init `(v ~T0 @X0 0 ef1`*S6 ]
 "12 class/paddle.h
 [; ;class/paddle.h: 12: void Paddle_init(struct Paddle* p,uint16_t team);
@@ -53,6 +53,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2 class/gameParameters.c
 [; ;class/gameParameters.c: 2: extern FONT_INFO arialNarrow_12ptFontInfo;
 [v _arialNarrow_12ptFontInfo `S2 ~T0 @X0 0 e ]
+[v F5968 `(v ~T0 @X0 0 tf1`uc ]
+[v F5970 `(v ~T0 @X0 0 tf1`uc ]
 [v F5972 `(v ~T0 @X0 0 tf1`uc ]
 [v F5974 `(v ~T0 @X0 0 tf1`uc ]
 [v F5976 `(v ~T0 @X0 0 tf1`uc ]
@@ -69,13 +71,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F5998 `(v ~T0 @X0 0 tf1`uc ]
 [v F6000 `(v ~T0 @X0 0 tf1`uc ]
 [v F6002 `(v ~T0 @X0 0 tf1`uc ]
-[v F6004 `(v ~T0 @X0 0 tf1`uc ]
-[v F6006 `(v ~T0 @X0 0 tf1`uc ]
 [v F138 `(v ~T0 @X0 0 t? ]
 "175 class/../libraries/lcd_highlevel.h
 [; ;class/../libraries/lcd_highlevel.h: 175: void LCD_SliderCreate(uint16_t posX, uint16_t posY,
 [v _LCD_SliderCreate `(v ~T0 @X0 0 ef11`us`us`us`us`us`us`us`us`us`*F138`*S5 ]
-[v F6008 `(v ~T0 @X0 0 t? ]
+[v F6004 `(v ~T0 @X0 0 t? ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -847,25 +847,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Paddle_init (2 , &U . *U _s 13 -> -> 1 `i `us ]
 "13
 [; ;class/gameParameters.c: 13:     LCD_ButtonCreate(130,50,90,20,0b1111111111111111,0b0000000000000000,"Parametres",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnParam),1);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 130 `i `us -> -> 50 `i `us -> -> 90 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 1C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5972 -> -> -> 0 `i `*v `*F5974 -> -> -> 0 `i `*v `*F5976 &U . *U _s 4 -> -> 1 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 130 `i `us -> -> 50 `i `us -> -> 90 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 1C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5968 -> -> -> 0 `i `*v `*F5970 -> -> -> 0 `i `*v `*F5972 &U . *U _s 4 -> -> 1 `i `uc ]
 "14
 [; ;class/gameParameters.c: 14:     LCD_ButtonCreate(10,250,70,20,0b1111111111111111,0b0000000000000000,"1 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnOnePlayer),2);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 10 `i `us -> -> 250 `i `us -> -> 70 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 2C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5978 -> -> -> 0 `i `*v `*F5980 -> -> -> 0 `i `*v `*F5982 &U . *U _s 5 -> -> 2 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 10 `i `us -> -> 250 `i `us -> -> 70 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 2C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5974 -> -> -> 0 `i `*v `*F5976 -> -> -> 0 `i `*v `*F5978 &U . *U _s 5 -> -> 2 `i `uc ]
 "15
 [; ;class/gameParameters.c: 15:     LCD_ButtonCreate(150,250,70,20,0b1111111111111111,0b0000000000000000,"2 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnTwoPlayer),3);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 150 `i `us -> -> 250 `i `us -> -> 70 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 3C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5984 -> -> -> 0 `i `*v `*F5986 -> -> -> 0 `i `*v `*F5988 &U . *U _s 6 -> -> 3 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 150 `i `us -> -> 250 `i `us -> -> 70 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 3C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5980 -> -> -> 0 `i `*v `*F5982 -> -> -> 0 `i `*v `*F5984 &U . *U _s 6 -> -> 3 `i `uc ]
 "16
 [; ;class/gameParameters.c: 16:     LCD_ButtonCreate(130,50,90,20,0b1111111111111111,0b0000000000000000,"QUITTER",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnLeaveParam),4);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 130 `i `us -> -> 50 `i `us -> -> 90 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 4C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5990 -> -> -> 0 `i `*v `*F5992 -> -> -> 0 `i `*v `*F5994 &U . *U _s 7 -> -> 4 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 130 `i `us -> -> 50 `i `us -> -> 90 `i `us -> -> 20 `i `us -> -> 65535 `ui `us -> -> 0 `i `us :s 4C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5986 -> -> -> 0 `i `*v `*F5988 -> -> -> 0 `i `*v `*F5990 &U . *U _s 7 -> -> 4 `i `uc ]
 "17
 [; ;class/gameParameters.c: 17:     LCD_ButtonCreate(10,220,70,50,0b0000000000000000,0b1111111111111111,"<--",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnLeft),5);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 10 `i `us -> -> 220 `i `us -> -> 70 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us :s 5C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5996 -> -> -> 0 `i `*v `*F5998 -> -> -> 0 `i `*v `*F6000 &U . *U _s 8 -> -> 5 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 10 `i `us -> -> 220 `i `us -> -> 70 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us :s 5C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5992 -> -> -> 0 `i `*v `*F5994 -> -> -> 0 `i `*v `*F5996 &U . *U _s 8 -> -> 5 `i `uc ]
 "18
 [; ;class/gameParameters.c: 18:     LCD_ButtonCreate(150,220,70,50,0b0000000000000000,0b1111111111111111,"-->",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnRight),6);
-[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 150 `i `us -> -> 220 `i `us -> -> 70 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us :s 6C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F6002 -> -> -> 0 `i `*v `*F6004 -> -> -> 0 `i `*v `*F6006 &U . *U _s 9 -> -> 6 `i `uc ]
+[e ( _LCD_ButtonCreate (4 , , , , , , , , , , , , -> -> 150 `i `us -> -> 220 `i `us -> -> 70 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us :s 6C &U _arialNarrow_12ptFontInfo -> -> -> 0 `i `*v `*F5998 -> -> -> 0 `i `*v `*F6000 -> -> -> 0 `i `*v `*F6002 &U . *U _s 9 -> -> 6 `i `uc ]
 "19
 [; ;class/gameParameters.c: 19:     LCD_SliderCreate(50,100,165,20,0b0000000000000000,0b1111111111111111,0b1111100000000000,0,11,((void*)0),&(s->sldParam));
-[e ( _LCD_SliderCreate (4 , , , , , , , , , , -> -> 50 `i `us -> -> 100 `i `us -> -> 165 `i `us -> -> 20 `i `us -> -> 0 `i `us -> -> 65535 `ui `us -> -> 63488 `ui `us -> -> 0 `i `us -> -> 11 `i `us -> -> -> 0 `i `*v `*F6008 &U . *U _s 10 ]
+[e ( _LCD_SliderCreate (4 , , , , , , , , , , -> -> 50 `i `us -> -> 100 `i `us -> -> 165 `i `us -> -> 20 `i `us -> -> 0 `i `us -> -> 65535 `ui `us -> -> 63488 `ui `us -> -> 0 `i `us -> -> 11 `i `us -> -> -> 0 `i `*v `*F6004 &U . *U _s 10 ]
 "20
 [; ;class/gameParameters.c: 20: }
 [e :UE 835 ]
@@ -956,46 +956,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 840 ]
 }
 "41
-[; ;class/gameParameters.c: 41: void GameParameters_setX(struct GameParameters* s, uint16_t value)
-[v _GameParameters_setX `(v ~T0 @X0 1 ef2`*S834`us ]
+[; ;class/gameParameters.c: 41: void GameParameters_resetPos(struct GameParameters* s)
+[v _GameParameters_resetPos `(v ~T0 @X0 1 ef1`*S834 ]
 "42
 [; ;class/gameParameters.c: 42: {
 {
-[e :U _GameParameters_setX ]
+[e :U _GameParameters_resetPos ]
 "41
-[; ;class/gameParameters.c: 41: void GameParameters_setX(struct GameParameters* s, uint16_t value)
+[; ;class/gameParameters.c: 41: void GameParameters_resetPos(struct GameParameters* s)
 [v _s `*S834 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
 "42
 [; ;class/gameParameters.c: 42: {
 [f ]
 "43
-[; ;class/gameParameters.c: 43:     s->x=value;
-[e = . *U _s 2 _value ]
+[; ;class/gameParameters.c: 43:     s->x=0;
+[e = . *U _s 2 -> -> 0 `i `us ]
 "44
-[; ;class/gameParameters.c: 44: }
+[; ;class/gameParameters.c: 44:     s->y=0;
+[e = . *U _s 3 -> -> 0 `i `us ]
+"45
+[; ;class/gameParameters.c: 45: }
 [e :UE 841 ]
 }
-"45
-[; ;class/gameParameters.c: 45: void GameParameters_setY(struct GameParameters* s, uint16_t value)
-[v _GameParameters_setY `(v ~T0 @X0 1 ef2`*S834`us ]
 "46
-[; ;class/gameParameters.c: 46: {
+[; ;class/gameParameters.c: 46: void GameParameters_setX(struct GameParameters* s, uint16_t value)
+[v _GameParameters_setX `(v ~T0 @X0 1 ef2`*S834`us ]
+"47
+[; ;class/gameParameters.c: 47: {
 {
-[e :U _GameParameters_setY ]
-"45
-[; ;class/gameParameters.c: 45: void GameParameters_setY(struct GameParameters* s, uint16_t value)
+[e :U _GameParameters_setX ]
+"46
+[; ;class/gameParameters.c: 46: void GameParameters_setX(struct GameParameters* s, uint16_t value)
 [v _s `*S834 ~T0 @X0 1 r1 ]
 [v _value `us ~T0 @X0 1 r2 ]
-"46
-[; ;class/gameParameters.c: 46: {
-[f ]
 "47
-[; ;class/gameParameters.c: 47:     s->y=value;
-[e = . *U _s 3 _value ]
+[; ;class/gameParameters.c: 47: {
+[f ]
 "48
-[; ;class/gameParameters.c: 48: }
+[; ;class/gameParameters.c: 48:     s->x=value;
+[e = . *U _s 2 _value ]
+"49
+[; ;class/gameParameters.c: 49: }
 [e :UE 842 ]
+}
+"50
+[; ;class/gameParameters.c: 50: void GameParameters_setY(struct GameParameters* s, uint16_t value)
+[v _GameParameters_setY `(v ~T0 @X0 1 ef2`*S834`us ]
+"51
+[; ;class/gameParameters.c: 51: {
+{
+[e :U _GameParameters_setY ]
+"50
+[; ;class/gameParameters.c: 50: void GameParameters_setY(struct GameParameters* s, uint16_t value)
+[v _s `*S834 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"51
+[; ;class/gameParameters.c: 51: {
+[f ]
+"52
+[; ;class/gameParameters.c: 52:     s->y=value;
+[e = . *U _s 3 _value ]
+"53
+[; ;class/gameParameters.c: 53: }
+[e :UE 843 ]
 }
 [a 1C 80 97 114 97 109 101 116 114 101 115 0 ]
 [a 3C 50 32 80 108 97 121 101 114 0 ]

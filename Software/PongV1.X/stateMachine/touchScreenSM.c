@@ -67,25 +67,28 @@ void touchScreenController(GameParameters* g)
             //1.Reset TIMER SLEEP
             //------------------------------------------------------------------
             //--------------xMeasurement 
+            INT1IE=0;  
             configMeasure(false);
             while((ADCON0&0x02)!=0){};
             uint16_t valueX;
             valueX=(ADRESH<<8)+ADRESL;
-            valueX=800-valueX;
-            if(valueX>=150)
+            if(valueX<=_TSC_OFFSET_X)
             {
-                valueX=(valueX-150)/2;
-            }else{valueX=0;} 
+                valueX=_TSC_OFFSET_X;
+            }
+            valueX=(valueX-_TSC_OFFSET_X)/_TSC_CONV_X;
+            valueX=_TSC_MAX_X-valueX;
             //--------------yMeasurement  
             configMeasure(true);                             
             while((ADCON0&0x02)!=0){};            
             uint16_t valueY;
             valueY=(ADRESH<<8)+ADRESL;
-            if(valueY>=125)
+            if(valueY<=_TSC_OFFSET_Y)
             {
-                valueY=(valueY-125)/2;
-            }else{valueY=0;}
-            XF_scheduleTimer(1,evTimerPos,false);
+                valueY=_TSC_OFFSET_Y;
+            }
+            valueY=(valueY-_TSC_OFFSET_Y)/_TSC_CONV_Y;
+            XF_scheduleTimer(9,evTimerPos,false);
             //------------------------------------------------------------------
             //Pin configuration for realease touch
             ADCON0=0b00101001;
@@ -116,40 +119,39 @@ void configTouch()
 {
     ANSB1=0;
     ANSB2=0;
-    TRISB2=0;//Y- GND
-    LATB2=0;          
-    TRISB1=1;//X+ input/interrupt/pullup
+    _DIR_YU=0;//Y- GND
+    _TSC_YU=0;          
+    _DIR_XR=1;//X+ input/interrupt/pullup
     RBPU=0;
     WPUB=0b00000010;
     INTEDG1=0;           
-    TRISB3=1;//X- open           
-    TRISB4=1;//Y+ open
+    _DIR_XL=1;//X- open           
+    _DIR_YD=1;//Y+ open
     INT1IE=1;
 }
 void configMeasure(bool channel)
 {
     if(channel==0)
-    {
-        INT1IE=0;           
+    {         
         ANSB1=0;
-        TRISB1=0;//X- GND
-        LATB1=0;            
-        TRISB3=0;//X+ VCC
-        LATB3=1;            
-        TRISB4=1;//Y- open              
-        TRISB2=1;          
+        _DIR_XR=0;//X- GND
+        _TSC_XR=0;            
+        _DIR_XL=0;//X+ VCC
+        _TSC_XL=1;            
+        _DIR_YD=1;//Y- open              
+        _DIR_YU=1;//y+ analog          
         ANSB2=1;            
         ADCON0=0b00100011;  
     }
     if(channel==1)
     {
         ANSB2=0;
-        TRISB2=0;//Y- GND
-        LATB2=0;            
-        TRISB4=0;//Y+ VCC
-        LATB4=1;            
-        TRISB3=1;//X- open
-        TRISB1=1;
+        _DIR_YU=0;//Y- GND
+        _TSC_YU=0;            
+        _DIR_YD=0;//Y+ VCC
+        _TSC_YD=1;            
+        _DIR_XL=1;//X- open
+        _DIR_XR=1;//x+ analog
         ANSB1=1;            
         ADCON0=0b00101011;  
     }

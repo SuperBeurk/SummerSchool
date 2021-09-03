@@ -6,29 +6,25 @@ void Paddle_init(struct Paddle* p,uint16_t team)
     {
         p->x = 90;
         p->y = 20;
-        p->w = 50;
-        p->h = 20;
         p->color = BLUE; 
     }
     else
     {
         p->x = 90;
         p->y = 280;
-        p->w = 50;
-        p->h = 20;
         p->color = BLUE; 
     }
     
 }
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 {
-    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,WHITE);
+    LCD_DrawRect(p->x,p->y,p->x+_PADDLE_WIDTH,p->y+_PADDLE_HEIGHT,1,WHITE);
     if(add==1)
     {
         p->x=(p->x)+value;
-        if((p->x+p->w)>239)
+        if((p->x+_PADDLE_WIDTH)>239)
         {
-            p->x=239-(p->w);
+            p->x=239-(_PADDLE_WIDTH);
         }
     }
     else
@@ -47,5 +43,5 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 void Paddle_draw(struct Paddle* p)
 {
     //Draw new paddle
-    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,p->color);
+    LCD_DrawRect(p->x,p->y,p->x+_PADDLE_WIDTH,p->y+_PADDLE_HEIGHT,1,p->color);
 }

@@ -1,26 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5 class/ball.h
-[; ;class/ball.h: 5: {
-[s S6 `us 1 `us 1 `us 1 `us 1 ]
-[n S6 Ball x y r color ]
-"12 class/../libraries/lcd_highlevel.h
-[; ;class/../libraries/lcd_highlevel.h: 12: {
-[s S1 `uc 1 `us 1 ]
-[n S1 . width offset ]
-"18
-[; ;class/../libraries/lcd_highlevel.h: 18: {
-[s S2 `uc 1 `uc 1 `uc 1 `*CS1 1 `*Cuc 1 ]
-[n S2 . height start_char end_char descriptor bitmap ]
-"20 class/ball.c
-[; ;class/ball.c: 20:     LCD_DrawText("O",&arialNarrow_12ptFontInfo, A_LEFT, b->x, b->y,b->color, 0b1111111111111111);
-[c E47 0 1 2 .. ]
-[n E47 . A_LEFT A_RIGHT A_CENTER  ]
-"271 class/../libraries/lcd_highlevel.h
-[; ;class/../libraries/lcd_highlevel.h: 271: void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
-[v _LCD_DrawText `(v ~T0 @X0 0 ef7`*Cuc`*CS2`E47`us`us`us`us ]
-"2 class/ball.c
-[; ;class/ball.c: 2: extern const FONT_INFO arialNarrow_12ptFontInfo;
-[v _arialNarrow_12ptFontInfo `CS2 ~T0 @X0 0 e ]
+"7 class/ball.h
+[; ;class/ball.h: 7: {
+[s S6 `us 1 `us 1 `s 1 `s 1 ]
+[n S6 Ball x y dx dy ]
+"256 class/../libraries/lcd_highlevel.h
+[; ;class/../libraries/lcd_highlevel.h: 256: void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
+[v _LCD_DrawRect `(v ~T0 @X0 0 ef6`us`us`us`us`uc`us ]
+"15 class/ball.h
+[; ;class/ball.h: 15: void Ball_draw(struct Ball* b);
+[v _Ball_draw `(v ~T0 @X0 0 ef1`*S6 ]
 "3 class/ball.c
 [; ;class/ball.c: 3: void Ball_init(struct Ball* b)
 [v _Ball_init `(v ~T0 @X0 1 ef1`*S6 ]
@@ -41,75 +29,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/ball.c: 6:     b->y = 150;
 [e = . *U _b 1 -> -> 150 `i `us ]
 "7
-[; ;class/ball.c: 7:     b->r = 10;
-[e = . *U _b 2 -> -> 10 `i `us ]
+[; ;class/ball.c: 7:     b->dx = 0;
+[e = . *U _b 2 -> -> 0 `i `s ]
 "8
-[; ;class/ball.c: 8:     b->color = 0b1111100000000000;
-[e = . *U _b 3 -> -> 63488 `ui `us ]
+[; ;class/ball.c: 8:     b->dy = 1;
+[e = . *U _b 3 -> -> 1 `i `s ]
 "9
 [; ;class/ball.c: 9: }
 [e :UE 7 ]
 }
 "10
-[; ;class/ball.c: 10: void Ball_setPosX(struct Ball* b, uint16_t value)
-[v _Ball_setPosX `(v ~T0 @X0 1 ef2`*S6`us ]
+[; ;class/ball.c: 10: void Ball_Update(struct Ball* b)
+[v _Ball_Update `(v ~T0 @X0 1 ef1`*S6 ]
 "11
 [; ;class/ball.c: 11: {
 {
-[e :U _Ball_setPosX ]
+[e :U _Ball_Update ]
 "10
-[; ;class/ball.c: 10: void Ball_setPosX(struct Ball* b, uint16_t value)
+[; ;class/ball.c: 10: void Ball_Update(struct Ball* b)
 [v _b `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
 "11
 [; ;class/ball.c: 11: {
 [f ]
 "12
-[; ;class/ball.c: 12:     b->x = value;
-[e = . *U _b 0 _value ]
+[; ;class/ball.c: 12:     LCD_DrawRect(b->x-8,b->y-8,b->x+8,b->y+8,1,0b1111111111111111);
+[e ( _LCD_DrawRect (4 , , , , , -> - -> . *U _b 0 `ui -> -> 8 `i `ui `us -> - -> . *U _b 1 `ui -> -> 8 `i `ui `us -> + -> . *U _b 0 `ui -> -> 8 `i `ui `us -> + -> . *U _b 1 `ui -> -> 8 `i `ui `us -> -> 1 `i `uc -> -> 65535 `ui `us ]
 "13
-[; ;class/ball.c: 13: }
+[; ;class/ball.c: 13:     b->x=b->x+b->dx;
+[e = . *U _b 0 -> + -> . *U _b 0 `ui -> . *U _b 2 `ui `us ]
+"14
+[; ;class/ball.c: 14:     b->y=b->y+b->dy;
+[e = . *U _b 1 -> + -> . *U _b 1 `ui -> . *U _b 3 `ui `us ]
+"15
+[; ;class/ball.c: 15:     Ball_draw(b);
+[e ( _Ball_draw (1 _b ]
+"16
+[; ;class/ball.c: 16: }
 [e :UE 8 ]
 }
-"14
-[; ;class/ball.c: 14: void Ball_setPosY(struct Ball* b, uint16_t value)
-[v _Ball_setPosY `(v ~T0 @X0 1 ef2`*S6`us ]
-"15
-[; ;class/ball.c: 15: {
-{
-[e :U _Ball_setPosY ]
-"14
-[; ;class/ball.c: 14: void Ball_setPosY(struct Ball* b, uint16_t value)
-[v _b `*S6 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"15
-[; ;class/ball.c: 15: {
-[f ]
-"16
-[; ;class/ball.c: 16:     b->y = value;
-[e = . *U _b 1 _value ]
 "17
-[; ;class/ball.c: 17: }
-[e :UE 9 ]
-}
-"18
-[; ;class/ball.c: 18: void Ball_draw(struct Ball* b)
+[; ;class/ball.c: 17: void Ball_draw(struct Ball* b)
 [v _Ball_draw `(v ~T0 @X0 1 ef1`*S6 ]
-"19
-[; ;class/ball.c: 19: {
+"18
+[; ;class/ball.c: 18: {
 {
 [e :U _Ball_draw ]
-"18
-[; ;class/ball.c: 18: void Ball_draw(struct Ball* b)
+"17
+[; ;class/ball.c: 17: void Ball_draw(struct Ball* b)
 [v _b `*S6 ~T0 @X0 1 r1 ]
-"19
-[; ;class/ball.c: 19: {
+"18
+[; ;class/ball.c: 18: {
 [f ]
+"19
+[; ;class/ball.c: 19:     LCD_DrawRect(b->x-8,b->y-8,b->x+8,b->y+8,1,0b1111100000000000);
+[e ( _LCD_DrawRect (4 , , , , , -> - -> . *U _b 0 `ui -> -> 8 `i `ui `us -> - -> . *U _b 1 `ui -> -> 8 `i `ui `us -> + -> . *U _b 0 `ui -> -> 8 `i `ui `us -> + -> . *U _b 1 `ui -> -> 8 `i `ui `us -> -> 1 `i `uc -> -> 63488 `ui `us ]
 "20
-[; ;class/ball.c: 20:     LCD_DrawText("O",&arialNarrow_12ptFontInfo, A_LEFT, b->x, b->y,b->color, 0b1111111111111111);
-[e ( _LCD_DrawText (4 , , , , , , :s 1C &U _arialNarrow_12ptFontInfo . `E47 0 . *U _b 0 . *U _b 1 . *U _b 3 -> -> 65535 `ui `us ]
-"21
-[; ;class/ball.c: 21: }
-[e :UE 10 ]
+[; ;class/ball.c: 20: }
+[e :UE 9 ]
 }
-[a 1C 79 0 ]

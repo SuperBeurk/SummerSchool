@@ -2,6 +2,7 @@
 #include "factory.h"
 
 #define _XTAL_FREQ   64000000L
+#define _DIR_BACKLIGHT TRISC1
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 
 //global variable
@@ -26,12 +27,12 @@ void Factory_init()
     
 
     T0CON=0b10000110;
-    TMR0H=0xE7;
-    TMR0L=0x95;
+    TMR0H=0xFB;
+    TMR0L=0x1D;
     TMR0IE=1;
     
     //PWM BACKLIGHT
-    TRISC1=0;
+    _DIR_BACKLIGHT=0;
     PR2=255;
     CCP2CONbits.CCP2M = 0xC;
     CCPR2L = 255;         

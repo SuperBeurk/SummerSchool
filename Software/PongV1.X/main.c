@@ -39,10 +39,10 @@ void __interrupt() isr(void)
     }
     if((TMR0IF==1)&&(TMR0IE==1))
     {
-        XF_decrementAndQueueTimers();
-        
-        TMR0H=0xE7;
-        TMR0L=0x95;
+        XF_decrementAndQueueTimers(); 
+        XF_scheduleTimer(5,evGameUpdate,true);
+        TMR0H=0xFB;
+        TMR0L=0x1D;
         TMR0IF=0;              
     }
 }

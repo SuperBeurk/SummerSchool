@@ -10,6 +10,8 @@
 # 1 "class/paddle.h" 1
 
 
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
 
 
@@ -278,14 +280,12 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 3 "class/paddle.h" 2
+# 5 "class/paddle.h" 2
 
 typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
-    uint16_t w;
-    uint16_t h;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);
@@ -300,29 +300,25 @@ void Paddle_init(struct Paddle* p,uint16_t team)
     {
         p->x = 90;
         p->y = 20;
-        p->w = 50;
-        p->h = 20;
         p->color = 0b0000000000011111;
     }
     else
     {
         p->x = 90;
         p->y = 280;
-        p->w = 50;
-        p->h = 20;
         p->color = 0b0000000000011111;
     }
 
 }
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 {
-    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,0b1111111111111111);
+    LCD_DrawRect(p->x,p->y,p->x+50,p->y+20,1,0b1111111111111111);
     if(add==1)
     {
         p->x=(p->x)+value;
-        if((p->x+p->w)>239)
+        if((p->x+50)>239)
         {
-            p->x=239-(p->w);
+            p->x=239-(50);
         }
     }
     else
@@ -341,5 +337,5 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 void Paddle_draw(struct Paddle* p)
 {
 
-    LCD_DrawRect(p->x,p->y,p->x+p->w,p->y+p->h,1,p->color);
+    LCD_DrawRect(p->x,p->y,p->x+50,p->y+20,1,p->color);
 }

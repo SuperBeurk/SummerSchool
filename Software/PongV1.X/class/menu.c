@@ -19,7 +19,6 @@ void Menu_parametersDraw(GameParameters* g)
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(WHITE);
-    LCD_DrawText("INGAME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,BLACK,WHITE);
     LCD_ButtonDraw(&(g->btnRight));
     LCD_ButtonDraw(&(g->btnLeft));
     Paddle_draw(&g->p1);

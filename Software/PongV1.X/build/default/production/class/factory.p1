@@ -15,14 +15,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "108
 [s S830 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F5804 1 ]
 [n S830 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
-"5 class/ball.h
-[; ;class/ball.h: 5: {
-[s S831 `us 1 `us 1 `us 1 `us 1 ]
-[n S831 Ball x y r color ]
-"5 class/paddle.h
-[; ;class/paddle.h: 5: {
-[s S832 `us 1 `us 1 `us 1 `us 1 `us 1 ]
-[n S832 Paddle x y w h color ]
+"7 class/ball.h
+[; ;class/ball.h: 7: {
+[s S831 `us 1 `us 1 `s 1 `s 1 ]
+[n S831 Ball x y dx dy ]
+"7 class/paddle.h
+[; ;class/paddle.h: 7: {
+[s S832 `us 1 `us 1 `us 1 ]
+[n S832 Paddle x y color ]
 "5 class/score.h
 [; ;class/score.h: 5: {
 [s S833 `us 1 `us 1 ]
@@ -44,14 +44,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
 "233
 [v _LCD_Fill `(v ~T0 @X0 0 ef1`us ]
-"19 class/factory.c
-[; ;class/factory.c: 19:     LCD_DrawText("MenuStart",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+"20 class/factory.c
+[; ;class/factory.c: 20:     LCD_DrawText("MenuStart",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
 [c E5746 0 1 2 .. ]
 [n E5746 . A_LEFT A_RIGHT A_CENTER  ]
 "271 class/../stateMachine/../libraries/lcd_highlevel.h
 [v _LCD_DrawText `(v ~T0 @X0 0 ef7`*Cuc`*CS827`E5746`us`us`us`us ]
-"5 class/factory.c
-[; ;class/factory.c: 5: extern const FONT_INFO arialNarrow_12ptFontInfo;
+"6 class/factory.c
+[; ;class/factory.c: 6: extern const FONT_INFO arialNarrow_12ptFontInfo;
 [v _arialNarrow_12ptFontInfo `CS827 ~T0 @X0 0 e ]
 "17583 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17583: extern volatile __bit GIE __attribute__((address(0x7F97)));
@@ -125,15 +125,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _sleepInit `(v ~T0 @X0 0 ef1`*S834 ]
 "65 class/../xf/xf.h
 [v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
-"57 class/factory.c
-[; ;class/factory.c: 57:     if (ev != NULLEVENT)
-[c E5972 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E5972 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame  ]
+"58 class/factory.c
+[; ;class/factory.c: 58:     if (ev != NULLEVENT)
+[c E5968 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E5968 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame evGameUpdate  ]
 "9 class/../stateMachine/sleepSM.h
 [; ;class/../stateMachine/sleepSM.h: 9: void sleepSM(Event ev);
 [v _sleepSM `(v ~T0 @X0 0 ef1`uc ]
-"8 class/../stateMachine/touchScreenSM.h
-[; ;class/../stateMachine/touchScreenSM.h: 8: void touchScreenSM(Event ev,GameParameters* g);
+"25 class/../stateMachine/touchScreenSM.h
+[; ;class/../stateMachine/touchScreenSM.h: 25: void touchScreenSM(Event ev,GameParameters* g);
 [v _touchScreenSM `(v ~T0 @X0 0 ef2`uc`*S834 ]
 "8 class/../stateMachine/display.h
 [; ;class/../stateMachine/display.h: 8: void displaySM(Event ev,GameParameters* g);
@@ -2856,134 +2856,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"8 class/factory.c
-[; ;class/factory.c: 8: GameParameters g1;
+"9 class/factory.c
+[; ;class/factory.c: 9: GameParameters g1;
 [v _g1 `S834 ~T0 @X0 1 e ]
-"10
-[; ;class/factory.c: 10: void Factory_init()
-[v _Factory_init `(v ~T0 @X0 1 ef ]
 "11
-[; ;class/factory.c: 11: {
+[; ;class/factory.c: 11: void Factory_init()
+[v _Factory_init `(v ~T0 @X0 1 ef ]
+"12
+[; ;class/factory.c: 12: {
 {
 [e :U _Factory_init ]
 [f ]
-"13
-[; ;class/factory.c: 13:     PLLEN = 1;
-[e = _PLLEN -> -> 1 `i `b ]
 "14
-[; ;class/factory.c: 14:     OSCCON = 0b01110000;
-[e = _OSCCON -> -> 112 `i `uc ]
+[; ;class/factory.c: 14:     PLLEN = 1;
+[e = _PLLEN -> -> 1 `i `b ]
 "15
-[; ;class/factory.c: 15:     _delay((unsigned long)((100)*(64000000L/4000.0)));
+[; ;class/factory.c: 15:     OSCCON = 0b01110000;
+[e = _OSCCON -> -> 112 `i `uc ]
+"16
+[; ;class/factory.c: 16:     _delay((unsigned long)((100)*(64000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"17
-[; ;class/factory.c: 17:     LCD_Init();
-[e ( _LCD_Init ..  ]
 "18
-[; ;class/factory.c: 18:     LCD_Fill(0b0000000000011111);
-[e ( _LCD_Fill (1 -> -> 31 `i `us ]
+[; ;class/factory.c: 18:     LCD_Init();
+[e ( _LCD_Init ..  ]
 "19
-[; ;class/factory.c: 19:     LCD_DrawText("MenuStart",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+[; ;class/factory.c: 19:     LCD_Fill(0b0000000000011111);
+[e ( _LCD_Fill (1 -> -> 31 `i `us ]
+"20
+[; ;class/factory.c: 20:     LCD_DrawText("MenuStart",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
 [e ( _LCD_DrawText (4 , , , , , , :s 1C &U _arialNarrow_12ptFontInfo . `E5746 2 -> -> 50 `i `us -> -> 50 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
-"24
-[; ;class/factory.c: 24:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
 "25
-[; ;class/factory.c: 25:     INT1IE=0;
+[; ;class/factory.c: 25:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"26
+[; ;class/factory.c: 26:     INT1IE=0;
 [e = _INT1IE -> -> 0 `i `b ]
-"28
-[; ;class/factory.c: 28:     T0CON=0b10000110;
-[e = _T0CON -> -> 134 `i `uc ]
 "29
-[; ;class/factory.c: 29:     TMR0H=0xE7;
-[e = _TMR0H -> -> 231 `i `uc ]
+[; ;class/factory.c: 29:     T0CON=0b10000110;
+[e = _T0CON -> -> 134 `i `uc ]
 "30
-[; ;class/factory.c: 30:     TMR0L=0x95;
-[e = _TMR0L -> -> 149 `i `uc ]
+[; ;class/factory.c: 30:     TMR0H=0xFB;
+[e = _TMR0H -> -> 251 `i `uc ]
 "31
-[; ;class/factory.c: 31:     TMR0IE=1;
+[; ;class/factory.c: 31:     TMR0L=0x1D;
+[e = _TMR0L -> -> 29 `i `uc ]
+"32
+[; ;class/factory.c: 32:     TMR0IE=1;
 [e = _TMR0IE -> -> 1 `i `b ]
-"34
-[; ;class/factory.c: 34:     TRISC1=0;
-[e = _TRISC1 -> -> 0 `i `b ]
 "35
-[; ;class/factory.c: 35:     PR2=255;
-[e = _PR2 -> -> 255 `i `uc ]
+[; ;class/factory.c: 35:     TRISC1=0;
+[e = _TRISC1 -> -> 0 `i `b ]
 "36
-[; ;class/factory.c: 36:     CCP2CONbits.CCP2M = 0xC;
-[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+[; ;class/factory.c: 36:     PR2=255;
+[e = _PR2 -> -> 255 `i `uc ]
 "37
-[; ;class/factory.c: 37:     CCPR2L = 255;
-[e = _CCPR2L -> -> 255 `i `uc ]
+[; ;class/factory.c: 37:     CCP2CONbits.CCP2M = 0xC;
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
 "38
-[; ;class/factory.c: 38:     CCP2CONbits.DC2B = 0;
-[e = . . _CCP2CONbits 0 1 -> -> 0 `i `uc ]
+[; ;class/factory.c: 38:     CCPR2L = 255;
+[e = _CCPR2L -> -> 255 `i `uc ]
 "39
-[; ;class/factory.c: 39:     TMR2IF=0;
-[e = _TMR2IF -> -> 0 `i `b ]
+[; ;class/factory.c: 39:     CCP2CONbits.DC2B = 0;
+[e = . . _CCP2CONbits 0 1 -> -> 0 `i `uc ]
 "40
-[; ;class/factory.c: 40:     T2CONbits.T2CKPS0 = 1;
-[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
+[; ;class/factory.c: 40:     TMR2IF=0;
+[e = _TMR2IF -> -> 0 `i `b ]
 "41
-[; ;class/factory.c: 41:     T2CONbits.T2CKPS1 = 0;
-[e = . . _T2CONbits 1 1 -> -> 0 `i `uc ]
+[; ;class/factory.c: 41:     T2CONbits.T2CKPS0 = 1;
+[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
 "42
-[; ;class/factory.c: 42:     T2CONbits.TMR2ON = 1;
+[; ;class/factory.c: 42:     T2CONbits.T2CKPS1 = 0;
+[e = . . _T2CONbits 1 1 -> -> 0 `i `uc ]
+"43
+[; ;class/factory.c: 43:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"44
-[; ;class/factory.c: 44:     ADCON2=0b10100110;
+"45
+[; ;class/factory.c: 45:     ADCON2=0b10100110;
 [e = _ADCON2 -> -> 166 `i `uc ]
-"47
-[; ;class/factory.c: 47:     XF_init();
-[e ( _XF_init ..  ]
 "48
-[; ;class/factory.c: 48:     GameParameters_init(&g1);
-[e ( _GameParameters_init (1 &U _g1 ]
+[; ;class/factory.c: 48:     XF_init();
+[e ( _XF_init ..  ]
 "49
-[; ;class/factory.c: 49:     sleepInit(&g1);
+[; ;class/factory.c: 49:     GameParameters_init(&g1);
+[e ( _GameParameters_init (1 &U _g1 ]
+"50
+[; ;class/factory.c: 50:     sleepInit(&g1);
 [e ( _sleepInit (1 &U _g1 ]
-"51
-[; ;class/factory.c: 51: }
+"52
+[; ;class/factory.c: 52: }
 [e :UE 837 ]
 }
-"52
-[; ;class/factory.c: 52: void Factory_exec()
-[v _Factory_exec `(v ~T0 @X0 1 ef ]
 "53
-[; ;class/factory.c: 53: {
+[; ;class/factory.c: 53: void Factory_exec()
+[v _Factory_exec `(v ~T0 @X0 1 ef ]
+"54
+[; ;class/factory.c: 54: {
 {
 [e :U _Factory_exec ]
 [f ]
-"55
-[; ;class/factory.c: 55:     Event ev;
-[v _ev `uc ~T0 @X0 1 a ]
 "56
-[; ;class/factory.c: 56:     ev = XF_popEvent(0);
-[e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
+[; ;class/factory.c: 56:     Event ev;
+[v _ev `uc ~T0 @X0 1 a ]
 "57
-[; ;class/factory.c: 57:     if (ev != NULLEVENT)
-[e $ ! != -> _ev `i -> . `E5972 0 `i 839  ]
+[; ;class/factory.c: 57:     ev = XF_popEvent(0);
+[e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
 "58
-[; ;class/factory.c: 58:     {
-{
+[; ;class/factory.c: 58:     if (ev != NULLEVENT)
+[e $ ! != -> _ev `i -> . `E5968 0 `i 839  ]
 "59
-[; ;class/factory.c: 59:         sleepSM(ev);
-[e ( _sleepSM (1 _ev ]
+[; ;class/factory.c: 59:     {
+{
 "60
-[; ;class/factory.c: 60:         touchScreenSM(ev,&g1);
-[e ( _touchScreenSM (2 , _ev &U _g1 ]
+[; ;class/factory.c: 60:         sleepSM(ev);
+[e ( _sleepSM (1 _ev ]
 "61
-[; ;class/factory.c: 61:         displaySM(ev,&g1);
-[e ( _displaySM (2 , _ev &U _g1 ]
+[; ;class/factory.c: 61:         touchScreenSM(ev,&g1);
+[e ( _touchScreenSM (2 , _ev &U _g1 ]
 "62
-[; ;class/factory.c: 62:         gameControllerSM(ev,&g1);
-[e ( _gameControllerSM (2 , _ev &U _g1 ]
+[; ;class/factory.c: 62:         displaySM(ev,&g1);
+[e ( _displaySM (2 , _ev &U _g1 ]
 "63
-[; ;class/factory.c: 63:     }
+[; ;class/factory.c: 63:         gameControllerSM(ev,&g1);
+[e ( _gameControllerSM (2 , _ev &U _g1 ]
+"64
+[; ;class/factory.c: 64:     }
 }
 [e :U 839 ]
-"65
-[; ;class/factory.c: 65: }
+"66
+[; ;class/factory.c: 66: }
 [e :UE 838 ]
 }
 [a 1C 77 101 110 117 83 116 97 114 116 0 ]

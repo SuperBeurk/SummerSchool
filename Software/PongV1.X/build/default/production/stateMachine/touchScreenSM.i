@@ -14,8 +14,7 @@
 
 
 # 1 "stateMachine/touchScreenSM.h" 1
-
-
+# 20 "stateMachine/touchScreenSM.h"
 # 1 "stateMachine/../xf/xf.h" 1
 # 14 "stateMachine/../xf/xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
@@ -132,7 +131,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame,evGameUpdate};
 
 typedef struct Timer
 {
@@ -187,7 +186,7 @@ void XF_unscheduleTimer(TimerID id, _Bool inISR);
 
 
 void XF_decrementAndQueueTimers();
-# 3 "stateMachine/touchScreenSM.h" 2
+# 20 "stateMachine/touchScreenSM.h" 2
 
 # 1 "stateMachine/../libraries/lcd_highlevel.h" 1
 # 11 "stateMachine/../libraries/lcd_highlevel.h"
@@ -341,7 +340,7 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "stateMachine/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 4 "stateMachine/touchScreenSM.h" 2
+# 21 "stateMachine/touchScreenSM.h" 2
 
 # 1 "stateMachine/../class/gameParameters.h" 1
 
@@ -353,34 +352,35 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
 # 1 "stateMachine/../class/ball.h" 1
 
 
+
+
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/ball.h" 2
+# 5 "stateMachine/../class/ball.h" 2
 
 typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
-    uint16_t r;
-    uint16_t color;
+    int16_t dx;
+    int16_t dy;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setPosX(struct Ball* b, uint16_t value);
-void Ball_setPosY(struct Ball* b, uint16_t value);
+void Ball_Update(struct Ball* b);
 void Ball_draw(struct Ball* b);
 # 5 "stateMachine/../class/gameParameters.h" 2
 
 # 1 "stateMachine/../class/paddle.h" 1
 
 
+
+
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/paddle.h" 2
+# 5 "stateMachine/../class/paddle.h" 2
 
 typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
-    uint16_t w;
-    uint16_t h;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);
@@ -9515,7 +9515,8 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
-# 5 "stateMachine/touchScreenSM.h" 2
+void GameParameters_resetPos(struct GameParameters* s);
+# 22 "stateMachine/touchScreenSM.h" 2
 
 
 void touchScreenInit();
@@ -9782,25 +9783,28 @@ void touchScreenController(GameParameters* g)
 
 
 
+            INT1IE=0;
             configMeasure(0);
             while((ADCON0&0x02)!=0){};
             uint16_t valueX;
             valueX=(ADRESH<<8)+ADRESL;
-            valueX=800-valueX;
-            if(valueX>=150)
+            if(valueX<=120)
             {
-                valueX=(valueX-150)/2;
-            }else{valueX=0;}
+                valueX=120;
+            }
+            valueX=(valueX-120)/2.35;
+            valueX=240 -valueX;
 
             configMeasure(1);
             while((ADCON0&0x02)!=0){};
             uint16_t valueY;
             valueY=(ADRESH<<8)+ADRESL;
-            if(valueY>=125)
+            if(valueY<=105)
             {
-                valueY=(valueY-125)/2;
-            }else{valueY=0;}
-            XF_scheduleTimer(1,evTimerPos,0);
+                valueY=105;
+            }
+            valueY=(valueY-105)/2;
+            XF_scheduleTimer(9,evTimerPos,0);
 
 
             ADCON0=0b00101001;
@@ -9845,7 +9849,6 @@ void configMeasure(_Bool channel)
 {
     if(channel==0)
     {
-        INT1IE=0;
         ANSB1=0;
         TRISB1=0;
         LATB1=0;

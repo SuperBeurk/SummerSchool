@@ -10,6 +10,8 @@
 # 1 "class/ball.h" 1
 
 
+
+
 # 1 "class/../libraries/lcd_highlevel.h" 1
 
 
@@ -278,38 +280,36 @@ void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
 # 295 "class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 3 "class/ball.h" 2
+# 5 "class/ball.h" 2
 
 typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
-    uint16_t r;
-    uint16_t color;
+    int16_t dx;
+    int16_t dy;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setPosX(struct Ball* b, uint16_t value);
-void Ball_setPosY(struct Ball* b, uint16_t value);
+void Ball_Update(struct Ball* b);
 void Ball_draw(struct Ball* b);
 # 1 "class/ball.c" 2
 
-extern const FONT_INFO arialNarrow_12ptFontInfo;
+
 void Ball_init(struct Ball* b)
 {
     b->x = 90;
     b->y = 150;
-    b->r = 10;
-    b->color = 0b1111100000000000;
+    b->dx = 0;
+    b->dy = 1;
 }
-void Ball_setPosX(struct Ball* b, uint16_t value)
+void Ball_Update(struct Ball* b)
 {
-    b->x = value;
-}
-void Ball_setPosY(struct Ball* b, uint16_t value)
-{
-    b->y = value;
+    LCD_DrawRect(b->x-8,b->y-8,b->x+8,b->y+8,1,0b1111111111111111);
+    b->x=b->x+b->dx;
+    b->y=b->y+b->dy;
+    Ball_draw(b);
 }
 void Ball_draw(struct Ball* b)
 {
-    LCD_DrawText("O",&arialNarrow_12ptFontInfo, A_LEFT, b->x, b->y,b->color, 0b1111111111111111);
+    LCD_DrawRect(b->x-8,b->y-8,b->x+8,b->y+8,1,0b1111100000000000);
 }

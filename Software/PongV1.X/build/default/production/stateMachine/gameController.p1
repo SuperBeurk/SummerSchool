@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 stateMachine/gameController.c
-[; ;stateMachine/gameController.c: 9: enum state gameControllerState;
-[c E6016 0 1 2 3 .. ]
-[n E6016 state NOGAME PARAMETERS LOCAL ONLINE  ]
+"13 stateMachine/gameController.c
+[; ;stateMachine/gameController.c: 13: enum state gameControllerState;
+[c E6504 0 1 2 3 .. ]
+[n E6504 state NOGAME PARAMETERS LOCAL ONLINE  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 12: {
 [s S3 `uc 1 `us 1 ]
@@ -11,26 +11,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 18: {
 [s S4 `uc 1 `uc 1 `uc 1 `*CS3 1 `*Cuc 1 ]
 [n S4 . height start_char end_char descriptor bitmap ]
-[v F119 `(v ~T0 @X0 0 tf1`uc ]
-[v F122 `(v ~T0 @X0 0 tf1`uc ]
-[v F125 `(v ~T0 @X0 0 tf1`uc ]
+[v F120 `(v ~T0 @X0 0 tf1`uc ]
+[v F123 `(v ~T0 @X0 0 tf1`uc ]
+[v F126 `(v ~T0 @X0 0 tf1`uc ]
 "88
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 88: {
-[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S4 1 `uc 1 `*F119 1 `*F122 1 `*F125 1 `uc 1 ]
+[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S4 1 `uc 1 `*F120 1 `*F123 1 `*F126 1 `uc 1 ]
 [n S6 . posX posY width height txtColor bgColor text font pressed fpPress fpReleased fpOut index ]
-[v F143 `(v ~T0 @X0 0 t? ]
+[v F144 `(v ~T0 @X0 0 t? ]
 "108
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 108: {
-[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F143 1 ]
+[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F144 1 ]
 [n S7 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
-"5 stateMachine/../class/ball.h
-[; ;stateMachine/../class/ball.h: 5: {
-[s S8 `us 1 `us 1 `us 1 `us 1 ]
-[n S8 Ball x y r color ]
-"5 stateMachine/../class/paddle.h
-[; ;stateMachine/../class/paddle.h: 5: {
-[s S9 `us 1 `us 1 `us 1 `us 1 `us 1 ]
-[n S9 Paddle x y w h color ]
+"7 stateMachine/../class/ball.h
+[; ;stateMachine/../class/ball.h: 7: {
+[s S8 `us 1 `us 1 `s 1 `s 1 ]
+[n S8 Ball x y dx dy ]
+"7 stateMachine/../class/paddle.h
+[; ;stateMachine/../class/paddle.h: 7: {
+[s S9 `us 1 `us 1 `us 1 ]
+[n S9 Paddle x y color ]
 "5 stateMachine/../class/score.h
 [; ;stateMachine/../class/score.h: 5: {
 [s S10 `us 1 `us 1 ]
@@ -42,21 +42,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 stateMachine/gameController.h
 [; ;stateMachine/gameController.h: 7: void gameControllerController(GameParameters* g);
 [v _gameControllerController `(v ~T0 @X0 0 ef1`*S836 ]
-"22 stateMachine/gameController.c
-[; ;stateMachine/gameController.c: 22:             if(ev==evParameters)
-[c E39 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame  ]
+"27 stateMachine/gameController.c
+[; ;stateMachine/gameController.c: 27:             if(ev==evParameters)
+[c E39 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame evGameUpdate  ]
+"8 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 8: void moovePaddle(GameParameters* g);
+[v _moovePaddle `(v ~T0 @X0 0 ef1`*S836 ]
+"9
+[; ;stateMachine/gameController.h: 9: void mooveBall(GameParameters* g);
+[v _mooveBall `(v ~T0 @X0 0 ef1`*S836 ]
+"256 stateMachine/../class/../libraries/lcd_highlevel.h
+[; ;stateMachine/../class/../libraries/lcd_highlevel.h: 256: void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
+[v _LCD_DrawRect `(v ~T0 @X0 0 ef6`us`us`us`us`uc`us ]
+"14 stateMachine/../class/paddle.h
+[; ;stateMachine/../class/paddle.h: 14: void Paddle_draw(struct Paddle* p);
+[v _Paddle_draw `(v ~T0 @X0 0 ef1`*S9 ]
 "215 stateMachine/../class/../libraries/lcd_highlevel.h
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 215: uint8_t LCD_InButton(btn_t * button, uint16_t posX, uint16_t posY);
 [v _LCD_InButton `(uc ~T0 @X0 0 ef3`*S6`us`us ]
 "58 stateMachine/../xf/xf.h
 [; ;stateMachine/../xf/xf.h: 58: _Bool XF_pushEvent(Event ev, _Bool inISR);
 [v _XF_pushEvent `(a ~T0 @X0 0 ef2`uc`a ]
+"33 stateMachine/../class/gameParameters.h
+[; ;stateMachine/../class/gameParameters.h: 33: void GameParameters_resetPos(struct GameParameters* s);
+[v _GameParameters_resetPos `(v ~T0 @X0 0 ef1`*S836 ]
 "206 stateMachine/../class/../libraries/lcd_highlevel.h
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 206: uint8_t LCD_InSlider(sld_t * slider, uint16_t posX, uint16_t posY);
 [v _LCD_InSlider `(uc ~T0 @X0 0 ef3`*S7`us`us ]
-"8 stateMachine/gameController.h
-[; ;stateMachine/gameController.h: 8: void backlightController(GameParameters* g);
+"10 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 10: void backlightController(GameParameters* g);
 [v _backlightController `(v ~T0 @X0 0 ef1`*S836 ]
 "189 stateMachine/../class/../libraries/lcd_highlevel.h
 [; ;stateMachine/../class/../libraries/lcd_highlevel.h: 189: void LCD_SliderUpdate(sld_t * slider);
@@ -64,12 +79,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13 stateMachine/../class/paddle.h
 [; ;stateMachine/../class/paddle.h: 13: void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
 [v _Paddle_addX `(v ~T0 @X0 0 ef3`*S9`us`us ]
-"14
-[; ;stateMachine/../class/paddle.h: 14: void Paddle_draw(struct Paddle* p);
-[v _Paddle_draw `(v ~T0 @X0 0 ef1`*S9 ]
-"161 stateMachine/../class/../libraries/lcd_highlevel.h
-[; ;stateMachine/../class/../libraries/lcd_highlevel.h: 161: void LCD_ButtonUpdate(btn_t * button);
-[v _LCD_ButtonUpdate `(v ~T0 @X0 0 ef1`*S6 ]
+"11 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 11: void checkCollision(GameParameters* g);
+[v _checkCollision `(v ~T0 @X0 0 ef1`*S836 ]
+"14 stateMachine/../class/ball.h
+[; ;stateMachine/../class/ball.h: 14: void Ball_Update(struct Ball* b);
+[v _Ball_Update `(v ~T0 @X0 0 ef1`*S8 ]
 "28 stateMachine/../class/gameParameters.h
 [; ;stateMachine/../class/gameParameters.h: 28: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 [v _GameParameters_setBackLight `(v ~T0 @X0 0 ef2`*S836`us ]
@@ -805,572 +820,913 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 stateMachine/gameController.c
-[; ;stateMachine/gameController.c: 9: enum state gameControllerState;
-[v _gameControllerState `E6016 ~T0 @X0 1 e ]
-"11
-[; ;stateMachine/gameController.c: 11: void gameControllerInit(GameParameters* g)
+"13 stateMachine/gameController.c
+[; ;stateMachine/gameController.c: 13: enum state gameControllerState;
+[v _gameControllerState `E6504 ~T0 @X0 1 e ]
+"15
+[; ;stateMachine/gameController.c: 15: void gameControllerInit(GameParameters* g)
 [v _gameControllerInit `(v ~T0 @X0 1 ef1`*S836 ]
-"12
-[; ;stateMachine/gameController.c: 12: {
+"16
+[; ;stateMachine/gameController.c: 16: {
 {
 [e :U _gameControllerInit ]
-"11
-[; ;stateMachine/gameController.c: 11: void gameControllerInit(GameParameters* g)
-[v _g `*S836 ~T0 @X0 1 r1 ]
-"12
-[; ;stateMachine/gameController.c: 12: {
-[f ]
-"13
-[; ;stateMachine/gameController.c: 13:     gameControllerState=NOGAME;
-[e = _gameControllerState . `E6016 0 ]
-"14
-[; ;stateMachine/gameController.c: 14:     gameControllerController(g);
-[e ( _gameControllerController (1 _g ]
 "15
-[; ;stateMachine/gameController.c: 15: }
-[e :UE 837 ]
-}
+[; ;stateMachine/gameController.c: 15: void gameControllerInit(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
 "16
-[; ;stateMachine/gameController.c: 16: void gameControllerSM(Event ev,GameParameters* g)
-[v _gameControllerSM `(v ~T0 @X0 1 ef2`uc`*S836 ]
+[; ;stateMachine/gameController.c: 16: {
+[f ]
 "17
-[; ;stateMachine/gameController.c: 17: {
+[; ;stateMachine/gameController.c: 17:     gameControllerState=NOGAME;
+[e = _gameControllerState . `E6504 0 ]
+"18
+[; ;stateMachine/gameController.c: 18:     gameControllerController(g);
+[e ( _gameControllerController (1 _g ]
+"19
+[; ;stateMachine/gameController.c: 19: }
+[e :UE 840 ]
+}
+"20
+[; ;stateMachine/gameController.c: 20: void gameControllerSM(Event ev,GameParameters* g)
+[v _gameControllerSM `(v ~T0 @X0 1 ef2`uc`*S836 ]
+"21
+[; ;stateMachine/gameController.c: 21: {
 {
 [e :U _gameControllerSM ]
-"16
-[; ;stateMachine/gameController.c: 16: void gameControllerSM(Event ev,GameParameters* g)
+"20
+[; ;stateMachine/gameController.c: 20: void gameControllerSM(Event ev,GameParameters* g)
 [v _ev `uc ~T0 @X0 1 r1 ]
 [v _g `*S836 ~T0 @X0 1 r2 ]
-"17
-[; ;stateMachine/gameController.c: 17: {
-[f ]
-"18
-[; ;stateMachine/gameController.c: 18:    switch(gameControllerState)
-[e $U 840  ]
-"19
-[; ;stateMachine/gameController.c: 19:     {
-{
-"20
-[; ;stateMachine/gameController.c: 20:         case NOGAME:
-[e :U 841 ]
 "21
-[; ;stateMachine/gameController.c: 21:             gameControllerController(g);
-[e ( _gameControllerController (1 _g ]
+[; ;stateMachine/gameController.c: 21: {
+[f ]
 "22
-[; ;stateMachine/gameController.c: 22:             if(ev==evParameters)
-[e $ ! == -> _ev `i -> . `E39 7 `i 842  ]
+[; ;stateMachine/gameController.c: 22:    char s[20];
+[v _s `uc ~T0 @X0 -> 20 `i a ]
 "23
-[; ;stateMachine/gameController.c: 23:             {
-{
+[; ;stateMachine/gameController.c: 23:    switch(gameControllerState)
+[e $U 843  ]
 "24
-[; ;stateMachine/gameController.c: 24:                 gameControllerState=PARAMETERS;
-[e = _gameControllerState . `E6016 1 ]
-"25
-[; ;stateMachine/gameController.c: 25:             }
-}
-[e :U 842 ]
-"26
-[; ;stateMachine/gameController.c: 26:             if(ev==evOnePlayer)
-[e $ ! == -> _ev `i -> . `E39 5 `i 843  ]
-"27
-[; ;stateMachine/gameController.c: 27:             {
+[; ;stateMachine/gameController.c: 24:     {
 {
+"25
+[; ;stateMachine/gameController.c: 25:         case NOGAME:
+[e :U 844 ]
+"26
+[; ;stateMachine/gameController.c: 26:             gameControllerController(g);
+[e ( _gameControllerController (1 _g ]
+"27
+[; ;stateMachine/gameController.c: 27:             if(ev==evParameters)
+[e $ ! == -> _ev `i -> . `E39 7 `i 845  ]
 "28
-[; ;stateMachine/gameController.c: 28:                 gameControllerState=LOCAL;
-[e = _gameControllerState . `E6016 2 ]
+[; ;stateMachine/gameController.c: 28:             {
+{
 "29
-[; ;stateMachine/gameController.c: 29:             }
-}
-[e :U 843 ]
+[; ;stateMachine/gameController.c: 29:                 gameControllerState=PARAMETERS;
+[e = _gameControllerState . `E6504 1 ]
 "30
-[; ;stateMachine/gameController.c: 30:             break;
-[e $U 839  ]
+[; ;stateMachine/gameController.c: 30:             }
+}
+[e :U 845 ]
 "31
-[; ;stateMachine/gameController.c: 31:             if(ev==evTwoPlayer)
-[e $ ! == -> _ev `i -> . `E39 6 `i 844  ]
+[; ;stateMachine/gameController.c: 31:             if(ev==evOnePlayer)
+[e $ ! == -> _ev `i -> . `E39 5 `i 846  ]
 "32
 [; ;stateMachine/gameController.c: 32:             {
 {
 "33
-[; ;stateMachine/gameController.c: 33:                 gameControllerState=ONLINE;
-[e = _gameControllerState . `E6016 3 ]
+[; ;stateMachine/gameController.c: 33:                 gameControllerState=LOCAL;
+[e = _gameControllerState . `E6504 2 ]
 "34
 [; ;stateMachine/gameController.c: 34:             }
 }
-[e :U 844 ]
-"35
-[; ;stateMachine/gameController.c: 35:         case PARAMETERS:
-[e :U 845 ]
-"36
-[; ;stateMachine/gameController.c: 36:             gameControllerController(g);
-[e ( _gameControllerController (1 _g ]
-"37
-[; ;stateMachine/gameController.c: 37:             if(ev==evLeaveParam)
-[e $ ! == -> _ev `i -> . `E39 8 `i 846  ]
-"38
-[; ;stateMachine/gameController.c: 38:             {
-{
-"39
-[; ;stateMachine/gameController.c: 39:                 gameControllerState=NOGAME;
-[e = _gameControllerState . `E6016 0 ]
-"40
-[; ;stateMachine/gameController.c: 40:             }
-}
 [e :U 846 ]
-"41
-[; ;stateMachine/gameController.c: 41:             break;
-[e $U 839  ]
-"42
-[; ;stateMachine/gameController.c: 42:         case LOCAL:
-[e :U 847 ]
-"43
-[; ;stateMachine/gameController.c: 43:             if(ev==evTimerPos)
-[e $ ! == -> _ev `i -> . `E39 4 `i 848  ]
-"44
-[; ;stateMachine/gameController.c: 44:             {
+"35
+[; ;stateMachine/gameController.c: 35:             break;
+[e $U 842  ]
+"36
+[; ;stateMachine/gameController.c: 36:             if(ev==evTwoPlayer)
+[e $ ! == -> _ev `i -> . `E39 6 `i 847  ]
+"37
+[; ;stateMachine/gameController.c: 37:             {
 {
-"45
-[; ;stateMachine/gameController.c: 45:                 gameControllerController(g);
-[e ( _gameControllerController (1 _g ]
-"46
-[; ;stateMachine/gameController.c: 46:             }
+"38
+[; ;stateMachine/gameController.c: 38:                 gameControllerState=ONLINE;
+[e = _gameControllerState . `E6504 3 ]
+"39
+[; ;stateMachine/gameController.c: 39:             }
 }
+[e :U 847 ]
+"40
+[; ;stateMachine/gameController.c: 40:         case PARAMETERS:
 [e :U 848 ]
-"47
-[; ;stateMachine/gameController.c: 47:             break;
-[e $U 839  ]
-"48
-[; ;stateMachine/gameController.c: 48:         case ONLINE:
+"41
+[; ;stateMachine/gameController.c: 41:             gameControllerController(g);
+[e ( _gameControllerController (1 _g ]
+"42
+[; ;stateMachine/gameController.c: 42:             if(ev==evLeaveParam)
+[e $ ! == -> _ev `i -> . `E39 8 `i 849  ]
+"43
+[; ;stateMachine/gameController.c: 43:             {
+{
+"44
+[; ;stateMachine/gameController.c: 44:                 gameControllerState=NOGAME;
+[e = _gameControllerState . `E6504 0 ]
+"45
+[; ;stateMachine/gameController.c: 45:             }
+}
 [e :U 849 ]
-"50
-[; ;stateMachine/gameController.c: 50:             break;
-[e $U 839  ]
-"51
-[; ;stateMachine/gameController.c: 51:         default:
+"46
+[; ;stateMachine/gameController.c: 46:             break;
+[e $U 842  ]
+"47
+[; ;stateMachine/gameController.c: 47:         case LOCAL:
 [e :U 850 ]
+"48
+[; ;stateMachine/gameController.c: 48:             if (ev==evPress)
+[e $ ! == -> _ev `i -> . `E39 1 `i 851  ]
+"49
+[; ;stateMachine/gameController.c: 49:             {
+{
+"50
+[; ;stateMachine/gameController.c: 50:                 moovePaddle(g);
+[e ( _moovePaddle (1 _g ]
 "52
-[; ;stateMachine/gameController.c: 52:             break;
-[e $U 839  ]
+[; ;stateMachine/gameController.c: 52:             }
+}
+[e $U 852  ]
 "53
-[; ;stateMachine/gameController.c: 53:     }
-}
-[e $U 839  ]
-[e :U 840 ]
-[e [\ -> _gameControllerState `ui , $ -> . `E6016 0 `ui 841
- , $ -> . `E6016 1 `ui 845
- , $ -> . `E6016 2 `ui 847
- , $ -> . `E6016 3 `ui 849
- 850 ]
-[e :U 839 ]
+[; ;stateMachine/gameController.c: 53:             else if(ev==evGameUpdate)
+[e :U 851 ]
+[e $ ! == -> _ev `i -> . `E39 10 `i 853  ]
 "54
-[; ;stateMachine/gameController.c: 54: }
-[e :UE 838 ]
-}
+[; ;stateMachine/gameController.c: 54:             {
+{
 "55
-[; ;stateMachine/gameController.c: 55: void gameControllerController(GameParameters* g)
-[v _gameControllerController `(v ~T0 @X0 1 ef1`*S836 ]
+[; ;stateMachine/gameController.c: 55:                 mooveBall(g);
+[e ( _mooveBall (1 _g ]
 "56
-[; ;stateMachine/gameController.c: 56: {
+[; ;stateMachine/gameController.c: 56:                 LCD_DrawRect(g->p2.x,g->p2.y,g->p2.x+50,g->p2.y+20,1,0b1111111111111111);
+[e ( _LCD_DrawRect (4 , , , , , . . *U _g 13 0 . . *U _g 13 1 -> + -> . . *U _g 13 0 `ui -> -> 50 `i `ui `us -> + -> . . *U _g 13 1 `ui -> -> 20 `i `ui `us -> -> 1 `i `uc -> -> 65535 `ui `us ]
+"57
+[; ;stateMachine/gameController.c: 57:                 g->p2.x=g->b.x;
+[e = . . *U _g 13 0 . . *U _g 11 0 ]
+"58
+[; ;stateMachine/gameController.c: 58:                 Paddle_draw(&g->p2);
+[e ( _Paddle_draw (1 &U . *U _g 13 ]
+"59
+[; ;stateMachine/gameController.c: 59:             }
+}
+[e :U 853 ]
+[e :U 852 ]
+"60
+[; ;stateMachine/gameController.c: 60:             break;
+[e $U 842  ]
+"61
+[; ;stateMachine/gameController.c: 61:         case ONLINE:
+[e :U 854 ]
+"63
+[; ;stateMachine/gameController.c: 63:             break;
+[e $U 842  ]
+"64
+[; ;stateMachine/gameController.c: 64:         default:
+[e :U 855 ]
+"65
+[; ;stateMachine/gameController.c: 65:             break;
+[e $U 842  ]
+"66
+[; ;stateMachine/gameController.c: 66:     }
+}
+[e $U 842  ]
+[e :U 843 ]
+[e [\ -> _gameControllerState `ui , $ -> . `E6504 0 `ui 844
+ , $ -> . `E6504 1 `ui 848
+ , $ -> . `E6504 2 `ui 850
+ , $ -> . `E6504 3 `ui 854
+ 855 ]
+[e :U 842 ]
+"67
+[; ;stateMachine/gameController.c: 67: }
+[e :UE 841 ]
+}
+"68
+[; ;stateMachine/gameController.c: 68: void gameControllerController(GameParameters* g)
+[v _gameControllerController `(v ~T0 @X0 1 ef1`*S836 ]
+"69
+[; ;stateMachine/gameController.c: 69: {
 {
 [e :U _gameControllerController ]
-"55
-[; ;stateMachine/gameController.c: 55: void gameControllerController(GameParameters* g)
-[v _g `*S836 ~T0 @X0 1 r1 ]
-"56
-[; ;stateMachine/gameController.c: 56: {
-[f ]
-"57
-[; ;stateMachine/gameController.c: 57:     switch(gameControllerState)
-[e $U 853  ]
-"58
-[; ;stateMachine/gameController.c: 58:     {
-{
-"59
-[; ;stateMachine/gameController.c: 59:         case NOGAME:
-[e :U 854 ]
-"60
-[; ;stateMachine/gameController.c: 60:             if(LCD_InButton(&(g->btnParam),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 4 . *U _g 2 . *U _g 3 `i -> 0 `i 855  ]
-"61
-[; ;stateMachine/gameController.c: 61:             {
-{
-"62
-[; ;stateMachine/gameController.c: 62:                 XF_pushEvent(evParameters,0);
-[e ( _XF_pushEvent (2 , -> . `E39 7 `uc -> -> 0 `i `a ]
-"63
-[; ;stateMachine/gameController.c: 63:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
-"64
-[; ;stateMachine/gameController.c: 64:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
-"65
-[; ;stateMachine/gameController.c: 65:             }
-}
-[e :U 855 ]
-"66
-[; ;stateMachine/gameController.c: 66:             if(LCD_InButton(&(g->btnOnePlayer),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 5 . *U _g 2 . *U _g 3 `i -> 0 `i 856  ]
-"67
-[; ;stateMachine/gameController.c: 67:             {
-{
 "68
-[; ;stateMachine/gameController.c: 68:                 XF_pushEvent(evOnePlayer,0);
-[e ( _XF_pushEvent (2 , -> . `E39 5 `uc -> -> 0 `i `a ]
+[; ;stateMachine/gameController.c: 68: void gameControllerController(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
 "69
-[; ;stateMachine/gameController.c: 69:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 69: {
+[f ]
 "70
-[; ;stateMachine/gameController.c: 70:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 70:     switch(gameControllerState)
+[e $U 858  ]
 "71
-[; ;stateMachine/gameController.c: 71:             }
-}
-[e :U 856 ]
-"72
-[; ;stateMachine/gameController.c: 72:             if(LCD_InButton(&(g->btnTwoPlayer),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 6 . *U _g 2 . *U _g 3 `i -> 0 `i 857  ]
-"73
-[; ;stateMachine/gameController.c: 73:             {
+[; ;stateMachine/gameController.c: 71:     {
 {
+"72
+[; ;stateMachine/gameController.c: 72:         case NOGAME:
+[e :U 859 ]
+"73
+[; ;stateMachine/gameController.c: 73:             if(LCD_InButton(&(g->btnParam),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 4 . *U _g 2 . *U _g 3 `i -> 0 `i 860  ]
 "74
-[; ;stateMachine/gameController.c: 74:                 XF_pushEvent(evTwoPlayer,0);
-[e ( _XF_pushEvent (2 , -> . `E39 6 `uc -> -> 0 `i `a ]
+[; ;stateMachine/gameController.c: 74:             {
+{
 "75
-[; ;stateMachine/gameController.c: 75:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 75:                 XF_pushEvent(evParameters,0);
+[e ( _XF_pushEvent (2 , -> . `E39 7 `uc -> -> 0 `i `a ]
 "76
-[; ;stateMachine/gameController.c: 76:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 76:                 GameParameters_resetPos(g);;
+[e ( _GameParameters_resetPos (1 _g ]
 "77
 [; ;stateMachine/gameController.c: 77:             }
 }
-[e :U 857 ]
-"78
-[; ;stateMachine/gameController.c: 78:             break;
-[e $U 852  ]
-"79
-[; ;stateMachine/gameController.c: 79:         case PARAMETERS:
-[e :U 858 ]
-"80
-[; ;stateMachine/gameController.c: 80:             if(LCD_InSlider(&(g->sldParam),g->x,g->y))
-[e $ ! != -> ( _LCD_InSlider (3 , , &U . *U _g 10 . *U _g 2 . *U _g 3 `i -> 0 `i 859  ]
-"81
-[; ;stateMachine/gameController.c: 81:             {
-{
-"82
-[; ;stateMachine/gameController.c: 82:                 backlightController(g);
-[e ( _backlightController (1 _g ]
-"83
-[; ;stateMachine/gameController.c: 83:                 LCD_SliderUpdate(&(g->sldParam));
-[e ( _LCD_SliderUpdate (1 &U . *U _g 10 ]
-"84
-[; ;stateMachine/gameController.c: 84:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
-"85
-[; ;stateMachine/gameController.c: 85:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
-"86
-[; ;stateMachine/gameController.c: 86:             }
-}
-[e :U 859 ]
-"87
-[; ;stateMachine/gameController.c: 87:             if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 7 . *U _g 2 . *U _g 3 `i -> 0 `i 860  ]
-"88
-[; ;stateMachine/gameController.c: 88:             {
-{
-"89
-[; ;stateMachine/gameController.c: 89:                 XF_pushEvent(evLeaveParam,0);
-[e ( _XF_pushEvent (2 , -> . `E39 8 `uc -> -> 0 `i `a ]
-"90
-[; ;stateMachine/gameController.c: 90:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
-"91
-[; ;stateMachine/gameController.c: 91:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
-"92
-[; ;stateMachine/gameController.c: 92:             }
-}
 [e :U 860 ]
-"93
-[; ;stateMachine/gameController.c: 93:             break;
-[e $U 852  ]
-"94
-[; ;stateMachine/gameController.c: 94:         case LOCAL:
-[e :U 861 ]
-"95
-[; ;stateMachine/gameController.c: 95:             if(LCD_InButton(&(g->btnLeft),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 8 . *U _g 2 . *U _g 3 `i -> 0 `i 862  ]
-"96
-[; ;stateMachine/gameController.c: 96:             {
+"78
+[; ;stateMachine/gameController.c: 78:             if(LCD_InButton(&(g->btnOnePlayer),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 5 . *U _g 2 . *U _g 3 `i -> 0 `i 861  ]
+"79
+[; ;stateMachine/gameController.c: 79:             {
 {
+"80
+[; ;stateMachine/gameController.c: 80:                 XF_pushEvent(evOnePlayer,0);
+[e ( _XF_pushEvent (2 , -> . `E39 5 `uc -> -> 0 `i `a ]
+"81
+[; ;stateMachine/gameController.c: 81:                 GameParameters_resetPos(g);;
+[e ( _GameParameters_resetPos (1 _g ]
+"82
+[; ;stateMachine/gameController.c: 82:             }
+}
+[e :U 861 ]
+"83
+[; ;stateMachine/gameController.c: 83:             if(LCD_InButton(&(g->btnTwoPlayer),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 6 . *U _g 2 . *U _g 3 `i -> 0 `i 862  ]
+"84
+[; ;stateMachine/gameController.c: 84:             {
+{
+"85
+[; ;stateMachine/gameController.c: 85:                 XF_pushEvent(evTwoPlayer,0);
+[e ( _XF_pushEvent (2 , -> . `E39 6 `uc -> -> 0 `i `a ]
+"86
+[; ;stateMachine/gameController.c: 86:                 GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
+"87
+[; ;stateMachine/gameController.c: 87:             }
+}
+[e :U 862 ]
+"88
+[; ;stateMachine/gameController.c: 88:             break;
+[e $U 857  ]
+"89
+[; ;stateMachine/gameController.c: 89:         case PARAMETERS:
+[e :U 863 ]
+"90
+[; ;stateMachine/gameController.c: 90:             if(LCD_InSlider(&(g->sldParam),g->x,g->y))
+[e $ ! != -> ( _LCD_InSlider (3 , , &U . *U _g 10 . *U _g 2 . *U _g 3 `i -> 0 `i 864  ]
+"91
+[; ;stateMachine/gameController.c: 91:             {
+{
+"92
+[; ;stateMachine/gameController.c: 92:                 backlightController(g);
+[e ( _backlightController (1 _g ]
+"93
+[; ;stateMachine/gameController.c: 93:                 LCD_SliderUpdate(&(g->sldParam));
+[e ( _LCD_SliderUpdate (1 &U . *U _g 10 ]
+"94
+[; ;stateMachine/gameController.c: 94:                 GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
+"95
+[; ;stateMachine/gameController.c: 95:             }
+}
+[e :U 864 ]
+"96
+[; ;stateMachine/gameController.c: 96:             if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 7 . *U _g 2 . *U _g 3 `i -> 0 `i 865  ]
 "97
-[; ;stateMachine/gameController.c: 97:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 97:             {
+{
 "98
-[; ;stateMachine/gameController.c: 98:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 98:                 XF_pushEvent(evLeaveParam,0);
+[e ( _XF_pushEvent (2 , -> . `E39 8 `uc -> -> 0 `i `a ]
 "99
-[; ;stateMachine/gameController.c: 99:                 Paddle_addX(&g->p1,8,0);
-[e ( _Paddle_addX (3 , , &U . *U _g 12 -> -> 8 `i `us -> -> 0 `i `us ]
+[; ;stateMachine/gameController.c: 99:                 GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
 "100
 [; ;stateMachine/gameController.c: 100:             }
 }
-[e :U 862 ]
-"101
-[; ;stateMachine/gameController.c: 101:             if(LCD_InButton(&(g->btnRight),g->x,g->y))
-[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 9 . *U _g 2 . *U _g 3 `i -> 0 `i 863  ]
-"102
-[; ;stateMachine/gameController.c: 102:             {
-{
-"103
-[; ;stateMachine/gameController.c: 103:                 g->x=0;
-[e = . *U _g 2 -> -> 0 `i `us ]
-"104
-[; ;stateMachine/gameController.c: 104:                 g->y=0;
-[e = . *U _g 3 -> -> 0 `i `us ]
-"105
-[; ;stateMachine/gameController.c: 105:                 Paddle_addX(&g->p1,8,1);
-[e ( _Paddle_addX (3 , , &U . *U _g 12 -> -> 8 `i `us -> -> 1 `i `us ]
-"106
-[; ;stateMachine/gameController.c: 106:             }
-}
-[e :U 863 ]
-"107
-[; ;stateMachine/gameController.c: 107:             Paddle_draw(&g->p1);
-[e ( _Paddle_draw (1 &U . *U _g 12 ]
-"108
-[; ;stateMachine/gameController.c: 108:             LCD_ButtonUpdate(&(g->btnLeft));
-[e ( _LCD_ButtonUpdate (1 &U . *U _g 8 ]
-"109
-[; ;stateMachine/gameController.c: 109:             LCD_ButtonUpdate(&(g->btnRight));
-[e ( _LCD_ButtonUpdate (1 &U . *U _g 9 ]
-"110
-[; ;stateMachine/gameController.c: 110:             break;
-[e $U 852  ]
-"111
-[; ;stateMachine/gameController.c: 111:         case ONLINE:
-[e :U 864 ]
-"112
-[; ;stateMachine/gameController.c: 112:             break;
-[e $U 852  ]
-"113
-[; ;stateMachine/gameController.c: 113:         default:
 [e :U 865 ]
-"114
-[; ;stateMachine/gameController.c: 114:             break;
-[e $U 852  ]
-"115
-[; ;stateMachine/gameController.c: 115:     }
-}
-[e $U 852  ]
-[e :U 853 ]
-[e [\ -> _gameControllerState `ui , $ -> . `E6016 0 `ui 854
- , $ -> . `E6016 1 `ui 858
- , $ -> . `E6016 2 `ui 861
- , $ -> . `E6016 3 `ui 864
- 865 ]
-[e :U 852 ]
-"116
-[; ;stateMachine/gameController.c: 116: }
-[e :UE 851 ]
-}
-"117
-[; ;stateMachine/gameController.c: 117: void backlightController(GameParameters* g)
-[v _backlightController `(v ~T0 @X0 1 ef1`*S836 ]
-"118
-[; ;stateMachine/gameController.c: 118: {
-{
-[e :U _backlightController ]
-"117
-[; ;stateMachine/gameController.c: 117: void backlightController(GameParameters* g)
-[v _g `*S836 ~T0 @X0 1 r1 ]
-"118
-[; ;stateMachine/gameController.c: 118: {
-[f ]
-"119
-[; ;stateMachine/gameController.c: 119:     if(((g->x)>=50)&&((g->x)<64))
-[e $ ! && >= -> . *U _g 2 `ui -> -> 50 `i `ui < -> . *U _g 2 `ui -> -> 64 `i `ui 867  ]
-"120
-[; ;stateMachine/gameController.c: 120:     {
-{
-"121
-[; ;stateMachine/gameController.c: 121:         GameParameters_setBackLight(g,0);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 0 `i `us ]
-"122
-[; ;stateMachine/gameController.c: 122:     }
-}
-[e $U 868  ]
-"123
-[; ;stateMachine/gameController.c: 123:     else if(((g->x)>=64)&&((g->x)<78))
+"101
+[; ;stateMachine/gameController.c: 101:             break;
+[e $U 857  ]
+"102
+[; ;stateMachine/gameController.c: 102:         case LOCAL:
+[e :U 866 ]
+"103
+[; ;stateMachine/gameController.c: 103:             break;
+[e $U 857  ]
+"104
+[; ;stateMachine/gameController.c: 104:         case ONLINE:
 [e :U 867 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 64 `i `ui < -> . *U _g 2 `ui -> -> 78 `i `ui 869  ]
-"124
-[; ;stateMachine/gameController.c: 124:     {
-{
-"125
-[; ;stateMachine/gameController.c: 125:         GameParameters_setBackLight(g,1);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 1 `i `us ]
-"126
-[; ;stateMachine/gameController.c: 126:     }
+"105
+[; ;stateMachine/gameController.c: 105:             break;
+[e $U 857  ]
+"106
+[; ;stateMachine/gameController.c: 106:         default:
+[e :U 868 ]
+"107
+[; ;stateMachine/gameController.c: 107:             break;
+[e $U 857  ]
+"108
+[; ;stateMachine/gameController.c: 108:     }
 }
-[e $U 870  ]
-"127
-[; ;stateMachine/gameController.c: 127:     else if(((g->x)>=78)&&((g->x)<92))
-[e :U 869 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 78 `i `ui < -> . *U _g 2 `ui -> -> 92 `i `ui 871  ]
-"128
-[; ;stateMachine/gameController.c: 128:     {
-{
-"129
-[; ;stateMachine/gameController.c: 129:         GameParameters_setBackLight(g,2);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 2 `i `us ]
-"130
-[; ;stateMachine/gameController.c: 130:     }
+[e $U 857  ]
+[e :U 858 ]
+[e [\ -> _gameControllerState `ui , $ -> . `E6504 0 `ui 859
+ , $ -> . `E6504 1 `ui 863
+ , $ -> . `E6504 2 `ui 866
+ , $ -> . `E6504 3 `ui 867
+ 868 ]
+[e :U 857 ]
+"109
+[; ;stateMachine/gameController.c: 109: }
+[e :UE 856 ]
 }
-[e $U 872  ]
-"131
-[; ;stateMachine/gameController.c: 131:     else if(((g->x)>=92)&&((g->x)<106))
+"110
+[; ;stateMachine/gameController.c: 110: void moovePaddle(GameParameters* g)
+[v _moovePaddle `(v ~T0 @X0 1 ef1`*S836 ]
+"111
+[; ;stateMachine/gameController.c: 111: {
+{
+[e :U _moovePaddle ]
+"110
+[; ;stateMachine/gameController.c: 110: void moovePaddle(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
+"111
+[; ;stateMachine/gameController.c: 111: {
+[f ]
+"112
+[; ;stateMachine/gameController.c: 112:     if(LCD_InButton(&(g->btnLeft),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 8 . *U _g 2 . *U _g 3 `i -> 0 `i 870  ]
+"113
+[; ;stateMachine/gameController.c: 113:     {
+{
+"114
+[; ;stateMachine/gameController.c: 114:         GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
+"115
+[; ;stateMachine/gameController.c: 115:         Paddle_addX(&g->p1,8,0);
+[e ( _Paddle_addX (3 , , &U . *U _g 12 -> -> 8 `i `us -> -> 0 `i `us ]
+"116
+[; ;stateMachine/gameController.c: 116:     }
+}
+[e :U 870 ]
+"117
+[; ;stateMachine/gameController.c: 117:     if(LCD_InButton(&(g->btnRight),g->x,g->y))
+[e $ ! != -> ( _LCD_InButton (3 , , &U . *U _g 9 . *U _g 2 . *U _g 3 `i -> 0 `i 871  ]
+"118
+[; ;stateMachine/gameController.c: 118:     {
+{
+"119
+[; ;stateMachine/gameController.c: 119:         GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
+"120
+[; ;stateMachine/gameController.c: 120:         Paddle_addX(&g->p1,8,1);
+[e ( _Paddle_addX (3 , , &U . *U _g 12 -> -> 8 `i `us -> -> 1 `i `us ]
+"121
+[; ;stateMachine/gameController.c: 121:     }
+}
 [e :U 871 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 92 `i `ui < -> . *U _g 2 `ui -> -> 106 `i `ui 873  ]
+"122
+[; ;stateMachine/gameController.c: 122:     Paddle_draw(&g->p1);
+[e ( _Paddle_draw (1 &U . *U _g 12 ]
+"123
+[; ;stateMachine/gameController.c: 123: }
+[e :UE 869 ]
+}
+"124
+[; ;stateMachine/gameController.c: 124: void mooveBall(GameParameters* g)
+[v _mooveBall `(v ~T0 @X0 1 ef1`*S836 ]
+"125
+[; ;stateMachine/gameController.c: 125: {
+{
+[e :U _mooveBall ]
+"124
+[; ;stateMachine/gameController.c: 124: void mooveBall(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
+"125
+[; ;stateMachine/gameController.c: 125: {
+[f ]
+"126
+[; ;stateMachine/gameController.c: 126:     checkCollision(g);
+[e ( _checkCollision (1 _g ]
+"127
+[; ;stateMachine/gameController.c: 127:     Ball_Update(&g->b);
+[e ( _Ball_Update (1 &U . *U _g 11 ]
+"128
+[; ;stateMachine/gameController.c: 128: }
+[e :UE 872 ]
+}
+"129
+[; ;stateMachine/gameController.c: 129: void checkCollision(GameParameters* g)
+[v _checkCollision `(v ~T0 @X0 1 ef1`*S836 ]
+"130
+[; ;stateMachine/gameController.c: 130: {
+{
+[e :U _checkCollision ]
+"129
+[; ;stateMachine/gameController.c: 129: void checkCollision(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
+"130
+[; ;stateMachine/gameController.c: 130: {
+[f ]
 "132
-[; ;stateMachine/gameController.c: 132:     {
-{
+[; ;stateMachine/gameController.c: 132:     if(g->b.y+8>=g->p1.y-1)
+[e $ ! >= + -> . . *U _g 11 1 `ui -> -> 8 `i `ui - -> . . *U _g 12 1 `ui -> -> 1 `i `ui 874  ]
 "133
-[; ;stateMachine/gameController.c: 133:         GameParameters_setBackLight(g,3);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 3 `i `us ]
-"134
-[; ;stateMachine/gameController.c: 134:     }
-}
-[e $U 874  ]
-"135
-[; ;stateMachine/gameController.c: 135:     else if(((g->x)>=106)&&((g->x)<120))
-[e :U 873 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 106 `i `ui < -> . *U _g 2 `ui -> -> 120 `i `ui 875  ]
-"136
-[; ;stateMachine/gameController.c: 136:     {
+[; ;stateMachine/gameController.c: 133:     {
 {
+"134
+[; ;stateMachine/gameController.c: 134:         if(g->b.x+8>g->p1.x)
+[e $ ! > + -> . . *U _g 11 0 `ui -> -> 8 `i `ui -> . . *U _g 12 0 `ui 875  ]
+"135
+[; ;stateMachine/gameController.c: 135:         {
+{
+"136
+[; ;stateMachine/gameController.c: 136:             if(g->b.x-8<g->p1.x+50)
+[e $ ! < - -> . . *U _g 11 0 `ui -> -> 8 `i `ui + -> . . *U _g 12 0 `ui -> -> 50 `i `ui 876  ]
 "137
-[; ;stateMachine/gameController.c: 137:         GameParameters_setBackLight(g,4);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 4 `i `us ]
+[; ;stateMachine/gameController.c: 137:             {
+{
 "138
-[; ;stateMachine/gameController.c: 138:     }
-}
-[e $U 876  ]
+[; ;stateMachine/gameController.c: 138:                 if(g->b.x-g->p1.x<10)
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 12 0 `ui -> -> 10 `i `ui 877  ]
 "139
-[; ;stateMachine/gameController.c: 139:     else if(((g->x)>=120)&&((g->x)<134))
-[e :U 875 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 120 `i `ui < -> . *U _g 2 `ui -> -> 134 `i `ui 877  ]
-"140
-[; ;stateMachine/gameController.c: 140:     {
+[; ;stateMachine/gameController.c: 139:                 {
 {
 "141
-[; ;stateMachine/gameController.c: 141:         GameParameters_setBackLight(g,5);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 5 `i `us ]
+[; ;stateMachine/gameController.c: 141:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
 "142
-[; ;stateMachine/gameController.c: 142:     }
+[; ;stateMachine/gameController.c: 142:                     g->b.dx=-2;
+[e = . . *U _g 11 2 -> -U -> 2 `i `s ]
+"143
+[; ;stateMachine/gameController.c: 143:                 }
 }
 [e $U 878  ]
-"143
-[; ;stateMachine/gameController.c: 143:         else if(((g->x)>=134)&&((g->x)<150))
-[e :U 877 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 134 `i `ui < -> . *U _g 2 `ui -> -> 150 `i `ui 879  ]
 "144
-[; ;stateMachine/gameController.c: 144:     {
-{
+[; ;stateMachine/gameController.c: 144:                 else if(g->b.x-g->p1.x<20)
+[e :U 877 ]
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 12 0 `ui -> -> 20 `i `ui 879  ]
 "145
-[; ;stateMachine/gameController.c: 145:         GameParameters_setBackLight(g,6);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 6 `i `us ]
-"146
-[; ;stateMachine/gameController.c: 146:     }
+[; ;stateMachine/gameController.c: 145:                 {
+{
+"147
+[; ;stateMachine/gameController.c: 147:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"148
+[; ;stateMachine/gameController.c: 148:                     g->b.dx=-1;
+[e = . . *U _g 11 2 -> -U -> 1 `i `s ]
+"149
+[; ;stateMachine/gameController.c: 149:                 }
 }
 [e $U 880  ]
-"147
-[; ;stateMachine/gameController.c: 147:     else if(((g->x)>=150)&&((g->x)<164))
-[e :U 879 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 150 `i `ui < -> . *U _g 2 `ui -> -> 164 `i `ui 881  ]
-"148
-[; ;stateMachine/gameController.c: 148:     {
-{
-"149
-[; ;stateMachine/gameController.c: 149:         GameParameters_setBackLight(g,7);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 7 `i `us ]
 "150
-[; ;stateMachine/gameController.c: 150:     }
+[; ;stateMachine/gameController.c: 150:                 else if(g->b.x-g->p1.x<30)
+[e :U 879 ]
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 12 0 `ui -> -> 30 `i `ui 881  ]
+"151
+[; ;stateMachine/gameController.c: 151:                 {
+{
+"152
+[; ;stateMachine/gameController.c: 152:                     g->b.dx=g->b.dx;
+[e = . . *U _g 11 2 . . *U _g 11 2 ]
+"153
+[; ;stateMachine/gameController.c: 153:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"154
+[; ;stateMachine/gameController.c: 154:                 }
 }
 [e $U 882  ]
-"151
-[; ;stateMachine/gameController.c: 151:     else if(((g->x)>=164)&&((g->x)<178))
+"155
+[; ;stateMachine/gameController.c: 155:                 else if(g->b.x-g->p1.x<40)
 [e :U 881 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 164 `i `ui < -> . *U _g 2 `ui -> -> 178 `i `ui 883  ]
-"152
-[; ;stateMachine/gameController.c: 152:     {
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 12 0 `ui -> -> 40 `i `ui 883  ]
+"156
+[; ;stateMachine/gameController.c: 156:                 {
 {
-"153
-[; ;stateMachine/gameController.c: 153:         GameParameters_setBackLight(g,8);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 8 `i `us ]
-"154
-[; ;stateMachine/gameController.c: 154:     }
+"158
+[; ;stateMachine/gameController.c: 158:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"159
+[; ;stateMachine/gameController.c: 159:                     g->b.dx=1;
+[e = . . *U _g 11 2 -> -> 1 `i `s ]
+"160
+[; ;stateMachine/gameController.c: 160:                 }
 }
 [e $U 884  ]
-"155
-[; ;stateMachine/gameController.c: 155:     else if(((g->x)>=178)&&((g->x)<192))
-[e :U 883 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 178 `i `ui < -> . *U _g 2 `ui -> -> 192 `i `ui 885  ]
-"156
-[; ;stateMachine/gameController.c: 156:     {
-{
-"157
-[; ;stateMachine/gameController.c: 157:         GameParameters_setBackLight(g,9);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 9 `i `us ]
-"158
-[; ;stateMachine/gameController.c: 158:     }
-}
-[e $U 886  ]
-"159
-[; ;stateMachine/gameController.c: 159:     else if(((g->x)>=192)&&((g->x)<206))
-[e :U 885 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 192 `i `ui < -> . *U _g 2 `ui -> -> 206 `i `ui 887  ]
-"160
-[; ;stateMachine/gameController.c: 160:     {
-{
 "161
-[; ;stateMachine/gameController.c: 161:         GameParameters_setBackLight(g,10);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 10 `i `us ]
+[; ;stateMachine/gameController.c: 161:                 else
+[e :U 883 ]
 "162
-[; ;stateMachine/gameController.c: 162:     }
-}
-[e $U 888  ]
-"163
-[; ;stateMachine/gameController.c: 163:     else if(((g->x)>=206)&&((g->x)<215))
-[e :U 887 ]
-[e $ ! && >= -> . *U _g 2 `ui -> -> 206 `i `ui < -> . *U _g 2 `ui -> -> 215 `i `ui 889  ]
-"164
-[; ;stateMachine/gameController.c: 164:     {
+[; ;stateMachine/gameController.c: 162:                 {
 {
+"164
+[; ;stateMachine/gameController.c: 164:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
 "165
-[; ;stateMachine/gameController.c: 165:         GameParameters_setBackLight(g,11);
-[e ( _GameParameters_setBackLight (2 , _g -> -> 11 `i `us ]
+[; ;stateMachine/gameController.c: 165:                     g->b.dx=2;
+[e = . . *U _g 11 2 -> -> 2 `i `s ]
 "166
-[; ;stateMachine/gameController.c: 166:     }
+[; ;stateMachine/gameController.c: 166:                 }
 }
-[e :U 889 ]
-[e :U 888 ]
-[e :U 886 ]
 [e :U 884 ]
 [e :U 882 ]
 [e :U 880 ]
 [e :U 878 ]
+"169
+[; ;stateMachine/gameController.c: 169:                 g->s1.homeScore++;
+[e ++ . . *U _g 14 0 -> -> 1 `i `us ]
+"170
+[; ;stateMachine/gameController.c: 170:             }
+}
 [e :U 876 ]
+"171
+[; ;stateMachine/gameController.c: 171:         }
+}
+[e :U 875 ]
+"172
+[; ;stateMachine/gameController.c: 172:     }
+}
 [e :U 874 ]
-[e :U 872 ]
-[e :U 870 ]
-[e :U 868 ]
-"167
-[; ;stateMachine/gameController.c: 167:     g->sldParam.value=g->backlight;
+"174
+[; ;stateMachine/gameController.c: 174:     if(g->b.y-8<=g->p2.y+20 +1)
+[e $ ! <= - -> . . *U _g 11 1 `ui -> -> 8 `i `ui + + -> . . *U _g 13 1 `ui -> -> 20 `i `ui -> -> 1 `i `ui 885  ]
+"175
+[; ;stateMachine/gameController.c: 175:     {
+{
+"176
+[; ;stateMachine/gameController.c: 176:         if(g->b.x+8>g->p2.x)
+[e $ ! > + -> . . *U _g 11 0 `ui -> -> 8 `i `ui -> . . *U _g 13 0 `ui 886  ]
+"177
+[; ;stateMachine/gameController.c: 177:         {
+{
+"178
+[; ;stateMachine/gameController.c: 178:             if(g->b.x-8<g->p2.x+50)
+[e $ ! < - -> . . *U _g 11 0 `ui -> -> 8 `i `ui + -> . . *U _g 13 0 `ui -> -> 50 `i `ui 887  ]
+"179
+[; ;stateMachine/gameController.c: 179:             {
+{
+"180
+[; ;stateMachine/gameController.c: 180:                 if(g->b.x-g->p2.x<10)
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 13 0 `ui -> -> 10 `i `ui 888  ]
+"181
+[; ;stateMachine/gameController.c: 181:                 {
+{
+"183
+[; ;stateMachine/gameController.c: 183:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"184
+[; ;stateMachine/gameController.c: 184:                     g->b.dx=-2;
+[e = . . *U _g 11 2 -> -U -> 2 `i `s ]
+"185
+[; ;stateMachine/gameController.c: 185:                 }
+}
+[e $U 889  ]
+"186
+[; ;stateMachine/gameController.c: 186:                 else if(g->b.x-g->p2.x<20)
+[e :U 888 ]
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 13 0 `ui -> -> 20 `i `ui 890  ]
+"187
+[; ;stateMachine/gameController.c: 187:                 {
+{
+"189
+[; ;stateMachine/gameController.c: 189:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"190
+[; ;stateMachine/gameController.c: 190:                     g->b.dx=-1;
+[e = . . *U _g 11 2 -> -U -> 1 `i `s ]
+"191
+[; ;stateMachine/gameController.c: 191:                 }
+}
+[e $U 891  ]
+"192
+[; ;stateMachine/gameController.c: 192:                 else if(g->b.x-g->p2.x<30)
+[e :U 890 ]
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 13 0 `ui -> -> 30 `i `ui 892  ]
+"193
+[; ;stateMachine/gameController.c: 193:                 {
+{
+"194
+[; ;stateMachine/gameController.c: 194:                     g->b.dx=g->b.dx;
+[e = . . *U _g 11 2 . . *U _g 11 2 ]
+"195
+[; ;stateMachine/gameController.c: 195:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"196
+[; ;stateMachine/gameController.c: 196:                 }
+}
+[e $U 893  ]
+"197
+[; ;stateMachine/gameController.c: 197:                 else if(g->b.x-g->p2.x<40)
+[e :U 892 ]
+[e $ ! < - -> . . *U _g 11 0 `ui -> . . *U _g 13 0 `ui -> -> 40 `i `ui 894  ]
+"198
+[; ;stateMachine/gameController.c: 198:                 {
+{
+"200
+[; ;stateMachine/gameController.c: 200:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"201
+[; ;stateMachine/gameController.c: 201:                     g->b.dx=1;
+[e = . . *U _g 11 2 -> -> 1 `i `s ]
+"202
+[; ;stateMachine/gameController.c: 202:                 }
+}
+[e $U 895  ]
+"203
+[; ;stateMachine/gameController.c: 203:                 else
+[e :U 894 ]
+"204
+[; ;stateMachine/gameController.c: 204:                 {
+{
+"206
+[; ;stateMachine/gameController.c: 206:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 11 3 -> -U -> . . *U _g 11 3 `i `s ]
+"207
+[; ;stateMachine/gameController.c: 207:                     g->b.dx=2;
+[e = . . *U _g 11 2 -> -> 2 `i `s ]
+"208
+[; ;stateMachine/gameController.c: 208:                 }
+}
+[e :U 895 ]
+[e :U 893 ]
+[e :U 891 ]
+[e :U 889 ]
+"210
+[; ;stateMachine/gameController.c: 210:                 g->s1.awayScore++;
+[e ++ . . *U _g 14 1 -> -> 1 `i `us ]
+"211
+[; ;stateMachine/gameController.c: 211:             }
+}
+[e :U 887 ]
+"212
+[; ;stateMachine/gameController.c: 212:         }
+}
+[e :U 886 ]
+"213
+[; ;stateMachine/gameController.c: 213:     }
+}
+[e :U 885 ]
+"215
+[; ;stateMachine/gameController.c: 215:     if(g->b.x+8>=239)
+[e $ ! >= + -> . . *U _g 11 0 `ui -> -> 8 `i `ui -> -> 239 `i `ui 896  ]
+"216
+[; ;stateMachine/gameController.c: 216:     {
+{
+"217
+[; ;stateMachine/gameController.c: 217:         g->b.dx=-g->b.dx;
+[e = . . *U _g 11 2 -> -U -> . . *U _g 11 2 `i `s ]
+"218
+[; ;stateMachine/gameController.c: 218:     }
+}
+[e :U 896 ]
+"219
+[; ;stateMachine/gameController.c: 219:     if(g->b.x-8<=0)
+[e $ ! <= - -> . . *U _g 11 0 `ui -> -> 8 `i `ui -> -> 0 `i `ui 897  ]
+"220
+[; ;stateMachine/gameController.c: 220:     {
+{
+"221
+[; ;stateMachine/gameController.c: 221:         g->b.dx=-g->b.dx;
+[e = . . *U _g 11 2 -> -U -> . . *U _g 11 2 `i `s ]
+"222
+[; ;stateMachine/gameController.c: 222:     }
+}
+[e :U 897 ]
+"224
+[; ;stateMachine/gameController.c: 224:     if(g->b.y-8<=g->p2.y)
+[e $ ! <= - -> . . *U _g 11 1 `ui -> -> 8 `i `ui -> . . *U _g 13 1 `ui 898  ]
+"225
+[; ;stateMachine/gameController.c: 225:     {
+{
+"227
+[; ;stateMachine/gameController.c: 227:     }
+}
+[e :U 898 ]
+"228
+[; ;stateMachine/gameController.c: 228:     if(g->b.y+8>=g->p1.y)
+[e $ ! >= + -> . . *U _g 11 1 `ui -> -> 8 `i `ui -> . . *U _g 12 1 `ui 899  ]
+"229
+[; ;stateMachine/gameController.c: 229:     {
+{
+"231
+[; ;stateMachine/gameController.c: 231:     }
+}
+[e :U 899 ]
+"233
+[; ;stateMachine/gameController.c: 233: }
+[e :UE 873 ]
+}
+"234
+[; ;stateMachine/gameController.c: 234: void backlightController(GameParameters* g)
+[v _backlightController `(v ~T0 @X0 1 ef1`*S836 ]
+"235
+[; ;stateMachine/gameController.c: 235: {
+{
+[e :U _backlightController ]
+"234
+[; ;stateMachine/gameController.c: 234: void backlightController(GameParameters* g)
+[v _g `*S836 ~T0 @X0 1 r1 ]
+"235
+[; ;stateMachine/gameController.c: 235: {
+[f ]
+"236
+[; ;stateMachine/gameController.c: 236:     if(((g->x)>=50)&&((g->x)<64))
+[e $ ! && >= -> . *U _g 2 `ui -> -> 50 `i `ui < -> . *U _g 2 `ui -> -> 64 `i `ui 901  ]
+"237
+[; ;stateMachine/gameController.c: 237:     {
+{
+"238
+[; ;stateMachine/gameController.c: 238:         GameParameters_setBackLight(g,0);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 0 `i `us ]
+"239
+[; ;stateMachine/gameController.c: 239:     }
+}
+[e $U 902  ]
+"240
+[; ;stateMachine/gameController.c: 240:     else if(((g->x)>=64)&&((g->x)<78))
+[e :U 901 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 64 `i `ui < -> . *U _g 2 `ui -> -> 78 `i `ui 903  ]
+"241
+[; ;stateMachine/gameController.c: 241:     {
+{
+"242
+[; ;stateMachine/gameController.c: 242:         GameParameters_setBackLight(g,1);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 1 `i `us ]
+"243
+[; ;stateMachine/gameController.c: 243:     }
+}
+[e $U 904  ]
+"244
+[; ;stateMachine/gameController.c: 244:     else if(((g->x)>=78)&&((g->x)<92))
+[e :U 903 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 78 `i `ui < -> . *U _g 2 `ui -> -> 92 `i `ui 905  ]
+"245
+[; ;stateMachine/gameController.c: 245:     {
+{
+"246
+[; ;stateMachine/gameController.c: 246:         GameParameters_setBackLight(g,2);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 2 `i `us ]
+"247
+[; ;stateMachine/gameController.c: 247:     }
+}
+[e $U 906  ]
+"248
+[; ;stateMachine/gameController.c: 248:     else if(((g->x)>=92)&&((g->x)<106))
+[e :U 905 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 92 `i `ui < -> . *U _g 2 `ui -> -> 106 `i `ui 907  ]
+"249
+[; ;stateMachine/gameController.c: 249:     {
+{
+"250
+[; ;stateMachine/gameController.c: 250:         GameParameters_setBackLight(g,3);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 3 `i `us ]
+"251
+[; ;stateMachine/gameController.c: 251:     }
+}
+[e $U 908  ]
+"252
+[; ;stateMachine/gameController.c: 252:     else if(((g->x)>=106)&&((g->x)<120))
+[e :U 907 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 106 `i `ui < -> . *U _g 2 `ui -> -> 120 `i `ui 909  ]
+"253
+[; ;stateMachine/gameController.c: 253:     {
+{
+"254
+[; ;stateMachine/gameController.c: 254:         GameParameters_setBackLight(g,4);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 4 `i `us ]
+"255
+[; ;stateMachine/gameController.c: 255:     }
+}
+[e $U 910  ]
+"256
+[; ;stateMachine/gameController.c: 256:     else if(((g->x)>=120)&&((g->x)<134))
+[e :U 909 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 120 `i `ui < -> . *U _g 2 `ui -> -> 134 `i `ui 911  ]
+"257
+[; ;stateMachine/gameController.c: 257:     {
+{
+"258
+[; ;stateMachine/gameController.c: 258:         GameParameters_setBackLight(g,5);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 5 `i `us ]
+"259
+[; ;stateMachine/gameController.c: 259:     }
+}
+[e $U 912  ]
+"260
+[; ;stateMachine/gameController.c: 260:         else if(((g->x)>=134)&&((g->x)<150))
+[e :U 911 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 134 `i `ui < -> . *U _g 2 `ui -> -> 150 `i `ui 913  ]
+"261
+[; ;stateMachine/gameController.c: 261:     {
+{
+"262
+[; ;stateMachine/gameController.c: 262:         GameParameters_setBackLight(g,6);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 6 `i `us ]
+"263
+[; ;stateMachine/gameController.c: 263:     }
+}
+[e $U 914  ]
+"264
+[; ;stateMachine/gameController.c: 264:     else if(((g->x)>=150)&&((g->x)<164))
+[e :U 913 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 150 `i `ui < -> . *U _g 2 `ui -> -> 164 `i `ui 915  ]
+"265
+[; ;stateMachine/gameController.c: 265:     {
+{
+"266
+[; ;stateMachine/gameController.c: 266:         GameParameters_setBackLight(g,7);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 7 `i `us ]
+"267
+[; ;stateMachine/gameController.c: 267:     }
+}
+[e $U 916  ]
+"268
+[; ;stateMachine/gameController.c: 268:     else if(((g->x)>=164)&&((g->x)<178))
+[e :U 915 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 164 `i `ui < -> . *U _g 2 `ui -> -> 178 `i `ui 917  ]
+"269
+[; ;stateMachine/gameController.c: 269:     {
+{
+"270
+[; ;stateMachine/gameController.c: 270:         GameParameters_setBackLight(g,8);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 8 `i `us ]
+"271
+[; ;stateMachine/gameController.c: 271:     }
+}
+[e $U 918  ]
+"272
+[; ;stateMachine/gameController.c: 272:     else if(((g->x)>=178)&&((g->x)<192))
+[e :U 917 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 178 `i `ui < -> . *U _g 2 `ui -> -> 192 `i `ui 919  ]
+"273
+[; ;stateMachine/gameController.c: 273:     {
+{
+"274
+[; ;stateMachine/gameController.c: 274:         GameParameters_setBackLight(g,9);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 9 `i `us ]
+"275
+[; ;stateMachine/gameController.c: 275:     }
+}
+[e $U 920  ]
+"276
+[; ;stateMachine/gameController.c: 276:     else if(((g->x)>=192)&&((g->x)<206))
+[e :U 919 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 192 `i `ui < -> . *U _g 2 `ui -> -> 206 `i `ui 921  ]
+"277
+[; ;stateMachine/gameController.c: 277:     {
+{
+"278
+[; ;stateMachine/gameController.c: 278:         GameParameters_setBackLight(g,10);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 10 `i `us ]
+"279
+[; ;stateMachine/gameController.c: 279:     }
+}
+[e $U 922  ]
+"280
+[; ;stateMachine/gameController.c: 280:     else if(((g->x)>=206)&&((g->x)<215))
+[e :U 921 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 206 `i `ui < -> . *U _g 2 `ui -> -> 215 `i `ui 923  ]
+"281
+[; ;stateMachine/gameController.c: 281:     {
+{
+"282
+[; ;stateMachine/gameController.c: 282:         GameParameters_setBackLight(g,11);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 11 `i `us ]
+"283
+[; ;stateMachine/gameController.c: 283:     }
+}
+[e :U 923 ]
+[e :U 922 ]
+[e :U 920 ]
+[e :U 918 ]
+[e :U 916 ]
+[e :U 914 ]
+[e :U 912 ]
+[e :U 910 ]
+[e :U 908 ]
+[e :U 906 ]
+[e :U 904 ]
+[e :U 902 ]
+"284
+[; ;stateMachine/gameController.c: 284:     g->sldParam.value=g->backlight;
 [e = . . *U _g 10 9 . *U _g 0 ]
-"168
-[; ;stateMachine/gameController.c: 168: }
-[e :UE 866 ]
+"285
+[; ;stateMachine/gameController.c: 285: }
+[e :UE 900 ]
 }

@@ -132,7 +132,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame,evGameUpdate};
 
 typedef struct Timer
 {
@@ -363,34 +363,35 @@ uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
 # 1 "stateMachine/../class/ball.h" 1
 
 
+
+
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/ball.h" 2
+# 5 "stateMachine/../class/ball.h" 2
 
 typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
-    uint16_t r;
-    uint16_t color;
+    int16_t dx;
+    int16_t dy;
 }Ball;
 void Ball_init(struct Ball* b);
-void Ball_setPosX(struct Ball* b, uint16_t value);
-void Ball_setPosY(struct Ball* b, uint16_t value);
+void Ball_Update(struct Ball* b);
 void Ball_draw(struct Ball* b);
 # 5 "stateMachine/../class/../class/gameParameters.h" 2
 
 # 1 "stateMachine/../class/paddle.h" 1
 
 
+
+
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/paddle.h" 2
+# 5 "stateMachine/../class/paddle.h" 2
 
 typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
-    uint16_t w;
-    uint16_t h;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);
@@ -9525,6 +9526,7 @@ void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+void GameParameters_resetPos(struct GameParameters* s);
 # 4 "stateMachine/../class/menu.h" 2
 
 void Menu_welcomeDraw(GameParameters* g);
@@ -9546,15 +9548,16 @@ void displayController(GameParameters* g);
 void gameControllerInit(GameParameters* g);
 void gameControllerSM(Event ev,GameParameters* g);
 void gameControllerController(GameParameters* g);
+void moovePaddle(GameParameters* g);
+void mooveBall(GameParameters* g);
 void backlightController(GameParameters* g);
+void checkCollision(GameParameters* g);
 # 5 "stateMachine/sleepSM.h" 2
 
 # 1 "stateMachine/touchScreenSM.h" 1
-
-
-
+# 21 "stateMachine/touchScreenSM.h"
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 4 "stateMachine/touchScreenSM.h" 2
+# 21 "stateMachine/touchScreenSM.h" 2
 
 
 

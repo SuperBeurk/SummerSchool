@@ -1,32 +1,32 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[c E6043 0 1 2 .. ]
-[n E6043 state WAKEUP BACKLIGHTOFF SLEEP  ]
+[c E6046 0 1 2 .. ]
+[n E6046 state WAKEUP BACKLIGHTOFF SLEEP  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
 "18
 [s S4 `uc 1 `uc 1 `uc 1 `*CS3 1 `*Cuc 1 ]
 [n S4 . height start_char end_char descriptor bitmap ]
-[v F119 `(v ~T0 @X0 0 tf1`uc ]
-[v F122 `(v ~T0 @X0 0 tf1`uc ]
-[v F125 `(v ~T0 @X0 0 tf1`uc ]
+[v F120 `(v ~T0 @X0 0 tf1`uc ]
+[v F123 `(v ~T0 @X0 0 tf1`uc ]
+[v F126 `(v ~T0 @X0 0 tf1`uc ]
 "88
-[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S4 1 `uc 1 `*F119 1 `*F122 1 `*F125 1 `uc 1 ]
+[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S4 1 `uc 1 `*F120 1 `*F123 1 `*F126 1 `uc 1 ]
 [n S6 . posX posY width height txtColor bgColor text font pressed fpPress fpReleased fpOut index ]
-[v F143 `(v ~T0 @X0 0 t? ]
+[v F144 `(v ~T0 @X0 0 t? ]
 "108
-[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F143 1 ]
+[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F144 1 ]
 [n S7 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
-"5 stateMachine/../class/ball.h
-[; ;stateMachine/../class/ball.h: 5: {
-[s S8 `us 1 `us 1 `us 1 `us 1 ]
-[n S8 Ball x y r color ]
-"5 stateMachine/../class/paddle.h
-[; ;stateMachine/../class/paddle.h: 5: {
-[s S9 `us 1 `us 1 `us 1 `us 1 `us 1 ]
-[n S9 Paddle x y w h color ]
+"7 stateMachine/../class/ball.h
+[; ;stateMachine/../class/ball.h: 7: {
+[s S8 `us 1 `us 1 `s 1 `s 1 ]
+[n S8 Ball x y dx dy ]
+"7 stateMachine/../class/paddle.h
+[; ;stateMachine/../class/paddle.h: 7: {
+[s S9 `us 1 `us 1 `us 1 ]
+[n S9 Paddle x y color ]
 "5 stateMachine/../class/score.h
 [; ;stateMachine/../class/score.h: 5: {
 [s S10 `us 1 `us 1 ]
@@ -40,16 +40,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5 stateMachine/gameController.h
 [; ;stateMachine/gameController.h: 5: void gameControllerInit(GameParameters* g);
 [v _gameControllerInit `(v ~T0 @X0 0 ef1`*S836 ]
-"7 stateMachine/touchScreenSM.h
-[; ;stateMachine/touchScreenSM.h: 7: void touchScreenInit();
+"24 stateMachine/touchScreenSM.h
+[; ;stateMachine/touchScreenSM.h: 24: void touchScreenInit();
 [v _touchScreenInit `(v ~T0 @X0 0 e? ]
 "10 stateMachine/sleepSM.h
 [; ;stateMachine/sleepSM.h: 10: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
 "24 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 24:             if(ev==evTimer30)
-[c E39 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame  ]
+[c E39 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evNewGame evGameUpdate  ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -784,7 +784,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[v _sleepState `E6043 ~T0 @X0 1 e ]
+[v _sleepState `E6046 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
 [v _sleepInit `(v ~T0 @X0 1 ef1`*S836 ]
@@ -800,7 +800,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6043 0 ]
+[e = _sleepState . `E6046 0 ]
 "14
 [; ;stateMachine/sleepSM.c: 14:     displayInit(g);
 [e ( _displayInit (1 _g ]
@@ -847,7 +847,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "26
 [; ;stateMachine/sleepSM.c: 26:                sleepState=BACKLIGHTOFF;
-[e = _sleepState . `E6043 1 ]
+[e = _sleepState . `E6046 1 ]
 "27
 [; ;stateMachine/sleepSM.c: 27:                sleepController();
 [e ( _sleepController ..  ]
@@ -869,7 +869,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "33
 [; ;stateMachine/sleepSM.c: 33:                sleepState=SLEEP;
-[e = _sleepState . `E6043 2 ]
+[e = _sleepState . `E6046 2 ]
 "34
 [; ;stateMachine/sleepSM.c: 34:                sleepController();
 [e ( _sleepController ..  ]
@@ -885,7 +885,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "38
 [; ;stateMachine/sleepSM.c: 38:                sleepState=WAKEUP;
-[e = _sleepState . `E6043 0 ]
+[e = _sleepState . `E6046 0 ]
 "39
 [; ;stateMachine/sleepSM.c: 39:                sleepController();
 [e ( _sleepController ..  ]
@@ -907,7 +907,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "45
 [; ;stateMachine/sleepSM.c: 45:                sleepState=WAKEUP;
-[e = _sleepState . `E6043 0 ]
+[e = _sleepState . `E6046 0 ]
 "46
 [; ;stateMachine/sleepSM.c: 46:                sleepController();
 [e ( _sleepController ..  ]
@@ -929,9 +929,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 839  ]
 [e :U 840 ]
-[e [\ -> _sleepState `ui , $ -> . `E6043 0 `ui 841
- , $ -> . `E6043 1 `ui 843
- , $ -> . `E6043 2 `ui 846
+[e [\ -> _sleepState `ui , $ -> . `E6046 0 `ui 841
+ , $ -> . `E6046 1 `ui 843
+ , $ -> . `E6046 2 `ui 846
  848 ]
 [e :U 839 ]
 "52
@@ -981,9 +981,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 850  ]
 [e :U 851 ]
-[e [\ -> _sleepState `ui , $ -> . `E6043 0 `ui 852
- , $ -> . `E6043 1 `ui 853
- , $ -> . `E6043 2 `ui 854
+[e [\ -> _sleepState `ui , $ -> . `E6046 0 `ui 852
+ , $ -> . `E6046 1 `ui 853
+ , $ -> . `E6046 2 `ui 854
  855 ]
 [e :U 850 ]
 "72
