@@ -11345,6 +11345,8 @@ void Factory_init()
 
     GIE=1;
     INT1IE=0;
+    TRISC0=0;
+    LATC0=1;
 
 
     T0CON=0b10000110;
