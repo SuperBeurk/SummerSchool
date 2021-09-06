@@ -5,4 +5,5 @@
 void Menu_welcomeDraw(GameParameters* g);
 void Menu_parametersDraw(GameParameters* g);
 void Menu_inGameDraw(GameParameters* g);
+void Menu_endGame(GameParameters* g);
 #endif

@@ -18,7 +18,7 @@ typedef  uint8_t  Event;    // event type
 typedef  uint16_t Time;     // time type
 typedef  uint8_t  TimerID;  // identifier of timer (position in buffer)
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame,evGameUpdate};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer        // timer structure
 {

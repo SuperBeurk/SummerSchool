@@ -6,5 +6,5 @@
 #include "../class/gameParameters.h"
 void displayInit(GameParameters* g);
 void displaySM(Event ev,GameParameters* g);
-void displayController(GameParameters* g);
+void displayController(GameParameters* g,Event ev);
 #endif

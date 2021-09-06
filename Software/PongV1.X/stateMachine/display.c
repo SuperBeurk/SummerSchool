@@ -5,15 +5,18 @@
  * Created on 30. août 2021, 12:40
  */
 #include "display.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 
-typedef enum state{WELCOME,PARAMETERS,INGAME} state;
+typedef enum state{WELCOME,PARAMETERS,INGAME,ENDGAME} state;
 enum state displayState;
 
 void displayInit(GameParameters* g)
 {
     displayState=WELCOME;
-    displayController(g);    
+    displayController(g,NULLEVENT);    
 }
 void displaySM(Event ev, GameParameters* g)
 {
@@ -23,33 +26,45 @@ void displaySM(Event ev, GameParameters* g)
             if((ev==evOnePlayer)||(ev==evTwoPlayer))
             {
                 displayState=INGAME;
-                displayController(g);
+                Menu_inGameDraw(g);
+                displayController(g,ev);
             }
             if(ev==evParameters)
             {
                 displayState=PARAMETERS;
-                displayController(g);
+                displayController(g,ev);
             }
             break;
         case PARAMETERS:
             if(ev==evLeaveParam)
             {
                 displayState=WELCOME;
-                displayController(g);
+                displayController(g,ev);
             }
             break;
         case INGAME:
-            if(ev==evNewGame)
+            if(ev==evEndGame)
             {
-                displayState=WELCOME;
-                displayController(g);
+                displayState=ENDGAME;                           
+                displayController(g,ev);
             }
+            else
+            {
+                displayController(g,ev);
+            }
+            break;
+       case ENDGAME:
+           if(ev==evNewGame)
+           {
+               displayState=WELCOME;
+               displayController(g,ev);
+           }
             break;
         default:
             break;
     } 
 }
-void displayController(GameParameters* g)
+void displayController(GameParameters* g,Event ev)
 {
     switch(displayState)
     {
@@ -62,11 +77,27 @@ void displayController(GameParameters* g)
             Menu_parametersDraw(g);
             break;
         case INGAME:
-            //Display ball
-            //Display both paddle
-            //Display score
-            Menu_inGameDraw(g);
+            if(ev==evRedrawPaddle1)
+            {
+                Paddle_draw(&g->p1);                
+            }
+            if(ev==evRedrawPaddle2)
+            {
+                Paddle_draw(&g->p2);
+            }
+            if(ev==evRedrawBall)
+            {
+                Ball_draw(&g->b);
+            }
+            if(ev==evRedrawScore)
+            {
+                Score_draw(&g->s1);
+            }
             break;
+        case ENDGAME:
+            Menu_endGame(g);
+            break;
+            
         default:
             break;
     }

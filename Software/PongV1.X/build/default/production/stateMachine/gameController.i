@@ -132,7 +132,7 @@ typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
 
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evNewGame,evGameUpdate};
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
 {
@@ -359,6 +359,8 @@ typedef struct Ball
 {
     uint16_t x;
     uint16_t y;
+    uint16_t oldx;
+    uint16_t oldy;
     int16_t dx;
     int16_t dy;
 }Ball;
@@ -379,6 +381,8 @@ typedef struct Paddle
 {
     uint16_t x;
     uint16_t y;
+    uint16_t oldx;
+    uint16_t oldy;
     uint16_t color;
 }Paddle;
 void Paddle_init(struct Paddle* p,uint16_t team);
@@ -392,39 +396,213 @@ void Paddle_draw(struct Paddle* p);
 # 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
 # 3 "stateMachine/../class/score.h" 2
 
-typedef struct Score
-{
-    uint16_t homeScore;
-    uint16_t awayScore;
-}Score;
-void Score_init(struct Score* s);
-void Score_setHomeScore(struct Score* s, uint16_t value);
-void Score_setAwayScore(struct Score* s, uint16_t value);
-void Score_draw(struct Score* s);
-# 7 "stateMachine/../class/gameParameters.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 4 "stateMachine/../class/score.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 5 "stateMachine/../class/score.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -478,15 +656,30 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 2 3
+# 6 "stateMachine/../class/score.h" 2
+
+typedef struct Score
+{
+    uint16_t homeScore;
+    uint16_t awayScore;
+    char str[2];
+}Score;
+void Score_init(struct Score* s);
+void Score_setHomeScore(struct Score* s, uint16_t value);
+void Score_setAwayScore(struct Score* s, uint16_t value);
+void Score_draw(struct Score* s);
+# 7 "stateMachine/../class/gameParameters.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
 
 
 
-
-
-
-
-
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 23 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
@@ -9500,6 +9693,7 @@ typedef struct GameParameters
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
     btn_t btnLeft;
+    btn_t btnNewGame;
     btn_t btnRight;
     sld_t sldParam;
     Ball b;
@@ -9516,229 +9710,83 @@ void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "stateMachine/gameController.h" 2
 
+# 1 "stateMachine/sleepSM.h" 1
+
+
+
+# 1 "stateMachine/display.h" 1
+
+
+
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 4 "stateMachine/display.h" 2
+
+# 1 "stateMachine/../class/menu.h" 1
+
+
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 3 "stateMachine/../class/menu.h" 2
+
+
+void Menu_welcomeDraw(GameParameters* g);
+void Menu_parametersDraw(GameParameters* g);
+void Menu_inGameDraw(GameParameters* g);
+void Menu_endGame(GameParameters* g);
+# 5 "stateMachine/display.h" 2
+
+
+void displayInit(GameParameters* g);
+void displaySM(Event ev,GameParameters* g);
+void displayController(GameParameters* g,Event ev);
+# 4 "stateMachine/sleepSM.h" 2
+
+# 1 "stateMachine/gameController.h" 1
+# 5 "stateMachine/sleepSM.h" 2
+
+# 1 "stateMachine/touchScreenSM.h" 1
+# 21 "stateMachine/touchScreenSM.h"
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 21 "stateMachine/touchScreenSM.h" 2
+
+
+
+void touchScreenInit();
+void touchScreenSM(Event ev,GameParameters* g);
+void touchScreenController(GameParameters* g);
+void configTouch();
+void configMeasure(_Bool channel);
+# 6 "stateMachine/sleepSM.h" 2
+
+
+void sleepInit(GameParameters* g);
+void sleepSM(Event ev);
+void sleepController();
+# 5 "stateMachine/gameController.h" 2
+
 void gameControllerInit(GameParameters* g);
 void gameControllerSM(Event ev,GameParameters* g);
-void gameControllerController(GameParameters* g);
+void gameControllerController(GameParameters* g,Event ev);
 void moovePaddle(GameParameters* g);
 void mooveBall(GameParameters* g);
 void backlightController(GameParameters* g);
 void checkCollision(GameParameters* g);
 # 7 "stateMachine/gameController.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 8 "stateMachine/gameController.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 9 "stateMachine/gameController.c" 2
-
-
-typedef enum state{NOGAME,PARAMETERS,LOCAL,ONLINE} state;
+typedef enum state{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} state;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 enum state gameControllerState;
 
 void gameControllerInit(GameParameters* g)
 {
     gameControllerState=NOGAME;
-    gameControllerController(g);
+    gameControllerController(g,NULLEVENT);
 }
 void gameControllerSM(Event ev,GameParameters* g)
 {
-   char s[20];
    switch(gameControllerState)
     {
         case NOGAME:
-            gameControllerController(g);
+            gameControllerController(g,NULLEVENT);
             if(ev==evParameters)
             {
                 gameControllerState=PARAMETERS;
@@ -9753,34 +9801,26 @@ void gameControllerSM(Event ev,GameParameters* g)
                 gameControllerState=ONLINE;
             }
         case PARAMETERS:
-            gameControllerController(g);
+            gameControllerController(g,NULLEVENT);
             if(ev==evLeaveParam)
             {
                 gameControllerState=NOGAME;
             }
             break;
         case LOCAL:
-            if (ev==evPress)
-            {
-                moovePaddle(g);
-
-            }
-            else if(ev==evGameUpdate)
-            {
-                mooveBall(g);
-                LCD_DrawRect(g->p2.x,g->p2.y,g->p2.x+50,g->p2.y+20,1,0b1111111111111111);
-                g->p2.x=g->b.x;
-                Paddle_draw(&g->p2);
-            }
+            gameControllerController(g,ev);
             break;
         case ONLINE:
 
             break;
+       case ENDGAME:
+           gameControllerController(g,ev);
+           break;
         default:
             break;
     }
 }
-void gameControllerController(GameParameters* g)
+void gameControllerController(GameParameters* g,Event ev)
 {
     switch(gameControllerState)
     {
@@ -9815,8 +9855,37 @@ void gameControllerController(GameParameters* g)
             }
             break;
         case LOCAL:
+            if (ev==evPress)
+            {
+                moovePaddle(g);
+
+            }
+            else if(ev==evGameUpdate)
+            {
+                mooveBall(g);
+
+                if(g->b.x+50>=239)
+                {
+                    g->p2.x=239-50;
+                }
+                else
+                {
+                    g->p2.x=g->b.x;
+                }
+                XF_pushEvent(evRedrawPaddle2,0);
+            }
             break;
         case ONLINE:
+            break;
+        case ENDGAME:
+            if(LCD_InButton(&(g->btnNewGame),g->x,g->y))
+            {
+                GameParameters_init(g);
+                XF_pushEvent(evNewGame,0);
+                gameControllerState=NOGAME;
+
+
+            }
             break;
         default:
             break;
@@ -9834,21 +9903,23 @@ void moovePaddle(GameParameters* g)
         GameParameters_resetPos(g);
         Paddle_addX(&g->p1,8,1);
     }
-    Paddle_draw(&g->p1);
+    XF_pushEvent(evRedrawPaddle1,0);
 }
 void mooveBall(GameParameters* g)
 {
     checkCollision(g);
     Ball_Update(&g->b);
+    XF_pushEvent(evRedrawBall,0);
 }
 void checkCollision(GameParameters* g)
 {
+    char s[20];
 
-    if(g->b.y+8>=g->p1.y-1)
+    if(g->b.y+4>=g->p1.y-1)
     {
-        if(g->b.x+8>g->p1.x)
+        if(g->b.x+4>g->p1.x)
         {
-            if(g->b.x-8<g->p1.x+50)
+            if(g->b.x-4<g->p1.x+50)
             {
                 if(g->b.x-g->p1.x<10)
                 {
@@ -9882,15 +9953,17 @@ void checkCollision(GameParameters* g)
 
 
                 g->s1.homeScore++;
+                XF_pushEvent(evRedrawScore,0);
+
             }
         }
     }
 
-    if(g->b.y-8<=g->p2.y+20 +1)
+    if(g->b.y-4<=g->p2.y+10 +1)
     {
-        if(g->b.x+8>g->p2.x)
+        if(g->b.x+4>g->p2.x)
         {
-            if(g->b.x-8<g->p2.x+50)
+            if(g->b.x-4<g->p2.x+50)
             {
                 if(g->b.x-g->p2.x<10)
                 {
@@ -9923,26 +9996,33 @@ void checkCollision(GameParameters* g)
                 }
 
                 g->s1.awayScore++;
+                XF_pushEvent(evRedrawScore,0);
             }
         }
     }
 
-    if(g->b.x+8>=239)
+    if(g->b.x+4>=239)
     {
         g->b.dx=-g->b.dx;
     }
-    if(g->b.x-8<=0)
+    if(g->b.x-4<=0)
     {
         g->b.dx=-g->b.dx;
     }
 
-    if(g->b.y-8<=g->p2.y)
+    if(g->b.y-4<=g->p2.y-5)
     {
 
+        XF_pushEvent(evEndGame,0);
+        g->s1.awayScore=0;
+        gameControllerState=ENDGAME;
     }
-    if(g->b.y+8>=g->p1.y)
+    if(g->b.y+4>=g->p1.y+5)
     {
 
+        XF_pushEvent(evEndGame,0);
+        g->s1.homeScore=0;
+        gameControllerState=ENDGAME;
     }
 
 }

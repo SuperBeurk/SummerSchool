@@ -5,25 +5,21 @@
  * Created on 30. août 2021, 12:40
  */
 #include "gameController.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-typedef enum state{NOGAME,PARAMETERS,LOCAL,ONLINE} state;
+typedef enum state{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} state;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 enum state gameControllerState;
 
 void gameControllerInit(GameParameters* g)
 {
     gameControllerState=NOGAME;
-    gameControllerController(g);    
+    gameControllerController(g,NULLEVENT);    
 }
 void gameControllerSM(Event ev,GameParameters* g)
 {
-   char s[20];
    switch(gameControllerState)
     {
         case NOGAME:
-            gameControllerController(g);
+            gameControllerController(g,NULLEVENT);
             if(ev==evParameters)
             {
                 gameControllerState=PARAMETERS;
@@ -38,34 +34,26 @@ void gameControllerSM(Event ev,GameParameters* g)
                 gameControllerState=ONLINE;
             }
         case PARAMETERS:
-            gameControllerController(g);
+            gameControllerController(g,NULLEVENT);
             if(ev==evLeaveParam)
             {
                 gameControllerState=NOGAME;
             }
             break;
         case LOCAL:
-            if (ev==evPress)
-            {
-                moovePaddle(g);
-                
-            }
-            else if(ev==evGameUpdate)
-            {
-                mooveBall(g);
-                LCD_DrawRect(g->p2.x,g->p2.y,g->p2.x+_PADDLE_WIDTH,g->p2.y+_PADDLE_HEIGHT,1,WHITE);
-                g->p2.x=g->b.x;
-                Paddle_draw(&g->p2);
-            }
+            gameControllerController(g,ev);
             break;
         case ONLINE:
 
             break;
+       case ENDGAME:
+           gameControllerController(g,ev);
+           break;
         default:
             break;
     } 
 }
-void gameControllerController(GameParameters* g)
+void gameControllerController(GameParameters* g,Event ev)
 {            
     switch(gameControllerState)
     {
@@ -100,8 +88,37 @@ void gameControllerController(GameParameters* g)
             }
             break;
         case LOCAL: 
+            if (ev==evPress)
+            {
+                moovePaddle(g);
+                
+            }
+            else if(ev==evGameUpdate)
+            {
+                mooveBall(g);
+             
+                if(g->b.x+_PADDLE_WIDTH>=239)
+                {
+                    g->p2.x=239-_PADDLE_WIDTH;
+                }
+                else
+                {
+                    g->p2.x=g->b.x;
+                }
+                XF_pushEvent(evRedrawPaddle2,false);                
+            }
             break;
         case ONLINE:
+            break;
+        case ENDGAME:
+            if(LCD_InButton(&(g->btnNewGame),g->x,g->y))
+            {
+                GameParameters_init(g);
+                XF_pushEvent(evNewGame,false);
+                gameControllerState=NOGAME;
+                //Reset game param function
+                        
+            }
             break;
         default:
             break;
@@ -119,15 +136,17 @@ void moovePaddle(GameParameters* g)
         GameParameters_resetPos(g);
         Paddle_addX(&g->p1,8,1);
     }
-    Paddle_draw(&g->p1);
+    XF_pushEvent(evRedrawPaddle1,false);
 }
 void mooveBall(GameParameters* g)
 {
     checkCollision(g);
-    Ball_Update(&g->b);   
+    Ball_Update(&g->b); 
+    XF_pushEvent(evRedrawBall,false);
 }
 void checkCollision(GameParameters* g)
 {
+    char s[20];
     //------------------------collision with paddle 1---------------------------
     if(g->b.y+_BALL_RADIUS>=g->p1.y-1)
     {
@@ -167,6 +186,8 @@ void checkCollision(GameParameters* g)
                 
                 //Home score +1
                 g->s1.homeScore++;
+                XF_pushEvent(evRedrawScore,false);
+                
             }
         }
     }
@@ -208,6 +229,7 @@ void checkCollision(GameParameters* g)
                 }
                 //Away score +1
                 g->s1.awayScore++;
+                XF_pushEvent(evRedrawScore,false);
             }
         }
     }
@@ -221,13 +243,19 @@ void checkCollision(GameParameters* g)
         g->b.dx=-g->b.dx;
     }
     //------------------------loose game-----------------------------------
-    if(g->b.y-_BALL_RADIUS<=g->p2.y)
+    if(g->b.y-_BALL_RADIUS<=g->p2.y-5)
     {
         //Paddle 2 loose
+        XF_pushEvent(evEndGame,false);
+        g->s1.awayScore=0;
+        gameControllerState=ENDGAME;
     }
-    if(g->b.y+_BALL_RADIUS>=g->p1.y)
+    if(g->b.y+_BALL_RADIUS>=g->p1.y+5)
     {
         //Paddle 1 loose
+        XF_pushEvent(evEndGame,false);
+        g->s1.homeScore=0;
+        gameControllerState=ENDGAME;
     }
     
 }

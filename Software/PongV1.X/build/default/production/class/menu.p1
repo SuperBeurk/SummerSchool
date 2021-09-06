@@ -21,20 +21,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S5 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
 "7 class/ball.h
 [; ;class/ball.h: 7: {
-[s S6 `us 1 `us 1 `s 1 `s 1 ]
-[n S6 Ball x y dx dy ]
+[s S6 `us 1 `us 1 `us 1 `us 1 `s 1 `s 1 ]
+[n S6 Ball x y oldx oldy dx dy ]
 "7 class/paddle.h
 [; ;class/paddle.h: 7: {
-[s S7 `us 1 `us 1 `us 1 ]
-[n S7 Paddle x y color ]
-"5 class/score.h
-[; ;class/score.h: 5: {
-[s S8 `us 1 `us 1 ]
-[n S8 Score homeScore awayScore ]
+[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S7 Paddle x y oldx oldy color ]
+"8 class/score.h
+[; ;class/score.h: 8: {
+[s S16 `us 1 `us 1 `uc -> 2 `i ]
+[n S16 Score homeScore awayScore str ]
 "10 class/../class/gameParameters.h
 [; ;class/../class/gameParameters.h: 10: {
-[s S834 `us 1 `us 1 `us 1 `us 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S5 1 `S6 1 `S7 1 `S7 1 `S8 1 ]
-[n S834 GameParameters backlight player x y btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnLeft btnRight sldParam b p1 p2 s1 ]
+[s S837 `us 1 `us 1 `us 1 `us 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S5 1 `S6 1 `S7 1 `S7 1 `S16 1 ]
+[n S837 GameParameters backlight player x y btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnLeft btnNewGame btnRight sldParam b p1 p2 s1 ]
 "233 class/../libraries/lcd_highlevel.h
 [; ;class/../libraries/lcd_highlevel.h: 233: void LCD_Fill(uint16_t color);
 [v _LCD_Fill `(v ~T0 @X0 0 ef1`us ]
@@ -54,11 +54,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "197
 [; ;class/../libraries/lcd_highlevel.h: 197: void LCD_SliderDraw(sld_t * slider);
 [v _LCD_SliderDraw `(v ~T0 @X0 0 ef1`*S5 ]
-"14 class/paddle.h
-[; ;class/paddle.h: 14: void Paddle_draw(struct Paddle* p);
+"16 class/score.h
+[; ;class/score.h: 16: void Score_draw(struct Score* s);
+[v _Score_draw `(v ~T0 @X0 0 ef1`*S16 ]
+"16 class/paddle.h
+[; ;class/paddle.h: 16: void Paddle_draw(struct Paddle* p);
 [v _Paddle_draw `(v ~T0 @X0 0 ef1`*S7 ]
-"15 class/ball.h
-[; ;class/ball.h: 15: void Ball_draw(struct Ball* b);
+"17 class/ball.h
+[; ;class/ball.h: 17: void Ball_draw(struct Ball* b);
 [v _Ball_draw `(v ~T0 @X0 0 ef1`*S6 ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
@@ -794,14 +797,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "3 class/menu.c
 [; ;class/menu.c: 3: void Menu_welcomeDraw(GameParameters* g)
-[v _Menu_welcomeDraw `(v ~T0 @X0 1 ef1`*S834 ]
+[v _Menu_welcomeDraw `(v ~T0 @X0 1 ef1`*S837 ]
 "4
 [; ;class/menu.c: 4: {
 {
 [e :U _Menu_welcomeDraw ]
 "3
 [; ;class/menu.c: 3: void Menu_welcomeDraw(GameParameters* g)
-[v _g `*S834 ~T0 @X0 1 r1 ]
+[v _g `*S837 ~T0 @X0 1 r1 ]
 "4
 [; ;class/menu.c: 4: {
 [f ]
@@ -822,18 +825,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_ButtonDraw (1 &U . *U _g 6 ]
 "10
 [; ;class/menu.c: 10: }
-[e :UE 835 ]
+[e :UE 838 ]
 }
 "11
 [; ;class/menu.c: 11: void Menu_parametersDraw(GameParameters* g)
-[v _Menu_parametersDraw `(v ~T0 @X0 1 ef1`*S834 ]
+[v _Menu_parametersDraw `(v ~T0 @X0 1 ef1`*S837 ]
 "12
 [; ;class/menu.c: 12: {
 {
 [e :U _Menu_parametersDraw ]
 "11
 [; ;class/menu.c: 11: void Menu_parametersDraw(GameParameters* g)
-[v _g `*S834 ~T0 @X0 1 r1 ]
+[v _g `*S837 ~T0 @X0 1 r1 ]
 "12
 [; ;class/menu.c: 12: {
 [f ]
@@ -848,48 +851,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCD_ButtonDraw (1 &U . *U _g 7 ]
 "16
 [; ;class/menu.c: 16:     g->sldParam.value=g->backlight;
-[e = . . *U _g 10 9 . *U _g 0 ]
+[e = . . *U _g 11 9 . *U _g 0 ]
 "17
 [; ;class/menu.c: 17:     LCD_SliderDraw(&(g->sldParam));
-[e ( _LCD_SliderDraw (1 &U . *U _g 10 ]
+[e ( _LCD_SliderDraw (1 &U . *U _g 11 ]
 "18
 [; ;class/menu.c: 18: }
-[e :UE 836 ]
+[e :UE 839 ]
 }
 "19
 [; ;class/menu.c: 19: void Menu_inGameDraw(GameParameters* g)
-[v _Menu_inGameDraw `(v ~T0 @X0 1 ef1`*S834 ]
+[v _Menu_inGameDraw `(v ~T0 @X0 1 ef1`*S837 ]
 "20
 [; ;class/menu.c: 20: {
 {
 [e :U _Menu_inGameDraw ]
 "19
 [; ;class/menu.c: 19: void Menu_inGameDraw(GameParameters* g)
-[v _g `*S834 ~T0 @X0 1 r1 ]
+[v _g `*S837 ~T0 @X0 1 r1 ]
 "20
 [; ;class/menu.c: 20: {
 [f ]
 "21
-[; ;class/menu.c: 21:     LCD_Fill(0b1111111111111111);
-[e ( _LCD_Fill (1 -> -> 65535 `ui `us ]
+[; ;class/menu.c: 21:     LCD_Fill(0b0000000000000000);
+[e ( _LCD_Fill (1 -> -> 0 `i `us ]
 "22
-[; ;class/menu.c: 22:     LCD_ButtonDraw(&(g->btnRight));
-[e ( _LCD_ButtonDraw (1 &U . *U _g 9 ]
+[; ;class/menu.c: 22:     Score_draw(&g->s1);
+[e ( _Score_draw (1 &U . *U _g 15 ]
 "23
-[; ;class/menu.c: 23:     LCD_ButtonDraw(&(g->btnLeft));
-[e ( _LCD_ButtonDraw (1 &U . *U _g 8 ]
-"24
-[; ;class/menu.c: 24:     Paddle_draw(&g->p1);
-[e ( _Paddle_draw (1 &U . *U _g 12 ]
-"25
-[; ;class/menu.c: 25:     Paddle_draw(&g->p2);
+[; ;class/menu.c: 23:     Paddle_draw(&g->p1);
 [e ( _Paddle_draw (1 &U . *U _g 13 ]
+"24
+[; ;class/menu.c: 24:     Paddle_draw(&g->p2);
+[e ( _Paddle_draw (1 &U . *U _g 14 ]
+"25
+[; ;class/menu.c: 25:     Ball_draw(&g->b);
+[e ( _Ball_draw (1 &U . *U _g 12 ]
 "26
-[; ;class/menu.c: 26:     Ball_draw(&g->b);
-[e ( _Ball_draw (1 &U . *U _g 11 ]
+[; ;class/menu.c: 26: }
+[e :UE 840 ]
+}
 "27
-[; ;class/menu.c: 27: }
-[e :UE 837 ]
+[; ;class/menu.c: 27: void Menu_endGame(GameParameters* g)
+[v _Menu_endGame `(v ~T0 @X0 1 ef1`*S837 ]
+"28
+[; ;class/menu.c: 28: {
+{
+[e :U _Menu_endGame ]
+"27
+[; ;class/menu.c: 27: void Menu_endGame(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"28
+[; ;class/menu.c: 28: {
+[f ]
+"29
+[; ;class/menu.c: 29:     LCD_Fill(0b0000000000000000);
+[e ( _LCD_Fill (1 -> -> 0 `i `us ]
+"30
+[; ;class/menu.c: 30:     LCD_ButtonDraw(&(g->btnNewGame));
+[e ( _LCD_ButtonDraw (1 &U . *U _g 9 ]
+"32
+[; ;class/menu.c: 32:     if(g->s1.homeScore==0)
+[e $ ! == -> . . *U _g 15 0 `ui -> -> 0 `i `ui 842  ]
+"33
+[; ;class/menu.c: 33:     {
+{
+"34
+[; ;class/menu.c: 34:         LCD_DrawText("PLAYER 2 WIN",&arialNarrow_12ptFontInfo,A_CENTER,100,50,0b1111111111111111,0b0000000000000000);
+[e ( _LCD_DrawText (4 , , , , , , :s 3C &U _arialNarrow_12ptFontInfo . `E47 2 -> -> 100 `i `us -> -> 50 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
+"35
+[; ;class/menu.c: 35:     }
+}
+[e $U 843  ]
+"36
+[; ;class/menu.c: 36:     else
+[e :U 842 ]
+"37
+[; ;class/menu.c: 37:     {
+{
+"38
+[; ;class/menu.c: 38:         LCD_DrawText("PLAYER 1 WIN",&arialNarrow_12ptFontInfo,A_CENTER,100,50,0b1111111111111111,0b0000000000000000);
+[e ( _LCD_DrawText (4 , , , , , , :s 4C &U _arialNarrow_12ptFontInfo . `E47 2 -> -> 100 `i `us -> -> 50 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
+"39
+[; ;class/menu.c: 39:     }
+}
+[e :U 843 ]
+"41
+[; ;class/menu.c: 41: }
+[e :UE 841 ]
 }
 [a 2C 80 65 82 65 77 69 84 69 82 83 0 ]
+[a 3C 80 76 65 89 69 82 32 50 32 87 73 78 0 ]
+[a 4C 80 76 65 89 69 82 32 49 32 87 73 78 0 ]
 [a 1C 87 69 76 67 79 77 69 0 ]

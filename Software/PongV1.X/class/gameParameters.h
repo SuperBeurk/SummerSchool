@@ -17,6 +17,7 @@ typedef struct GameParameters
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
     btn_t btnLeft;
+    btn_t btnNewGame;
     btn_t btnRight;
     sld_t sldParam;
     Ball b;

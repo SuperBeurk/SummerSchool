@@ -7,6 +7,7 @@ void GameParameters_init(struct GameParameters* s)
     s->player = 0;
     s->x=0;
     s->y=0;
+    Score_init(&s->s1);
     Ball_init(&(s->b));
     Paddle_init(&(s->p1),0);
     Paddle_init(&(s->p2),1);
@@ -16,6 +17,7 @@ void GameParameters_init(struct GameParameters* s)
     LCD_ButtonCreate(130,50,90,20,WHITE,BLACK,"QUITTER",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnLeaveParam),4);
     LCD_ButtonCreate(10,220,70,50,BLACK,WHITE,"<--",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnLeft),5);
     LCD_ButtonCreate(150,220,70,50,BLACK,WHITE,"-->",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnRight),6);
+    LCD_ButtonCreate(150,220,70,50,BLACK,WHITE,"New Game",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnNewGame),6);
     LCD_SliderCreate(50,100,165,20,BLACK,WHITE,RED,0,11,NULL,&(s->sldParam));
 }
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
