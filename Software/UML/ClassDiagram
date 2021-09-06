@@ -1,0 +1,48 @@
+@startuml
+
+class class::Factory{
+
+  void Factory_init()
+  void Factory_exec()
+}
+
+class class::GameParameters{
+
+}
+
+class xf::XF{
+  void XF_init()
+  void XF_pushEvent(ev : uint8_t, inISR : bool)
+  uint8_t XF_popEvent(inIRS : bool)
+  uint8_t XF_scheduleTimeer(delay : uint16_t, ev : uint8_t, inISR : bool)
+  void XF_unscheduleTimer(uint8_t timerID, inISR : bool)
+  voidXF_decrementAndQueueTimers()
+}
+class class::Ball{
+
+}
+class class::Menu{
+
+}
+class class::Paddle{
+
+}
+class class::Score{
+
+}
+class StateMachine::Display{
+
+}
+class StateMachine::GameConroller{
+
+}
+class StateMachine::SleepSM{
+
+}
+class StateMachine::TouchScreenSM{
+
+}
+class::Factory *- class::GameParameters :g1
+class::Factory ..> xf::XF :uses
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+(*) --> "No Game"
+"No Game" --> [evOnePlayer] "Local"
+"No Game" --> [evParameters] "Parameters"
+"No Game" --> [evTwoPlayers] "Online"
+
+"Local" --> [evLoseGame] "No Game"
+"Parameters" --> [evLeaveParam] "No Game"
+"Online" --> [evLoseGame] "No Game"
+
+@enduml
