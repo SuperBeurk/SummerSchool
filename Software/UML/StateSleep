@@ -1,0 +1,9 @@
+@startuml
+(*) -->[init] "Wake Up"
+"Wake Up" --> [evTimer30] "Backlight_off"
+
+"Backlight_off" --> [evTimer60] "Sleep"
+
+"Sleep" --> [evPressScreen] "Wake Up"
+
+@enduml

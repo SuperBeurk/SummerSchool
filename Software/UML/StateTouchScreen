@@ -1,0 +1,8 @@
+@startuml
+(*) -->[init] "Waiting"
+"Waiting" --> [evPress] "CalculatePosition"
+
+"CalculatePosition" --> [evTimerPos] "CalculatePosition"
+"CalculatePosition" --> [evRelease] "Waiting"
+
+@enduml
