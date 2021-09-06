@@ -1,5 +1,9 @@
 #include "menu.h"
 extern const FONT_INFO arialNarrow_12ptFontInfo;
+
+//------------------------------------------------------------------------------
+//Method that will display the Parameters menu
+//------------------------------------------------------------------------------
 void Menu_welcomeDraw(GameParameters* g)
 {
     LCD_Fill(WHITE);
@@ -8,6 +12,10 @@ void Menu_welcomeDraw(GameParameters* g)
     LCD_ButtonDraw(&(g->btnOnePlayer));
     LCD_ButtonDraw(&(g->btnTwoPlayer));
 }
+
+//------------------------------------------------------------------------------
+//Method that will display the Parameters menu
+//------------------------------------------------------------------------------
 void Menu_parametersDraw(GameParameters* g)
 {
     LCD_Fill(WHITE);
@@ -16,6 +24,10 @@ void Menu_parametersDraw(GameParameters* g)
     g->sldParam.value=g->backlight;
     LCD_SliderDraw(&(g->sldParam)); 
 }
+
+//------------------------------------------------------------------------------
+//Method that will display the Parameters menu
+//------------------------------------------------------------------------------
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(BLACK);
@@ -24,6 +36,10 @@ void Menu_inGameDraw(GameParameters* g)
     Paddle_draw(&g->p2);
     Ball_draw(&g->b);
 }
+
+//------------------------------------------------------------------------------
+//Method that will display the Parameters menu
+//------------------------------------------------------------------------------
 void Menu_endGame(GameParameters* g)
 {
     LCD_Fill(BLACK);

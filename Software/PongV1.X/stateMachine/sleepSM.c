@@ -5,8 +5,8 @@
  * Created on 30. août 2021, 12:40
  */
 #include "sleepSM.h"
-typedef enum state{WAKEUP,BACKLIGHTOFF,SLEEP} state;
-enum state sleepState;
+typedef enum state1{WAKEUP,BACKLIGHTOFF,SLEEP} state1;
+state1 sleepState;
 
 void sleepInit(GameParameters* g)
 {
@@ -18,7 +18,7 @@ void sleepInit(GameParameters* g)
 }
 void sleepSM(Event ev)
 {
-   switch(sleepState)
+  /* switch(sleepState)
     {
         case WAKEUP: 
             if(ev==evTimer30)
@@ -48,7 +48,7 @@ void sleepSM(Event ev)
             break;
         default:
             break;
-    } 
+    } */
 }
 void sleepController()
 {

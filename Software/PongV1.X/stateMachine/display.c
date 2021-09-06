@@ -10,14 +10,19 @@
 #include <stdlib.h>
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 
-typedef enum state{WELCOME,PARAMETERS,INGAME,ENDGAME} state;
-enum state displayState;
+typedef enum state4{WELCOME,PARAMETERS,INGAME,ENDGAME} state4;
+state4 displayState;
 
 void displayInit(GameParameters* g)
 {
+    //Default state
     displayState=WELCOME;
     displayController(g,NULLEVENT);    
 }
+
+//------------------------------------------------------------------------------
+//State machine method
+//------------------------------------------------------------------------------
 void displaySM(Event ev, GameParameters* g)
 {
    switch(displayState)
@@ -77,6 +82,7 @@ void displayController(GameParameters* g,Event ev)
             Menu_parametersDraw(g);
             break;
         case INGAME:
+            //Update draw element depending on event
             if(ev==evRedrawPaddle1)
             {
                 Paddle_draw(&g->p1);                

@@ -1,6 +1,6 @@
 #ifndef _BALL
 #define _BALL
-#define _BALL_RADIUS 4
+#define _BALL_RADIUS 8
 #define _BALL_COLOR RED
 #include "../libraries/lcd_highlevel.h"
 typedef struct Ball

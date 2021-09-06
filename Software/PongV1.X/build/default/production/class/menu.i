@@ -325,8 +325,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "class/../class/gameParameters.h" 2
 
@@ -9644,19 +9656,37 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "class/menu.h" 2
 
+
+
+
 void Menu_welcomeDraw(GameParameters* g);
+
+
+
+
 void Menu_parametersDraw(GameParameters* g);
+
+
+
+
 void Menu_inGameDraw(GameParameters* g);
+
+
+
+
 void Menu_endGame(GameParameters* g);
 # 1 "class/menu.c" 2
 
 extern const FONT_INFO arialNarrow_12ptFontInfo;
+
+
+
+
 void Menu_welcomeDraw(GameParameters* g)
 {
     LCD_Fill(0b1111111111111111);
@@ -9665,6 +9695,10 @@ void Menu_welcomeDraw(GameParameters* g)
     LCD_ButtonDraw(&(g->btnOnePlayer));
     LCD_ButtonDraw(&(g->btnTwoPlayer));
 }
+
+
+
+
 void Menu_parametersDraw(GameParameters* g)
 {
     LCD_Fill(0b1111111111111111);
@@ -9673,6 +9707,10 @@ void Menu_parametersDraw(GameParameters* g)
     g->sldParam.value=g->backlight;
     LCD_SliderDraw(&(g->sldParam));
 }
+
+
+
+
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(0b0000000000000000);
@@ -9681,6 +9719,10 @@ void Menu_inGameDraw(GameParameters* g)
     Paddle_draw(&g->p2);
     Ball_draw(&g->b);
 }
+
+
+
+
 void Menu_endGame(GameParameters* g)
 {
     LCD_Fill(0b0000000000000000);

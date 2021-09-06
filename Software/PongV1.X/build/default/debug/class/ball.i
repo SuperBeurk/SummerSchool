@@ -313,8 +313,8 @@ void Ball_Update(struct Ball* b)
 }
 void Ball_draw(struct Ball* b)
 {
-    LCD_DrawRect(b->oldx-4,b->oldy-4,b->oldx+4,b->oldy+4,1,0b0000000000000000);
+    LCD_DrawRect(b->oldx-8,b->oldy-8,b->oldx+8,b->oldy+8,1,0b0000000000000000);
     b->oldx=b->x;
     b->oldy=b->y;
-    LCD_DrawRect(b->x-4,b->y-4,b->x+4,b->y+4,1,0b1111100000000000);
+    LCD_DrawRect(b->x-8,b->y-8,b->x+8,b->y+8,1,0b1111100000000000);
 }

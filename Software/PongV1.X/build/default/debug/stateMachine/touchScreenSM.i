@@ -387,8 +387,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "stateMachine/../class/gameParameters.h" 2
 
@@ -9706,7 +9718,6 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
@@ -9725,9 +9736,9 @@ void configMeasure(_Bool channel);
 
 
 
-typedef enum state{WAITING,CALCULATEPOSITION} state;
+typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-state touchScreenState;
+state3 touchScreenState;
 
 void touchScreenInit()
 {
@@ -9775,7 +9786,9 @@ void touchScreenController(GameParameters* g)
         case WAITING:
 
 
+            INTEDG1=0;
             configTouch();
+
 
             break;
         case CALCULATEPOSITION:
@@ -9806,7 +9819,7 @@ void touchScreenController(GameParameters* g)
             XF_scheduleTimer(9,evTimerPos,0);
 
 
-            ADCON0=0b00101001;
+            ADCON0=0b00101000;
             configTouch();
             INT1IF=0;
             INT1IE=1;
@@ -9839,7 +9852,6 @@ void configTouch()
     TRISB1=1;
     RBPU=0;
     WPUB=0b00000010;
-    INTEDG1=0;
     TRISB3=1;
     TRISB4=1;
     INT1IE=1;

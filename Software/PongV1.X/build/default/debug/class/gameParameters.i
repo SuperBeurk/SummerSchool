@@ -319,8 +319,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "class/gameParameters.h" 2
 
@@ -9638,7 +9650,6 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
@@ -9652,6 +9663,7 @@ void GameParameters_init(struct GameParameters* s)
     s->player = 0;
     s->x=0;
     s->y=0;
+    Score_init(&s->s1);
     Ball_init(&(s->b));
     Paddle_init(&(s->p1),0);
     Paddle_init(&(s->p2),1);
@@ -9679,10 +9691,6 @@ void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
 {
     s->player = value;
-}
-void GameParameters_draw(struct GameParameters* s)
-{
-
 }
 void GameParameters_resetPos(struct GameParameters* s)
 {

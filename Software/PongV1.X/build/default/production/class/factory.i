@@ -9393,8 +9393,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "class/gameParameters.h" 2
 
@@ -9637,7 +9649,6 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
@@ -9727,9 +9738,24 @@ void XF_decrementAndQueueTimers();
 # 3 "class/../stateMachine/../class/menu.h" 2
 
 
+
+
+
 void Menu_welcomeDraw(GameParameters* g);
+
+
+
+
 void Menu_parametersDraw(GameParameters* g);
+
+
+
+
 void Menu_inGameDraw(GameParameters* g);
+
+
+
+
 void Menu_endGame(GameParameters* g);
 # 5 "class/../stateMachine/display.h" 2
 
@@ -11553,6 +11579,7 @@ void Factory_init()
 
     GIE=1;
     INT1IE=0;
+    INTEDG1=0;
     TRISC0=0;
     LATC0=1;
 

@@ -385,8 +385,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "stateMachine/../class/gameParameters.h" 2
 
@@ -9704,11 +9716,78 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "stateMachine/gameController.h" 2
+
+# 1 "stateMachine/sleepSM.h" 1
+
+
+
+# 1 "stateMachine/display.h" 1
+
+
+
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 4 "stateMachine/display.h" 2
+
+# 1 "stateMachine/../class/menu.h" 1
+
+
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 3 "stateMachine/../class/menu.h" 2
+
+
+
+
+
+void Menu_welcomeDraw(GameParameters* g);
+
+
+
+
+void Menu_parametersDraw(GameParameters* g);
+
+
+
+
+void Menu_inGameDraw(GameParameters* g);
+
+
+
+
+void Menu_endGame(GameParameters* g);
+# 5 "stateMachine/display.h" 2
+
+
+void displayInit(GameParameters* g);
+void displaySM(Event ev,GameParameters* g);
+void displayController(GameParameters* g,Event ev);
+# 4 "stateMachine/sleepSM.h" 2
+
+# 1 "stateMachine/gameController.h" 1
+# 5 "stateMachine/sleepSM.h" 2
+
+# 1 "stateMachine/touchScreenSM.h" 1
+# 21 "stateMachine/touchScreenSM.h"
+# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
+# 21 "stateMachine/touchScreenSM.h" 2
+
+
+
+void touchScreenInit();
+void touchScreenSM(Event ev,GameParameters* g);
+void touchScreenController(GameParameters* g);
+void configTouch();
+void configMeasure(_Bool channel);
+# 6 "stateMachine/sleepSM.h" 2
+
+
+void sleepInit(GameParameters* g);
+void sleepSM(Event ev);
+void sleepController();
+# 5 "stateMachine/gameController.h" 2
 
 void gameControllerInit(GameParameters* g);
 void gameControllerSM(Event ev,GameParameters* g);
@@ -9719,39 +9798,47 @@ void backlightController(GameParameters* g);
 void checkCollision(GameParameters* g);
 # 7 "stateMachine/gameController.c" 2
 
-typedef enum state{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} state;
+typedef enum gameSM{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} gameSM;
+gameSM gameStateMachine;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-enum state gameControllerState;
+
 
 void gameControllerInit(GameParameters* g)
 {
-    gameControllerState=NOGAME;
+    gameStateMachine=NOGAME;
     gameControllerController(g,NULLEVENT);
 }
+
+
+
+
 void gameControllerSM(Event ev,GameParameters* g)
 {
-   switch(gameControllerState)
+   switch(gameStateMachine)
     {
+
         case NOGAME:
             gameControllerController(g,NULLEVENT);
             if(ev==evParameters)
             {
-                gameControllerState=PARAMETERS;
+                gameStateMachine=PARAMETERS;
             }
             if(ev==evOnePlayer)
             {
-                gameControllerState=LOCAL;
+                gameStateMachine=LOCAL;
+                XF_scheduleTimer(5,evGameUpdate,1);
             }
             break;
             if(ev==evTwoPlayer)
             {
-                gameControllerState=ONLINE;
+                gameStateMachine=ONLINE;
+                XF_scheduleTimer(5,evGameUpdate,0);
             }
         case PARAMETERS:
             gameControllerController(g,NULLEVENT);
             if(ev==evLeaveParam)
             {
-                gameControllerState=NOGAME;
+                gameStateMachine=NOGAME;
             }
             break;
         case LOCAL:
@@ -9761,25 +9848,31 @@ void gameControllerSM(Event ev,GameParameters* g)
 
             break;
        case ENDGAME:
+           gameControllerController(g,ev);
            break;
         default:
             break;
     }
 }
+
+
+
+
 void gameControllerController(GameParameters* g,Event ev)
 {
-    switch(gameControllerState)
+    switch(gameStateMachine)
     {
         case NOGAME:
+
             if(LCD_InButton(&(g->btnParam),g->x,g->y))
             {
                 XF_pushEvent(evParameters,0);
-                GameParameters_resetPos(g);;
+                GameParameters_resetPos(g);
             }
             if(LCD_InButton(&(g->btnOnePlayer),g->x,g->y))
             {
                 XF_pushEvent(evOnePlayer,0);
-                GameParameters_resetPos(g);;
+                GameParameters_resetPos(g);
             }
             if(LCD_InButton(&(g->btnTwoPlayer),g->x,g->y))
             {
@@ -9788,12 +9881,14 @@ void gameControllerController(GameParameters* g,Event ev)
             }
             break;
         case PARAMETERS:
+
             if(LCD_InSlider(&(g->sldParam),g->x,g->y))
             {
                 backlightController(g);
                 LCD_SliderUpdate(&(g->sldParam));
                 GameParameters_resetPos(g);
             }
+
             if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
             {
                 XF_pushEvent(evLeaveParam,0);
@@ -9801,14 +9896,17 @@ void gameControllerController(GameParameters* g,Event ev)
             }
             break;
         case LOCAL:
-            if (ev==evPress)
+            if (ev==evTimerPos)
             {
+
                 moovePaddle(g);
 
             }
             else if(ev==evGameUpdate)
             {
+
                 mooveBall(g);
+
 
                 if(g->b.x+50>=239)
                 {
@@ -9819,6 +9917,7 @@ void gameControllerController(GameParameters* g,Event ev)
                     g->p2.x=g->b.x;
                 }
                 XF_pushEvent(evRedrawPaddle2,0);
+                XF_scheduleTimer(5,evGameUpdate,1);
             }
             break;
         case ONLINE:
@@ -9826,8 +9925,10 @@ void gameControllerController(GameParameters* g,Event ev)
         case ENDGAME:
             if(LCD_InButton(&(g->btnNewGame),g->x,g->y))
             {
-                GameParameters_resetPos(g);
+
+                GameParameters_init(g);
                 XF_pushEvent(evNewGame,0);
+                gameStateMachine=NOGAME;
             }
             break;
         default:
@@ -9836,15 +9937,17 @@ void gameControllerController(GameParameters* g,Event ev)
 }
 void moovePaddle(GameParameters* g)
 {
+
     if(LCD_InButton(&(g->btnLeft),g->x,g->y))
     {
         GameParameters_resetPos(g);
-        Paddle_addX(&g->p1,8,0);
+        Paddle_addX(&g->p1,20,0);
     }
+
     if(LCD_InButton(&(g->btnRight),g->x,g->y))
     {
         GameParameters_resetPos(g);
-        Paddle_addX(&g->p1,8,1);
+        Paddle_addX(&g->p1,20,1);
     }
     XF_pushEvent(evRedrawPaddle1,0);
 }
@@ -9858,26 +9961,36 @@ void checkCollision(GameParameters* g)
 {
     char s[20];
 
-    if(g->b.y+4>=g->p1.y-1)
+    if(g->b.x+g->b.dx+8>=239)
     {
-        if(g->b.x+4>g->p1.x)
+        g->b.dx=-g->b.dx;
+    }
+    if(g->b.x+g->b.dx-8<=3)
+    {
+        g->b.dx=-g->b.dx;
+    }
+
+    if(g->b.y+8>=g->p1.y-1)
+    {
+        if(g->b.x+8>g->p1.x)
         {
-            if(g->b.x-4<g->p1.x+50)
+            if(g->b.x-8<g->p1.x+50)
             {
                 if(g->b.x-g->p1.x<10)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=-2;
+                    g->b.dx-=2;
                 }
                 else if(g->b.x-g->p1.x<20)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=-1;
+                    g->b.dx-=1;
                 }
                 else if(g->b.x-g->p1.x<30)
                 {
+
                     g->b.dx=g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
@@ -9885,13 +9998,13 @@ void checkCollision(GameParameters* g)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=1;
+                    g->b.dx+=1;
                 }
                 else
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=2;
+                    g->b.dx+=2;
                 }
 
 
@@ -9902,26 +10015,27 @@ void checkCollision(GameParameters* g)
         }
     }
 
-    if(g->b.y-4<=g->p2.y+10 +1)
+    if(g->b.y-8<=g->p2.y+10 +1)
     {
-        if(g->b.x+4>g->p2.x)
+        if(g->b.x+8>g->p2.x)
         {
-            if(g->b.x-4<g->p2.x+50)
+            if(g->b.x-8<g->p2.x+50)
             {
                 if(g->b.x-g->p2.x<10)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=-2;
+                    g->b.dx-=2;
                 }
                 else if(g->b.x-g->p2.x<20)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=-1;
+                    g->b.dx-=1;
                 }
                 else if(g->b.x-g->p2.x<30)
                 {
+
                     g->b.dx=g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
@@ -9929,13 +10043,13 @@ void checkCollision(GameParameters* g)
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=1;
+                    g->b.dx+=1;
                 }
                 else
                 {
 
                     g->b.dy=-g->b.dy;
-                    g->b.dx=2;
+                    g->b.dx+=2;
                 }
 
                 g->s1.awayScore++;
@@ -9944,31 +10058,24 @@ void checkCollision(GameParameters* g)
         }
     }
 
-    if(g->b.x+4>=239)
-    {
-        g->b.dx=-g->b.dx;
-    }
-    if(g->b.x-4<=0)
-    {
-        g->b.dx=-g->b.dx;
-    }
 
-    if(g->b.y-4<=g->p2.y-5)
+    if(g->b.y-8<=g->p2.y-5)
     {
 
         XF_pushEvent(evEndGame,0);
         g->s1.awayScore=0;
-        gameControllerState=ENDGAME;
+        gameStateMachine=ENDGAME;
     }
-    if(g->b.y+4>=g->p1.y+5)
+    if(g->b.y+8>=g->p1.y+5)
     {
 
         XF_pushEvent(evEndGame,0);
         g->s1.homeScore=0;
-        gameControllerState=ENDGAME;
+        gameStateMachine=ENDGAME;
     }
 
 }
+
 void backlightController(GameParameters* g)
 {
     if(((g->x)>=50)&&((g->x)<64))

@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "15 stateMachine/touchScreenSM.c
-[; ;stateMachine/touchScreenSM.c: 15: state touchScreenState;
-[c E6509 0 1 .. ]
-[n E6509 state WAITING CALCULATEPOSITION  ]
+[; ;stateMachine/touchScreenSM.c: 15: state3 touchScreenState;
+[c E6507 0 1 .. ]
+[n E6507 state3 WAITING CALCULATEPOSITION  ]
 "27 stateMachine/touchScreenSM.h
 [; ;stateMachine/touchScreenSM.h: 27: void configTouch();
 [v _configTouch `(v ~T0 @X0 0 e? ]
@@ -45,7 +45,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26 stateMachine/touchScreenSM.h
 [; ;stateMachine/touchScreenSM.h: 26: void touchScreenController(GameParameters* g);
 [v _touchScreenController `(v ~T0 @X0 0 ef1`*S839 ]
-"17694 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
+"17730 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17730: extern volatile __bit INTEDG1 __attribute__((address(0x7F8D)));
+[v _INTEDG1 `Vb ~T0 @X0 0 e@32653 ]
+"17694
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17694: extern volatile __bit INT1IE __attribute__((address(0x7F83)));
 [v _INT1IE `Vb ~T0 @X0 0 e@32643 ]
 "28 stateMachine/touchScreenSM.h
@@ -115,8 +118,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PORTBbits `VS354 ~T0 @X0 0 e@3969 ]
 "113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"103 stateMachine/touchScreenSM.c
-[; ;stateMachine/touchScreenSM.c: 103:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,0b0000000000000000,0b1111111111111111);
+"105 stateMachine/touchScreenSM.c
+[; ;stateMachine/touchScreenSM.c: 105:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,0b0000000000000000,0b1111111111111111);
 [c E91 0 1 2 .. ]
 [n E91 . A_LEFT A_RIGHT A_CENTER  ]
 "271 stateMachine/../class/../libraries/lcd_highlevel.h
@@ -124,11 +127,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 stateMachine/touchScreenSM.c
 [; ;stateMachine/touchScreenSM.c: 14: extern const FONT_INFO arialNarrow_12ptFontInfo;
 [v _arialNarrow_12ptFontInfo `CS4 ~T0 @X0 0 e ]
-"32 stateMachine/../class/gameParameters.h
-[; ;stateMachine/../class/gameParameters.h: 32: void GameParameters_setX(struct GameParameters* s, uint16_t value);
+"31 stateMachine/../class/gameParameters.h
+[; ;stateMachine/../class/gameParameters.h: 31: void GameParameters_setX(struct GameParameters* s, uint16_t value);
 [v _GameParameters_setX `(v ~T0 @X0 0 ef2`*S839`us ]
-"33
-[; ;stateMachine/../class/gameParameters.h: 33: void GameParameters_setY(struct GameParameters* s, uint16_t value);
+"32
+[; ;stateMachine/../class/gameParameters.h: 32: void GameParameters_setY(struct GameParameters* s, uint16_t value);
 [v _GameParameters_setY `(v ~T0 @X0 0 ef2`*S839`us ]
 "16776 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16776: extern volatile __bit ANSB1 __attribute__((address(0x79C9)));
@@ -151,9 +154,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2614
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 2614: extern volatile unsigned char WPUB __attribute__((address(0xF61)));
 [v _WPUB `Vuc ~T0 @X0 0 e@3937 ]
-"17730
-[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17730: extern volatile __bit INTEDG1 __attribute__((address(0x7F8D)));
-[v _INTEDG1 `Vb ~T0 @X0 0 e@32653 ]
 "19482
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 19482: extern volatile __bit TRISB3 __attribute__((address(0x7C9B)));
 [v _TRISB3 `Vb ~T0 @X0 0 e@31899 ]
@@ -902,8 +902,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "15 stateMachine/touchScreenSM.c
-[; ;stateMachine/touchScreenSM.c: 15: state touchScreenState;
-[v _touchScreenState `E6509 ~T0 @X0 1 e ]
+[; ;stateMachine/touchScreenSM.c: 15: state3 touchScreenState;
+[v _touchScreenState `E6507 ~T0 @X0 1 e ]
 "17
 [; ;stateMachine/touchScreenSM.c: 17: void touchScreenInit()
 [v _touchScreenInit `(v ~T0 @X0 1 ef ]
@@ -914,7 +914,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "19
 [; ;stateMachine/touchScreenSM.c: 19:     touchScreenState=WAITING;
-[e = _touchScreenState . `E6509 0 ]
+[e = _touchScreenState . `E6507 0 ]
 "20
 [; ;stateMachine/touchScreenSM.c: 20:     configTouch();
 [e ( _configTouch ..  ]
@@ -953,7 +953,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "32
 [; ;stateMachine/touchScreenSM.c: 32:                 touchScreenState=CALCULATEPOSITION;
-[e = _touchScreenState . `E6509 1 ]
+[e = _touchScreenState . `E6507 1 ]
 "33
 [; ;stateMachine/touchScreenSM.c: 33:                 touchScreenController(g);
 [e ( _touchScreenController (1 _g ]
@@ -975,7 +975,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "39
 [; ;stateMachine/touchScreenSM.c: 39:                 touchScreenState=WAITING;
-[e = _touchScreenState . `E6509 0 ]
+[e = _touchScreenState . `E6507 0 ]
 "40
 [; ;stateMachine/touchScreenSM.c: 40:                 touchScreenController(g);
 [e ( _touchScreenController (1 _g ]
@@ -1010,8 +1010,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 842  ]
 [e :U 843 ]
-[e [\ -> _touchScreenState `ui , $ -> . `E6509 0 `ui 844
- , $ -> . `E6509 1 `ui 846
+[e [\ -> _touchScreenState `ui , $ -> . `E6507 0 `ui 844
+ , $ -> . `E6507 1 `ui 846
  849 ]
 [e :U 842 ]
 "50
@@ -1044,22 +1044,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/touchScreenSM.c: 60:         case WAITING:
 [e :U 853 ]
 "63
-[; ;stateMachine/touchScreenSM.c: 63:             configTouch();
+[; ;stateMachine/touchScreenSM.c: 63:             INTEDG1=0;
+[e = _INTEDG1 -> -> 0 `i `b ]
+"64
+[; ;stateMachine/touchScreenSM.c: 64:             configTouch();
 [e ( _configTouch ..  ]
-"65
-[; ;stateMachine/touchScreenSM.c: 65:             break;
+"67
+[; ;stateMachine/touchScreenSM.c: 67:             break;
 [e $U 851  ]
-"66
-[; ;stateMachine/touchScreenSM.c: 66:         case CALCULATEPOSITION:
+"68
+[; ;stateMachine/touchScreenSM.c: 68:         case CALCULATEPOSITION:
 [e :U 854 ]
-"70
-[; ;stateMachine/touchScreenSM.c: 70:             INT1IE=0;
-[e = _INT1IE -> -> 0 `i `b ]
-"71
-[; ;stateMachine/touchScreenSM.c: 71:             configMeasure(0);
-[e ( _configMeasure (1 -> -> 0 `i `a ]
 "72
-[; ;stateMachine/touchScreenSM.c: 72:             while((ADCON0&0x02)!=0){};
+[; ;stateMachine/touchScreenSM.c: 72:             INT1IE=0;
+[e = _INT1IE -> -> 0 `i `b ]
+"73
+[; ;stateMachine/touchScreenSM.c: 73:             configMeasure(0);
+[e ( _configMeasure (1 -> -> 0 `i `a ]
+"74
+[; ;stateMachine/touchScreenSM.c: 74:             while((ADCON0&0x02)!=0){};
 [e $U 855  ]
 [e :U 856 ]
 {
@@ -1067,36 +1070,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 855 ]
 [e $ != & -> _ADCON0 `i -> 2 `i -> 0 `i 856  ]
 [e :U 857 ]
-"73
-[; ;stateMachine/touchScreenSM.c: 73:             uint16_t valueX;
-[v _valueX `us ~T0 @X0 1 a ]
-"74
-[; ;stateMachine/touchScreenSM.c: 74:             valueX=(ADRESH<<8)+ADRESL;
-[e = _valueX -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
 "75
-[; ;stateMachine/touchScreenSM.c: 75:             if(valueX<=120)
-[e $ ! <= -> _valueX `ui -> -> 120 `i `ui 858  ]
+[; ;stateMachine/touchScreenSM.c: 75:             uint16_t valueX;
+[v _valueX `us ~T0 @X0 1 a ]
 "76
-[; ;stateMachine/touchScreenSM.c: 76:             {
-{
+[; ;stateMachine/touchScreenSM.c: 76:             valueX=(ADRESH<<8)+ADRESL;
+[e = _valueX -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
 "77
-[; ;stateMachine/touchScreenSM.c: 77:                 valueX=120;
-[e = _valueX -> -> 120 `i `us ]
+[; ;stateMachine/touchScreenSM.c: 77:             if(valueX<=120)
+[e $ ! <= -> _valueX `ui -> -> 120 `i `ui 858  ]
 "78
-[; ;stateMachine/touchScreenSM.c: 78:             }
+[; ;stateMachine/touchScreenSM.c: 78:             {
+{
+"79
+[; ;stateMachine/touchScreenSM.c: 79:                 valueX=120;
+[e = _valueX -> -> 120 `i `us ]
+"80
+[; ;stateMachine/touchScreenSM.c: 80:             }
 }
 [e :U 858 ]
-"79
-[; ;stateMachine/touchScreenSM.c: 79:             valueX=(valueX-120)/2.35;
+"81
+[; ;stateMachine/touchScreenSM.c: 81:             valueX=(valueX-120)/2.35;
 [e = _valueX -> / -> - -> _valueX `ui -> -> 120 `i `ui `d .2.35 `us ]
-"80
-[; ;stateMachine/touchScreenSM.c: 80:             valueX=240 -valueX;
-[e = _valueX -> - -> -> 240 `i `ui -> _valueX `ui `us ]
 "82
-[; ;stateMachine/touchScreenSM.c: 82:             configMeasure(1);
+[; ;stateMachine/touchScreenSM.c: 82:             valueX=240 -valueX;
+[e = _valueX -> - -> -> 240 `i `ui -> _valueX `ui `us ]
+"84
+[; ;stateMachine/touchScreenSM.c: 84:             configMeasure(1);
 [e ( _configMeasure (1 -> -> 1 `i `a ]
-"83
-[; ;stateMachine/touchScreenSM.c: 83:             while((ADCON0&0x02)!=0){};
+"85
+[; ;stateMachine/touchScreenSM.c: 85:             while((ADCON0&0x02)!=0){};
 [e $U 859  ]
 [e :U 860 ]
 {
@@ -1104,227 +1107,224 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 859 ]
 [e $ != & -> _ADCON0 `i -> 2 `i -> 0 `i 860  ]
 [e :U 861 ]
-"84
-[; ;stateMachine/touchScreenSM.c: 84:             uint16_t valueY;
-[v _valueY `us ~T0 @X0 1 a ]
-"85
-[; ;stateMachine/touchScreenSM.c: 85:             valueY=(ADRESH<<8)+ADRESL;
-[e = _valueY -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
 "86
-[; ;stateMachine/touchScreenSM.c: 86:             if(valueY<=105)
-[e $ ! <= -> _valueY `ui -> -> 105 `i `ui 862  ]
+[; ;stateMachine/touchScreenSM.c: 86:             uint16_t valueY;
+[v _valueY `us ~T0 @X0 1 a ]
 "87
-[; ;stateMachine/touchScreenSM.c: 87:             {
-{
+[; ;stateMachine/touchScreenSM.c: 87:             valueY=(ADRESH<<8)+ADRESL;
+[e = _valueY -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
 "88
-[; ;stateMachine/touchScreenSM.c: 88:                 valueY=105;
-[e = _valueY -> -> 105 `i `us ]
+[; ;stateMachine/touchScreenSM.c: 88:             if(valueY<=105)
+[e $ ! <= -> _valueY `ui -> -> 105 `i `ui 862  ]
 "89
-[; ;stateMachine/touchScreenSM.c: 89:             }
+[; ;stateMachine/touchScreenSM.c: 89:             {
+{
+"90
+[; ;stateMachine/touchScreenSM.c: 90:                 valueY=105;
+[e = _valueY -> -> 105 `i `us ]
+"91
+[; ;stateMachine/touchScreenSM.c: 91:             }
 }
 [e :U 862 ]
-"90
-[; ;stateMachine/touchScreenSM.c: 90:             valueY=(valueY-105)/2;
+"92
+[; ;stateMachine/touchScreenSM.c: 92:             valueY=(valueY-105)/2;
 [e = _valueY -> / - -> _valueY `ui -> -> 105 `i `ui -> -> 2 `i `ui `us ]
-"91
-[; ;stateMachine/touchScreenSM.c: 91:             XF_scheduleTimer(9,evTimerPos,0);
+"93
+[; ;stateMachine/touchScreenSM.c: 93:             XF_scheduleTimer(9,evTimerPos,0);
 [e ( _XF_scheduleTimer (3 , , -> -> 9 `i `us -> . `E39 4 `uc -> -> 0 `i `a ]
-"94
-[; ;stateMachine/touchScreenSM.c: 94:             ADCON0=0b00101001;
-[e = _ADCON0 -> -> 41 `i `uc ]
-"95
-[; ;stateMachine/touchScreenSM.c: 95:             configTouch();
-[e ( _configTouch ..  ]
 "96
-[; ;stateMachine/touchScreenSM.c: 96:             INT1IF=0;
-[e = _INT1IF -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 96:             ADCON0=0b00101000;
+[e = _ADCON0 -> -> 40 `i `uc ]
 "97
-[; ;stateMachine/touchScreenSM.c: 97:             INT1IE=1;
+[; ;stateMachine/touchScreenSM.c: 97:             configTouch();
+[e ( _configTouch ..  ]
+"98
+[; ;stateMachine/touchScreenSM.c: 98:             INT1IF=0;
+[e = _INT1IF -> -> 0 `i `b ]
+"99
+[; ;stateMachine/touchScreenSM.c: 99:             INT1IE=1;
 [e = _INT1IE -> -> 1 `i `b ]
-"100
-[; ;stateMachine/touchScreenSM.c: 100:             if(PORTBbits.RB1 == 0)
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 863  ]
-"101
-[; ;stateMachine/touchScreenSM.c: 101:             {
-{
 "102
-[; ;stateMachine/touchScreenSM.c: 102:                 sprintf(s,"X: %d",valueX);
-[e ( _sprintf (1 , (. , &U _s :s 1C -> _valueX `ui ]
+[; ;stateMachine/touchScreenSM.c: 102:             if(PORTBbits.RB1 == 0)
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 863  ]
 "103
-[; ;stateMachine/touchScreenSM.c: 103:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,0b0000000000000000,0b1111111111111111);
-[e ( _LCD_DrawText (4 , , , , , , -> &U _s `*Cuc &U _arialNarrow_12ptFontInfo . `E91 1 -> -> 200 `i `us -> -> 200 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+[; ;stateMachine/touchScreenSM.c: 103:             {
+{
 "104
-[; ;stateMachine/touchScreenSM.c: 104:                 GameParameters_setX(g,valueX);
-[e ( _GameParameters_setX (2 , _g _valueX ]
+[; ;stateMachine/touchScreenSM.c: 104:                 sprintf(s,"X: %d",valueX);
+[e ( _sprintf (1 , (. , &U _s :s 1C -> _valueX `ui ]
 "105
-[; ;stateMachine/touchScreenSM.c: 105:                 sprintf(s,"Y: %d",valueY);
-[e ( _sprintf (1 , (. , &U _s :s 2C -> _valueY `ui ]
+[; ;stateMachine/touchScreenSM.c: 105:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,0b0000000000000000,0b1111111111111111);
+[e ( _LCD_DrawText (4 , , , , , , -> &U _s `*Cuc &U _arialNarrow_12ptFontInfo . `E91 1 -> -> 200 `i `us -> -> 200 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
 "106
-[; ;stateMachine/touchScreenSM.c: 106:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,0b0000000000000000,0b1111111111111111);
-[e ( _LCD_DrawText (4 , , , , , , -> &U _s `*Cuc &U _arialNarrow_12ptFontInfo . `E91 1 -> -> 200 `i `us -> -> 250 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+[; ;stateMachine/touchScreenSM.c: 106:                 GameParameters_setX(g,valueX);
+[e ( _GameParameters_setX (2 , _g _valueX ]
 "107
-[; ;stateMachine/touchScreenSM.c: 107:                 GameParameters_setY(g,valueY);
-[e ( _GameParameters_setY (2 , _g _valueY ]
+[; ;stateMachine/touchScreenSM.c: 107:                 sprintf(s,"Y: %d",valueY);
+[e ( _sprintf (1 , (. , &U _s :s 2C -> _valueY `ui ]
 "108
-[; ;stateMachine/touchScreenSM.c: 108:             }
+[; ;stateMachine/touchScreenSM.c: 108:                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,0b0000000000000000,0b1111111111111111);
+[e ( _LCD_DrawText (4 , , , , , , -> &U _s `*Cuc &U _arialNarrow_12ptFontInfo . `E91 1 -> -> 200 `i `us -> -> 250 `i `us -> -> 0 `i `us -> -> 65535 `ui `us ]
+"109
+[; ;stateMachine/touchScreenSM.c: 109:                 GameParameters_setY(g,valueY);
+[e ( _GameParameters_setY (2 , _g _valueY ]
+"110
+[; ;stateMachine/touchScreenSM.c: 110:             }
 }
 [e :U 863 ]
-"113
-[; ;stateMachine/touchScreenSM.c: 113:             break;
-[e $U 851  ]
-"114
-[; ;stateMachine/touchScreenSM.c: 114:         default:
-[e :U 864 ]
 "115
 [; ;stateMachine/touchScreenSM.c: 115:             break;
 [e $U 851  ]
 "116
-[; ;stateMachine/touchScreenSM.c: 116:     }
+[; ;stateMachine/touchScreenSM.c: 116:         default:
+[e :U 864 ]
+"117
+[; ;stateMachine/touchScreenSM.c: 117:             break;
+[e $U 851  ]
+"118
+[; ;stateMachine/touchScreenSM.c: 118:     }
 }
 [e $U 851  ]
 [e :U 852 ]
-[e [\ -> _touchScreenState `ui , $ -> . `E6509 0 `ui 853
- , $ -> . `E6509 1 `ui 854
+[e [\ -> _touchScreenState `ui , $ -> . `E6507 0 `ui 853
+ , $ -> . `E6507 1 `ui 854
  864 ]
 [e :U 851 ]
-"117
-[; ;stateMachine/touchScreenSM.c: 117: }
+"119
+[; ;stateMachine/touchScreenSM.c: 119: }
 [e :UE 850 ]
 }
-"118
-[; ;stateMachine/touchScreenSM.c: 118: void configTouch()
+"120
+[; ;stateMachine/touchScreenSM.c: 120: void configTouch()
 [v _configTouch `(v ~T0 @X0 1 ef ]
-"119
-[; ;stateMachine/touchScreenSM.c: 119: {
+"121
+[; ;stateMachine/touchScreenSM.c: 121: {
 {
 [e :U _configTouch ]
 [f ]
-"120
-[; ;stateMachine/touchScreenSM.c: 120:     ANSB1=0;
-[e = _ANSB1 -> -> 0 `i `b ]
-"121
-[; ;stateMachine/touchScreenSM.c: 121:     ANSB2=0;
-[e = _ANSB2 -> -> 0 `i `b ]
 "122
-[; ;stateMachine/touchScreenSM.c: 122:     TRISB2=0;
-[e = _TRISB2 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 122:     ANSB1=0;
+[e = _ANSB1 -> -> 0 `i `b ]
 "123
-[; ;stateMachine/touchScreenSM.c: 123:     LATB2=0;
-[e = _LATB2 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 123:     ANSB2=0;
+[e = _ANSB2 -> -> 0 `i `b ]
 "124
-[; ;stateMachine/touchScreenSM.c: 124:     TRISB1=1;
-[e = _TRISB1 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 124:     TRISB2=0;
+[e = _TRISB2 -> -> 0 `i `b ]
 "125
-[; ;stateMachine/touchScreenSM.c: 125:     RBPU=0;
-[e = _RBPU -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 125:     LATB2=0;
+[e = _LATB2 -> -> 0 `i `b ]
 "126
-[; ;stateMachine/touchScreenSM.c: 126:     WPUB=0b00000010;
-[e = _WPUB -> -> 2 `i `uc ]
+[; ;stateMachine/touchScreenSM.c: 126:     TRISB1=1;
+[e = _TRISB1 -> -> 1 `i `b ]
 "127
-[; ;stateMachine/touchScreenSM.c: 127:     INTEDG1=0;
-[e = _INTEDG1 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 127:     RBPU=0;
+[e = _RBPU -> -> 0 `i `b ]
 "128
-[; ;stateMachine/touchScreenSM.c: 128:     TRISB3=1;
-[e = _TRISB3 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 128:     WPUB=0b00000010;
+[e = _WPUB -> -> 2 `i `uc ]
 "129
-[; ;stateMachine/touchScreenSM.c: 129:     TRISB4=1;
-[e = _TRISB4 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 129:     TRISB3=1;
+[e = _TRISB3 -> -> 1 `i `b ]
 "130
-[; ;stateMachine/touchScreenSM.c: 130:     INT1IE=1;
-[e = _INT1IE -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 130:     TRISB4=1;
+[e = _TRISB4 -> -> 1 `i `b ]
 "131
-[; ;stateMachine/touchScreenSM.c: 131: }
+[; ;stateMachine/touchScreenSM.c: 131:     INT1IE=1;
+[e = _INT1IE -> -> 1 `i `b ]
+"132
+[; ;stateMachine/touchScreenSM.c: 132: }
 [e :UE 865 ]
 }
-"132
-[; ;stateMachine/touchScreenSM.c: 132: void configMeasure(_Bool channel)
-[v _configMeasure `(v ~T0 @X0 1 ef1`a ]
 "133
-[; ;stateMachine/touchScreenSM.c: 133: {
+[; ;stateMachine/touchScreenSM.c: 133: void configMeasure(_Bool channel)
+[v _configMeasure `(v ~T0 @X0 1 ef1`a ]
+"134
+[; ;stateMachine/touchScreenSM.c: 134: {
 {
 [e :U _configMeasure ]
-"132
-[; ;stateMachine/touchScreenSM.c: 132: void configMeasure(_Bool channel)
-[v _channel `a ~T0 @X0 1 r1 ]
 "133
-[; ;stateMachine/touchScreenSM.c: 133: {
-[f ]
+[; ;stateMachine/touchScreenSM.c: 133: void configMeasure(_Bool channel)
+[v _channel `a ~T0 @X0 1 r1 ]
 "134
-[; ;stateMachine/touchScreenSM.c: 134:     if(channel==0)
-[e $ ! == -> _channel `i -> 0 `i 867  ]
+[; ;stateMachine/touchScreenSM.c: 134: {
+[f ]
 "135
-[; ;stateMachine/touchScreenSM.c: 135:     {
-{
+[; ;stateMachine/touchScreenSM.c: 135:     if(channel==0)
+[e $ ! == -> _channel `i -> 0 `i 867  ]
 "136
-[; ;stateMachine/touchScreenSM.c: 136:         ANSB1=0;
-[e = _ANSB1 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 136:     {
+{
 "137
-[; ;stateMachine/touchScreenSM.c: 137:         TRISB1=0;
-[e = _TRISB1 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 137:         ANSB1=0;
+[e = _ANSB1 -> -> 0 `i `b ]
 "138
-[; ;stateMachine/touchScreenSM.c: 138:         LATB1=0;
-[e = _LATB1 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 138:         TRISB1=0;
+[e = _TRISB1 -> -> 0 `i `b ]
 "139
-[; ;stateMachine/touchScreenSM.c: 139:         TRISB3=0;
-[e = _TRISB3 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 139:         LATB1=0;
+[e = _LATB1 -> -> 0 `i `b ]
 "140
-[; ;stateMachine/touchScreenSM.c: 140:         LATB3=1;
-[e = _LATB3 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 140:         TRISB3=0;
+[e = _TRISB3 -> -> 0 `i `b ]
 "141
-[; ;stateMachine/touchScreenSM.c: 141:         TRISB4=1;
-[e = _TRISB4 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 141:         LATB3=1;
+[e = _LATB3 -> -> 1 `i `b ]
 "142
-[; ;stateMachine/touchScreenSM.c: 142:         TRISB2=1;
-[e = _TRISB2 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 142:         TRISB4=1;
+[e = _TRISB4 -> -> 1 `i `b ]
 "143
-[; ;stateMachine/touchScreenSM.c: 143:         ANSB2=1;
-[e = _ANSB2 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 143:         TRISB2=1;
+[e = _TRISB2 -> -> 1 `i `b ]
 "144
-[; ;stateMachine/touchScreenSM.c: 144:         ADCON0=0b00100011;
-[e = _ADCON0 -> -> 35 `i `uc ]
+[; ;stateMachine/touchScreenSM.c: 144:         ANSB2=1;
+[e = _ANSB2 -> -> 1 `i `b ]
 "145
-[; ;stateMachine/touchScreenSM.c: 145:     }
+[; ;stateMachine/touchScreenSM.c: 145:         ADCON0=0b00100011;
+[e = _ADCON0 -> -> 35 `i `uc ]
+"146
+[; ;stateMachine/touchScreenSM.c: 146:     }
 }
 [e :U 867 ]
-"146
-[; ;stateMachine/touchScreenSM.c: 146:     if(channel==1)
-[e $ ! == -> _channel `i -> 1 `i 868  ]
 "147
-[; ;stateMachine/touchScreenSM.c: 147:     {
-{
+[; ;stateMachine/touchScreenSM.c: 147:     if(channel==1)
+[e $ ! == -> _channel `i -> 1 `i 868  ]
 "148
-[; ;stateMachine/touchScreenSM.c: 148:         ANSB2=0;
-[e = _ANSB2 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 148:     {
+{
 "149
-[; ;stateMachine/touchScreenSM.c: 149:         TRISB2=0;
-[e = _TRISB2 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 149:         ANSB2=0;
+[e = _ANSB2 -> -> 0 `i `b ]
 "150
-[; ;stateMachine/touchScreenSM.c: 150:         LATB2=0;
-[e = _LATB2 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 150:         TRISB2=0;
+[e = _TRISB2 -> -> 0 `i `b ]
 "151
-[; ;stateMachine/touchScreenSM.c: 151:         TRISB4=0;
-[e = _TRISB4 -> -> 0 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 151:         LATB2=0;
+[e = _LATB2 -> -> 0 `i `b ]
 "152
-[; ;stateMachine/touchScreenSM.c: 152:         LATB4=1;
-[e = _LATB4 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 152:         TRISB4=0;
+[e = _TRISB4 -> -> 0 `i `b ]
 "153
-[; ;stateMachine/touchScreenSM.c: 153:         TRISB3=1;
-[e = _TRISB3 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 153:         LATB4=1;
+[e = _LATB4 -> -> 1 `i `b ]
 "154
-[; ;stateMachine/touchScreenSM.c: 154:         TRISB1=1;
-[e = _TRISB1 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 154:         TRISB3=1;
+[e = _TRISB3 -> -> 1 `i `b ]
 "155
-[; ;stateMachine/touchScreenSM.c: 155:         ANSB1=1;
-[e = _ANSB1 -> -> 1 `i `b ]
+[; ;stateMachine/touchScreenSM.c: 155:         TRISB1=1;
+[e = _TRISB1 -> -> 1 `i `b ]
 "156
-[; ;stateMachine/touchScreenSM.c: 156:         ADCON0=0b00101011;
-[e = _ADCON0 -> -> 43 `i `uc ]
+[; ;stateMachine/touchScreenSM.c: 156:         ANSB1=1;
+[e = _ANSB1 -> -> 1 `i `b ]
 "157
-[; ;stateMachine/touchScreenSM.c: 157:     }
+[; ;stateMachine/touchScreenSM.c: 157:         ADCON0=0b00101011;
+[e = _ADCON0 -> -> 43 `i `uc ]
+"158
+[; ;stateMachine/touchScreenSM.c: 158:     }
 }
 [e :U 868 ]
-"158
-[; ;stateMachine/touchScreenSM.c: 158: }
+"159
+[; ;stateMachine/touchScreenSM.c: 159: }
 [e :UE 866 ]
 }
 [p f _sprintf 8388736 ]

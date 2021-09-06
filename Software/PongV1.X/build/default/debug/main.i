@@ -9545,8 +9545,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "./stateMachine/../class/../class/gameParameters.h" 2
 
@@ -9789,15 +9801,29 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "./stateMachine/../class/menu.h" 2
 
+
+
+
 void Menu_welcomeDraw(GameParameters* g);
+
+
+
+
 void Menu_parametersDraw(GameParameters* g);
+
+
+
+
 void Menu_inGameDraw(GameParameters* g);
+
+
+
+
 void Menu_endGame(GameParameters* g);
 # 5 "./stateMachine/display.h" 2
 
@@ -9811,6 +9837,9 @@ void displayController(GameParameters* g,Event ev);
 
 
 
+
+# 1 "./stateMachine/sleepSM.h" 1
+# 5 "./stateMachine/gameController.h" 2
 
 void gameControllerInit(GameParameters* g);
 void gameControllerSM(Event ev,GameParameters* g);
@@ -11597,7 +11626,6 @@ void Factory_exec();
 
 
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-
 void __attribute__((picinterrupt(("")))) isr(void)
 {
     if((INT1IF==1)&&(INT1IE==1))
@@ -11622,7 +11650,6 @@ void __attribute__((picinterrupt(("")))) isr(void)
     if((TMR0IF==1)&&(TMR0IE==1))
     {
         XF_decrementAndQueueTimers();
-        XF_scheduleTimer(5,evGameUpdate,1);
         TMR0H=0xFB;
         TMR0L=0x1D;
         TMR0IF=0;

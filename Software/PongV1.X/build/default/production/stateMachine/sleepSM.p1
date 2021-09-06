@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[c E6546 0 1 2 .. ]
-[n E6546 state WAKEUP BACKLIGHTOFF SLEEP  ]
+[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
+[c E6544 0 1 2 .. ]
+[n E6544 state1 WAKEUP BACKLIGHTOFF SLEEP  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -46,10 +46,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10 stateMachine/sleepSM.h
 [; ;stateMachine/sleepSM.h: 10: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
-"24 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 24:             if(ev==evTimer30)
-[c E39 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -783,8 +779,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: enum state sleepState;
-[v _sleepState `E6546 ~T0 @X0 1 e ]
+[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
+[v _sleepState `E6544 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
 [v _sleepInit `(v ~T0 @X0 1 ef1`*S839 ]
@@ -800,7 +796,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6546 0 ]
+[e = _sleepState . `E6544 0 ]
 "14
 [; ;stateMachine/sleepSM.c: 14:     displayInit(g);
 [e ( _displayInit (1 _g ]
@@ -830,110 +826,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;stateMachine/sleepSM.c: 20: {
 [f ]
-"21
-[; ;stateMachine/sleepSM.c: 21:    switch(sleepState)
-[e $U 843  ]
-"22
-[; ;stateMachine/sleepSM.c: 22:     {
-{
-"23
-[; ;stateMachine/sleepSM.c: 23:         case WAKEUP:
-[e :U 844 ]
-"24
-[; ;stateMachine/sleepSM.c: 24:             if(ev==evTimer30)
-[e $ ! == -> _ev `i -> . `E39 3 `i 845  ]
-"25
-[; ;stateMachine/sleepSM.c: 25:             {
-{
-"26
-[; ;stateMachine/sleepSM.c: 26:                sleepState=BACKLIGHTOFF;
-[e = _sleepState . `E6546 1 ]
-"27
-[; ;stateMachine/sleepSM.c: 27:                sleepController();
-[e ( _sleepController ..  ]
-"28
-[; ;stateMachine/sleepSM.c: 28:             }
-}
-[e :U 845 ]
-"29
-[; ;stateMachine/sleepSM.c: 29:             break;
-[e $U 842  ]
-"30
-[; ;stateMachine/sleepSM.c: 30:         case BACKLIGHTOFF:
-[e :U 846 ]
-"31
-[; ;stateMachine/sleepSM.c: 31:             if(ev==evTimer30)
-[e $ ! == -> _ev `i -> . `E39 3 `i 847  ]
-"32
-[; ;stateMachine/sleepSM.c: 32:             {
-{
-"33
-[; ;stateMachine/sleepSM.c: 33:                sleepState=SLEEP;
-[e = _sleepState . `E6546 2 ]
-"34
-[; ;stateMachine/sleepSM.c: 34:                sleepController();
-[e ( _sleepController ..  ]
-"35
-[; ;stateMachine/sleepSM.c: 35:             }
-}
-[e :U 847 ]
-"36
-[; ;stateMachine/sleepSM.c: 36:             if(ev==evPress)
-[e $ ! == -> _ev `i -> . `E39 1 `i 848  ]
-"37
-[; ;stateMachine/sleepSM.c: 37:             {
-{
-"38
-[; ;stateMachine/sleepSM.c: 38:                sleepState=WAKEUP;
-[e = _sleepState . `E6546 0 ]
-"39
-[; ;stateMachine/sleepSM.c: 39:                sleepController();
-[e ( _sleepController ..  ]
-"40
-[; ;stateMachine/sleepSM.c: 40:             }
-}
-[e :U 848 ]
-"41
-[; ;stateMachine/sleepSM.c: 41:             break;
-[e $U 842  ]
-"42
-[; ;stateMachine/sleepSM.c: 42:         case SLEEP:
-[e :U 849 ]
-"43
-[; ;stateMachine/sleepSM.c: 43:             if(ev==evPress)
-[e $ ! == -> _ev `i -> . `E39 1 `i 850  ]
-"44
-[; ;stateMachine/sleepSM.c: 44:             {
-{
-"45
-[; ;stateMachine/sleepSM.c: 45:                sleepState=WAKEUP;
-[e = _sleepState . `E6546 0 ]
-"46
-[; ;stateMachine/sleepSM.c: 46:                sleepController();
-[e ( _sleepController ..  ]
-"47
-[; ;stateMachine/sleepSM.c: 47:             }
-}
-[e :U 850 ]
-"48
-[; ;stateMachine/sleepSM.c: 48:             break;
-[e $U 842  ]
-"49
-[; ;stateMachine/sleepSM.c: 49:         default:
-[e :U 851 ]
-"50
-[; ;stateMachine/sleepSM.c: 50:             break;
-[e $U 842  ]
-"51
-[; ;stateMachine/sleepSM.c: 51:     }
-}
-[e $U 842  ]
-[e :U 843 ]
-[e [\ -> _sleepState `ui , $ -> . `E6546 0 `ui 844
- , $ -> . `E6546 1 `ui 846
- , $ -> . `E6546 2 `ui 849
- 851 ]
-[e :U 842 ]
 "52
 [; ;stateMachine/sleepSM.c: 52: }
 [e :UE 841 ]
@@ -948,45 +840,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "55
 [; ;stateMachine/sleepSM.c: 55:     switch(sleepState)
-[e $U 854  ]
+[e $U 844  ]
 "56
 [; ;stateMachine/sleepSM.c: 56:     {
 {
 "57
 [; ;stateMachine/sleepSM.c: 57:         case WAKEUP:
-[e :U 855 ]
+[e :U 845 ]
 "61
 [; ;stateMachine/sleepSM.c: 61:             break;
-[e $U 853  ]
+[e $U 843  ]
 "62
 [; ;stateMachine/sleepSM.c: 62:         case BACKLIGHTOFF:
-[e :U 856 ]
+[e :U 846 ]
 "64
 [; ;stateMachine/sleepSM.c: 64:             break;
-[e $U 853  ]
+[e $U 843  ]
 "65
 [; ;stateMachine/sleepSM.c: 65:         case SLEEP:
-[e :U 857 ]
+[e :U 847 ]
 "68
 [; ;stateMachine/sleepSM.c: 68:             break;
-[e $U 853  ]
+[e $U 843  ]
 "69
 [; ;stateMachine/sleepSM.c: 69:         default:
-[e :U 858 ]
+[e :U 848 ]
 "70
 [; ;stateMachine/sleepSM.c: 70:             break;
-[e $U 853  ]
+[e $U 843  ]
 "71
 [; ;stateMachine/sleepSM.c: 71:     }
 }
-[e $U 853  ]
-[e :U 854 ]
-[e [\ -> _sleepState `ui , $ -> . `E6546 0 `ui 855
- , $ -> . `E6546 1 `ui 856
- , $ -> . `E6546 2 `ui 857
- 858 ]
-[e :U 853 ]
+[e $U 843  ]
+[e :U 844 ]
+[e [\ -> _sleepState `ui , $ -> . `E6544 0 `ui 845
+ , $ -> . `E6544 1 `ui 846
+ , $ -> . `E6544 2 `ui 847
+ 848 ]
+[e :U 843 ]
 "72
 [; ;stateMachine/sleepSM.c: 72: }
-[e :UE 852 ]
+[e :UE 842 ]
 }

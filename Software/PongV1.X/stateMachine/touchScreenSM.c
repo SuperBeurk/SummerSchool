@@ -10,9 +10,9 @@
 #include <xc.h>
 #include <stdlib.h>
 
-typedef enum state{WAITING,CALCULATEPOSITION} state;
+typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-state touchScreenState;
+state3 touchScreenState;
 
 void touchScreenInit()
 {
@@ -60,7 +60,9 @@ void touchScreenController(GameParameters* g)
         case WAITING:
             //1.Reset TimerPos
             //Pin configuration for press touch
+            INTEDG1=0; 
             configTouch();
+               
             //3.Create TimerSleep
             break;
         case CALCULATEPOSITION:
@@ -91,7 +93,7 @@ void touchScreenController(GameParameters* g)
             XF_scheduleTimer(9,evTimerPos,false);
             //------------------------------------------------------------------
             //Pin configuration for realease touch
-            ADCON0=0b00101001;
+            ADCON0=0b00101000;
             configTouch();
             INT1IF=0;
             INT1IE=1;
@@ -123,8 +125,7 @@ void configTouch()
     _TSC_YU=0;          
     _DIR_XR=1;//X+ input/interrupt/pullup
     RBPU=0;
-    WPUB=0b00000010;
-    INTEDG1=0;           
+    WPUB=0b00000010;       
     _DIR_XL=1;//X- open           
     _DIR_YD=1;//Y+ open
     INT1IE=1;

@@ -394,8 +394,20 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 6 "stateMachine/../class/../class/gameParameters.h" 2
 
@@ -9713,15 +9725,29 @@ typedef struct GameParameters
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
-void GameParameters_draw(struct GameParameters* s);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "stateMachine/../class/menu.h" 2
 
+
+
+
 void Menu_welcomeDraw(GameParameters* g);
+
+
+
+
 void Menu_parametersDraw(GameParameters* g);
+
+
+
+
 void Menu_inGameDraw(GameParameters* g);
+
+
+
+
 void Menu_endGame(GameParameters* g);
 # 5 "stateMachine/display.h" 2
 
@@ -9736,14 +9762,19 @@ void displayController(GameParameters* g,Event ev);
 
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 
-typedef enum state{WELCOME,PARAMETERS,INGAME,ENDGAME} state;
-enum state displayState;
+typedef enum state4{WELCOME,PARAMETERS,INGAME,ENDGAME} state4;
+state4 displayState;
 
 void displayInit(GameParameters* g)
 {
+
     displayState=WELCOME;
     displayController(g,NULLEVENT);
 }
+
+
+
+
 void displaySM(Event ev, GameParameters* g)
 {
    switch(displayState)
@@ -9803,6 +9834,7 @@ void displayController(GameParameters* g,Event ev)
             Menu_parametersDraw(g);
             break;
         case INGAME:
+
             if(ev==evRedrawPaddle1)
             {
                 Paddle_draw(&g->p1);

@@ -24,6 +24,7 @@ void Factory_init()
     //Interrupt
     GIE=1;
     INT1IE=0;
+    INTEDG1=0;
     TRISC0=0;
     LATC0=1;
     

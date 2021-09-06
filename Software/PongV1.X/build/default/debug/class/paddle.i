@@ -290,10 +290,25 @@ typedef struct Paddle
     uint16_t oldy;
     uint16_t color;
 }Paddle;
+
+
+
+
 void Paddle_init(struct Paddle* p,uint16_t team);
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+
+
+
+
 void Paddle_draw(struct Paddle* p);
 # 1 "class/paddle.c" 2
+
+
+
 
 
 void Paddle_init(struct Paddle* p,uint16_t team)
@@ -314,6 +329,10 @@ void Paddle_init(struct Paddle* p,uint16_t team)
     }
 
 }
+
+
+
+
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 {
     if(add==1)
@@ -326,7 +345,7 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
     }
     else
     {
-        if((p->x)<9)
+        if((p->x)<21)
         {
             p->x=0;
         }
@@ -337,9 +356,15 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 
     }
 }
+
+
+
+
 void Paddle_draw(struct Paddle* p)
 {
+
     LCD_DrawRect(p->oldx,p->oldy,p->oldx+50,p->oldy+10,1,0b0000000000000000);
+
     p->oldx=p->x;
     p->oldy=p->y;
 

@@ -1,5 +1,8 @@
 #include "paddle.h"
 
+//------------------------------------------------------------------------------
+//Method that will init the paddle struct
+//------------------------------------------------------------------------------
 void Paddle_init(struct Paddle* p,uint16_t team)
 {
     p->oldx=0;
@@ -18,6 +21,10 @@ void Paddle_init(struct Paddle* p,uint16_t team)
     }
     
 }
+
+//------------------------------------------------------------------------------
+//Method that will do a step on the paddle
+//------------------------------------------------------------------------------
 void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
 {
     if(add==1)
@@ -30,7 +37,7 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
     }
     else
     {
-        if((p->x)<9)
+        if((p->x)<21)
         {
             p->x=0;
         }
@@ -41,9 +48,15 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
         
     }
 }
+
+//------------------------------------------------------------------------------
+//Method that will draw the new paddle
+//------------------------------------------------------------------------------
 void Paddle_draw(struct Paddle* p)
 {
+    //Clear old paddle
     LCD_DrawRect(p->oldx,p->oldy,p->oldx+_PADDLE_WIDTH,p->oldy+_PADDLE_HEIGHT,1,BLACK);
+    //Save actual value as old ones
     p->oldx=p->x;
     p->oldy=p->y;
     //Draw new paddle

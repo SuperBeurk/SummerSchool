@@ -15,7 +15,6 @@
 #include <string.h>
 
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-
 void __interrupt() isr(void)
 {
     if((INT1IF==1)&&(INT1IE==1))
@@ -40,7 +39,6 @@ void __interrupt() isr(void)
     if((TMR0IF==1)&&(TMR0IE==1))
     {
         XF_decrementAndQueueTimers(); 
-        XF_scheduleTimer(5,evGameUpdate,true);
         TMR0H=0xFB;
         TMR0L=0x1D;
         TMR0IF=0;              
