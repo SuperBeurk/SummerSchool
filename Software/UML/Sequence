@@ -1,11 +1,30 @@
 @startuml
+
 skinparam sequenceParticipant underline
 
-participant "Main" as m
-participant "Factory" as f
+participant "Main" as mn
+participant "Factory" as fy
+participant "XF" as xf
+participant "SleepSM" as sm
+participant "TouchScreenSM" as ts
+participant "Display" as ds
+participant "GameConroller" as gc
 
-m -> f: init()
-m -> f: build()
+mn -> fy: init()
 
+group Repeat
+  mn -> fy: exec()
+  activate fy
+  fy -> xf: popEvent()
+  xf --> fy: event
+
+  fy -> sm: SleepSM(event)
+  fy -> ts: TouchScreenSM(event)
+  fy -> ds: DisplaySM(event)
+  fy -> gc: GameConrollerSM(event)
+  xf --> fy: eventConsumed
+
+  deactivate fy
+end
 
 @enduml

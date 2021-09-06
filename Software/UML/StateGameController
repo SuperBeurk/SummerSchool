@@ -4,8 +4,11 @@
 "No Game" --> [evParameters] "Parameters"
 "No Game" --> [evTwoPlayers] "Online"
 
-"Local" --> [evLoseGame] "No Game"
+"Local" --> [evEndGame] "End Game"
 "Parameters" --> [evLeaveParam] "No Game"
-"Online" --> [evLoseGame] "No Game"
+"Online" --> [evEndGame] "End Game"
+
+"End Game" --> [evNewGame] "No Game"
+"End Game" --> (*)
 
 @enduml
