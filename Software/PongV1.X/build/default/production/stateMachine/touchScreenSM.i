@@ -9702,14 +9702,14 @@ typedef struct GameParameters
     uint16_t player;
     uint16_t x;
     uint16_t y;
+    uint16_t level;
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
-    btn_t btnLeft;
     btn_t btnNewGame;
-    btn_t btnRight;
-    sld_t sldParam;
+    sld_t sldBackLight;
+    sld_t sldLevel;
     Ball b;
     Paddle p1;
     Paddle p2;
@@ -9717,6 +9717,7 @@ typedef struct GameParameters
 }GameParameters;
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
@@ -9724,10 +9725,32 @@ void GameParameters_resetPos(struct GameParameters* s);
 # 22 "stateMachine/touchScreenSM.h" 2
 
 
+
+
+
+
+
+
 void touchScreenInit();
+
+
+
+
+
+
+
 void touchScreenSM(Event ev,GameParameters* g);
+# 48 "stateMachine/touchScreenSM.h"
 void touchScreenController(GameParameters* g);
+
+
+
+
 void configTouch();
+
+
+
+
 void configMeasure(_Bool channel);
 # 7 "stateMachine/touchScreenSM.c" 2
 
@@ -9740,11 +9763,20 @@ typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 state3 touchScreenState;
 
+
+
+
+
+
 void touchScreenInit()
 {
     touchScreenState=WAITING;
     configTouch();
 }
+
+
+
+
 
 
 
@@ -9759,6 +9791,7 @@ void touchScreenSM(Event ev, GameParameters* g)
                 touchScreenController(g);
             }
             break;
+
         case CALCULATEPOSITION:
             if(ev==evRelease)
             {
@@ -9774,9 +9807,7 @@ void touchScreenSM(Event ev, GameParameters* g)
             break;
     }
 }
-
-
-
+# 70 "stateMachine/touchScreenSM.c"
 void touchScreenController(GameParameters* g)
 {
     char s[20];
@@ -9785,12 +9816,12 @@ void touchScreenController(GameParameters* g)
     {
         case WAITING:
 
-
             INTEDG1=0;
             configTouch();
 
 
             break;
+
         case CALCULATEPOSITION:
 
 
@@ -9818,10 +9849,8 @@ void touchScreenController(GameParameters* g)
             valueY=(valueY-105)/2;
             XF_scheduleTimer(9,evTimerPos,0);
 
-
             ADCON0=0b00101000;
             configTouch();
-
 
             if(PORTBbits.RB1 == 0)
             {
@@ -9834,13 +9863,15 @@ void touchScreenController(GameParameters* g)
             }
 
 
-
-
             break;
         default:
             break;
     }
 }
+
+
+
+
 void configTouch()
 {
     ANSB1=0;
@@ -9855,9 +9886,13 @@ void configTouch()
     __nop();
     TRISB3=1;
     TRISB4=1;
-    INT1IF = 0;
+    INT1IF=0;
     INT1IE=1;
 }
+
+
+
+
 void configMeasure(_Bool channel)
 {
     if(channel==0)

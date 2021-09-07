@@ -12,5 +12,6 @@ class/../stateMachine/display.h  \
 class/../stateMachine/../libraries/lcd_highlevel.h  \
 class/../stateMachine/../class/menu.h  \
 class/../stateMachine/gameController.h  \
+class/../stateMachine/../gameFunction.h  \
 class/../stateMachine/touchScreenSM.h  \
 class/../libraries/arialNarrow_12ptBitmaps.c 

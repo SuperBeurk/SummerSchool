@@ -1,11 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "12 libraries/lcd_highlevel.h
+[; ;libraries/lcd_highlevel.h: 12: {
 [s S1 `uc 1 `us 1 ]
 [n S1 . width offset ]
 "18
+[; ;libraries/lcd_highlevel.h: 18: {
 [s S2 `uc 1 `uc 1 `uc 1 `*CS1 1 `*Cuc 1 ]
 [n S2 . height start_char end_char descriptor bitmap ]
 "7 libraries/arialNarrow_12ptBitmaps.c
+[; ;libraries/arialNarrow_12ptBitmaps.c: 7: const uint8_t arialNarrow_12ptBitmaps[] =
 [v _arialNarrow_12ptBitmaps `Cuc ~T0 @X0 -> 1575 `i e ]
 [i _arialNarrow_12ptBitmaps
 :U ..
@@ -1587,6 +1590,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "1627
+[; ;libraries/arialNarrow_12ptBitmaps.c: 1627: const FONT_CHAR_INFO arialNarrow_12ptDescriptors[] =
 [v _arialNarrow_12ptDescriptors `CS1 ~T0 @X0 -> 95 `i e ]
 [i _arialNarrow_12ptDescriptors
 :U ..
@@ -1973,6 +1977,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "1727
+[; ;libraries/arialNarrow_12ptBitmaps.c: 1727: const FONT_INFO arialNarrow_12ptFontInfo =
 [v _arialNarrow_12ptFontInfo `CS2 ~T0 @X0 1 e ]
 [i _arialNarrow_12ptFontInfo
 :U ..

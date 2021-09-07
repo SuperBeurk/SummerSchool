@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[c E6544 0 1 2 .. ]
-[n E6544 state1 WAKEUP BACKLIGHTOFF SLEEP  ]
+[c E6551 0 1 2 .. ]
+[n E6551 state1 WAKEUP BACKLIGHTOFF SLEEP  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -31,17 +31,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/../class/score.h: 8: {
 [s S18 `us 1 `us 1 `uc -> 2 `i ]
 [n S18 Score homeScore awayScore str ]
-"10 stateMachine/../class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight player x y btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnLeft btnNewGame btnRight sldParam b p1 p2 s1 ]
+"10 ./class/gameParameters.h
+[s S839 `us 1 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
+[n S839 GameParameters backlight player x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
 "7 stateMachine/display.h
 [; ;stateMachine/display.h: 7: void displayInit(GameParameters* g);
 [v _displayInit `(v ~T0 @X0 0 ef1`*S839 ]
-"6 stateMachine/gameController.h
-[; ;stateMachine/gameController.h: 6: void gameControllerInit(GameParameters* g);
+"12 stateMachine/gameController.h
+[; ;stateMachine/gameController.h: 12: void gameControllerInit(GameParameters* g);
 [v _gameControllerInit `(v ~T0 @X0 0 ef1`*S839 ]
-"24 stateMachine/touchScreenSM.h
-[; ;stateMachine/touchScreenSM.h: 24: void touchScreenInit();
+"30 stateMachine/touchScreenSM.h
+[; ;stateMachine/touchScreenSM.h: 30: void touchScreenInit();
 [v _touchScreenInit `(v ~T0 @X0 0 e? ]
 "10 stateMachine/sleepSM.h
 [; ;stateMachine/sleepSM.h: 10: void sleepController();
@@ -780,7 +780,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "9 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[v _sleepState `E6544 ~T0 @X0 1 e ]
+[v _sleepState `E6551 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
 [v _sleepInit `(v ~T0 @X0 1 ef1`*S839 ]
@@ -796,7 +796,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6544 0 ]
+[e = _sleepState . `E6551 0 ]
 "14
 [; ;stateMachine/sleepSM.c: 14:     displayInit(g);
 [e ( _displayInit (1 _g ]
@@ -873,9 +873,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 843  ]
 [e :U 844 ]
-[e [\ -> _sleepState `ui , $ -> . `E6544 0 `ui 845
- , $ -> . `E6544 1 `ui 846
- , $ -> . `E6544 2 `ui 847
+[e [\ -> _sleepState `ui , $ -> . `E6551 0 `ui 845
+ , $ -> . `E6551 1 `ui 846
+ , $ -> . `E6551 2 `ui 847
  848 ]
 [e :U 843 ]
 "72

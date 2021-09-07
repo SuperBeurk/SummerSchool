@@ -304,7 +304,6 @@ void Ball_init(struct Ball* b)
     b->oldx=20;
     b->oldy=20;
     b->dx = 0;
-    b->dy = 1;
 }
 void Ball_Update(struct Ball* b)
 {

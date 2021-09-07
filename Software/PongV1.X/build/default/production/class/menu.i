@@ -9640,14 +9640,14 @@ typedef struct GameParameters
     uint16_t player;
     uint16_t x;
     uint16_t y;
+    uint16_t level;
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
-    btn_t btnLeft;
     btn_t btnNewGame;
-    btn_t btnRight;
-    sld_t sldParam;
+    sld_t sldBackLight;
+    sld_t sldLevel;
     Ball b;
     Paddle p1;
     Paddle p2;
@@ -9655,6 +9655,7 @@ typedef struct GameParameters
 }GameParameters;
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
@@ -9702,10 +9703,14 @@ void Menu_welcomeDraw(GameParameters* g)
 void Menu_parametersDraw(GameParameters* g)
 {
     LCD_Fill(0b1111111111111111);
-    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
+    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_LEFT,10,50,0b0000000000000000,0b1111111111111111);
     LCD_ButtonDraw(&(g->btnLeaveParam));
-    g->sldParam.value=g->backlight;
-    LCD_SliderDraw(&(g->sldParam));
+    g->sldBackLight.value=g->backlight;
+    LCD_SliderDraw(&(g->sldBackLight));
+    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,0b0000000000000000,0b1111111111111111);
+    g->sldLevel.value=g->level;
+    LCD_SliderDraw(&(g->sldLevel));
+    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,0b0000000000000000,0b1111111111111111);
 }
 
 

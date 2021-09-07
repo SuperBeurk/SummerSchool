@@ -49,6 +49,8 @@
       </logicalFolder>
       <itemPath>configuration_bits.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>gameFunction.c</itemPath>
+      <itemPath>gameFunction.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

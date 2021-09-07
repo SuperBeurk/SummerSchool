@@ -21,9 +21,39 @@
 #include "../libraries/lcd_highlevel.h"
 #include "../class/gameParameters.h"
 #include <pic18.h>
+
+//------------------------------------------------------------------------------
+//Initialize touchScreenSM
+//------------------------------------------------------------------------------
+//State:    WAITING,default state
+//------------------------------------------------------------------------------
 void touchScreenInit();
+
+//------------------------------------------------------------------------------
+//Statemachine of touchScreen
+//------------------------------------------------------------------------------
+//State:    WAITING
+//          CALCULATEPOS,
+//------------------------------------------------------------------------------
 void touchScreenSM(Event ev,GameParameters* g);
+
+//------------------------------------------------------------------------------
+//Action to do on a state
+//------------------------------------------------------------------------------
+//State:    WAITING, Change LCD pin config for waiting touch interrupt
+//          CALCULATEPOS, Change LCD pin onfig for measure  the position then 
+//          change the config again to wait a release event, 
+//          and recalcule the position if there is no release event every 90 ms(evTimerPos)
+//------------------------------------------------------------------------------
 void touchScreenController(GameParameters* g);
+
+//------------------------------------------------------------------------------
+//Configure the YU,YD,XR,XL pins for waiting interrupt
+//------------------------------------------------------------------------------
 void configTouch();
+
+//------------------------------------------------------------------------------
+//Configure the YU,YD,XR,XL pins for measure the position
+//------------------------------------------------------------------------------
 void configMeasure(bool channel);
 #endif

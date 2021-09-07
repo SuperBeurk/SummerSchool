@@ -11,4 +11,5 @@ stateMachine/../class/ball.h  \
 stateMachine/../class/paddle.h  \
 stateMachine/../class/score.h  \
 stateMachine/gameController.h  \
+stateMachine/../gameFunction.h  \
 stateMachine/touchScreenSM.h 

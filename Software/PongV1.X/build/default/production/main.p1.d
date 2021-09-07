@@ -12,6 +12,7 @@ stateMachine/../class/ball.h  \
 stateMachine/../class/paddle.h  \
 stateMachine/../class/score.h  \
 stateMachine/gameController.h  \
+stateMachine/../gameFunction.h  \
 stateMachine/touchScreenSM.h  \
 class/factory.h  \
 stateMachine/../class/../libraries/arialNarrow_12ptBitmaps.c 

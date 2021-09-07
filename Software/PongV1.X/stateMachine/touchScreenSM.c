@@ -14,42 +14,58 @@ typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 state3 touchScreenState;
 
+//------------------------------------------------------------------------------
+//Initialize touchScreenSM
+//------------------------------------------------------------------------------
+//State:    WAITING,default state
+//------------------------------------------------------------------------------
 void touchScreenInit()
 {
-    touchScreenState=WAITING;
-    configTouch();
+    touchScreenState=WAITING;//default state
+    configTouch();//action to do
 }
+
 //------------------------------------------------------------------------------
-//Method that will change the state of the statemachine depending on an event
+//Statemachine of touchScreen
+//------------------------------------------------------------------------------
+//State:    WAITING
+//          CALCULATEPOS,
 //------------------------------------------------------------------------------
 void touchScreenSM(Event ev, GameParameters* g)
 {
     switch(touchScreenState)
     {
         case WAITING:
-            if(ev==evPress)
+            if(ev==evPress)//If we pressed the LCD screen
             {
-                touchScreenState=CALCULATEPOSITION;
-                touchScreenController(g);
+                touchScreenState=CALCULATEPOSITION;//change state
+                touchScreenController(g);//action to do
             }
             break;
+//------------------------------------------------------------------------------
         case CALCULATEPOSITION:
-            if(ev==evRelease)
+            if(ev==evRelease)//If we release our pressing
             {
-                touchScreenState=WAITING;
-                touchScreenController(g);
+                touchScreenState=WAITING;//change state
+                touchScreenController(g);//action to do
             }
-            if(ev==evTimerPos)
+            if(ev==evTimerPos)//We are still press so recalculate the position depending on this timer
             {
-                touchScreenController(g);
+                touchScreenController(g);//action to do
             }
             break;
         default:
             break;
     }
 }
+
 //------------------------------------------------------------------------------
-//Method that will be call on a state change to do the action on entry
+//Action to do on a state
+//------------------------------------------------------------------------------
+//State:    WAITING, Change LCD pin config for waiting touch interrupt
+//          CALCULATEPOS, Change LCD pin onfig for measure  the position then 
+//          change the config again to wait a release event, 
+//          and recalcule the position if there is no release event every 90 ms(evTimerPos)
 //------------------------------------------------------------------------------
 void touchScreenController(GameParameters* g)
 {
@@ -59,17 +75,17 @@ void touchScreenController(GameParameters* g)
     {
         case WAITING:
             //1.Reset TimerPos
-            //Pin configuration for press touch
-            INTEDG1=0; 
-            configTouch();
+            INTEDG1=0;//Interrupt on falling edge
+            configTouch();//Pin configuration for press touch
                
             //3.Create TimerSleep
             break;
+//------------------------------------------------------------------
         case CALCULATEPOSITION:
             //1.Reset TIMER SLEEP
             //------------------------------------------------------------------
             //--------------xMeasurement 
-            INT1IE=0;  
+            INT1IE=0;//disable interrupt RB1  
             configMeasure(false);
             while((ADCON0&0x02)!=0){};
             uint16_t valueX;
@@ -90,14 +106,12 @@ void touchScreenController(GameParameters* g)
                 valueY=_TSC_OFFSET_Y;
             }
             valueY=(valueY-_TSC_OFFSET_Y)/_TSC_CONV_Y;
-            XF_scheduleTimer(9,evTimerPos,false);
+            XF_scheduleTimer(9,evTimerPos,false);//Create event for recalculate the pos
             //------------------------------------------------------------------
-            //Pin configuration for realease touch
-            ADCON0=0b00101000;
-            configTouch();
-            
-            //Save value if screen still press
-            if(PORTBbits.RB1 == 0)
+            ADCON0=0b00101000;//turn off AD
+            configTouch();//Pin configuration for realease touch
+                       
+            if(PORTBbits.RB1 == 0)//Save value if screen still press
             {
                 sprintf(s,"X: %d",valueX);
                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,BLACK,WHITE);
@@ -105,16 +119,18 @@ void touchScreenController(GameParameters* g)
                 sprintf(s,"Y: %d",valueY);
                 LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,BLACK,WHITE);  
                 GameParameters_setY(g,valueY);
-            }
-            
+            }            
             //------------------------------------------------------------------
-            //3.Create TimerPos
-
+//------------------------------------------------------------------------------
             break;
         default:
             break;
     }
 }
+
+//------------------------------------------------------------------------------
+//Configure the YU,YD,XR,XL pins for waiting interrupt
+//------------------------------------------------------------------------------
 void configTouch()
 {
     ANSB1=0;
@@ -129,12 +145,16 @@ void configTouch()
     NOP();
     _DIR_XL=1;//X- open           
     _DIR_YD=1;//Y+ open
-    INT1IF = 0;
-    INT1IE=1;
+    INT1IF=0;//clear int flag
+    INT1IE=1;//enable interrupt RB1
 }
+
+//------------------------------------------------------------------------------
+//Configure the YU,YD,XR,XL pins for measure the position
+//------------------------------------------------------------------------------
 void configMeasure(bool channel)
 {
-    if(channel==0)
+    if(channel==0)//y measure
     {         
         ANSB1=0;
         _DIR_XR=0;//X- GND
@@ -146,7 +166,7 @@ void configMeasure(bool channel)
         ANSB2=1;            
         ADCON0=0b00100011;  
     }
-    if(channel==1)
+    if(channel==1)//x measure
     {
         ANSB2=0;
         _DIR_YU=0;//Y- GND

@@ -1,51 +1,65 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[c E6544 0 1 2 .. ]
-[n E6544 state1 WAKEUP BACKLIGHTOFF SLEEP  ]
-"12 stateMachine/../class/../libraries/lcd_highlevel.h
-[s S3 `uc 1 `us 1 ]
-[n S3 . width offset ]
+"12 ./class/../libraries/lcd_highlevel.h
+[; ;./class/../libraries/lcd_highlevel.h: 12: {
+[s S1 `uc 1 `us 1 ]
+[n S1 . width offset ]
 "18
-[s S4 `uc 1 `uc 1 `uc 1 `*CS3 1 `*Cuc 1 ]
-[n S4 . height start_char end_char descriptor bitmap ]
-[v F125 `(v ~T0 @X0 0 tf1`uc ]
-[v F128 `(v ~T0 @X0 0 tf1`uc ]
-[v F131 `(v ~T0 @X0 0 tf1`uc ]
+[; ;./class/../libraries/lcd_highlevel.h: 18: {
+[s S2 `uc 1 `uc 1 `uc 1 `*CS1 1 `*Cuc 1 ]
+[n S2 . height start_char end_char descriptor bitmap ]
+[v F81 `(v ~T0 @X0 0 tf1`uc ]
+[v F84 `(v ~T0 @X0 0 tf1`uc ]
+[v F87 `(v ~T0 @X0 0 tf1`uc ]
 "88
-[s S6 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S4 1 `uc 1 `*F125 1 `*F128 1 `*F131 1 `uc 1 ]
-[n S6 . posX posY width height txtColor bgColor text font pressed fpPress fpReleased fpOut index ]
-[v F149 `(v ~T0 @X0 0 t? ]
+[; ;./class/../libraries/lcd_highlevel.h: 88: {
+[s S4 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `*Cuc 1 `*S2 1 `uc 1 `*F81 1 `*F84 1 `*F87 1 `uc 1 ]
+[n S4 . posX posY width height txtColor bgColor text font pressed fpPress fpReleased fpOut index ]
+[v F105 `(v ~T0 @X0 0 t? ]
 "108
-[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F149 1 ]
-[n S7 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
-"7 stateMachine/../class/ball.h
-[; ;stateMachine/../class/ball.h: 7: {
-[s S8 `us 1 `us 1 `us 1 `us 1 `s 1 `s 1 ]
-[n S8 Ball x y oldx oldy dx dy ]
-"7 stateMachine/../class/paddle.h
-[; ;stateMachine/../class/paddle.h: 7: {
-[s S9 `us 1 `us 1 `us 1 `us 1 `us 1 ]
-[n S9 Paddle x y oldx oldy color ]
-"8 stateMachine/../class/score.h
-[; ;stateMachine/../class/score.h: 8: {
-[s S18 `us 1 `us 1 `uc -> 2 `i ]
-[n S18 Score homeScore awayScore str ]
-"10 stateMachine/../class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight player x y btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnLeft btnNewGame btnRight sldParam b p1 p2 s1 ]
-"7 stateMachine/display.h
-[; ;stateMachine/display.h: 7: void displayInit(GameParameters* g);
-[v _displayInit `(v ~T0 @X0 0 ef1`*S839 ]
-"6 stateMachine/gameController.h
-[; ;stateMachine/gameController.h: 6: void gameControllerInit(GameParameters* g);
-[v _gameControllerInit `(v ~T0 @X0 0 ef1`*S839 ]
-"24 stateMachine/touchScreenSM.h
-[; ;stateMachine/touchScreenSM.h: 24: void touchScreenInit();
-[v _touchScreenInit `(v ~T0 @X0 0 e? ]
-"10 stateMachine/sleepSM.h
-[; ;stateMachine/sleepSM.h: 10: void sleepController();
-[v _sleepController `(v ~T0 @X0 0 e? ]
+[; ;./class/../libraries/lcd_highlevel.h: 108: {
+[s S5 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `us 1 `us 1 `*F105 1 ]
+[n S5 . posX posY width height sldColor bgColor borderColor cursorWidth pressed value oldValue steps fpPress ]
+"7 ./class/ball.h
+[; ;./class/ball.h: 7: {
+[s S6 `us 1 `us 1 `us 1 `us 1 `s 1 `s 1 ]
+[n S6 Ball x y oldx oldy dx dy ]
+"7 ./class/paddle.h
+[; ;./class/paddle.h: 7: {
+[s S7 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S7 Paddle x y oldx oldy color ]
+"8 ./class/score.h
+[; ;./class/score.h: 8: {
+[s S16 `us 1 `us 1 `uc -> 2 `i ]
+[n S16 Score homeScore awayScore str ]
+"10 ./class/gameParameters.h
+[; ;./class/gameParameters.h: 10: {
+[s S837 `us 1 `us 1 `us 1 `us 1 `us 1 `S4 1 `S4 1 `S4 1 `S4 1 `S4 1 `S5 1 `S5 1 `S6 1 `S7 1 `S7 1 `S16 1 ]
+[n S837 GameParameters backlight player x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
+"34
+[; ;./class/gameParameters.h: 34: void GameParameters_resetPos(struct GameParameters* s);
+[v _GameParameters_resetPos `(v ~T0 @X0 0 ef1`*S837 ]
+"23 ./class/paddle.h
+[; ;./class/paddle.h: 23: void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
+[v _Paddle_addX `(v ~T0 @X0 0 ef3`*S7`us`us ]
+"58 ./xf/xf.h
+[; ;./xf/xf.h: 58: _Bool XF_pushEvent(Event ev, _Bool inISR);
+[v _XF_pushEvent `(a ~T0 @X0 0 ef2`uc`a ]
+"21 gameFunction.c
+[; ;gameFunction.c: 21:     XF_pushEvent(evRedrawPaddle1,0);
+[c E6460 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E6460 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+"33 ./gameFunction.h
+[; ;./gameFunction.h: 33: void checkCollision(GameParameters* g);
+[v _checkCollision `(v ~T0 @X0 0 ef1`*S837 ]
+"16 ./class/ball.h
+[; ;./class/ball.h: 16: void Ball_Update(struct Ball* b);
+[v _Ball_Update `(v ~T0 @X0 0 ef1`*S6 ]
+"29 ./class/gameParameters.h
+[; ;./class/gameParameters.h: 29: void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+[v _GameParameters_setBackLight `(v ~T0 @X0 0 ef2`*S837`us ]
+"30
+[; ;./class/gameParameters.h: 30: void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
+[v _GameParameters_setLevel `(v ~T0 @X0 0 ef2`*S837`us ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -778,107 +792,719 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[v _sleepState `E6544 ~T0 @X0 1 e ]
-"11
-[; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
-[v _sleepInit `(v ~T0 @X0 1 ef1`*S839 ]
-"12
-[; ;stateMachine/sleepSM.c: 12: {
+"7 gameFunction.c
+[; ;gameFunction.c: 7: void moovePaddle1(GameParameters* g)
+[v _moovePaddle1 `(v ~T0 @X0 1 ef1`*S837 ]
+"8
+[; ;gameFunction.c: 8: {
 {
-[e :U _sleepInit ]
-"11
-[; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
-[v _g `*S839 ~T0 @X0 1 r1 ]
-"12
-[; ;stateMachine/sleepSM.c: 12: {
+[e :U _moovePaddle1 ]
+"7
+[; ;gameFunction.c: 7: void moovePaddle1(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"8
+[; ;gameFunction.c: 8: {
 [f ]
+"10
+[; ;gameFunction.c: 10:     if((g->x>0)&&(g->x<110))
+[e $ ! && > -> . *U _g 2 `ui -> -> 0 `i `ui < -> . *U _g 2 `ui -> -> 110 `i `ui 841  ]
+"11
+[; ;gameFunction.c: 11:     {
+{
+"12
+[; ;gameFunction.c: 12:         GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
 "13
-[; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6544 0 ]
+[; ;gameFunction.c: 13:         Paddle_addX(&g->p1,20,0);
+[e ( _Paddle_addX (3 , , &U . *U _g 13 -> -> 20 `i `us -> -> 0 `i `us ]
 "14
-[; ;stateMachine/sleepSM.c: 14:     displayInit(g);
-[e ( _displayInit (1 _g ]
-"15
-[; ;stateMachine/sleepSM.c: 15:     gameControllerInit(g);
-[e ( _gameControllerInit (1 _g ]
+[; ;gameFunction.c: 14:     }
+}
+[e :U 841 ]
 "16
-[; ;stateMachine/sleepSM.c: 16:     touchScreenInit();
-[e ( _touchScreenInit ..  ]
+[; ;gameFunction.c: 16:     if(g->x>=130)
+[e $ ! >= -> . *U _g 2 `ui -> -> 130 `i `ui 842  ]
 "17
-[; ;stateMachine/sleepSM.c: 17:     sleepController();
-[e ( _sleepController ..  ]
+[; ;gameFunction.c: 17:     {
+{
 "18
-[; ;stateMachine/sleepSM.c: 18: }
+[; ;gameFunction.c: 18:         GameParameters_resetPos(g);
+[e ( _GameParameters_resetPos (1 _g ]
+"19
+[; ;gameFunction.c: 19:         Paddle_addX(&g->p1,20,1);
+[e ( _Paddle_addX (3 , , &U . *U _g 13 -> -> 20 `i `us -> -> 1 `i `us ]
+"20
+[; ;gameFunction.c: 20:     }
+}
+[e :U 842 ]
+"21
+[; ;gameFunction.c: 21:     XF_pushEvent(evRedrawPaddle1,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 11 `uc -> -> 0 `i `a ]
+"22
+[; ;gameFunction.c: 22: }
 [e :UE 840 ]
 }
-"19
-[; ;stateMachine/sleepSM.c: 19: void sleepSM(Event ev)
-[v _sleepSM `(v ~T0 @X0 1 ef1`uc ]
-"20
-[; ;stateMachine/sleepSM.c: 20: {
+"27
+[; ;gameFunction.c: 27: void moovePaddle2(GameParameters* g)
+[v _moovePaddle2 `(v ~T0 @X0 1 ef1`*S837 ]
+"28
+[; ;gameFunction.c: 28: {
 {
-[e :U _sleepSM ]
-"19
-[; ;stateMachine/sleepSM.c: 19: void sleepSM(Event ev)
-[v _ev `uc ~T0 @X0 1 r1 ]
-"20
-[; ;stateMachine/sleepSM.c: 20: {
+[e :U _moovePaddle2 ]
+"27
+[; ;gameFunction.c: 27: void moovePaddle2(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"28
+[; ;gameFunction.c: 28: {
 [f ]
-"52
-[; ;stateMachine/sleepSM.c: 52: }
-[e :UE 841 ]
-}
-"53
-[; ;stateMachine/sleepSM.c: 53: void sleepController()
-[v _sleepController `(v ~T0 @X0 1 ef ]
-"54
-[; ;stateMachine/sleepSM.c: 54: {
+"30
+[; ;gameFunction.c: 30:     if(g->p2.x+(50/2)<g->b.x)
+[e $ ! < + -> . . *U _g 14 0 `ui -> / -> 50 `i -> 2 `i `ui -> . . *U _g 12 0 `ui 844  ]
+"31
+[; ;gameFunction.c: 31:     {
 {
-[e :U _sleepController ]
-[f ]
-"55
-[; ;stateMachine/sleepSM.c: 55:     switch(sleepState)
-[e $U 844  ]
-"56
-[; ;stateMachine/sleepSM.c: 56:     {
-{
-"57
-[; ;stateMachine/sleepSM.c: 57:         case WAKEUP:
-[e :U 845 ]
-"61
-[; ;stateMachine/sleepSM.c: 61:             break;
-[e $U 843  ]
-"62
-[; ;stateMachine/sleepSM.c: 62:         case BACKLIGHTOFF:
-[e :U 846 ]
-"64
-[; ;stateMachine/sleepSM.c: 64:             break;
-[e $U 843  ]
-"65
-[; ;stateMachine/sleepSM.c: 65:         case SLEEP:
-[e :U 847 ]
-"68
-[; ;stateMachine/sleepSM.c: 68:             break;
-[e $U 843  ]
-"69
-[; ;stateMachine/sleepSM.c: 69:         default:
-[e :U 848 ]
-"70
-[; ;stateMachine/sleepSM.c: 70:             break;
-[e $U 843  ]
-"71
-[; ;stateMachine/sleepSM.c: 71:     }
+"32
+[; ;gameFunction.c: 32:         Paddle_addX(&g->p2,2,1);
+[e ( _Paddle_addX (3 , , &U . *U _g 14 -> -> 2 `i `us -> -> 1 `i `us ]
+"33
+[; ;gameFunction.c: 33:         XF_pushEvent(evRedrawPaddle2,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 12 `uc -> -> 0 `i `a ]
+"34
+[; ;gameFunction.c: 34:     }
 }
-[e $U 843  ]
+[e $U 845  ]
+"35
+[; ;gameFunction.c: 35:     else if(g->p2.x+(50/2)>g->b.x)
 [e :U 844 ]
-[e [\ -> _sleepState `ui , $ -> . `E6544 0 `ui 845
- , $ -> . `E6544 1 `ui 846
- , $ -> . `E6544 2 `ui 847
- 848 ]
-[e :U 843 ]
+[e $ ! > + -> . . *U _g 14 0 `ui -> / -> 50 `i -> 2 `i `ui -> . . *U _g 12 0 `ui 846  ]
+"36
+[; ;gameFunction.c: 36:     {
+{
+"37
+[; ;gameFunction.c: 37:         Paddle_addX(&g->p2,2,0);
+[e ( _Paddle_addX (3 , , &U . *U _g 14 -> -> 2 `i `us -> -> 0 `i `us ]
+"38
+[; ;gameFunction.c: 38:         XF_pushEvent(evRedrawPaddle2,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 12 `uc -> -> 0 `i `a ]
+"39
+[; ;gameFunction.c: 39:     }
+}
+[e :U 846 ]
+[e :U 845 ]
+"40
+[; ;gameFunction.c: 40: }
+[e :UE 843 ]
+}
+"46
+[; ;gameFunction.c: 46: void mooveBall(GameParameters* g)
+[v _mooveBall `(v ~T0 @X0 1 ef1`*S837 ]
+"47
+[; ;gameFunction.c: 47: {
+{
+[e :U _mooveBall ]
+"46
+[; ;gameFunction.c: 46: void mooveBall(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"47
+[; ;gameFunction.c: 47: {
+[f ]
+"48
+[; ;gameFunction.c: 48:     checkCollision(g);
+[e ( _checkCollision (1 _g ]
+"49
+[; ;gameFunction.c: 49:     Ball_Update(&g->b);
+[e ( _Ball_Update (1 &U . *U _g 12 ]
+"50
+[; ;gameFunction.c: 50:     XF_pushEvent(evRedrawBall,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 13 `uc -> -> 0 `i `a ]
+"51
+[; ;gameFunction.c: 51: }
+[e :UE 847 ]
+}
+"56
+[; ;gameFunction.c: 56: void checkCollision(GameParameters* g)
+[v _checkCollision `(v ~T0 @X0 1 ef1`*S837 ]
+"57
+[; ;gameFunction.c: 57: {
+{
+[e :U _checkCollision ]
+"56
+[; ;gameFunction.c: 56: void checkCollision(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"57
+[; ;gameFunction.c: 57: {
+[f ]
+"58
+[; ;gameFunction.c: 58:     char s[20];
+[v _s `uc ~T0 @X0 -> 20 `i a ]
+"60
+[; ;gameFunction.c: 60:     if(g->b.x+g->b.dx+8>=239)
+[e $ ! >= + + -> . . *U _g 12 0 `ui -> . . *U _g 12 4 `ui -> -> 8 `i `ui -> -> 239 `i `ui 849  ]
+"61
+[; ;gameFunction.c: 61:     {
+{
+"62
+[; ;gameFunction.c: 62:         g->b.dx=-g->b.dx;
+[e = . . *U _g 12 4 -> -U -> . . *U _g 12 4 `i `s ]
+"63
+[; ;gameFunction.c: 63:         g->b.x+=g->b.dx;
+[e =+ . . *U _g 12 0 -> . . *U _g 12 4 `us ]
+"64
+[; ;gameFunction.c: 64:     }
+}
+[e :U 849 ]
+"65
+[; ;gameFunction.c: 65:     if((int)(g->b.x+g->b.dx-8)<=1)
+[e $ ! <= -> - + -> . . *U _g 12 0 `ui -> . . *U _g 12 4 `ui -> -> 8 `i `ui `i -> 1 `i 850  ]
+"66
+[; ;gameFunction.c: 66:     {
+{
+"67
+[; ;gameFunction.c: 67:         g->b.dx=-g->b.dx;
+[e = . . *U _g 12 4 -> -U -> . . *U _g 12 4 `i `s ]
+"68
+[; ;gameFunction.c: 68:         g->b.x+=g->b.dx;
+[e =+ . . *U _g 12 0 -> . . *U _g 12 4 `us ]
+"69
+[; ;gameFunction.c: 69:     }
+}
+[e :U 850 ]
+"71
+[; ;gameFunction.c: 71:     if(g->b.y+8==g->p1.y-1)
+[e $ ! == + -> . . *U _g 12 1 `ui -> -> 8 `i `ui - -> . . *U _g 13 1 `ui -> -> 1 `i `ui 851  ]
 "72
-[; ;stateMachine/sleepSM.c: 72: }
-[e :UE 842 ]
+[; ;gameFunction.c: 72:     {
+{
+"73
+[; ;gameFunction.c: 73:         if(g->b.x+8>g->p1.x)
+[e $ ! > + -> . . *U _g 12 0 `ui -> -> 8 `i `ui -> . . *U _g 13 0 `ui 852  ]
+"74
+[; ;gameFunction.c: 74:         {
+{
+"75
+[; ;gameFunction.c: 75:             if(g->b.x-8<g->p1.x+50)
+[e $ ! < - -> . . *U _g 12 0 `ui -> -> 8 `i `ui + -> . . *U _g 13 0 `ui -> -> 50 `i `ui 853  ]
+"76
+[; ;gameFunction.c: 76:             {
+{
+"78
+[; ;gameFunction.c: 78:                 if(g->b.x-g->p1.x<10)
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 13 0 `ui -> -> 10 `i `ui 854  ]
+"79
+[; ;gameFunction.c: 79:                 {
+{
+"81
+[; ;gameFunction.c: 81:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"82
+[; ;gameFunction.c: 82:                     g->b.dx-=2;
+[e =- . . *U _g 12 4 -> -> 2 `i `s ]
+"83
+[; ;gameFunction.c: 83:                 }
+}
+[e $U 855  ]
+"84
+[; ;gameFunction.c: 84:                 else if(g->b.x-g->p1.x<20)
+[e :U 854 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 13 0 `ui -> -> 20 `i `ui 856  ]
+"85
+[; ;gameFunction.c: 85:                 {
+{
+"87
+[; ;gameFunction.c: 87:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"88
+[; ;gameFunction.c: 88:                     g->b.dx-=1;
+[e =- . . *U _g 12 4 -> -> 1 `i `s ]
+"89
+[; ;gameFunction.c: 89:                 }
+}
+[e $U 857  ]
+"90
+[; ;gameFunction.c: 90:                 else if(g->b.x-g->p1.x<30)
+[e :U 856 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 13 0 `ui -> -> 30 `i `ui 858  ]
+"91
+[; ;gameFunction.c: 91:                 {
+{
+"93
+[; ;gameFunction.c: 93:                     g->b.dx=g->b.dx;
+[e = . . *U _g 12 4 . . *U _g 12 4 ]
+"94
+[; ;gameFunction.c: 94:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"95
+[; ;gameFunction.c: 95:                 }
+}
+[e $U 859  ]
+"96
+[; ;gameFunction.c: 96:                 else if(g->b.x-g->p1.x<40)
+[e :U 858 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 13 0 `ui -> -> 40 `i `ui 860  ]
+"97
+[; ;gameFunction.c: 97:                 {
+{
+"99
+[; ;gameFunction.c: 99:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"100
+[; ;gameFunction.c: 100:                     g->b.dx+=1;
+[e =+ . . *U _g 12 4 -> -> 1 `i `s ]
+"101
+[; ;gameFunction.c: 101:                 }
+}
+[e $U 861  ]
+"102
+[; ;gameFunction.c: 102:                 else
+[e :U 860 ]
+"103
+[; ;gameFunction.c: 103:                 {
+{
+"105
+[; ;gameFunction.c: 105:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"106
+[; ;gameFunction.c: 106:                     g->b.dx+=2;
+[e =+ . . *U _g 12 4 -> -> 2 `i `s ]
+"107
+[; ;gameFunction.c: 107:                 }
+}
+[e :U 861 ]
+[e :U 859 ]
+[e :U 857 ]
+[e :U 855 ]
+"110
+[; ;gameFunction.c: 110:                 g->s1.homeScore++;
+[e ++ . . *U _g 15 0 -> -> 1 `i `us ]
+"111
+[; ;gameFunction.c: 111:                 XF_pushEvent(evRedrawScore,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 14 `uc -> -> 0 `i `a ]
+"113
+[; ;gameFunction.c: 113:             }
+}
+[e :U 853 ]
+"114
+[; ;gameFunction.c: 114:         }
+}
+[e :U 852 ]
+"115
+[; ;gameFunction.c: 115:     }
+}
+[e :U 851 ]
+"118
+[; ;gameFunction.c: 118:     if(g->b.y-8==g->p2.y+10 +1)
+[e $ ! == - -> . . *U _g 12 1 `ui -> -> 8 `i `ui + + -> . . *U _g 14 1 `ui -> -> 10 `i `ui -> -> 1 `i `ui 862  ]
+"119
+[; ;gameFunction.c: 119:     {
+{
+"120
+[; ;gameFunction.c: 120:         if(g->b.x+8>g->p2.x)
+[e $ ! > + -> . . *U _g 12 0 `ui -> -> 8 `i `ui -> . . *U _g 14 0 `ui 863  ]
+"121
+[; ;gameFunction.c: 121:         {
+{
+"122
+[; ;gameFunction.c: 122:             if(g->b.x-8<g->p2.x+50)
+[e $ ! < - -> . . *U _g 12 0 `ui -> -> 8 `i `ui + -> . . *U _g 14 0 `ui -> -> 50 `i `ui 864  ]
+"123
+[; ;gameFunction.c: 123:             {
+{
+"124
+[; ;gameFunction.c: 124:                 if(g->b.x-g->p2.x<10)
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 14 0 `ui -> -> 10 `i `ui 865  ]
+"125
+[; ;gameFunction.c: 125:                 {
+{
+"127
+[; ;gameFunction.c: 127:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"128
+[; ;gameFunction.c: 128:                     g->b.dx-=2;
+[e =- . . *U _g 12 4 -> -> 2 `i `s ]
+"129
+[; ;gameFunction.c: 129:                 }
+}
+[e $U 866  ]
+"130
+[; ;gameFunction.c: 130:                 else if(g->b.x-g->p2.x<20)
+[e :U 865 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 14 0 `ui -> -> 20 `i `ui 867  ]
+"131
+[; ;gameFunction.c: 131:                 {
+{
+"133
+[; ;gameFunction.c: 133:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"134
+[; ;gameFunction.c: 134:                     g->b.dx-=1;
+[e =- . . *U _g 12 4 -> -> 1 `i `s ]
+"135
+[; ;gameFunction.c: 135:                 }
+}
+[e $U 868  ]
+"136
+[; ;gameFunction.c: 136:                 else if(g->b.x-g->p2.x<30)
+[e :U 867 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 14 0 `ui -> -> 30 `i `ui 869  ]
+"137
+[; ;gameFunction.c: 137:                 {
+{
+"139
+[; ;gameFunction.c: 139:                     g->b.dx=g->b.dx;
+[e = . . *U _g 12 4 . . *U _g 12 4 ]
+"140
+[; ;gameFunction.c: 140:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"141
+[; ;gameFunction.c: 141:                 }
+}
+[e $U 870  ]
+"142
+[; ;gameFunction.c: 142:                 else if(g->b.x-g->p2.x<40)
+[e :U 869 ]
+[e $ ! < - -> . . *U _g 12 0 `ui -> . . *U _g 14 0 `ui -> -> 40 `i `ui 871  ]
+"143
+[; ;gameFunction.c: 143:                 {
+{
+"145
+[; ;gameFunction.c: 145:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"146
+[; ;gameFunction.c: 146:                     g->b.dx+=1;
+[e =+ . . *U _g 12 4 -> -> 1 `i `s ]
+"147
+[; ;gameFunction.c: 147:                 }
+}
+[e $U 872  ]
+"148
+[; ;gameFunction.c: 148:                 else
+[e :U 871 ]
+"149
+[; ;gameFunction.c: 149:                 {
+{
+"151
+[; ;gameFunction.c: 151:                     g->b.dy=-g->b.dy;
+[e = . . *U _g 12 5 -> -U -> . . *U _g 12 5 `i `s ]
+"152
+[; ;gameFunction.c: 152:                     g->b.dx+=2;
+[e =+ . . *U _g 12 4 -> -> 2 `i `s ]
+"153
+[; ;gameFunction.c: 153:                 }
+}
+[e :U 872 ]
+[e :U 870 ]
+[e :U 868 ]
+[e :U 866 ]
+"155
+[; ;gameFunction.c: 155:                 g->s1.awayScore++;
+[e ++ . . *U _g 15 1 -> -> 1 `i `us ]
+"156
+[; ;gameFunction.c: 156:                 XF_pushEvent(evRedrawScore,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 14 `uc -> -> 0 `i `a ]
+"157
+[; ;gameFunction.c: 157:             }
+}
+[e :U 864 ]
+"158
+[; ;gameFunction.c: 158:         }
+}
+[e :U 863 ]
+"159
+[; ;gameFunction.c: 159:     }
+}
+[e :U 862 ]
+"162
+[; ;gameFunction.c: 162:     if(g->b.y-8<g->p2.y-10)
+[e $ ! < - -> . . *U _g 12 1 `ui -> -> 8 `i `ui - -> . . *U _g 14 1 `ui -> -> 10 `i `ui 873  ]
+"163
+[; ;gameFunction.c: 163:     {
+{
+"165
+[; ;gameFunction.c: 165:         XF_pushEvent(evEndGame,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 9 `uc -> -> 0 `i `a ]
+"166
+[; ;gameFunction.c: 166:         g->s1.awayScore=0;
+[e = . . *U _g 15 1 -> -> 0 `i `us ]
+"167
+[; ;gameFunction.c: 167:     }
+}
+[e :U 873 ]
+"168
+[; ;gameFunction.c: 168:     if(g->b.y+8>g->p1.y+10)
+[e $ ! > + -> . . *U _g 12 1 `ui -> -> 8 `i `ui + -> . . *U _g 13 1 `ui -> -> 10 `i `ui 874  ]
+"169
+[; ;gameFunction.c: 169:     {
+{
+"171
+[; ;gameFunction.c: 171:         XF_pushEvent(evEndGame,0);
+[e ( _XF_pushEvent (2 , -> . `E6460 9 `uc -> -> 0 `i `a ]
+"172
+[; ;gameFunction.c: 172:         g->s1.homeScore=0;
+[e = . . *U _g 15 0 -> -> 0 `i `us ]
+"173
+[; ;gameFunction.c: 173:     }
+}
+[e :U 874 ]
+"175
+[; ;gameFunction.c: 175: }
+[e :UE 848 ]
+}
+"180
+[; ;gameFunction.c: 180: void backlightController(GameParameters* g)
+[v _backlightController `(v ~T0 @X0 1 ef1`*S837 ]
+"181
+[; ;gameFunction.c: 181: {
+{
+[e :U _backlightController ]
+"180
+[; ;gameFunction.c: 180: void backlightController(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"181
+[; ;gameFunction.c: 181: {
+[f ]
+"183
+[; ;gameFunction.c: 183:     if(((g->x)>=50)&&((g->x)<64))
+[e $ ! && >= -> . *U _g 2 `ui -> -> 50 `i `ui < -> . *U _g 2 `ui -> -> 64 `i `ui 876  ]
+"184
+[; ;gameFunction.c: 184:     {
+{
+"185
+[; ;gameFunction.c: 185:         GameParameters_setBackLight(g,0);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 0 `i `us ]
+"186
+[; ;gameFunction.c: 186:     }
+}
+[e $U 877  ]
+"187
+[; ;gameFunction.c: 187:     else if(((g->x)>=64)&&((g->x)<78))
+[e :U 876 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 64 `i `ui < -> . *U _g 2 `ui -> -> 78 `i `ui 878  ]
+"188
+[; ;gameFunction.c: 188:     {
+{
+"189
+[; ;gameFunction.c: 189:         GameParameters_setBackLight(g,1);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 1 `i `us ]
+"190
+[; ;gameFunction.c: 190:     }
+}
+[e $U 879  ]
+"191
+[; ;gameFunction.c: 191:     else if(((g->x)>=78)&&((g->x)<92))
+[e :U 878 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 78 `i `ui < -> . *U _g 2 `ui -> -> 92 `i `ui 880  ]
+"192
+[; ;gameFunction.c: 192:     {
+{
+"193
+[; ;gameFunction.c: 193:         GameParameters_setBackLight(g,2);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 2 `i `us ]
+"194
+[; ;gameFunction.c: 194:     }
+}
+[e $U 881  ]
+"195
+[; ;gameFunction.c: 195:     else if(((g->x)>=92)&&((g->x)<106))
+[e :U 880 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 92 `i `ui < -> . *U _g 2 `ui -> -> 106 `i `ui 882  ]
+"196
+[; ;gameFunction.c: 196:     {
+{
+"197
+[; ;gameFunction.c: 197:         GameParameters_setBackLight(g,3);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 3 `i `us ]
+"198
+[; ;gameFunction.c: 198:     }
+}
+[e $U 883  ]
+"199
+[; ;gameFunction.c: 199:     else if(((g->x)>=106)&&((g->x)<120))
+[e :U 882 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 106 `i `ui < -> . *U _g 2 `ui -> -> 120 `i `ui 884  ]
+"200
+[; ;gameFunction.c: 200:     {
+{
+"201
+[; ;gameFunction.c: 201:         GameParameters_setBackLight(g,4);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 4 `i `us ]
+"202
+[; ;gameFunction.c: 202:     }
+}
+[e $U 885  ]
+"203
+[; ;gameFunction.c: 203:     else if(((g->x)>=120)&&((g->x)<134))
+[e :U 884 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 120 `i `ui < -> . *U _g 2 `ui -> -> 134 `i `ui 886  ]
+"204
+[; ;gameFunction.c: 204:     {
+{
+"205
+[; ;gameFunction.c: 205:         GameParameters_setBackLight(g,5);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 5 `i `us ]
+"206
+[; ;gameFunction.c: 206:     }
+}
+[e $U 887  ]
+"207
+[; ;gameFunction.c: 207:         else if(((g->x)>=134)&&((g->x)<150))
+[e :U 886 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 134 `i `ui < -> . *U _g 2 `ui -> -> 150 `i `ui 888  ]
+"208
+[; ;gameFunction.c: 208:     {
+{
+"209
+[; ;gameFunction.c: 209:         GameParameters_setBackLight(g,6);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 6 `i `us ]
+"210
+[; ;gameFunction.c: 210:     }
+}
+[e $U 889  ]
+"211
+[; ;gameFunction.c: 211:     else if(((g->x)>=150)&&((g->x)<164))
+[e :U 888 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 150 `i `ui < -> . *U _g 2 `ui -> -> 164 `i `ui 890  ]
+"212
+[; ;gameFunction.c: 212:     {
+{
+"213
+[; ;gameFunction.c: 213:         GameParameters_setBackLight(g,7);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 7 `i `us ]
+"214
+[; ;gameFunction.c: 214:     }
+}
+[e $U 891  ]
+"215
+[; ;gameFunction.c: 215:     else if(((g->x)>=164)&&((g->x)<178))
+[e :U 890 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 164 `i `ui < -> . *U _g 2 `ui -> -> 178 `i `ui 892  ]
+"216
+[; ;gameFunction.c: 216:     {
+{
+"217
+[; ;gameFunction.c: 217:         GameParameters_setBackLight(g,8);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 8 `i `us ]
+"218
+[; ;gameFunction.c: 218:     }
+}
+[e $U 893  ]
+"219
+[; ;gameFunction.c: 219:     else if(((g->x)>=178)&&((g->x)<192))
+[e :U 892 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 178 `i `ui < -> . *U _g 2 `ui -> -> 192 `i `ui 894  ]
+"220
+[; ;gameFunction.c: 220:     {
+{
+"221
+[; ;gameFunction.c: 221:         GameParameters_setBackLight(g,9);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 9 `i `us ]
+"222
+[; ;gameFunction.c: 222:     }
+}
+[e $U 895  ]
+"223
+[; ;gameFunction.c: 223:     else if(((g->x)>=192)&&((g->x)<206))
+[e :U 894 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 192 `i `ui < -> . *U _g 2 `ui -> -> 206 `i `ui 896  ]
+"224
+[; ;gameFunction.c: 224:     {
+{
+"225
+[; ;gameFunction.c: 225:         GameParameters_setBackLight(g,10);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 10 `i `us ]
+"226
+[; ;gameFunction.c: 226:     }
+}
+[e $U 897  ]
+"227
+[; ;gameFunction.c: 227:     else if(((g->x)>=206)&&((g->x)<215))
+[e :U 896 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 206 `i `ui < -> . *U _g 2 `ui -> -> 215 `i `ui 898  ]
+"228
+[; ;gameFunction.c: 228:     {
+{
+"229
+[; ;gameFunction.c: 229:         GameParameters_setBackLight(g,11);
+[e ( _GameParameters_setBackLight (2 , _g -> -> 11 `i `us ]
+"230
+[; ;gameFunction.c: 230:     }
+}
+[e :U 898 ]
+[e :U 897 ]
+[e :U 895 ]
+[e :U 893 ]
+[e :U 891 ]
+[e :U 889 ]
+[e :U 887 ]
+[e :U 885 ]
+[e :U 883 ]
+[e :U 881 ]
+[e :U 879 ]
+[e :U 877 ]
+"231
+[; ;gameFunction.c: 231:     g->sldBackLight.value=g->backlight;
+[e = . . *U _g 10 9 . *U _g 0 ]
+"232
+[; ;gameFunction.c: 232: }
+[e :UE 875 ]
+}
+"237
+[; ;gameFunction.c: 237: void levelController(GameParameters* g)
+[v _levelController `(v ~T0 @X0 1 ef1`*S837 ]
+"238
+[; ;gameFunction.c: 238: {
+{
+[e :U _levelController ]
+"237
+[; ;gameFunction.c: 237: void levelController(GameParameters* g)
+[v _g `*S837 ~T0 @X0 1 r1 ]
+"238
+[; ;gameFunction.c: 238: {
+[f ]
+"240
+[; ;gameFunction.c: 240:     if(((g->x)>=105)&&((g->x)<160))
+[e $ ! && >= -> . *U _g 2 `ui -> -> 105 `i `ui < -> . *U _g 2 `ui -> -> 160 `i `ui 900  ]
+"241
+[; ;gameFunction.c: 241:     {
+{
+"242
+[; ;gameFunction.c: 242:         GameParameters_setLevel(g,2);
+[e ( _GameParameters_setLevel (2 , _g -> -> 2 `i `us ]
+"243
+[; ;gameFunction.c: 243:     }
+}
+[e $U 901  ]
+"244
+[; ;gameFunction.c: 244:     else if(((g->x)>=160)&&((g->x)<215))
+[e :U 900 ]
+[e $ ! && >= -> . *U _g 2 `ui -> -> 160 `i `ui < -> . *U _g 2 `ui -> -> 215 `i `ui 902  ]
+"245
+[; ;gameFunction.c: 245:     {
+{
+"246
+[; ;gameFunction.c: 246:         GameParameters_setLevel(g,3);
+[e ( _GameParameters_setLevel (2 , _g -> -> 3 `i `us ]
+"247
+[; ;gameFunction.c: 247:     }
+}
+[e $U 903  ]
+"248
+[; ;gameFunction.c: 248:     else
+[e :U 902 ]
+"249
+[; ;gameFunction.c: 249:     {
+{
+"250
+[; ;gameFunction.c: 250:         GameParameters_setLevel(g,1);
+[e ( _GameParameters_setLevel (2 , _g -> -> 1 `i `us ]
+"251
+[; ;gameFunction.c: 251:     }
+}
+[e :U 903 ]
+[e :U 901 ]
+"252
+[; ;gameFunction.c: 252:     g->sldLevel.value=g->level;
+[e = . . *U _g 11 9 . *U _g 4 ]
+"253
+[; ;gameFunction.c: 253: }
+[e :UE 899 ]
 }

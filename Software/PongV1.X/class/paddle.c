@@ -37,7 +37,7 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
     }
     else
     {
-        if((p->x)<21)
+        if((p->x)<value+1)
         {
             p->x=0;
         }

@@ -116,8 +116,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/paddle.c: 39:     {
 {
 "40
-[; ;class/paddle.c: 40:         if((p->x)<21)
-[e $ ! < -> . *U _p 0 `ui -> -> 21 `i `ui 14  ]
+[; ;class/paddle.c: 40:         if((p->x)<value+1)
+[e $ ! < -> . *U _p 0 `ui + -> _value `ui -> -> 1 `i `ui 14  ]
 "41
 [; ;class/paddle.c: 41:         {
 {

@@ -9633,14 +9633,14 @@ typedef struct GameParameters
     uint16_t player;
     uint16_t x;
     uint16_t y;
+    uint16_t level;
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
-    btn_t btnLeft;
     btn_t btnNewGame;
-    btn_t btnRight;
-    sld_t sldParam;
+    sld_t sldBackLight;
+    sld_t sldLevel;
     Ball b;
     Paddle p1;
     Paddle p2;
@@ -9648,6 +9648,7 @@ typedef struct GameParameters
 }GameParameters;
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
@@ -9770,29 +9771,82 @@ void displayController(GameParameters* g,Event ev);
 
 
 
-# 1 "class/../stateMachine/sleepSM.h" 1
+# 1 "class/../stateMachine/../gameFunction.h" 1
+
+
+
+
+
+
+
+void moovePaddle1(GameParameters* g);
+
+
+
+
+void moovePaddle2(GameParameters* g);
+
+
+
+
+void mooveBall(GameParameters* g);
+
+
+
+
+void backlightController(GameParameters* g);
+
+
+
+
+void levelController(GameParameters* g);
+
+
+
+
+void checkCollision(GameParameters* g);
 # 5 "class/../stateMachine/gameController.h" 2
 
+# 1 "class/../stateMachine/sleepSM.h" 1
+# 6 "class/../stateMachine/gameController.h" 2
+
+
+
+
+
+
 void gameControllerInit(GameParameters* g);
+# 23 "class/../stateMachine/gameController.h"
 void gameControllerSM(Event ev,GameParameters* g);
+# 34 "class/../stateMachine/gameController.h"
 void gameControllerController(GameParameters* g,Event ev);
-void moovePaddle(GameParameters* g);
-void mooveBall(GameParameters* g);
-void backlightController(GameParameters* g);
-void checkCollision(GameParameters* g);
 # 5 "class/../stateMachine/sleepSM.h" 2
 
 # 1 "class/../stateMachine/touchScreenSM.h" 1
 # 21 "class/../stateMachine/touchScreenSM.h"
 # 1 "class/../stateMachine/../libraries/lcd_highlevel.h" 1
 # 21 "class/../stateMachine/touchScreenSM.h" 2
-
-
-
+# 30 "class/../stateMachine/touchScreenSM.h"
 void touchScreenInit();
+
+
+
+
+
+
+
 void touchScreenSM(Event ev,GameParameters* g);
+# 48 "class/../stateMachine/touchScreenSM.h"
 void touchScreenController(GameParameters* g);
+
+
+
+
 void configTouch();
+
+
+
+
 void configMeasure(_Bool channel);
 # 6 "class/../stateMachine/sleepSM.h" 2
 

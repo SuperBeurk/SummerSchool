@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "14 stateMachine/display.c
 [; ;stateMachine/display.c: 14: state4 displayState;
-[c E6515 0 1 2 3 .. ]
-[n E6515 state4 WELCOME PARAMETERS INGAME ENDGAME  ]
+[c E6518 0 1 2 3 .. ]
+[n E6518 state4 WELCOME PARAMETERS INGAME ENDGAME  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -32,8 +32,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S18 `us 1 `us 1 `uc -> 2 `i ]
 [n S18 Score homeScore awayScore str ]
 "10 stateMachine/../class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight player x y btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnLeft btnNewGame btnRight sldParam b p1 p2 s1 ]
+[s S839 `us 1 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
+[n S839 GameParameters backlight player x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
 "9 stateMachine/display.h
 [; ;stateMachine/display.h: 9: void displayController(GameParameters* g,Event ev);
 [v _displayController `(v ~T0 @X0 0 ef2`*S839`uc ]
@@ -796,7 +796,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "14 stateMachine/display.c
 [; ;stateMachine/display.c: 14: state4 displayState;
-[v _displayState `E6515 ~T0 @X0 1 e ]
+[v _displayState `E6518 ~T0 @X0 1 e ]
 "16
 [; ;stateMachine/display.c: 16: void displayInit(GameParameters* g)
 [v _displayInit `(v ~T0 @X0 1 ef1`*S839 ]
@@ -812,7 +812,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "19
 [; ;stateMachine/display.c: 19:     displayState=WELCOME;
-[e = _displayState . `E6515 0 ]
+[e = _displayState . `E6518 0 ]
 "20
 [; ;stateMachine/display.c: 20:     displayController(g,NULLEVENT);
 [e ( _displayController (2 , _g -> . `E39 0 `uc ]
@@ -851,7 +851,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "33
 [; ;stateMachine/display.c: 33:                 displayState=INGAME;
-[e = _displayState . `E6515 2 ]
+[e = _displayState . `E6518 2 ]
 "34
 [; ;stateMachine/display.c: 34:                 Menu_inGameDraw(g);
 [e ( _Menu_inGameDraw (1 _g ]
@@ -870,7 +870,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "39
 [; ;stateMachine/display.c: 39:                 displayState=PARAMETERS;
-[e = _displayState . `E6515 1 ]
+[e = _displayState . `E6518 1 ]
 "40
 [; ;stateMachine/display.c: 40:                 displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
@@ -892,7 +892,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "46
 [; ;stateMachine/display.c: 46:                 displayState=WELCOME;
-[e = _displayState . `E6515 0 ]
+[e = _displayState . `E6518 0 ]
 "47
 [; ;stateMachine/display.c: 47:                 displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
@@ -914,7 +914,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "53
 [; ;stateMachine/display.c: 53:                 displayState=ENDGAME;
-[e = _displayState . `E6515 3 ]
+[e = _displayState . `E6518 3 ]
 "54
 [; ;stateMachine/display.c: 54:                 displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
@@ -949,7 +949,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "64
 [; ;stateMachine/display.c: 64:                displayState=WELCOME;
-[e = _displayState . `E6515 0 ]
+[e = _displayState . `E6518 0 ]
 "65
 [; ;stateMachine/display.c: 65:                displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
@@ -971,10 +971,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 842  ]
 [e :U 843 ]
-[e [\ -> _displayState `ui , $ -> . `E6515 0 `ui 844
- , $ -> . `E6515 1 `ui 847
- , $ -> . `E6515 2 `ui 849
- , $ -> . `E6515 3 `ui 852
+[e [\ -> _displayState `ui , $ -> . `E6518 0 `ui 844
+ , $ -> . `E6518 1 `ui 847
+ , $ -> . `E6518 2 `ui 849
+ , $ -> . `E6518 3 `ui 852
  854 ]
 [e :U 842 ]
 "71
@@ -1097,10 +1097,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 856  ]
 [e :U 857 ]
-[e [\ -> _displayState `ui , $ -> . `E6515 0 `ui 858
- , $ -> . `E6515 1 `ui 859
- , $ -> . `E6515 2 `ui 860
- , $ -> . `E6515 3 `ui 865
+[e [\ -> _displayState `ui , $ -> . `E6518 0 `ui 858
+ , $ -> . `E6518 1 `ui 859
+ , $ -> . `E6518 2 `ui 860
+ , $ -> . `E6518 3 `ui 865
  866 ]
 [e :U 856 ]
 "110

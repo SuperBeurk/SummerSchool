@@ -1,4 +1,4 @@
-# 1 "stateMachine/gameController.c"
+# 1 "gameFunction.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,18 +6,20 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "stateMachine/gameController.c" 2
+# 1 "gameFunction.c" 2
+# 1 "./gameFunction.h" 1
+
+
+# 1 "./class/gameParameters.h" 1
+
+
+
+# 1 "./class/../libraries/lcd_highlevel.h" 1
 
 
 
 
 
-
-# 1 "stateMachine/gameController.h" 1
-
-
-# 1 "stateMachine/../xf/xf.h" 1
-# 14 "stateMachine/../xf/xf.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -124,77 +126,12 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
-# 15 "stateMachine/../xf/xf.h" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 16 "stateMachine/../xf/xf.h" 2
-
-typedef uint8_t Event;
-typedef uint16_t Time;
-typedef uint8_t TimerID;
-
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
-
-typedef struct Timer
-{
-    Time tm;
-    Event ev;
-} Timer;
-# 36 "stateMachine/../xf/xf.h"
-typedef struct XF
-{
-    Timer timerList[8];
-    Event eventQueue[12];
-    uint8_t in;
-    uint8_t out;
-} XF;
+# 6 "./class/../libraries/lcd_highlevel.h" 2
 
 
 
 
 
-
-
-void XF_init();
-
-
-
-
-
-
-
-_Bool XF_pushEvent(Event ev, _Bool inISR);
-
-
-
-
-
-
-Event XF_popEvent(_Bool inISR);
-# 74 "stateMachine/../xf/xf.h"
-TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
-
-
-
-
-
-
-
-void XF_unscheduleTimer(TimerID id, _Bool inISR);
-
-
-
-
-
-
-void XF_decrementAndQueueTimers();
-# 3 "stateMachine/gameController.h" 2
-
-# 1 "stateMachine/../class/gameParameters.h" 1
-
-
-
-# 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 11 "stateMachine/../class/../libraries/lcd_highlevel.h"
 typedef struct
 {
     uint8_t width;
@@ -210,14 +147,14 @@ typedef struct
     const uint8_t * bitmap;
 
 }FONT_INFO;
-# 50 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 50 "./class/../libraries/lcd_highlevel.h"
 typedef enum
 {
     A_LEFT,
     A_RIGHT,
     A_CENTER
 }ALIGN;
-# 64 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 64 "./class/../libraries/lcd_highlevel.h"
 typedef struct
 {
  uint16_t bfType;
@@ -277,7 +214,7 @@ typedef struct
   uint16_t steps;
   void (*fpPress)();
 }sld_t;
-# 138 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 138 "./class/../libraries/lcd_highlevel.h"
 void LCD_ButtonCreate(uint16_t posX, uint16_t posY,
                       uint16_t width, uint16_t height,
                       uint16_t txtColor, uint16_t bgColor,
@@ -285,7 +222,7 @@ void LCD_ButtonCreate(uint16_t posX, uint16_t posY,
                       void (*fpPress)(uint8_t), void (* fpReleased)(uint8_t), void (* fpOut)(uint8_t),
                       btn_t * button,
                       uint8_t index);
-# 153 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 153 "./class/../libraries/lcd_highlevel.h"
 void LCD_ButtonDraw(btn_t * button);
 
 
@@ -295,7 +232,7 @@ void LCD_ButtonDraw(btn_t * button);
 
 
 void LCD_ButtonUpdate(btn_t * button);
-# 175 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 175 "./class/../libraries/lcd_highlevel.h"
 void LCD_SliderCreate(uint16_t posX, uint16_t posY,
                       uint16_t width, uint16_t height,
                       uint16_t sldColor, uint16_t bgColor, uint16_t borderColor,
@@ -319,13 +256,13 @@ void LCD_SliderUpdate(sld_t * slider);
 
 
 void LCD_SliderDraw(sld_t * slider);
-# 206 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 206 "./class/../libraries/lcd_highlevel.h"
 uint8_t LCD_InSlider(sld_t * slider, uint16_t posX, uint16_t posY);
-# 215 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 215 "./class/../libraries/lcd_highlevel.h"
 uint8_t LCD_InButton(btn_t * button, uint16_t posX, uint16_t posY);
-# 224 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 224 "./class/../libraries/lcd_highlevel.h"
 void LCD_Init(void);
-# 233 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 233 "./class/../libraries/lcd_highlevel.h"
 void LCD_Fill(uint16_t color);
 
 
@@ -335,25 +272,25 @@ void LCD_Fill(uint16_t color);
 
 
 void LCD_SetPixel(uint16_t posX,uint16_t posY, uint16_t color);
-# 256 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 256 "./class/../libraries/lcd_highlevel.h"
 void LCD_DrawRect(uint16_t posX1,uint16_t posY1, uint16_t posX2,
   uint16_t posY2,uint8_t fill,uint16_t color);
-# 271 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 271 "./class/../libraries/lcd_highlevel.h"
 void LCD_DrawText(const uint8_t * msg,const FONT_INFO * font, ALIGN align,
         uint16_t posX, uint16_t posY, uint16_t color, uint16_t bg_color);
-# 281 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 281 "./class/../libraries/lcd_highlevel.h"
 uint16_t RGB2LCD(uint8_t * colorTableEntry);
-# 295 "stateMachine/../class/../libraries/lcd_highlevel.h"
+# 295 "./class/../libraries/lcd_highlevel.h"
 uint8_t LCD_Bitmap(const uint8_t * bmpPtr, uint16_t posX, uint16_t posY);
-# 4 "stateMachine/../class/gameParameters.h" 2
+# 4 "./class/gameParameters.h" 2
 
-# 1 "stateMachine/../class/ball.h" 1
-
-
+# 1 "./class/ball.h" 1
 
 
-# 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 5 "stateMachine/../class/ball.h" 2
+
+
+# 1 "./class/../libraries/lcd_highlevel.h" 1
+# 5 "./class/ball.h" 2
 
 typedef struct Ball
 {
@@ -367,15 +304,15 @@ typedef struct Ball
 void Ball_init(struct Ball* b);
 void Ball_Update(struct Ball* b);
 void Ball_draw(struct Ball* b);
-# 5 "stateMachine/../class/gameParameters.h" 2
+# 5 "./class/gameParameters.h" 2
 
-# 1 "stateMachine/../class/paddle.h" 1
-
-
+# 1 "./class/paddle.h" 1
 
 
-# 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 5 "stateMachine/../class/paddle.h" 2
+
+
+# 1 "./class/../libraries/lcd_highlevel.h" 1
+# 5 "./class/paddle.h" 2
 
 typedef struct Paddle
 {
@@ -400,13 +337,13 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add);
 
 
 void Paddle_draw(struct Paddle* p);
-# 6 "stateMachine/../class/gameParameters.h" 2
+# 6 "./class/gameParameters.h" 2
 
-# 1 "stateMachine/../class/score.h" 1
+# 1 "./class/score.h" 1
 
 
-# 1 "stateMachine/../class/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/score.h" 2
+# 1 "./class/../libraries/lcd_highlevel.h" 1
+# 3 "./class/score.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
@@ -551,7 +488,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "stateMachine/../class/score.h" 2
+# 4 "./class/score.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
@@ -608,7 +545,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 5 "stateMachine/../class/score.h" 2
+# 5 "./class/score.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
@@ -668,7 +605,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 6 "stateMachine/../class/score.h" 2
+# 6 "./class/score.h" 2
 
 typedef struct Score
 {
@@ -680,7 +617,7 @@ void Score_init(struct Score* s);
 void Score_setHomeScore(struct Score* s, uint16_t value);
 void Score_setAwayScore(struct Score* s, uint16_t value);
 void Score_draw(struct Score* s);
-# 7 "stateMachine/../class/gameParameters.h" 2
+# 7 "./class/gameParameters.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
@@ -9692,7 +9629,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 8 "stateMachine/../class/gameParameters.h" 2
+# 8 "./class/gameParameters.h" 2
 
 typedef struct GameParameters
 {
@@ -9700,14 +9637,14 @@ typedef struct GameParameters
     uint16_t player;
     uint16_t x;
     uint16_t y;
+    uint16_t level;
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
     btn_t btnLeaveParam;
-    btn_t btnLeft;
     btn_t btnNewGame;
-    btn_t btnRight;
-    sld_t sldParam;
+    sld_t sldBackLight;
+    sld_t sldLevel;
     Ball b;
     Paddle p1;
     Paddle p2;
@@ -9715,248 +9652,164 @@ typedef struct GameParameters
 }GameParameters;
 void GameParameters_init(struct GameParameters* s);
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
 void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
 void GameParameters_resetPos(struct GameParameters* s);
-# 4 "stateMachine/gameController.h" 2
+# 3 "./gameFunction.h" 2
 
-# 1 "stateMachine/sleepSM.h" 1
+# 1 "./xf/xf.h" 1
+# 15 "./xf/xf.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 16 "./xf/xf.h" 2
 
+typedef uint8_t Event;
+typedef uint16_t Time;
+typedef uint8_t TimerID;
 
+enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
-# 1 "stateMachine/display.h" 1
-
-
-
-# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
-# 4 "stateMachine/display.h" 2
-
-# 1 "stateMachine/../class/menu.h" 1
-
-
-# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
-# 3 "stateMachine/../class/menu.h" 2
-
-
-
-
-
-void Menu_welcomeDraw(GameParameters* g);
-
-
-
-
-void Menu_parametersDraw(GameParameters* g);
+typedef struct Timer
+{
+    Time tm;
+    Event ev;
+} Timer;
+# 36 "./xf/xf.h"
+typedef struct XF
+{
+    Timer timerList[8];
+    Event eventQueue[12];
+    uint8_t in;
+    uint8_t out;
+} XF;
 
 
 
 
-void Menu_inGameDraw(GameParameters* g);
+
+
+
+void XF_init();
 
 
 
 
-void Menu_endGame(GameParameters* g);
-# 5 "stateMachine/display.h" 2
-
-
-void displayInit(GameParameters* g);
-void displaySM(Event ev,GameParameters* g);
-void displayController(GameParameters* g,Event ev);
-# 4 "stateMachine/sleepSM.h" 2
-
-# 1 "stateMachine/gameController.h" 1
-# 5 "stateMachine/sleepSM.h" 2
-
-# 1 "stateMachine/touchScreenSM.h" 1
-# 21 "stateMachine/touchScreenSM.h"
-# 1 "stateMachine/../libraries/lcd_highlevel.h" 1
-# 21 "stateMachine/touchScreenSM.h" 2
 
 
 
-void touchScreenInit();
-void touchScreenSM(Event ev,GameParameters* g);
-void touchScreenController(GameParameters* g);
-void configTouch();
-void configMeasure(_Bool channel);
-# 6 "stateMachine/sleepSM.h" 2
+_Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
-void sleepInit(GameParameters* g);
-void sleepSM(Event ev);
-void sleepController();
-# 5 "stateMachine/gameController.h" 2
 
-void gameControllerInit(GameParameters* g);
-void gameControllerSM(Event ev,GameParameters* g);
-void gameControllerController(GameParameters* g,Event ev);
-void moovePaddle(GameParameters* g);
+
+
+
+Event XF_popEvent(_Bool inISR);
+# 74 "./xf/xf.h"
+TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
+
+
+
+
+
+
+
+void XF_unscheduleTimer(TimerID id, _Bool inISR);
+
+
+
+
+
+
+void XF_decrementAndQueueTimers();
+# 4 "./gameFunction.h" 2
+
+
+
+
+void moovePaddle1(GameParameters* g);
+
+
+
+
+void moovePaddle2(GameParameters* g);
+
+
+
+
 void mooveBall(GameParameters* g);
+
+
+
+
 void backlightController(GameParameters* g);
+
+
+
+
+void levelController(GameParameters* g);
+
+
+
+
 void checkCollision(GameParameters* g);
-# 7 "stateMachine/gameController.c" 2
-
-typedef enum gameSM{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} gameSM;
-gameSM gameStateMachine;
-extern const FONT_INFO arialNarrow_12ptFontInfo;
-
-
-void gameControllerInit(GameParameters* g)
-{
-    gameStateMachine=NOGAME;
-    gameControllerController(g,NULLEVENT);
-}
+# 1 "gameFunction.c" 2
 
 
 
 
-void gameControllerSM(Event ev,GameParameters* g)
-{
-   switch(gameStateMachine)
-    {
-
-        case NOGAME:
-            gameControllerController(g,NULLEVENT);
-            if(ev==evParameters)
-            {
-                gameStateMachine=PARAMETERS;
-            }
-            if(ev==evOnePlayer)
-            {
-                gameStateMachine=LOCAL;
-                XF_scheduleTimer(5,evGameUpdate,1);
-            }
-            break;
-            if(ev==evTwoPlayer)
-            {
-                gameStateMachine=ONLINE;
-                XF_scheduleTimer(5,evGameUpdate,0);
-            }
-        case PARAMETERS:
-            gameControllerController(g,NULLEVENT);
-            if(ev==evLeaveParam)
-            {
-                gameStateMachine=NOGAME;
-            }
-            break;
-        case LOCAL:
-            gameControllerController(g,ev);
-            break;
-        case ONLINE:
-
-            break;
-       case ENDGAME:
-           gameControllerController(g,ev);
-           break;
-        default:
-            break;
-    }
-}
 
 
-
-
-void gameControllerController(GameParameters* g,Event ev)
-{
-    switch(gameStateMachine)
-    {
-        case NOGAME:
-
-            if(LCD_InButton(&(g->btnParam),g->x,g->y))
-            {
-                XF_pushEvent(evParameters,0);
-                GameParameters_resetPos(g);
-            }
-            if(LCD_InButton(&(g->btnOnePlayer),g->x,g->y))
-            {
-                XF_pushEvent(evOnePlayer,0);
-                GameParameters_resetPos(g);
-            }
-            if(LCD_InButton(&(g->btnTwoPlayer),g->x,g->y))
-            {
-                XF_pushEvent(evTwoPlayer,0);
-                GameParameters_resetPos(g);
-            }
-            break;
-        case PARAMETERS:
-
-            if(LCD_InSlider(&(g->sldParam),g->x,g->y))
-            {
-                backlightController(g);
-                LCD_SliderUpdate(&(g->sldParam));
-                GameParameters_resetPos(g);
-            }
-
-            if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
-            {
-                XF_pushEvent(evLeaveParam,0);
-                GameParameters_resetPos(g);
-            }
-            break;
-        case LOCAL:
-            if (ev==evTimerPos)
-            {
-
-                moovePaddle(g);
-
-            }
-            else if(ev==evGameUpdate)
-            {
-
-                mooveBall(g);
-
-
-                if(g->b.x+50>=239)
-                {
-                    g->p2.x=239-50;
-                }
-                else
-                {
-                    g->p2.x=g->b.x;
-                }
-                XF_pushEvent(evRedrawPaddle2,0);
-                XF_scheduleTimer(5,evGameUpdate,1);
-            }
-            break;
-        case ONLINE:
-            break;
-        case ENDGAME:
-            if(LCD_InButton(&(g->btnNewGame),g->x,g->y))
-            {
-
-                GameParameters_init(g);
-                XF_pushEvent(evNewGame,0);
-                gameStateMachine=NOGAME;
-            }
-            break;
-        default:
-            break;
-    }
-}
-void moovePaddle(GameParameters* g)
+void moovePaddle1(GameParameters* g)
 {
 
-    if(LCD_InButton(&(g->btnLeft),g->x,g->y))
+    if((g->x>0)&&(g->x<110))
     {
         GameParameters_resetPos(g);
         Paddle_addX(&g->p1,20,0);
     }
 
-    if(LCD_InButton(&(g->btnRight),g->x,g->y))
+    if(g->x>=130)
     {
         GameParameters_resetPos(g);
         Paddle_addX(&g->p1,20,1);
     }
     XF_pushEvent(evRedrawPaddle1,0);
 }
+
+
+
+
+void moovePaddle2(GameParameters* g)
+{
+
+    if(g->p2.x+(50/2)<g->b.x)
+    {
+        Paddle_addX(&g->p2,2,1);
+        XF_pushEvent(evRedrawPaddle2,0);
+    }
+    else if(g->p2.x+(50/2)>g->b.x)
+    {
+        Paddle_addX(&g->p2,2,0);
+        XF_pushEvent(evRedrawPaddle2,0);
+    }
+}
+
+
+
+
+
 void mooveBall(GameParameters* g)
 {
     checkCollision(g);
     Ball_Update(&g->b);
     XF_pushEvent(evRedrawBall,0);
 }
+
+
+
+
 void checkCollision(GameParameters* g)
 {
     char s[20];
@@ -9964,18 +9817,21 @@ void checkCollision(GameParameters* g)
     if(g->b.x+g->b.dx+8>=239)
     {
         g->b.dx=-g->b.dx;
+        g->b.x+=g->b.dx;
     }
-    if(g->b.x+g->b.dx-8<=3)
+    if((int)(g->b.x+g->b.dx-8)<=1)
     {
         g->b.dx=-g->b.dx;
+        g->b.x+=g->b.dx;
     }
 
-    if(g->b.y+8>=g->p1.y-1)
+    if(g->b.y+8==g->p1.y-1)
     {
         if(g->b.x+8>g->p1.x)
         {
             if(g->b.x-8<g->p1.x+50)
             {
+
                 if(g->b.x-g->p1.x<10)
                 {
 
@@ -10015,7 +9871,8 @@ void checkCollision(GameParameters* g)
         }
     }
 
-    if(g->b.y-8<=g->p2.y+10 +1)
+
+    if(g->b.y-8==g->p2.y+10 +1)
     {
         if(g->b.x+8>g->p2.x)
         {
@@ -10059,25 +9916,27 @@ void checkCollision(GameParameters* g)
     }
 
 
-    if(g->b.y-8<=g->p2.y-5)
+    if(g->b.y-8<g->p2.y-10)
     {
 
         XF_pushEvent(evEndGame,0);
         g->s1.awayScore=0;
-        gameStateMachine=ENDGAME;
     }
-    if(g->b.y+8>=g->p1.y+5)
+    if(g->b.y+8>g->p1.y+10)
     {
 
         XF_pushEvent(evEndGame,0);
         g->s1.homeScore=0;
-        gameStateMachine=ENDGAME;
     }
 
 }
 
+
+
+
 void backlightController(GameParameters* g)
 {
+
     if(((g->x)>=50)&&((g->x)<64))
     {
         GameParameters_setBackLight(g,0);
@@ -10126,5 +9985,26 @@ void backlightController(GameParameters* g)
     {
         GameParameters_setBackLight(g,11);
     }
-    g->sldParam.value=g->backlight;
+    g->sldBackLight.value=g->backlight;
+}
+
+
+
+
+void levelController(GameParameters* g)
+{
+
+    if(((g->x)>=105)&&((g->x)<160))
+    {
+        GameParameters_setLevel(g,2);
+    }
+    else if(((g->x)>=160)&&((g->x)<215))
+    {
+        GameParameters_setLevel(g,3);
+    }
+    else
+    {
+        GameParameters_setLevel(g,1);
+    }
+    g->sldLevel.value=g->level;
 }

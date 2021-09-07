@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=class/ball.c class/paddle.c class/factory.c class/score.c class/gameParameters.c class/menu.c libraries/arialNarrow_12ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=class/ball.c class/paddle.c class/factory.c class/score.c class/gameParameters.c class/menu.c libraries/arialNarrow_12ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c gameFunction.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/class/menu.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/class/ball.p1.d ${OBJECTDIR}/class/paddle.p1.d ${OBJECTDIR}/class/factory.p1.d ${OBJECTDIR}/class/score.p1.d ${OBJECTDIR}/class/gameParameters.p1.d ${OBJECTDIR}/class/menu.p1.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d ${OBJECTDIR}/stateMachine/display.p1.d ${OBJECTDIR}/stateMachine/gameController.p1.d ${OBJECTDIR}/xf/xf.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/main.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/class/menu.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/gameFunction.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/class/ball.p1.d ${OBJECTDIR}/class/paddle.p1.d ${OBJECTDIR}/class/factory.p1.d ${OBJECTDIR}/class/score.p1.d ${OBJECTDIR}/class/gameParameters.p1.d ${OBJECTDIR}/class/menu.p1.d ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1.d ${OBJECTDIR}/libraries/lcd_highlevel.p1.d ${OBJECTDIR}/libraries/lcd_lowlevel.p1.d ${OBJECTDIR}/stateMachine/sleepSM.p1.d ${OBJECTDIR}/stateMachine/touchScreenSM.p1.d ${OBJECTDIR}/stateMachine/display.p1.d ${OBJECTDIR}/stateMachine/gameController.p1.d ${OBJECTDIR}/xf/xf.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/gameFunction.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/class/menu.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1
+OBJECTFILES=${OBJECTDIR}/class/ball.p1 ${OBJECTDIR}/class/paddle.p1 ${OBJECTDIR}/class/factory.p1 ${OBJECTDIR}/class/score.p1 ${OBJECTDIR}/class/gameParameters.p1 ${OBJECTDIR}/class/menu.p1 ${OBJECTDIR}/libraries/arialNarrow_12ptBitmaps.p1 ${OBJECTDIR}/libraries/lcd_highlevel.p1 ${OBJECTDIR}/libraries/lcd_lowlevel.p1 ${OBJECTDIR}/stateMachine/sleepSM.p1 ${OBJECTDIR}/stateMachine/touchScreenSM.p1 ${OBJECTDIR}/stateMachine/display.p1 ${OBJECTDIR}/stateMachine/gameController.p1 ${OBJECTDIR}/xf/xf.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/gameFunction.p1
 
 # Source Files
-SOURCEFILES=class/ball.c class/paddle.c class/factory.c class/score.c class/gameParameters.c class/menu.c libraries/arialNarrow_12ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c
+SOURCEFILES=class/ball.c class/paddle.c class/factory.c class/score.c class/gameParameters.c class/menu.c libraries/arialNarrow_12ptBitmaps.c libraries/lcd_highlevel.c libraries/lcd_lowlevel.c stateMachine/sleepSM.c stateMachine/touchScreenSM.c stateMachine/display.c stateMachine/gameController.c xf/xf.c configuration_bits.c main.c gameFunction.c
 
 
 CFLAGS=
@@ -221,6 +221,14 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/gameFunction.p1: gameFunction.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/gameFunction.p1.d 
+	@${RM} ${OBJECTDIR}/gameFunction.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/gameFunction.p1 gameFunction.c 
+	@-${MV} ${OBJECTDIR}/gameFunction.d ${OBJECTDIR}/gameFunction.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gameFunction.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/class/ball.p1: class/ball.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/class" 
@@ -349,6 +357,14 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/gameFunction.p1: gameFunction.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/gameFunction.p1.d 
+	@${RM} ${OBJECTDIR}/gameFunction.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc" -mwarn=0 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Xparser -Wno-conversion     -o ${OBJECTDIR}/gameFunction.p1 gameFunction.c 
+	@-${MV} ${OBJECTDIR}/gameFunction.d ${OBJECTDIR}/gameFunction.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gameFunction.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

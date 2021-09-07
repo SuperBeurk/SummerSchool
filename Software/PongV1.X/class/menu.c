@@ -19,10 +19,14 @@ void Menu_welcomeDraw(GameParameters* g)
 void Menu_parametersDraw(GameParameters* g)
 {
     LCD_Fill(WHITE);
-    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,50,50,BLACK,WHITE);
+    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_LEFT,10,50,BLACK,WHITE);
     LCD_ButtonDraw(&(g->btnLeaveParam));
-    g->sldParam.value=g->backlight;
-    LCD_SliderDraw(&(g->sldParam)); 
+    g->sldBackLight.value=g->backlight;
+    LCD_SliderDraw(&(g->sldBackLight)); 
+    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,BLACK,WHITE);
+    g->sldLevel.value=g->level;
+    LCD_SliderDraw(&(g->sldLevel)); 
+    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,BLACK,WHITE);
 }
 
 //------------------------------------------------------------------------------
