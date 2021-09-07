@@ -1,6 +1,4 @@
 #include "gameFunction.h"
-
-
 //------------------------------------------------------------------------------
 //Method that will moove the local paddle on a click on the screen depending where we clicked
 //------------------------------------------------------------------------------
@@ -27,12 +25,12 @@ void moovePaddle1(GameParameters* g)
 void moovePaddle2(GameParameters* g)
 {
     //Moove IA Paddle
-    if(g->p2.x+(_PADDLE_WIDTH/2)<g->b.x)//if the paddle is at left of the ball
+    if(g->p2.x+(_PADDLE_WIDTH/2)<g->b.x-2)//if the paddle is at left of the ball
     {
         Paddle_addX(&g->p2,2,1);//moove paddle right
         XF_pushEvent(evRedrawPaddle2,false);
     }
-    else if(g->p2.x+(_PADDLE_WIDTH/2)>g->b.x)//if paddle is at right of the ball
+    else if(g->p2.x+(_PADDLE_WIDTH/2)>g->b.x+2)//if paddle is at right of the ball
     {
         Paddle_addX(&g->p2,2,0);//moove paddle left
         XF_pushEvent(evRedrawPaddle2,false);
@@ -48,6 +46,7 @@ void mooveBall(GameParameters* g)
     checkCollision(g);//check collision with wall and both paddle  
     Ball_Update(&g->b); //moove the ball with his vector
     XF_pushEvent(evRedrawBall,false);
+    XF_pushEvent(evRedrawScore,false);
 }
 
 //------------------------------------------------------------------------------
@@ -90,7 +89,7 @@ void checkCollision(GameParameters* g)
                 else if(g->b.x-g->p1.x<30)//in 3/5
                 {
                     //center
-                    g->b.dx=g->b.dx;
+                    g->b.dx=-g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
                 else if(g->b.x-g->p1.x<40)//in 4/5
@@ -136,7 +135,7 @@ void checkCollision(GameParameters* g)
                 else if(g->b.x-g->p2.x<30)
                 {
                     //center
-                    g->b.dx=g->b.dx;
+                    g->b.dx=-g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
                 else if(g->b.x-g->p2.x<40)
@@ -228,7 +227,7 @@ void backlightController(GameParameters* g)
     {
         GameParameters_setBackLight(g,11);//100%
     }
-    g->sldBackLight.value=g->backlight;
+    g->sldBackLight.value=g->backlight;//update slidebar value
 }
 
 //------------------------------------------------------------------------------
@@ -249,5 +248,5 @@ void levelController(GameParameters* g)
     {
         GameParameters_setLevel(g,1);//Level 1 default
     }
-    g->sldLevel.value=g->level;
+    g->sldLevel.value=g->level;//update slidebar value
 }

@@ -304,8 +304,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "class/../class/gameParameters.h" 2
 
@@ -616,9 +628,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "class/../class/gameParameters.h" 2
 
@@ -9637,7 +9665,6 @@ unsigned char __t3rd16on(void);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9653,12 +9680,35 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "class/menu.h" 2
 
@@ -9719,6 +9769,7 @@ void Menu_parametersDraw(GameParameters* g)
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(0b0000000000000000);
+    LCD_DrawRect(0,160,239,160,1,0b1111111111111111);
     Score_draw(&g->s1);
     Paddle_draw(&g->p1);
     Paddle_draw(&g->p2);

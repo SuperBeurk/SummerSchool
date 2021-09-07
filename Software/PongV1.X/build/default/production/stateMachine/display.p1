@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"14 stateMachine/display.c
-[; ;stateMachine/display.c: 14: state4 displayState;
-[c E6518 0 1 2 3 .. ]
-[n E6518 state4 WELCOME PARAMETERS INGAME ENDGAME  ]
+"8 stateMachine/display.c
+[; ;stateMachine/display.c: 8: state4 displayState;
+[c E6514 0 1 2 3 .. ]
+[n E6514 state4 WELCOME PARAMETERS INGAME ENDGAME  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -32,13 +32,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S18 `us 1 `us 1 `uc -> 2 `i ]
 [n S18 Score homeScore awayScore str ]
 "10 stateMachine/../class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight player x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
-"9 stateMachine/display.h
-[; ;stateMachine/display.h: 9: void displayController(GameParameters* g,Event ev);
+[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
+[n S839 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
+"33 stateMachine/display.h
+[; ;stateMachine/display.h: 33: void displayController(GameParameters* g,Event ev);
 [v _displayController `(v ~T0 @X0 0 ef2`*S839`uc ]
-"20 stateMachine/display.c
-[; ;stateMachine/display.c: 20:     displayController(g,NULLEVENT);
+"19 stateMachine/display.c
+[; ;stateMachine/display.c: 19:     displayController(g,NULLEVENT);
 [c E39 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
 [n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "18 stateMachine/../class/menu.h
@@ -53,12 +53,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 stateMachine/../class/paddle.h
 [; ;stateMachine/../class/paddle.h: 28: void Paddle_draw(struct Paddle* p);
 [v _Paddle_draw `(v ~T0 @X0 0 ef1`*S9 ]
-"17 stateMachine/../class/ball.h
-[; ;stateMachine/../class/ball.h: 17: void Ball_draw(struct Ball* b);
+"29 stateMachine/../class/ball.h
+[; ;stateMachine/../class/ball.h: 29: void Ball_draw(struct Ball* b);
 [v _Ball_draw `(v ~T0 @X0 0 ef1`*S8 ]
-"16 stateMachine/../class/score.h
-[; ;stateMachine/../class/score.h: 16: void Score_draw(struct Score* s);
+"32 stateMachine/../class/score.h
+[; ;stateMachine/../class/score.h: 32: void Score_draw(struct Score* s);
 [v _Score_draw `(v ~T0 @X0 0 ef1`*S18 ]
+"256 stateMachine/../class/../libraries/lcd_highlevel.h
+[v _LCD_DrawRect `(v ~T0 @X0 0 ef6`us`us`us`us`uc`us ]
 "23 stateMachine/../class/menu.h
 [; ;stateMachine/../class/menu.h: 23: void Menu_endGame(GameParameters* g);
 [v _Menu_endGame `(v ~T0 @X0 0 ef1`*S839 ]
@@ -794,316 +796,319 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 stateMachine/display.c
-[; ;stateMachine/display.c: 14: state4 displayState;
-[v _displayState `E6518 ~T0 @X0 1 e ]
-"16
-[; ;stateMachine/display.c: 16: void displayInit(GameParameters* g)
+"8 stateMachine/display.c
+[; ;stateMachine/display.c: 8: state4 displayState;
+[v _displayState `E6514 ~T0 @X0 1 e ]
+"15
+[; ;stateMachine/display.c: 15: void displayInit(GameParameters* g)
 [v _displayInit `(v ~T0 @X0 1 ef1`*S839 ]
-"17
-[; ;stateMachine/display.c: 17: {
+"16
+[; ;stateMachine/display.c: 16: {
 {
 [e :U _displayInit ]
-"16
-[; ;stateMachine/display.c: 16: void displayInit(GameParameters* g)
+"15
+[; ;stateMachine/display.c: 15: void displayInit(GameParameters* g)
 [v _g `*S839 ~T0 @X0 1 r1 ]
-"17
-[; ;stateMachine/display.c: 17: {
+"16
+[; ;stateMachine/display.c: 16: {
 [f ]
+"18
+[; ;stateMachine/display.c: 18:     displayState=WELCOME;
+[e = _displayState . `E6514 0 ]
 "19
-[; ;stateMachine/display.c: 19:     displayState=WELCOME;
-[e = _displayState . `E6518 0 ]
-"20
-[; ;stateMachine/display.c: 20:     displayController(g,NULLEVENT);
+[; ;stateMachine/display.c: 19:     displayController(g,NULLEVENT);
 [e ( _displayController (2 , _g -> . `E39 0 `uc ]
-"21
-[; ;stateMachine/display.c: 21: }
+"20
+[; ;stateMachine/display.c: 20: }
 [e :UE 840 ]
 }
-"26
-[; ;stateMachine/display.c: 26: void displaySM(Event ev, GameParameters* g)
+"30
+[; ;stateMachine/display.c: 30: void displaySM(Event ev, GameParameters* g)
 [v _displaySM `(v ~T0 @X0 1 ef2`uc`*S839 ]
-"27
-[; ;stateMachine/display.c: 27: {
+"31
+[; ;stateMachine/display.c: 31: {
 {
 [e :U _displaySM ]
-"26
-[; ;stateMachine/display.c: 26: void displaySM(Event ev, GameParameters* g)
+"30
+[; ;stateMachine/display.c: 30: void displaySM(Event ev, GameParameters* g)
 [v _ev `uc ~T0 @X0 1 r1 ]
 [v _g `*S839 ~T0 @X0 1 r2 ]
-"27
-[; ;stateMachine/display.c: 27: {
-[f ]
-"28
-[; ;stateMachine/display.c: 28:    switch(displayState)
-[e $U 843  ]
-"29
-[; ;stateMachine/display.c: 29:     {
-{
-"30
-[; ;stateMachine/display.c: 30:         case WELCOME:
-[e :U 844 ]
 "31
-[; ;stateMachine/display.c: 31:             if((ev==evOnePlayer)||(ev==evTwoPlayer))
-[e $ ! || == -> _ev `i -> . `E39 5 `i == -> _ev `i -> . `E39 6 `i 845  ]
+[; ;stateMachine/display.c: 31: {
+[f ]
 "32
-[; ;stateMachine/display.c: 32:             {
-{
+[; ;stateMachine/display.c: 32:    switch(displayState)
+[e $U 843  ]
 "33
-[; ;stateMachine/display.c: 33:                 displayState=INGAME;
-[e = _displayState . `E6518 2 ]
+[; ;stateMachine/display.c: 33:     {
+{
 "34
-[; ;stateMachine/display.c: 34:                 Menu_inGameDraw(g);
-[e ( _Menu_inGameDraw (1 _g ]
+[; ;stateMachine/display.c: 34:         case WELCOME:
+[e :U 844 ]
 "35
-[; ;stateMachine/display.c: 35:                 displayController(g,ev);
-[e ( _displayController (2 , _g _ev ]
+[; ;stateMachine/display.c: 35:             if((ev==evOnePlayer)||(ev==evTwoPlayer))
+[e $ ! || == -> _ev `i -> . `E39 5 `i == -> _ev `i -> . `E39 6 `i 845  ]
 "36
-[; ;stateMachine/display.c: 36:             }
+[; ;stateMachine/display.c: 36:             {
+{
+"37
+[; ;stateMachine/display.c: 37:                 displayState=INGAME;
+[e = _displayState . `E6514 2 ]
+"38
+[; ;stateMachine/display.c: 38:                 Menu_inGameDraw(g);
+[e ( _Menu_inGameDraw (1 _g ]
+"39
+[; ;stateMachine/display.c: 39:                 displayController(g,ev);
+[e ( _displayController (2 , _g _ev ]
+"40
+[; ;stateMachine/display.c: 40:             }
 }
 [e :U 845 ]
-"37
-[; ;stateMachine/display.c: 37:             if(ev==evParameters)
-[e $ ! == -> _ev `i -> . `E39 7 `i 846  ]
-"38
-[; ;stateMachine/display.c: 38:             {
-{
-"39
-[; ;stateMachine/display.c: 39:                 displayState=PARAMETERS;
-[e = _displayState . `E6518 1 ]
-"40
-[; ;stateMachine/display.c: 40:                 displayController(g,ev);
-[e ( _displayController (2 , _g _ev ]
 "41
-[; ;stateMachine/display.c: 41:             }
+[; ;stateMachine/display.c: 41:             if(ev==evParameters)
+[e $ ! == -> _ev `i -> . `E39 7 `i 846  ]
+"42
+[; ;stateMachine/display.c: 42:             {
+{
+"43
+[; ;stateMachine/display.c: 43:                 displayState=PARAMETERS;
+[e = _displayState . `E6514 1 ]
+"44
+[; ;stateMachine/display.c: 44:                 displayController(g,ev);
+[e ( _displayController (2 , _g _ev ]
+"45
+[; ;stateMachine/display.c: 45:             }
 }
 [e :U 846 ]
-"42
-[; ;stateMachine/display.c: 42:             break;
-[e $U 842  ]
-"43
-[; ;stateMachine/display.c: 43:         case PARAMETERS:
-[e :U 847 ]
-"44
-[; ;stateMachine/display.c: 44:             if(ev==evLeaveParam)
-[e $ ! == -> _ev `i -> . `E39 8 `i 848  ]
-"45
-[; ;stateMachine/display.c: 45:             {
-{
 "46
-[; ;stateMachine/display.c: 46:                 displayState=WELCOME;
-[e = _displayState . `E6518 0 ]
-"47
-[; ;stateMachine/display.c: 47:                 displayController(g,ev);
-[e ( _displayController (2 , _g _ev ]
+[; ;stateMachine/display.c: 46:             break;
+[e $U 842  ]
 "48
-[; ;stateMachine/display.c: 48:             }
+[; ;stateMachine/display.c: 48:         case PARAMETERS:
+[e :U 847 ]
+"49
+[; ;stateMachine/display.c: 49:             if(ev==evLeaveParam)
+[e $ ! == -> _ev `i -> . `E39 8 `i 848  ]
+"50
+[; ;stateMachine/display.c: 50:             {
+{
+"51
+[; ;stateMachine/display.c: 51:                 displayState=WELCOME;
+[e = _displayState . `E6514 0 ]
+"52
+[; ;stateMachine/display.c: 52:                 displayController(g,ev);
+[e ( _displayController (2 , _g _ev ]
+"53
+[; ;stateMachine/display.c: 53:             }
 }
 [e :U 848 ]
-"49
-[; ;stateMachine/display.c: 49:             break;
-[e $U 842  ]
-"50
-[; ;stateMachine/display.c: 50:         case INGAME:
-[e :U 849 ]
-"51
-[; ;stateMachine/display.c: 51:             if(ev==evEndGame)
-[e $ ! == -> _ev `i -> . `E39 9 `i 850  ]
-"52
-[; ;stateMachine/display.c: 52:             {
-{
-"53
-[; ;stateMachine/display.c: 53:                 displayState=ENDGAME;
-[e = _displayState . `E6518 3 ]
 "54
-[; ;stateMachine/display.c: 54:                 displayController(g,ev);
+[; ;stateMachine/display.c: 54:             break;
+[e $U 842  ]
+"56
+[; ;stateMachine/display.c: 56:         case INGAME:
+[e :U 849 ]
+"57
+[; ;stateMachine/display.c: 57:             if(ev==evEndGame)
+[e $ ! == -> _ev `i -> . `E39 9 `i 850  ]
+"58
+[; ;stateMachine/display.c: 58:             {
+{
+"59
+[; ;stateMachine/display.c: 59:                 displayState=ENDGAME;
+[e = _displayState . `E6514 3 ]
+"60
+[; ;stateMachine/display.c: 60:                 displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
-"55
-[; ;stateMachine/display.c: 55:             }
+"61
+[; ;stateMachine/display.c: 61:             }
 }
 [e $U 851  ]
-"56
-[; ;stateMachine/display.c: 56:             else
-[e :U 850 ]
-"57
-[; ;stateMachine/display.c: 57:             {
-{
-"58
-[; ;stateMachine/display.c: 58:                 displayController(g,ev);
-[e ( _displayController (2 , _g _ev ]
-"59
-[; ;stateMachine/display.c: 59:             }
-}
-[e :U 851 ]
-"60
-[; ;stateMachine/display.c: 60:             break;
-[e $U 842  ]
-"61
-[; ;stateMachine/display.c: 61:        case ENDGAME:
-[e :U 852 ]
 "62
-[; ;stateMachine/display.c: 62:            if(ev==evNewGame)
-[e $ ! == -> _ev `i -> . `E39 15 `i 853  ]
+[; ;stateMachine/display.c: 62:             else
+[e :U 850 ]
 "63
-[; ;stateMachine/display.c: 63:            {
+[; ;stateMachine/display.c: 63:             {
 {
 "64
-[; ;stateMachine/display.c: 64:                displayState=WELCOME;
-[e = _displayState . `E6518 0 ]
-"65
-[; ;stateMachine/display.c: 65:                displayController(g,ev);
+[; ;stateMachine/display.c: 64:                 displayController(g,ev);
 [e ( _displayController (2 , _g _ev ]
-"66
-[; ;stateMachine/display.c: 66:            }
+"65
+[; ;stateMachine/display.c: 65:             }
 }
-[e :U 853 ]
-"67
-[; ;stateMachine/display.c: 67:             break;
+[e :U 851 ]
+"66
+[; ;stateMachine/display.c: 66:             break;
 [e $U 842  ]
 "68
-[; ;stateMachine/display.c: 68:         default:
-[e :U 854 ]
+[; ;stateMachine/display.c: 68:        case ENDGAME:
+[e :U 852 ]
 "69
-[; ;stateMachine/display.c: 69:             break;
-[e $U 842  ]
+[; ;stateMachine/display.c: 69:            if(ev==evNewGame)
+[e $ ! == -> _ev `i -> . `E39 15 `i 853  ]
 "70
-[; ;stateMachine/display.c: 70:     }
+[; ;stateMachine/display.c: 70:            {
+{
+"71
+[; ;stateMachine/display.c: 71:                displayState=WELCOME;
+[e = _displayState . `E6514 0 ]
+"72
+[; ;stateMachine/display.c: 72:                displayController(g,ev);
+[e ( _displayController (2 , _g _ev ]
+"73
+[; ;stateMachine/display.c: 73:            }
+}
+[e :U 853 ]
+"74
+[; ;stateMachine/display.c: 74:             break;
+[e $U 842  ]
+"76
+[; ;stateMachine/display.c: 76:         default:
+[e :U 854 ]
+"77
+[; ;stateMachine/display.c: 77:             break;
+[e $U 842  ]
+"78
+[; ;stateMachine/display.c: 78:     }
 }
 [e $U 842  ]
 [e :U 843 ]
-[e [\ -> _displayState `ui , $ -> . `E6518 0 `ui 844
- , $ -> . `E6518 1 `ui 847
- , $ -> . `E6518 2 `ui 849
- , $ -> . `E6518 3 `ui 852
+[e [\ -> _displayState `ui , $ -> . `E6514 0 `ui 844
+ , $ -> . `E6514 1 `ui 847
+ , $ -> . `E6514 2 `ui 849
+ , $ -> . `E6514 3 `ui 852
  854 ]
 [e :U 842 ]
-"71
-[; ;stateMachine/display.c: 71: }
+"79
+[; ;stateMachine/display.c: 79: }
 [e :UE 841 ]
 }
-"72
-[; ;stateMachine/display.c: 72: void displayController(GameParameters* g,Event ev)
+"89
+[; ;stateMachine/display.c: 89: void displayController(GameParameters* g,Event ev)
 [v _displayController `(v ~T0 @X0 1 ef2`*S839`uc ]
-"73
-[; ;stateMachine/display.c: 73: {
+"90
+[; ;stateMachine/display.c: 90: {
 {
 [e :U _displayController ]
-"72
-[; ;stateMachine/display.c: 72: void displayController(GameParameters* g,Event ev)
+"89
+[; ;stateMachine/display.c: 89: void displayController(GameParameters* g,Event ev)
 [v _g `*S839 ~T0 @X0 1 r1 ]
 [v _ev `uc ~T0 @X0 1 r2 ]
-"73
-[; ;stateMachine/display.c: 73: {
-[f ]
-"74
-[; ;stateMachine/display.c: 74:     switch(displayState)
-[e $U 857  ]
-"75
-[; ;stateMachine/display.c: 75:     {
-{
-"76
-[; ;stateMachine/display.c: 76:         case WELCOME:
-[e :U 858 ]
-"78
-[; ;stateMachine/display.c: 78:             Menu_welcomeDraw(g);
-[e ( _Menu_welcomeDraw (1 _g ]
-"79
-[; ;stateMachine/display.c: 79:             break;
-[e $U 856  ]
-"80
-[; ;stateMachine/display.c: 80:         case PARAMETERS:
-[e :U 859 ]
-"82
-[; ;stateMachine/display.c: 82:             Menu_parametersDraw(g);
-[e ( _Menu_parametersDraw (1 _g ]
-"83
-[; ;stateMachine/display.c: 83:             break;
-[e $U 856  ]
-"84
-[; ;stateMachine/display.c: 84:         case INGAME:
-[e :U 860 ]
-"86
-[; ;stateMachine/display.c: 86:             if(ev==evRedrawPaddle1)
-[e $ ! == -> _ev `i -> . `E39 11 `i 861  ]
-"87
-[; ;stateMachine/display.c: 87:             {
-{
-"88
-[; ;stateMachine/display.c: 88:                 Paddle_draw(&g->p1);
-[e ( _Paddle_draw (1 &U . *U _g 13 ]
-"89
-[; ;stateMachine/display.c: 89:             }
-}
-[e :U 861 ]
 "90
-[; ;stateMachine/display.c: 90:             if(ev==evRedrawPaddle2)
-[e $ ! == -> _ev `i -> . `E39 12 `i 862  ]
+[; ;stateMachine/display.c: 90: {
+[f ]
 "91
-[; ;stateMachine/display.c: 91:             {
-{
+[; ;stateMachine/display.c: 91:     switch(displayState)
+[e $U 857  ]
 "92
-[; ;stateMachine/display.c: 92:                 Paddle_draw(&g->p2);
-[e ( _Paddle_draw (1 &U . *U _g 14 ]
+[; ;stateMachine/display.c: 92:     {
+{
 "93
-[; ;stateMachine/display.c: 93:             }
-}
-[e :U 862 ]
-"94
-[; ;stateMachine/display.c: 94:             if(ev==evRedrawBall)
-[e $ ! == -> _ev `i -> . `E39 13 `i 863  ]
+[; ;stateMachine/display.c: 93:         case WELCOME:
+[e :U 858 ]
 "95
-[; ;stateMachine/display.c: 95:             {
-{
+[; ;stateMachine/display.c: 95:             Menu_welcomeDraw(g);
+[e ( _Menu_welcomeDraw (1 _g ]
 "96
-[; ;stateMachine/display.c: 96:                 Ball_draw(&g->b);
-[e ( _Ball_draw (1 &U . *U _g 12 ]
-"97
-[; ;stateMachine/display.c: 97:             }
-}
-[e :U 863 ]
+[; ;stateMachine/display.c: 96:             break;
+[e $U 856  ]
 "98
-[; ;stateMachine/display.c: 98:             if(ev==evRedrawScore)
-[e $ ! == -> _ev `i -> . `E39 14 `i 864  ]
-"99
-[; ;stateMachine/display.c: 99:             {
-{
+[; ;stateMachine/display.c: 98:         case PARAMETERS:
+[e :U 859 ]
 "100
-[; ;stateMachine/display.c: 100:                 Score_draw(&g->s1);
-[e ( _Score_draw (1 &U . *U _g 15 ]
+[; ;stateMachine/display.c: 100:             Menu_parametersDraw(g);
+[e ( _Menu_parametersDraw (1 _g ]
 "101
-[; ;stateMachine/display.c: 101:             }
-}
-[e :U 864 ]
-"102
-[; ;stateMachine/display.c: 102:             break;
+[; ;stateMachine/display.c: 101:             break;
 [e $U 856  ]
 "103
-[; ;stateMachine/display.c: 103:         case ENDGAME:
-[e :U 865 ]
-"104
-[; ;stateMachine/display.c: 104:             Menu_endGame(g);
-[e ( _Menu_endGame (1 _g ]
+[; ;stateMachine/display.c: 103:         case INGAME:
+[e :U 860 ]
 "105
-[; ;stateMachine/display.c: 105:             break;
-[e $U 856  ]
+[; ;stateMachine/display.c: 105:             if(ev==evRedrawPaddle1)
+[e $ ! == -> _ev `i -> . `E39 11 `i 861  ]
+"106
+[; ;stateMachine/display.c: 106:             {
+{
 "107
-[; ;stateMachine/display.c: 107:         default:
-[e :U 866 ]
+[; ;stateMachine/display.c: 107:                 Paddle_draw(&g->p1);
+[e ( _Paddle_draw (1 &U . *U _g 12 ]
 "108
-[; ;stateMachine/display.c: 108:             break;
-[e $U 856  ]
+[; ;stateMachine/display.c: 108:             }
+}
+[e :U 861 ]
 "109
-[; ;stateMachine/display.c: 109:     }
+[; ;stateMachine/display.c: 109:             if(ev==evRedrawPaddle2)
+[e $ ! == -> _ev `i -> . `E39 12 `i 862  ]
+"110
+[; ;stateMachine/display.c: 110:             {
+{
+"111
+[; ;stateMachine/display.c: 111:                 Paddle_draw(&g->p2);
+[e ( _Paddle_draw (1 &U . *U _g 13 ]
+"112
+[; ;stateMachine/display.c: 112:             }
+}
+[e :U 862 ]
+"113
+[; ;stateMachine/display.c: 113:             if(ev==evRedrawBall)
+[e $ ! == -> _ev `i -> . `E39 13 `i 863  ]
+"114
+[; ;stateMachine/display.c: 114:             {
+{
+"115
+[; ;stateMachine/display.c: 115:                 Ball_draw(&g->b);
+[e ( _Ball_draw (1 &U . *U _g 11 ]
+"116
+[; ;stateMachine/display.c: 116:             }
+}
+[e :U 863 ]
+"117
+[; ;stateMachine/display.c: 117:             if(ev==evRedrawScore)
+[e $ ! == -> _ev `i -> . `E39 14 `i 864  ]
+"118
+[; ;stateMachine/display.c: 118:             {
+{
+"119
+[; ;stateMachine/display.c: 119:                 Score_draw(&g->s1);
+[e ( _Score_draw (1 &U . *U _g 14 ]
+"120
+[; ;stateMachine/display.c: 120:                 LCD_DrawRect(0,160,239,160,1,0b1111111111111111);
+[e ( _LCD_DrawRect (4 , , , , , -> -> 0 `i `us -> -> 160 `i `us -> -> 239 `i `us -> -> 160 `i `us -> -> 1 `i `uc -> -> 65535 `ui `us ]
+"121
+[; ;stateMachine/display.c: 121:             }
+}
+[e :U 864 ]
+"122
+[; ;stateMachine/display.c: 122:             break;
+[e $U 856  ]
+"124
+[; ;stateMachine/display.c: 124:         case ENDGAME:
+[e :U 865 ]
+"125
+[; ;stateMachine/display.c: 125:             Menu_endGame(g);
+[e ( _Menu_endGame (1 _g ]
+"126
+[; ;stateMachine/display.c: 126:             break;
+[e $U 856  ]
+"128
+[; ;stateMachine/display.c: 128:         default:
+[e :U 866 ]
+"129
+[; ;stateMachine/display.c: 129:             break;
+[e $U 856  ]
+"130
+[; ;stateMachine/display.c: 130:     }
 }
 [e $U 856  ]
 [e :U 857 ]
-[e [\ -> _displayState `ui , $ -> . `E6518 0 `ui 858
- , $ -> . `E6518 1 `ui 859
- , $ -> . `E6518 2 `ui 860
- , $ -> . `E6518 3 `ui 865
+[e [\ -> _displayState `ui , $ -> . `E6514 0 `ui 858
+ , $ -> . `E6514 1 `ui 859
+ , $ -> . `E6514 2 `ui 860
+ , $ -> . `E6514 3 `ui 865
  866 ]
 [e :U 856 ]
-"110
-[; ;stateMachine/display.c: 110: }
+"131
+[; ;stateMachine/display.c: 131: }
 [e :UE 855 ]
 }

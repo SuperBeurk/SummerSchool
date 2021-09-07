@@ -1,18 +1,14 @@
-/*
- * File:   touchScreen.c
- * Author: sebastie.metral
- *
- * Created on 30. août 2021, 12:42
- */
 #include "touchScreenSM.h"
 #include <stdio.h>
 #include <string.h>
 #include <xc.h>
 #include <stdlib.h>
-
+//all state for this stateMachine
 typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 state3 touchScreenState;
+
+extern XF theXF;   
 
 //------------------------------------------------------------------------------
 //Initialize touchScreenSM
@@ -22,7 +18,8 @@ state3 touchScreenState;
 void touchScreenInit()
 {
     touchScreenState=WAITING;//default state
-    configTouch();//action to do
+    configTouch();//config pin for touch
+    XF_scheduleTimer(3000,evTimer30,false);
 }
 
 //------------------------------------------------------------------------------
@@ -76,12 +73,19 @@ void touchScreenController(GameParameters* g)
         case WAITING:
             //1.Reset TimerPos
             INTEDG1=0;//Interrupt on falling edge
-            configTouch();//Pin configuration for press touch
-               
+            XF_scheduleTimer(3000,evTimer30,false);
+            configTouch();//Pin configuration for press touch               
             //3.Create TimerSleep
             break;
 //------------------------------------------------------------------
         case CALCULATEPOSITION:
+            for (int i=0; i<MAXTIMER; i++)
+            {
+                if (theXF.timerList[i].ev == evTimer30)
+                {
+                    XF_unscheduleTimer(i, false);
+                }
+            }
             //1.Reset TIMER SLEEP
             //------------------------------------------------------------------
             //--------------xMeasurement 

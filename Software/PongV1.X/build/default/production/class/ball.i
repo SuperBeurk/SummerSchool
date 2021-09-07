@@ -291,10 +291,25 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 1 "class/ball.c" 2
+
+
+
 
 
 void Ball_init(struct Ball* b)
@@ -305,11 +320,19 @@ void Ball_init(struct Ball* b)
     b->oldy=20;
     b->dx = 0;
 }
+
+
+
+
 void Ball_Update(struct Ball* b)
 {
     b->x=b->x+b->dx;
     b->y=b->y+b->dy;
 }
+
+
+
+
 void Ball_draw(struct Ball* b)
 {
     LCD_DrawRect(b->oldx-8,b->oldy-8,b->oldx+8,b->oldy+8,1,0b0000000000000000);

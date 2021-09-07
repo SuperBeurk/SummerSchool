@@ -1,10 +1,5 @@
-/*
- * File:   gameController.c
- * Author: sebastie.metral
- *
- * Created on 30. août 2021, 12:40
- */
 #include "gameController.h"
+//all state for this stateMachine
 typedef enum gameSM{NOGAME,PARAMETERS,LOCAL,ONLINE,ENDGAME} gameSM;
 gameSM gameStateMachine;
 
@@ -41,18 +36,7 @@ void gameControllerSM(Event ev,GameParameters* g)
             if(ev==evOnePlayer)//if we want to play in local
             {
                 gameStateMachine=LOCAL;//change state
-                if(g->level==3)
-                {
-                    XF_scheduleTimer(1,evGameUpdate,true);//start game timer
-                }
-                else if(g->level==2)
-                {
-                    XF_scheduleTimer(2,evGameUpdate,true);//start game timer
-                }
-                else if(g->level==1)
-                {
-                    XF_scheduleTimer(3,evGameUpdate,true);//start game timer
-                }
+                XF_scheduleTimer(4-g->level,evGameUpdate,true);//start game timer depending on level
             }
             break;
             if(ev==evTwoPlayer)//if we want to play in online
@@ -158,18 +142,7 @@ void gameControllerController(GameParameters* g,Event ev)
                 //Moove ball
                 mooveBall(g);
                 moovePaddle2(g);//IA Paddle  
-                if(g->level==3)
-                {
-                    XF_scheduleTimer(1,evGameUpdate,true);//start game timer
-                }
-                else if(g->level==2)
-                {
-                    XF_scheduleTimer(2,evGameUpdate,true);//start game timer
-                }
-                else if(g->level==1)
-                {
-                    XF_scheduleTimer(3,evGameUpdate,true);//start game timer
-                }
+                XF_scheduleTimer(4-g->level,evGameUpdate,true);//restart game timer depending on level
             }
 //------------------------------------------------------------------------------
             break;

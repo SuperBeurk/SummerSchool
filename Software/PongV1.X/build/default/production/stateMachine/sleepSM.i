@@ -7,12 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "stateMachine/sleepSM.c" 2
-
-
-
-
-
-
 # 1 "stateMachine/sleepSM.h" 1
 
 
@@ -131,7 +125,7 @@ typedef uint32_t uint_fast32_t;
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-
+# 41 "stateMachine/../xf/xf.h"
 enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
@@ -139,7 +133,7 @@ typedef struct Timer
     Time tm;
     Event ev;
 } Timer;
-# 36 "stateMachine/../xf/xf.h"
+# 56 "stateMachine/../xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -170,7 +164,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 74 "stateMachine/../xf/xf.h"
+# 94 "stateMachine/../xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -377,8 +371,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "stateMachine/../class/../class/gameParameters.h" 2
 
@@ -689,9 +695,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "stateMachine/../class/../class/gameParameters.h" 2
 
@@ -9710,7 +9732,6 @@ unsigned char __t3rd16on(void);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9726,12 +9747,35 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "stateMachine/../class/menu.h" 2
 
@@ -9757,8 +9801,16 @@ void Menu_endGame(GameParameters* g);
 # 5 "stateMachine/display.h" 2
 
 
+
+
+
+
+
+
 void displayInit(GameParameters* g);
+# 23 "stateMachine/display.h"
 void displaySM(Event ev,GameParameters* g);
+# 33 "stateMachine/display.h"
 void displayController(GameParameters* g,Event ev);
 # 4 "stateMachine/sleepSM.h" 2
 
@@ -9847,43 +9899,100 @@ void configMeasure(_Bool channel);
 # 6 "stateMachine/sleepSM.h" 2
 
 
-void sleepInit(GameParameters* g);
-void sleepSM(Event ev);
-void sleepController();
-# 7 "stateMachine/sleepSM.c" 2
 
-typedef enum state1{WAKEUP,BACKLIGHTOFF,SLEEP} state1;
+
+
+
+
+
+void sleepInit(GameParameters* g);
+# 23 "stateMachine/sleepSM.h"
+void sleepSM(Event ev);
+# 32 "stateMachine/sleepSM.h"
+void sleepController();
+
+
+
+
+void configPinSleep();
+# 1 "stateMachine/sleepSM.c" 2
+
+
+typedef enum state1{WAKEUP,SLEEP} state1;
 state1 sleepState;
+
+
+
+
+
 
 void sleepInit(GameParameters* g)
 {
     sleepState=WAKEUP;
+
     displayInit(g);
     gameControllerInit(g);
     touchScreenInit();
     sleepController();
 }
+
+
+
+
+
+
+
 void sleepSM(Event ev)
 {
-# 52 "stateMachine/sleepSM.c"
+    switch(sleepState)
+    {
+        case WAKEUP:
+            if(ev==evTimer30)
+            {
+               sleepState=SLEEP;
+               sleepController();
+            }
+            break;
+
+        case SLEEP:
+            break;
+
+        default:
+            break;
+    }
 }
+# 54 "stateMachine/sleepSM.c"
 void sleepController()
 {
     switch(sleepState)
     {
         case WAKEUP:
-
-
-
             break;
-        case BACKLIGHTOFF:
 
-            break;
         case SLEEP:
-
-
+            configPinSleep();
+            __asm(" sleep");
+            __asm(" reset");
             break;
+
         default:
             break;
     }
+}
+
+
+
+
+void configPinSleep()
+{
+    TRISC=0b10000010;
+    TRISA=0;
+    LATA=0xFF;
+    LATC0=0;
+    CCPR2L=0;
+    LATC2=1;
+    LATC3=1;
+    LATC4=1;
+    LATC5=1;
+    configTouch();
 }

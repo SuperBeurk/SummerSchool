@@ -298,8 +298,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "class/gameParameters.h" 2
 
@@ -610,9 +622,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "class/gameParameters.h" 2
 
@@ -9631,7 +9659,6 @@ unsigned char __t3rd16on(void);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9647,21 +9674,48 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 1 "class/gameParameters.c" 2
 
 extern FONT_INFO arialNarrow_12ptFontInfo;
+
+
+
+
 void GameParameters_init(struct GameParameters* s)
 {
+
     s->backlight = 11;
     CCPR2L = 255;
-    s->player = 0;
     s->x=0;
     s->y=0;
     s->level=1;
@@ -9670,6 +9724,8 @@ void GameParameters_init(struct GameParameters* s)
     s->b.dy=1;
     Paddle_init(&(s->p1),0);
     Paddle_init(&(s->p2),1);
+
+
     LCD_ButtonCreate(130,50,90,20,0b1111111111111111,0b0000000000000000,"Parametres",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnParam),1);
     LCD_ButtonCreate(10,250,70,20,0b1111111111111111,0b0000000000000000,"1 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnOnePlayer),2);
     LCD_ButtonCreate(150,250,70,20,0b1111111111111111,0b0000000000000000,"2 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnTwoPlayer),3);
@@ -9678,6 +9734,10 @@ void GameParameters_init(struct GameParameters* s)
     LCD_SliderCreate(50,110,165,20,0b0000000000000000,0b1111111111111111,0b1111100000000000,0,11,((void*)0),&(s->sldBackLight));
     LCD_SliderCreate(50,160,165,20,0b0000000000000000,0b1111111111111111,0b1111100000000000,0,3,((void*)0),&(s->sldLevel));
 }
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
 {
     s->backlight = value;
@@ -9690,23 +9750,35 @@ void GameParameters_setBackLight(struct GameParameters* s, uint16_t value)
         CCPR2L=(s->backlight)*23;
     }
 }
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value)
 {
     s->level = value;
 }
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value)
-{
-    s->player = value;
-}
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s)
 {
     s->x=0;
     s->y=0;
 }
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value)
 {
     s->x=value;
 }
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value)
 {
     s->y=value;

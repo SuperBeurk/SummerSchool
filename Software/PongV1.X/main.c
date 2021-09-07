@@ -14,43 +14,48 @@
 #include <stdio.h>
 #include <string.h>
 
-extern const FONT_INFO arialNarrow_12ptFontInfo;
+//------------------------------------------------------------------------------
+//Interruption function
+//------------------------------------------------------------------------------
+//INT1 interrupt on RB1
+//TMR0 interrupt timer0
+//------------------------------------------------------------------------------
 void __interrupt() isr(void)
 {
-    if((INT1IF==1)&&(INT1IE==1))
+    if((INT1IF==1)&&(INT1IE==1))//Interrupt on RB1
     {
-        if(INTEDG1==0)
+        if(INTEDG1==0)//Falling edge (detect press on LCD)
         {
-            INTEDG1=1;
-            INT1IF=0;
+            INTEDG1=1;//Change edge for waiting a raising edge
+            INT1IF=0;//clear flag
             XF_pushEvent(evPress,true);
 
         }
-        else if(INTEDG1==1)
+        else if(INTEDG1==1)//raising edge (detect release on LCD)
         {
-            INTEDG1=0;
-            INT1IF=0;
+            INTEDG1=0;//change edge for falling edge
+            INT1IF=0;//clear edge
             XF_pushEvent(evRelease,true);
-
-        }
-        
-        
+        }        
     }
-    if((TMR0IF==1)&&(TMR0IE==1))
+    if((TMR0IF==1)&&(TMR0IE==1))//Interrupt on timer 0
     {
-        XF_decrementAndQueueTimers(); 
-        TMR0H=0xFB;
+        XF_decrementAndQueueTimers(); //Decrement XF timerlist queue
+        TMR0H=0xFB;//reset timer for 10 ms
         TMR0L=0x1D;
-        TMR0IF=0;              
+        TMR0IF=0;//clear flag
     }
 }
+
+//------------------------------------------------------------------------------
+//main function
+//------------------------------------------------------------------------------
 void main(void) 
 {
-    Factory_init();
+    Factory_init();//Init all our stateMachine
     while(true)
     {
-        Factory_exec();
-          
+        Factory_exec();//Execute our programm         
     }
     return;
 }

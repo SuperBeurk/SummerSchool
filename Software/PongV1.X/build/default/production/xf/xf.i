@@ -9200,7 +9200,7 @@ unsigned char __t3rd16on(void);
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-
+# 41 "xf/xf.h"
 enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
@@ -9208,7 +9208,7 @@ typedef struct Timer
     Time tm;
     Event ev;
 } Timer;
-# 36 "xf/xf.h"
+# 56 "xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -9239,7 +9239,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 74 "xf/xf.h"
+# 94 "xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 

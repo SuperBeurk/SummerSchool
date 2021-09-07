@@ -301,8 +301,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "./class/gameParameters.h" 2
 
@@ -613,9 +625,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "./class/gameParameters.h" 2
 
@@ -9634,7 +9662,6 @@ unsigned char __t3rd16on(void);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9650,12 +9677,35 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 3 "./gameFunction.h" 2
 
@@ -9667,7 +9717,7 @@ void GameParameters_resetPos(struct GameParameters* s);
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-
+# 41 "./xf/xf.h"
 enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
@@ -9675,7 +9725,7 @@ typedef struct Timer
     Time tm;
     Event ev;
 } Timer;
-# 36 "./xf/xf.h"
+# 56 "./xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -9706,7 +9756,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 74 "./xf/xf.h"
+# 94 "./xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -9759,8 +9809,6 @@ void checkCollision(GameParameters* g);
 
 
 
-
-
 void moovePaddle1(GameParameters* g)
 {
 
@@ -9784,12 +9832,12 @@ void moovePaddle1(GameParameters* g)
 void moovePaddle2(GameParameters* g)
 {
 
-    if(g->p2.x+(50/2)<g->b.x)
+    if(g->p2.x+(50/2)<g->b.x-2)
     {
         Paddle_addX(&g->p2,2,1);
         XF_pushEvent(evRedrawPaddle2,0);
     }
-    else if(g->p2.x+(50/2)>g->b.x)
+    else if(g->p2.x+(50/2)>g->b.x+2)
     {
         Paddle_addX(&g->p2,2,0);
         XF_pushEvent(evRedrawPaddle2,0);
@@ -9805,6 +9853,7 @@ void mooveBall(GameParameters* g)
     checkCollision(g);
     Ball_Update(&g->b);
     XF_pushEvent(evRedrawBall,0);
+    XF_pushEvent(evRedrawScore,0);
 }
 
 
@@ -9847,7 +9896,7 @@ void checkCollision(GameParameters* g)
                 else if(g->b.x-g->p1.x<30)
                 {
 
-                    g->b.dx=g->b.dx;
+                    g->b.dx=-g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
                 else if(g->b.x-g->p1.x<40)
@@ -9893,7 +9942,7 @@ void checkCollision(GameParameters* g)
                 else if(g->b.x-g->p2.x<30)
                 {
 
-                    g->b.dx=g->b.dx;
+                    g->b.dx=-g->b.dx;
                     g->b.dy=-g->b.dy;
                 }
                 else if(g->b.x-g->p2.x<40)

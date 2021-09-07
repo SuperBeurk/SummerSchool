@@ -35,6 +35,7 @@ void Menu_parametersDraw(GameParameters* g)
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(BLACK);
+    LCD_DrawRect(0,160,239,160,1,WHITE);
     Score_draw(&g->s1);
     Paddle_draw(&g->p1);
     Paddle_draw(&g->p2);
