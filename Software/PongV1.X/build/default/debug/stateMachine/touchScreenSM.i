@@ -9852,8 +9852,12 @@ void configTouch()
     TRISB1=1;
     RBPU=0;
     WPUB=0b00000010;
+    TRISB3=0;
+    LATB3=1;
+    __nop();
     TRISB3=1;
     TRISB4=1;
+    INT1IF = 0;
     INT1IE=1;
 }
 void configMeasure(_Bool channel)

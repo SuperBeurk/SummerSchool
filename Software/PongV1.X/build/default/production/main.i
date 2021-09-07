@@ -11626,7 +11626,6 @@ void Factory_exec();
 
 
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-int i=0;
 void __attribute__((picinterrupt(("")))) isr(void)
 {
     if((INT1IF==1)&&(INT1IE==1))
@@ -11650,15 +11649,6 @@ void __attribute__((picinterrupt(("")))) isr(void)
     }
     if((TMR0IF==1)&&(TMR0IE==1))
     {
-        if(i<=5)
-        {
-            i++;
-        }
-        else
-        {
-            XF_scheduleTimer(5,evGameUpdate,1);
-            i=0;
-        }
         XF_decrementAndQueueTimers();
         TMR0H=0xFB;
         TMR0L=0x1D;

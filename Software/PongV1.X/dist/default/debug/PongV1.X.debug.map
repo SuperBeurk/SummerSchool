@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/debug\PongV1.X.debug.sym \
   --cmf=dist/default/debug\PongV1.X.debug.cmf -z -Q18LF25K22 \
-  -oC:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs21g.4 \
+  -oC:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs1n8.4 \
   --defsym=__MPLAB_BUILD=1 -Mdist/default/debug/PongV1.X.debug.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=01F0h-05FFh -pstack=STACK \
   -ACODE=00h-07FFFh -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs21g.o \
+  C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs1n8.o \
   dist/default/debug\PongV1.X.debug.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 18LF25K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs21g.o
+C:\Users\SEBAST~1.MET\AppData\Local\Temp\xcAs1n8.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 B0       B0        4        4       0
@@ -43,15 +43,15 @@ dist/default/debug\PongV1.X.debug.o
                 config                           300000   300000        E        0       4
                 temp                                 4E       4E        1        1       1
                 mediumconst                        783A     783A      7C6     3C1D       0
-                text87                             6390     6390       16        4       0
-                text86                             637A     637A       16        4       0
+                text87                             6398     6398       16        4       0
+                text86                             6382     6382       16        4       0
                 text85                             614A     614A       3C        4       0
                 text84                             583C     583C       B0        4       0
                 text83                             5DC0     5DC0       64        4       0
                 text82                             62B4     62B4       26        4       0
                 text81                             448E     448E      122        4       0
-                text79                             6364     6364       16        4       0
-                text78                             634E     634E       16        4       0
+                text79                             636C     636C       16        4       0
+                text78                             6356     6356       16        4       0
                 text77                             578C     578C       B0        4       0
                 text76                             5E86     5E86       60        4       0
                 text75                             2D08     2D08      33A        4       0
@@ -65,7 +65,7 @@ dist/default/debug\PongV1.X.debug.o
                 text67                             3DD8     3DD8      188        4       0
                 text66                             3F60     3F60      164        4       0
                 text65                             610A     610A       40        4       0
-                text64                             63C4     63C4        2        4       0
+                text64                             63CC     63CC        2        4       0
                 text63                             50E8     50E8       CA        4       0
                 text62                             60C6     60C6       44        4       0
                 text61                             5276     5276       C2        4       0
@@ -109,27 +109,27 @@ dist/default/debug\PongV1.X.debug.o
                 text23                             4AC2     4AC2       F4        4       0
                 text22                             299E     299E      36A        4       0
                 text21                             4E60     4E60       DC        4       0
-                text20                             63C2     63C2        2        4       0
-                text19                             6338     6338       16        4       0
-                text18                             6322     6322       16        4       0
+                text20                             63CA     63CA        2        4       0
+                text19                             6340     6340       16        4       0
+                text18                             632A     632A       16        4       0
                 text17                             2604     2604      39A        4       0
                 text16                             46BE     46BE      106        4       0
                 text15                             3A70     3A70      1B4        4       0
                 text14                             5FE4     5FE4       50        4       0
-                text13                             62DA     62DA       1A        4       0
+                text13                             62DA     62DA       22        4       0
                 text12                             35CC     35CC      26E        4       0
                 text11                             598A     598A       94        4       0
                 text10                             5EE6     5EE6       56        4       0
                 text9                              58EC     58EC       9E        4       0
                 text8                              3324     3324      2A8        4       0
                 text7                              5574     5574       B8        4       0
-                text6                              62F4     62F4       18        4       0
-                text5                              630C     630C       16        4       0
+                text6                              62FC     62FC       18        4       0
+                text5                              6314     6314       16        4       0
                 text4                              6186     6186       36        4       0
-                text3                              63B6     63B6        C        4       0
+                text3                              63BE     63BE        C        4       0
                 text2                              6218     6218       28        4       0
                 text1                              54B8     54B8       BC        4       0
-                text0                              63A6     63A6       10        4       0
+                text0                              63AE     63AE       10        4       0
                 cstackCOMRAM                          1        1       46        1       1
                 cstackBANK0                          60       60       55       60       1
                 cstackBANK1                         1EF      1EF        1      100       1
@@ -145,15 +145,15 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8       A8         0
                 init                                 B0       B0        4         0
                 reset_vec                             0        0        4         0
-                text87                             6390     6390       16         0
-                text86                             637A     637A       16         0
+                text87                             6398     6398       16         0
+                text86                             6382     6382       16         0
                 text85                             614A     614A       3C         0
                 text84                             583C     583C       B0         0
                 text83                             5DC0     5DC0       64         0
                 text82                             62B4     62B4       26         0
                 text81                             448E     448E      122         0
-                text79                             6364     6364       16         0
-                text78                             634E     634E       16         0
+                text79                             636C     636C       16         0
+                text78                             6356     6356       16         0
                 text77                             578C     578C       B0         0
                 text76                             5E86     5E86       60         0
                 text75                             2D08     2D08      33A         0
@@ -167,7 +167,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text67                             3DD8     3DD8      188         0
                 text66                             3F60     3F60      164         0
                 text65                             610A     610A       40         0
-                text64                             63C4     63C4        2         0
+                text64                             63CC     63CC        2         0
                 text63                             50E8     50E8       CA         0
                 text62                             60C6     60C6       44         0
                 text61                             5276     5276       C2         0
@@ -211,27 +211,27 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text23                             4AC2     4AC2       F4         0
                 text22                             299E     299E      36A         0
                 text21                             4E60     4E60       DC         0
-                text20                             63C2     63C2        2         0
-                text19                             6338     6338       16         0
-                text18                             6322     6322       16         0
+                text20                             63CA     63CA        2         0
+                text19                             6340     6340       16         0
+                text18                             632A     632A       16         0
                 text17                             2604     2604      39A         0
                 text16                             46BE     46BE      106         0
                 text15                             3A70     3A70      1B4         0
                 text14                             5FE4     5FE4       50         0
-                text13                             62DA     62DA       1A         0
+                text13                             62DA     62DA       22         0
                 text12                             35CC     35CC      26E         0
                 text11                             598A     598A       94         0
                 text10                             5EE6     5EE6       56         0
                 text9                              58EC     58EC       9E         0
                 text8                              3324     3324      2A8         0
                 text7                              5574     5574       B8         0
-                text6                              62F4     62F4       18         0
-                text5                              630C     630C       16         0
+                text6                              62FC     62FC       18         0
+                text5                              6314     6314       16         0
                 text4                              6186     6186       36         0
-                text3                              63B6     63B6        C         0
+                text3                              63BE     63BE        C         0
                 text2                              6218     6218       28         0
                 text1                              54B8     54B8       BC         0
-                text0                              63A6     63A6       10         0
+                text0                              63AE     63AE       10         0
                 cinit                              61BC     61BC       32         0
 
         CLASS   CONST          
@@ -286,7 +286,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00004E  00004F         1       1  COMRAM  
-                intcode                        000008  0063BE  0063C6         4       0  CODE    
+                intcode                        000008  0063C6  0063CE         4       0  CODE    
                 cstackBANK0                    000060  0000A0  000100        60       1  BANK0   
                 bssBANK1                       000100  0000F0  0001F0       100       1  BANK1   
                 mediumconst                    00783A  0007C6  008000      3C1D       0  MEDIUMCO
@@ -303,15 +303,15 @@ UNUSED ADDRESS RANGES
         BIGRAM           00004F-00005F               11
                          0001F0-0005FF              410
         CODE             000004-000007                4
-                         0063C6-007839             1474
+                         0063CE-007839             146C
         COMRAM           00004F-00005F               11
         CONST            000004-000007                4
-                         0063C6-007839             1474
+                         0063CE-007839             146C
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      0063C6-007839             1474
+        MEDIUMCONST      0063CE-007839             146C
         RAM              0001F0-0005FF              100
         SFR              000F38-000FFF               28
-        SMALLCONST       0063C6-007839              100
+        SMALLCONST       0063CE-007839              100
         STACK            0001F0-0005FF              410
 
                                   Symbol Table
@@ -507,15 +507,15 @@ _Ball_draw                            text74       0040C4
 _Ball_init                            text40       005B9A
 _CCP2CONbits                          (abs)        000F66
 _CCPR2L                               (abs)        000F67
-_ENTERCRITICAL                        text79       006364
+_ENTERCRITICAL                        text79       00636C
 _Factory_exec                         text10       005EE6
 _Factory_init                         text1        0054B8
 _GIE                                  (abs)        007F97
 _GameParameters_init                  text35       002220
 _GameParameters_resetPos              text26       0061EE
 _GameParameters_setBackLight          text32       006082
-_GameParameters_setX                  text19       006338
-_GameParameters_setY                  text18       006322
+_GameParameters_setX                  text19       006340
+_GameParameters_setY                  text18       00632A
 _INT1IE                               (abs)        007F83
 _INT1IF                               (abs)        007F80
 _INTEDG1                              (abs)        007F8D
@@ -543,7 +543,7 @@ _LCD_Read                             text50       00421A
 _LCD_SliderCreate                     text38       004BB6
 _LCD_SliderDraw                       text45       0045B0
 _LCD_SliderUpdate                     text46       001462
-_LEAVECRITICAL                        text78       00634E
+_LEAVECRITICAL                        text78       006356
 _Menu_endGame                         text47       0056DC
 _Menu_inGameDraw                      text55       005F3C
 _Menu_parametersDraw                  text44       005AA0
@@ -951,14 +951,14 @@ __activetblptr                        (abs)        000002
 __end_of_Ball_Update                  text30       005AA0
 __end_of_Ball_draw                    text74       00421A
 __end_of_Ball_init                    text40       005C10
-__end_of_ENTERCRITICAL                text79       00637A
+__end_of_ENTERCRITICAL                text79       006382
 __end_of_Factory_exec                 text10       005F3C
 __end_of_Factory_init                 text1        005574
 __end_of_GameParameters_init          text35       002604
 __end_of_GameParameters_resetPos      text26       006218
 __end_of_GameParameters_setBackLight  text32       0060C6
-__end_of_GameParameters_setX          text19       00634E
-__end_of_GameParameters_setY          text18       006338
+__end_of_GameParameters_setX          text19       006356
+__end_of_GameParameters_setY          text18       006340
 __end_of_LCD_Bitmap                   text51       000F74
 __end_of_LCD_ButtonCreate             text39       004AC2
 __end_of_LCD_ButtonDraw               text48       001462
@@ -974,7 +974,7 @@ __end_of_LCD_Read                     text50       00435C
 __end_of_LCD_SliderCreate             text38       004CA4
 __end_of_LCD_SliderDraw               text45       0046BE
 __end_of_LCD_SliderUpdate             text46       001938
-__end_of_LEAVECRITICAL                text78       006364
+__end_of_LEAVECRITICAL                text78       00636C
 __end_of_Menu_endGame                 text47       00578C
 __end_of_Menu_inGameDraw              text55       005F92
 __end_of_Menu_parametersDraw          text44       005B22
@@ -1009,34 +1009,34 @@ __end_of_arialNarrow_12ptFontInfo     mediumconst  007F86
 __end_of_backlightController          text31       001DD6
 __end_of_checkCollision               text28       00097E
 __end_of_configMeasure                text14       006034
-__end_of_configTouch                  text13       0062F4
+__end_of_configTouch                  text13       0062FC
 __end_of_displayController            text42       0048C8
-__end_of_displayInit                  text6        00630C
+__end_of_displayInit                  text6        006314
 __end_of_displaySM                    text41       0049C8
 __end_of_dtoa                         text60       003324
 __end_of_fputc                        text63       0051B2
 __end_of_fputs                        text62       00610A
 __end_of_gameControllerController     text22       002D08
-__end_of_gameControllerInit           text5        006322
+__end_of_gameControllerInit           text5        00632A
 __end_of_gameControllerSM             text21       004F3C
 __end_of_isr                          intcode      0000B0
-__end_of_main                         text0        0063B6
+__end_of_main                         text0        0063BE
 __end_of_mooveBall                    text27       006268
 __end_of_moovePaddle                  text23       004BB6
 __end_of_pad                          text61       005338
-__end_of_putch                        text64       0063C6
+__end_of_putch                        text64       0063CE
 __end_of_sleepController              text4        0061BC
 __end_of_sleepInit                    text2        006240
-__end_of_sleepSM                      text20       0063C4
+__end_of_sleepSM                      text20       0063CC
 __end_of_sprintf                      text57       005FE4
 __end_of_strlen                       text69       006082
 __end_of_touchScreenController        text12       00383A
-__end_of_touchScreenInit              text3        0063C2
+__end_of_touchScreenInit              text3        0063CA
 __end_of_touchScreenSM                text11       005A1E
 __end_of_vfpfcnvrt                    text59       003DD8
 __end_of_vfprintf                     text58       005E86
-__end_ofi2_ENTERCRITICAL              text87       0063A6
-__end_ofi2_LEAVECRITICAL              text86       006390
+__end_ofi2_ENTERCRITICAL              text87       0063AE
+__end_ofi2_LEAVECRITICAL              text86       006398
 __end_ofi2_XF_pushEvent               text83       005E24
 __end_ofi2___awmod                    text84       0058EC
 __end_ofi2___wmul                     text82       0062DA
@@ -1051,7 +1051,7 @@ __pcstackBANK1                        cstackBANK1  0001EF
 __pcstackCOMRAM                       cstackCOMRAM 000001
 __pintcode                            intcode      000008
 __pmediumconst                        mediumconst  00783A
-__ptext0                              text0        0063A6
+__ptext0                              text0        0063AE
 __ptext1                              text1        0054B8
 __ptext10                             text10       005EE6
 __ptext11                             text11       00598A
@@ -1061,10 +1061,10 @@ __ptext14                             text14       005FE4
 __ptext15                             text15       003A70
 __ptext16                             text16       0046BE
 __ptext17                             text17       002604
-__ptext18                             text18       006322
-__ptext19                             text19       006338
+__ptext18                             text18       00632A
+__ptext19                             text19       006340
 __ptext2                              text2        006218
-__ptext20                             text20       0063C2
+__ptext20                             text20       0063CA
 __ptext21                             text21       004E60
 __ptext22                             text22       00299E
 __ptext23                             text23       004AC2
@@ -1074,7 +1074,7 @@ __ptext26                             text26       0061EE
 __ptext27                             text27       006240
 __ptext28                             text28       0000B4
 __ptext29                             text29       005CF8
-__ptext3                              text3        0063B6
+__ptext3                              text3        0063BE
 __ptext30                             text30       005A1E
 __ptext31                             text31       001938
 __ptext32                             text32       006082
@@ -1096,7 +1096,7 @@ __ptext46                             text46       001462
 __ptext47                             text47       0056DC
 __ptext48                             text48       000F74
 __ptext49                             text49       00383A
-__ptext5                              text5        00630C
+__ptext5                              text5        006314
 __ptext50                             text50       00421A
 __ptext51                             text51       00097E
 __ptext52                             text52       005D5C
@@ -1107,12 +1107,12 @@ __ptext56                             text56       005016
 __ptext57                             text57       005F92
 __ptext58                             text58       005E24
 __ptext59                             text59       003C24
-__ptext6                              text6        0062F4
+__ptext6                              text6        0062FC
 __ptext60                             text60       003042
 __ptext61                             text61       005276
 __ptext62                             text62       0060C6
 __ptext63                             text63       0050E8
-__ptext64                             text64       0063C4
+__ptext64                             text64       0063CC
 __ptext65                             text65       00610A
 __ptext66                             text66       003F60
 __ptext67                             text67       003DD8
@@ -1127,16 +1127,16 @@ __ptext74                             text74       0040C4
 __ptext75                             text75       002D08
 __ptext76                             text76       005E86
 __ptext77                             text77       00578C
-__ptext78                             text78       00634E
-__ptext79                             text79       006364
+__ptext78                             text78       006356
+__ptext79                             text79       00636C
 __ptext8                              text8        003324
 __ptext81                             text81       00448E
 __ptext82                             text82       0062B4
 __ptext83                             text83       005DC0
 __ptext84                             text84       00583C
 __ptext85                             text85       00614A
-__ptext86                             text86       00637A
-__ptext87                             text87       006390
+__ptext86                             text86       006382
+__ptext87                             text87       006398
 __ptext9                              text9        0058EC
 __ramtop                              ramtop       000600
 __size_of_Ball_Update                 (abs)        000000
@@ -1238,36 +1238,36 @@ _configMeasure                        text14       005FE4
 _configTouch                          text13       0062DA
 _dbuf                                 bssBANK0     0000E0
 _displayController                    text42       0047C4
-_displayInit                          text6        0062F4
+_displayInit                          text6        0062FC
 _displaySM                            text41       0048C8
 _displayState                         bssBANK0     0000DD
 _dtoa                                 text60       003042
-_dtoa$4923                            cstackBANK0  000060
+_dtoa$4924                            cstackBANK0  000060
 _flags                                bssCOMRAM    00004B
 _fputc                                text63       0050E8
 _fputs                                text62       0060C6
 _g1                                   bssBANK1     000100
 _gameControllerController             text22       00299E
-_gameControllerInit                   text5        00630C
+_gameControllerInit                   text5        006314
 _gameControllerSM                     text21       004E60
 _gameStateMachine                     bssCOMRAM    00004D
 _isr                                  intcode      000008
-_main                                 text0        0063A6
+_main                                 text0        0063AE
 _mooveBall                            text27       006240
 _moovePaddle                          text23       004AC2
 _nout                                 bssBANK0     0000DB
 _pad                                  text61       005276
 _prec                                 bssCOMRAM    000049
-_putch                                text64       0063C4
+_putch                                text64       0063CC
 _sleepController                      text4        006186
 _sleepInit                            text2        006218
-_sleepSM                              text20       0063C2
+_sleepSM                              text20       0063CA
 _sleepState                           bssBANK0     0000DF
 _sprintf                              text57       005F92
 _strlen                               text69       006034
 _theXF                                bssBANK0     0000B5
 _touchScreenController                text12       0035CC
-_touchScreenInit                      text3        0063B6
+_touchScreenInit                      text3        0063BE
 _touchScreenSM                        text11       00598A
 _touchScreenState                     bssBANK0     0000DE
 _vfpfcnvrt                            text59       003C24
@@ -1307,8 +1307,8 @@ i2LEAVECRITICAL@inISR                 cstackCOMRAM 000001
 i2XF_pushEvent@ev                     cstackCOMRAM 000008
 i2XF_pushEvent@inISR                  cstackCOMRAM 000007
 i2XF_pushEvent@temp                   cstackCOMRAM 000009
-i2_ENTERCRITICAL                      text87       006390
-i2_LEAVECRITICAL                      text86       00637A
+i2_ENTERCRITICAL                      text87       006398
+i2_LEAVECRITICAL                      text86       006382
 i2_XF_pushEvent                       text83       005DC0
 i2___awmod                            text84       00583C
 i2___awmod@counter                    cstackCOMRAM 000005
@@ -1378,9 +1378,9 @@ C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c estimated size: 196
 
 class/gameParameters.c
-		_GameParameters_setX		CODE           	6338	0000	22
+		_GameParameters_setX		CODE           	6340	0000	22
 		_GameParameters_init		CODE           	2220	0000	996
-		_GameParameters_setY		CODE           	6322	0000	22
+		_GameParameters_setY		CODE           	632A	0000	22
 		_GameParameters_setBackLight		CODE           	6082	0000	68
 		_GameParameters_resetPos		CODE           	61EE	0000	42
 
@@ -1407,7 +1407,7 @@ class/score.c
 class/score.c estimated size: 248
 
 stateMachine/sleepSM.c
-		_sleepSM       		CODE           	63C2	0000	2
+		_sleepSM       		CODE           	63CA	0000	2
 		_sleepInit     		CODE           	6218	0000	40
 		_sleepController		CODE           	6186	0000	54
 
@@ -1424,7 +1424,7 @@ C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c estimated size: 68
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
-		_putch         		CODE           	63C4	0000	2
+		_putch         		CODE           	63CC	0000	2
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c estimated size: 2
 
@@ -1439,13 +1439,13 @@ C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c estimated size: 64
 
 stateMachine/touchScreenSM.c
-		_configTouch   		CODE           	62DA	0000	26
-		_touchScreenInit		CODE           	63B6	0000	12
+		_configTouch   		CODE           	62DA	0000	34
+		_touchScreenInit		CODE           	63BE	0000	12
 		_touchScreenController		CODE           	35CC	0000	622
 		_configMeasure 		CODE           	5FE4	0000	80
 		_touchScreenSM 		CODE           	598A	0000	148
 
-stateMachine/touchScreenSM.c estimated size: 888
+stateMachine/touchScreenSM.c estimated size: 896
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
 		___aomod       		CODE           	3F60	0000	356
@@ -1462,10 +1462,10 @@ shared
 		_arialNarrow_12ptFontInfo		MEDIUMCONST    	7F7F	0000	7
 		i2_XF_pushEvent		CODE           	5DC0	0000	100
 		_arialNarrow_12ptBitmaps		MEDIUMCONST    	783B	0000	1575
-		i2_ENTERCRITICAL		CODE           	6390	0000	22
+		i2_ENTERCRITICAL		CODE           	6398	0000	22
 		i2___wmul      		CODE           	62B4	0000	38
 		__initialization		CODE           	61BC	0000	36
-		i2_LEAVECRITICAL		CODE           	637A	0000	22
+		i2_LEAVECRITICAL		CODE           	6382	0000	22
 		i2___awmod     		CODE           	583C	0000	176
 		_arialNarrow_12ptDescriptors		MEDIUMCONST    	7E62	0000	285
 
@@ -1483,7 +1483,7 @@ C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c estimated 
 
 stateMachine/display.c
 		_displaySM     		CODE           	48C8	0000	256
-		_displayInit   		CODE           	62F4	0000	24
+		_displayInit   		CODE           	62FC	0000	24
 		_displayController		CODE           	47C4	0000	260
 
 stateMachine/display.c estimated size: 540
@@ -1518,11 +1518,11 @@ xf/xf.c
 		_XF_popEvent   		CODE           	5E86	0000	96
 		_XF_init       		CODE           	5574	0000	184
 		_XF_pushEvent  		CODE           	5CF8	0000	100
-		_ENTERCRITICAL 		CODE           	6364	0000	22
+		_ENTERCRITICAL 		CODE           	636C	0000	22
 		_XF_decrementAndQueueTimers		CODE           	448E	0000	290
 		_XF_unscheduleTimer		CODE           	614A	0000	60
 		_XF_scheduleTimer		CODE           	5C10	0000	116
-		_LEAVECRITICAL 		CODE           	634E	0000	22
+		_LEAVECRITICAL 		CODE           	6356	0000	22
 
 xf/xf.c estimated size: 890
 
@@ -1564,13 +1564,13 @@ stateMachine/gameController.c
 		_mooveBall     		CODE           	6240	0000	40
 		_gameControllerController		CODE           	299E	0000	874
 		_backlightController		CODE           	1938	0000	1182
-		_gameControllerInit		CODE           	630C	0000	22
+		_gameControllerInit		CODE           	6314	0000	22
 		_gameControllerSM		CODE           	4E60	0000	220
 
 stateMachine/gameController.c estimated size: 4832
 
 main.c
-		_main          		CODE           	63A6	0000	16
+		_main          		CODE           	63AE	0000	16
 		_isr           		CODE           	0008	0000	168
 
 main.c estimated size: 184

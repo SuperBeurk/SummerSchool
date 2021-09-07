@@ -9826,12 +9826,13 @@ void gameControllerSM(Event ev,GameParameters* g)
             if(ev==evOnePlayer)
             {
                 gameStateMachine=LOCAL;
+                XF_scheduleTimer(5,evGameUpdate,1);
             }
             break;
             if(ev==evTwoPlayer)
             {
                 gameStateMachine=ONLINE;
-
+                XF_scheduleTimer(5,evGameUpdate,0);
             }
         case PARAMETERS:
             gameControllerController(g,NULLEVENT);
@@ -9916,6 +9917,7 @@ void gameControllerController(GameParameters* g,Event ev)
                     g->p2.x=g->b.x;
                 }
                 XF_pushEvent(evRedrawPaddle2,0);
+                XF_scheduleTimer(5,evGameUpdate,1);
             }
             break;
         case ONLINE:

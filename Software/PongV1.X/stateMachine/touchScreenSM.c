@@ -95,8 +95,6 @@ void touchScreenController(GameParameters* g)
             //Pin configuration for realease touch
             ADCON0=0b00101000;
             configTouch();
-            INT1IF=0;
-            INT1IE=1;
             
             //Save value if screen still press
             if(PORTBbits.RB1 == 0)
@@ -125,9 +123,13 @@ void configTouch()
     _TSC_YU=0;          
     _DIR_XR=1;//X+ input/interrupt/pullup
     RBPU=0;
-    WPUB=0b00000010;       
+    WPUB=0b00000010;    
+    _DIR_XL=0;
+    _TSC_XL=1;//charger le condo
+    NOP();
     _DIR_XL=1;//X- open           
     _DIR_YD=1;//Y+ open
+    INT1IF = 0;
     INT1IE=1;
 }
 void configMeasure(bool channel)
