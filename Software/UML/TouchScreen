@@ -1,0 +1,15 @@
+@startuml
+(*) --> if "TouchScreenState" then
+  -right-> [Waiting] "ConfigTouch"
+  else
+    -down-> [CalculatePosition] "ConfigMeasure\nReading Analog in X"
+    --> "ConfigMeasure\nReading Analog in Y"
+    --> "ConfigTouch for release"
+    --> if "Still press" then
+    --> [true] "Save value"
+    --> (*)
+    else
+    -->[false] "Don't save value"
+    --> (*)
+
+@enduml

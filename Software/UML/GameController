@@ -1,0 +1,74 @@
+@startuml
+title No Game
+(*) --> "btnParam"
+  --> if "Press?" then
+  -left-> [Yes] "Push evParameters"
+  else
+  --> [No] "btnOnePlayer"
+"Push evParameters" --> "btnOnePlayer"
+  if "Press?" then
+  -left-> [Yes] "Push evOnePlayer"
+  else
+  --> [No] "btnTwoPlayer"
+  "Push evOnePlayer" --> btnTwoPlayer
+  if "Press?" then
+  -left-> [Yes] "Push evTwoPlayer"
+  else
+  --> [No] (*)
+  "Push evTwoPlayer" --> (*)
+
+@enduml
+
+@startuml
+title Parameters
+(*) --> "sldBackLight"
+  --> if "Press?" then
+  -left-> [Yes] "Update Luminosity"
+  else
+  --> [No] "sldLevel"
+"Update Luminosity" --> "sldLevel"
+  if "Press?" then
+  -left-> [Yes] "Update Level"
+  else
+  --> [No] "btnLeaveParam"
+  "Update Level" --> btnLeaveParam
+  if "Press?" then
+  -left-> [Yes] "Push evLeaveParam"
+  else
+  --> [No] (*)
+  "Push evLeaveParam" --> (*)
+
+@enduml
+
+@startuml
+title Local
+(*) --> if "evTimerPos" then
+  --> [true] "MovePaddle"
+  else
+    -left-> if "evGameUpdate" then
+    --> [true] "Move Ball\nMove IA Paddle\nStart Timer with level"
+
+  "MovePaddle" --> (*)
+  "Move Ball\nMove IA Paddle\nStart Timer with level" --> (*)
+
+@enduml
+
+@startuml
+(*) --> "No Game"
+(*) --> "Parameters"
+(*) --> "Local"
+(*) --> "EndGame"
+(*) --> "Online"
+
+"No Game" --> [btnParameters] "Push evParameters"
+"No Game" --> [btnOnePlayer] "Push evOnePlayer"
+"No Game" --> [btnTwoPlayer] "Push evTwoPlayer"
+
+"Parameters" --> [sldParam] "Ajust Luminosity\nChange level"
+"Ajust Luminosity\nChange level" --> [evLeaveParam] "Parameters"
+"Local" --> [evTimerPos] "Move Paddle"
+"Local" --> [evGameUpdate] "Move Ball\nMove IA Paddle"
+
+"EndGame" --> [btnNewGame] "Push evNewGame"
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+(*) --> if "Int Flag on\n& Enable on" then
+  --> if "Falling Edge" then
+    -left-> [true] "Change Edge\nClear flag\nPush evPress"
+    else
+      if "Rising Edge" then
+      --> [true] "Change Edge\nClear flag\nPush evRelease"
+      -right-> (*)
+    endif
+  endif
+endif
+
+(*) --> if "Timer flag on \n & timer enable on" then
+--> [true] "Decrement queue timer\n & clear timer"
+--> (*)
+
+@enduml
