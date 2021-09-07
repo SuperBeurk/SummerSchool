@@ -1,74 +1,91 @@
-/*
- * File:   display.c
- * Author: sebastie.metral
- *
- * Created on 30. août 2021, 12:40
- */
 #include "display.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 extern const FONT_INFO arialNarrow_12ptFontInfo;
-
+//all state for this stateMachine
 typedef enum state4{WELCOME,PARAMETERS,INGAME,ENDGAME} state4;
 state4 displayState;
 
+//------------------------------------------------------------------------------
+//Initialize displaySM
+//------------------------------------------------------------------------------
+//State:    WELCOME,default state
+//------------------------------------------------------------------------------
 void displayInit(GameParameters* g)
 {
-    //Default state
-    displayState=WELCOME;
-    displayController(g,NULLEVENT);    
+
+    displayState=WELCOME;    //Default state
+    displayController(g,NULLEVENT);    //action to do
 }
 
 //------------------------------------------------------------------------------
-//State machine method
+//Statemachine of displaySM
+//------------------------------------------------------------------------------
+//State:    WELCOME
+//          PARAMETERS
+//          INGAME
+//          ENDGAME
 //------------------------------------------------------------------------------
 void displaySM(Event ev, GameParameters* g)
 {
    switch(displayState)
     {
         case WELCOME: 
-            if((ev==evOnePlayer)||(ev==evTwoPlayer))
+            if((ev==evOnePlayer)||(ev==evTwoPlayer))//if we want to play in 1 or 2 player mode
             {
-                displayState=INGAME;
-                Menu_inGameDraw(g);
-                displayController(g,ev);
+                displayState=INGAME;//change state
+                Menu_inGameDraw(g);//display ingame menu
+                displayController(g,ev);//action to do
             }
-            if(ev==evParameters)
+            if(ev==evParameters)//if we want to update parameters
             {
-                displayState=PARAMETERS;
-                displayController(g,ev);
+                displayState=PARAMETERS;//change state
+                displayController(g,ev);//action to do
             }
             break;
+//------------------------------------------------------------------------------
         case PARAMETERS:
-            if(ev==evLeaveParam)
+            if(ev==evLeaveParam)//if we want to leave parameters
             {
-                displayState=WELCOME;
-                displayController(g,ev);
+                displayState=WELCOME;//change state
+                displayController(g,ev);//action to do
             }
             break;
+//------------------------------------------------------------------------------
         case INGAME:
-            if(ev==evEndGame)
+            if(ev==evEndGame)//if we loose our game
             {
-                displayState=ENDGAME;                           
-                displayController(g,ev);
+                displayState=ENDGAME;//change state                     
+                displayController(g,ev);//action to do
             }
-            else
+            else//if we are still in game
             {
-                displayController(g,ev);
+                displayController(g,ev);//redraw elemtn that need to be redraw
             }
             break;
+//------------------------------------------------------------------------------
        case ENDGAME:
-           if(ev==evNewGame)
+           if(ev==evNewGame)//if we want to replay a game
            {
-               displayState=WELCOME;
-               displayController(g,ev);
+               displayState=WELCOME;//change state
+               displayController(g,ev);//action to do
            }
             break;
+//------------------------------------------------------------------------------
         default:
             break;
     } 
 }
+
+//------------------------------------------------------------------------------
+//Action to do on a state
+//------------------------------------------------------------------------------
+//State:    WELCOME,    display welcome menu
+//          PARAMETERS, display parameters menu
+//          INGAME,     redraw ingame element
+//          ENDGAME,    display endgame menu
+//------------------------------------------------------------------------------
 void displayController(GameParameters* g,Event ev)
 {
     switch(displayState)
@@ -77,10 +94,12 @@ void displayController(GameParameters* g,Event ev)
             //Display Welcome Menu
             Menu_welcomeDraw(g);
             break;
+//------------------------------------------------------------------------------
         case PARAMETERS:
             //Display Parameters menu
             Menu_parametersDraw(g);
             break;
+//------------------------------------------------------------------------------
         case INGAME:
             //Update draw element depending on event
             if(ev==evRedrawPaddle1)
@@ -98,12 +117,14 @@ void displayController(GameParameters* g,Event ev)
             if(ev==evRedrawScore)
             {
                 Score_draw(&g->s1);
+                LCD_DrawRect(0,160,239,160,1,WHITE);//Midlle line
             }
             break;
+//------------------------------------------------------------------------------
         case ENDGAME:
-            Menu_endGame(g);
+            Menu_endGame(g);//Display engame menu
             break;
-            
+//------------------------------------------------------------------------------            
         default:
             break;
     }

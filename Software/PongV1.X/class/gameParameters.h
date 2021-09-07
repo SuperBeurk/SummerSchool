@@ -9,9 +9,8 @@
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
-    uint16_t x;
-    uint16_t y;
+    uint16_t x;//save x touchscreen position
+    uint16_t y;//save y touchescreen position
     uint16_t level;
     btn_t btnParam;
     btn_t btnOnePlayer;
@@ -25,11 +24,34 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+//------------------------------------------------------------------------------
+//Method that will initialize the struct
+//------------------------------------------------------------------------------
 void GameParameters_init(struct GameParameters* s);
+
+//------------------------------------------------------------------------------
+//Method that will set the luminosity from 0 to 100%
+//------------------------------------------------------------------------------
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+//------------------------------------------------------------------------------
+//Method that will set the level
+//------------------------------------------------------------------------------
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+//------------------------------------------------------------------------------
+//Method that will set X_tsc position value
+//------------------------------------------------------------------------------
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+//------------------------------------------------------------------------------
+//Method that will set Y_tsc position value
+//------------------------------------------------------------------------------
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+//------------------------------------------------------------------------------
+//Method that will reset tsc position value
+//------------------------------------------------------------------------------
 void GameParameters_resetPos(struct GameParameters* s);
 #endif

@@ -8,28 +8,30 @@ extern const FONT_INFO arialNarrow_12ptFontInfo;
 //global variable
 GameParameters g1;
 
+//------------------------------------------------------------------------------
+//Method that will initialize our program
+//------------------------------------------------------------------------------
 void Factory_init()
 {
     
     PLLEN = 1;           // activate PLL x4
     OSCCON = 0b01110000; // for 64MHz cpu clock (default is 8MHz)
     __delay_ms(100);     // Caution -> the PLL needs up to 2 [ms] to start !  
+    
     //LCD
     LCD_Init();
     LCD_Fill(BLUE);
     LCD_DrawText("MenuStart",&arialNarrow_12ptFontInfo,A_CENTER,50,50,BLACK,WHITE);
-    
-
-    
-    //Interrupt
+       
+    //Interrupt INT1
     GIE=1;
     INT1IE=0;
     INTEDG1=0;
     TRISC0=0;
     LATC0=1;
     
-
-    T0CON=0b10000110;
+    //Interrupt timer 10ms
+    T0CON=0b10000110;//prescaler 128
     TMR0H=0xFB;
     TMR0L=0x1D;
     TMR0IE=1;
@@ -44,6 +46,7 @@ void Factory_init()
     T2CONbits.T2CKPS0 = 1;  // 4. Set TMR2 prescale and enable Timer2
     T2CONbits.T2CKPS1 = 0;
     T2CONbits.TMR2ON = 1;
+    
     //AD
     ADCON2=0b10100110;
     
@@ -53,12 +56,16 @@ void Factory_init()
     sleepInit(&g1);
 
 }
+
+//------------------------------------------------------------------------------
+//Method that will execute our program
+//------------------------------------------------------------------------------
 void Factory_exec()
 {
     //read the next event
     Event ev;
     ev = XF_popEvent(false);
-    if (ev != NULLEVENT)
+    if (ev != NULLEVENT)//if there is an event, send it on all stateMachine
     {
         sleepSM(ev);
         touchScreenSM(ev,&g1);

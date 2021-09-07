@@ -7,12 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "stateMachine/touchScreenSM.c" 2
-
-
-
-
-
-
 # 1 "stateMachine/touchScreenSM.h" 1
 # 20 "stateMachine/touchScreenSM.h"
 # 1 "stateMachine/../xf/xf.h" 1
@@ -130,7 +124,7 @@ typedef uint32_t uint_fast32_t;
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-
+# 41 "stateMachine/../xf/xf.h"
 enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
@@ -138,7 +132,7 @@ typedef struct Timer
     Time tm;
     Event ev;
 } Timer;
-# 36 "stateMachine/../xf/xf.h"
+# 56 "stateMachine/../xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -169,7 +163,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 74 "stateMachine/../xf/xf.h"
+# 94 "stateMachine/../xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -366,8 +360,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "stateMachine/../class/gameParameters.h" 2
 
@@ -678,9 +684,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "stateMachine/../class/gameParameters.h" 2
 
@@ -9699,7 +9721,6 @@ unsigned char __t3rd16on(void);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9715,12 +9736,35 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 22 "stateMachine/touchScreenSM.h" 2
 
@@ -9752,7 +9796,7 @@ void configTouch();
 
 
 void configMeasure(_Bool channel);
-# 7 "stateMachine/touchScreenSM.c" 2
+# 1 "stateMachine/touchScreenSM.c" 2
 
 
 
@@ -9763,6 +9807,8 @@ typedef enum state3{WAITING,CALCULATEPOSITION} state3;
 extern const FONT_INFO arialNarrow_12ptFontInfo;
 state3 touchScreenState;
 
+extern XF theXF;
+
 
 
 
@@ -9772,6 +9818,7 @@ void touchScreenInit()
 {
     touchScreenState=WAITING;
     configTouch();
+    XF_scheduleTimer(3000,evTimer30,0);
 }
 
 
@@ -9807,7 +9854,7 @@ void touchScreenSM(Event ev, GameParameters* g)
             break;
     }
 }
-# 70 "stateMachine/touchScreenSM.c"
+# 67 "stateMachine/touchScreenSM.c"
 void touchScreenController(GameParameters* g)
 {
     char s[20];
@@ -9817,12 +9864,19 @@ void touchScreenController(GameParameters* g)
         case WAITING:
 
             INTEDG1=0;
+            XF_scheduleTimer(3000,evTimer30,0);
             configTouch();
-
 
             break;
 
         case CALCULATEPOSITION:
+            for (int i=0; i<8; i++)
+            {
+                if (theXF.timerList[i].ev == evTimer30)
+                {
+                    XF_unscheduleTimer(i, 0);
+                }
+            }
 
 
 

@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/../libraries/lcd_highlevel.h: 18: {
 [s S2 `uc 1 `uc 1 `uc 1 `*CS1 1 `*Cuc 1 ]
 [n S2 . height start_char end_char descriptor bitmap ]
-"19 class/score.c
-[; ;class/score.c: 19:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_LEFT,0,0,0b1111111111111111,0b0000000000000000);
+"35 class/score.c
+[; ;class/score.c: 35:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_LEFT,20,170,0b1111111111111111,0b0000000000000000);
 [c E47 0 1 2 .. ]
 [n E47 . A_LEFT A_RIGHT A_CENTER  ]
 "271 class/../libraries/lcd_highlevel.h
@@ -23,98 +23,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2 class/score.c
 [; ;class/score.c: 2: extern const FONT_INFO arialNarrow_12ptFontInfo;
 [v _arialNarrow_12ptFontInfo `CS2 ~T0 @X0 0 e ]
-"3 class/score.c
-[; ;class/score.c: 3: void Score_init(struct Score* s)
+"7 class/score.c
+[; ;class/score.c: 7: void Score_init(struct Score* s)
 [v _Score_init `(v ~T0 @X0 1 ef1`*S14 ]
-"4
-[; ;class/score.c: 4: {
+"8
+[; ;class/score.c: 8: {
 {
 [e :U _Score_init ]
-"3
-[; ;class/score.c: 3: void Score_init(struct Score* s)
-[v _s `*S14 ~T0 @X0 1 r1 ]
-"4
-[; ;class/score.c: 4: {
-[f ]
-"5
-[; ;class/score.c: 5:     s->homeScore = 0;
-[e = . *U _s 0 -> -> 0 `i `us ]
-"6
-[; ;class/score.c: 6:     s->awayScore = 0;
-[e = . *U _s 1 -> -> 0 `i `us ]
 "7
-[; ;class/score.c: 7: }
-[e :UE 15 ]
-}
-"8
-[; ;class/score.c: 8: void Score_setHomeScore(struct Score* s, uint16_t value)
-[v _Score_setHomeScore `(v ~T0 @X0 1 ef2`*S14`us ]
-"9
-[; ;class/score.c: 9: {
-{
-[e :U _Score_setHomeScore ]
-"8
-[; ;class/score.c: 8: void Score_setHomeScore(struct Score* s, uint16_t value)
+[; ;class/score.c: 7: void Score_init(struct Score* s)
 [v _s `*S14 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"9
-[; ;class/score.c: 9: {
+"8
+[; ;class/score.c: 8: {
 [f ]
+"9
+[; ;class/score.c: 9:     s->homeScore = 0;
+[e = . *U _s 0 -> -> 0 `i `us ]
 "10
-[; ;class/score.c: 10:     s->homeScore = value;
-[e = . *U _s 0 _value ]
+[; ;class/score.c: 10:     s->awayScore = 0;
+[e = . *U _s 1 -> -> 0 `i `us ]
 "11
 [; ;class/score.c: 11: }
-[e :UE 16 ]
-}
-"12
-[; ;class/score.c: 12: void Score_setAwayScore(struct Score* s, uint16_t value)
-[v _Score_setAwayScore `(v ~T0 @X0 1 ef2`*S14`us ]
-"13
-[; ;class/score.c: 13: {
-{
-[e :U _Score_setAwayScore ]
-"12
-[; ;class/score.c: 12: void Score_setAwayScore(struct Score* s, uint16_t value)
-[v _s `*S14 ~T0 @X0 1 r1 ]
-[v _value `us ~T0 @X0 1 r2 ]
-"13
-[; ;class/score.c: 13: {
-[f ]
-"14
-[; ;class/score.c: 14:     s->awayScore = value;
-[e = . *U _s 1 _value ]
-"15
-[; ;class/score.c: 15: }
-[e :UE 17 ]
+[e :UE 15 ]
 }
 "16
-[; ;class/score.c: 16: void Score_draw(struct Score* s)
-[v _Score_draw `(v ~T0 @X0 1 ef1`*S14 ]
+[; ;class/score.c: 16: void Score_setHomeScore(struct Score* s, uint16_t value)
+[v _Score_setHomeScore `(v ~T0 @X0 1 ef2`*S14`us ]
 "17
 [; ;class/score.c: 17: {
 {
-[e :U _Score_draw ]
+[e :U _Score_setHomeScore ]
 "16
-[; ;class/score.c: 16: void Score_draw(struct Score* s)
+[; ;class/score.c: 16: void Score_setHomeScore(struct Score* s, uint16_t value)
 [v _s `*S14 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
 "17
 [; ;class/score.c: 17: {
 [f ]
 "18
-[; ;class/score.c: 18:     sprintf(s->str,"%d",s->homeScore);
-[e ( _sprintf (1 , (. , &U . *U _s 2 :s 1C -> . *U _s 0 `ui ]
+[; ;class/score.c: 18:     s->homeScore = value;
+[e = . *U _s 0 _value ]
 "19
-[; ;class/score.c: 19:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_LEFT,0,0,0b1111111111111111,0b0000000000000000);
-[e ( _LCD_DrawText (4 , , , , , , -> &U . *U _s 2 `*Cuc &U _arialNarrow_12ptFontInfo . `E47 0 -> -> 0 `i `us -> -> 0 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
-"20
-[; ;class/score.c: 20:     sprintf(s->str,"%d",s->awayScore);
+[; ;class/score.c: 19: }
+[e :UE 16 ]
+}
+"24
+[; ;class/score.c: 24: void Score_setAwayScore(struct Score* s, uint16_t value)
+[v _Score_setAwayScore `(v ~T0 @X0 1 ef2`*S14`us ]
+"25
+[; ;class/score.c: 25: {
+{
+[e :U _Score_setAwayScore ]
+"24
+[; ;class/score.c: 24: void Score_setAwayScore(struct Score* s, uint16_t value)
+[v _s `*S14 ~T0 @X0 1 r1 ]
+[v _value `us ~T0 @X0 1 r2 ]
+"25
+[; ;class/score.c: 25: {
+[f ]
+"26
+[; ;class/score.c: 26:     s->awayScore = value;
+[e = . *U _s 1 _value ]
+"27
+[; ;class/score.c: 27: }
+[e :UE 17 ]
+}
+"32
+[; ;class/score.c: 32: void Score_draw(struct Score* s)
+[v _Score_draw `(v ~T0 @X0 1 ef1`*S14 ]
+"33
+[; ;class/score.c: 33: {
+{
+[e :U _Score_draw ]
+"32
+[; ;class/score.c: 32: void Score_draw(struct Score* s)
+[v _s `*S14 ~T0 @X0 1 r1 ]
+"33
+[; ;class/score.c: 33: {
+[f ]
+"34
+[; ;class/score.c: 34:     sprintf(s->str,"%d",s->homeScore);
+[e ( _sprintf (1 , (. , &U . *U _s 2 :s 1C -> . *U _s 0 `ui ]
+"35
+[; ;class/score.c: 35:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_LEFT,20,170,0b1111111111111111,0b0000000000000000);
+[e ( _LCD_DrawText (4 , , , , , , -> &U . *U _s 2 `*Cuc &U _arialNarrow_12ptFontInfo . `E47 0 -> -> 20 `i `us -> -> 170 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
+"36
+[; ;class/score.c: 36:     sprintf(s->str,"%d",s->awayScore);
 [e ( _sprintf (1 , (. , &U . *U _s 2 :s 2C -> . *U _s 1 `ui ]
-"21
-[; ;class/score.c: 21:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_RIGHT,239,0,0b1111111111111111,0b0000000000000000);
-[e ( _LCD_DrawText (4 , , , , , , -> &U . *U _s 2 `*Cuc &U _arialNarrow_12ptFontInfo . `E47 1 -> -> 239 `i `us -> -> 0 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
-"22
-[; ;class/score.c: 22: }
+"37
+[; ;class/score.c: 37:     LCD_DrawText(s->str,&arialNarrow_12ptFontInfo,A_LEFT,20,138,0b1111111111111111,0b0000000000000000);
+[e ( _LCD_DrawText (4 , , , , , , -> &U . *U _s 2 `*Cuc &U _arialNarrow_12ptFontInfo . `E47 0 -> -> 20 `i `us -> -> 138 `i `us -> -> 65535 `ui `us -> -> 0 `i `us ]
+"38
+[; ;class/score.c: 38: }
 [e :UE 18 ]
 }
 [p f _sprintf 8388736 ]

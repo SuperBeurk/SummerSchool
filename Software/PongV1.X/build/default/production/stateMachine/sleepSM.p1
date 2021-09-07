@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[c E6551 0 1 2 .. ]
-[n E6551 state1 WAKEUP BACKLIGHTOFF SLEEP  ]
+"4 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 4: state1 sleepState;
+[c E6548 0 1 .. ]
+[n E6548 state1 WAKEUP SLEEP  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -32,10 +32,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S18 `us 1 `us 1 `uc -> 2 `i ]
 [n S18 Score homeScore awayScore str ]
 "10 ./class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight player x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
-"7 stateMachine/display.h
-[; ;stateMachine/display.h: 7: void displayInit(GameParameters* g);
+[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
+[n S839 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
+"13 stateMachine/display.h
+[; ;stateMachine/display.h: 13: void displayInit(GameParameters* g);
 [v _displayInit `(v ~T0 @X0 0 ef1`*S839 ]
 "12 stateMachine/gameController.h
 [; ;stateMachine/gameController.h: 12: void gameControllerInit(GameParameters* g);
@@ -43,9 +43,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30 stateMachine/touchScreenSM.h
 [; ;stateMachine/touchScreenSM.h: 30: void touchScreenInit();
 [v _touchScreenInit `(v ~T0 @X0 0 e? ]
-"10 stateMachine/sleepSM.h
-[; ;stateMachine/sleepSM.h: 10: void sleepController();
+"32 stateMachine/sleepSM.h
+[; ;stateMachine/sleepSM.h: 32: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
+"32 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 32:             if(ev==evTimer30)
+[c E39 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+"37 stateMachine/sleepSM.h
+[; ;stateMachine/sleepSM.h: 37: void configPinSleep();
+[v _configPinSleep `(v ~T0 @X0 0 e? ]
+"8025 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 8025: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"7581
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 7581: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"7245
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 7245: extern volatile unsigned char LATA __attribute__((address(0xF89)));
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"17880
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17880: extern volatile __bit LATC0 __attribute__((address(0x7C58)));
+[v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
+"3256
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 3256: extern volatile unsigned char CCPR2L __attribute__((address(0xF67)));
+[v _CCPR2L `Vuc ~T0 @X0 0 e@3943 ]
+"17886
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17886: extern volatile __bit LATC2 __attribute__((address(0x7C5A)));
+[v _LATC2 `Vb ~T0 @X0 0 e@31834 ]
+"17889
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17889: extern volatile __bit LATC3 __attribute__((address(0x7C5B)));
+[v _LATC3 `Vb ~T0 @X0 0 e@31835 ]
+"17892
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17892: extern volatile __bit LATC4 __attribute__((address(0x7C5C)));
+[v _LATC4 `Vb ~T0 @X0 0 e@31836 ]
+"17895
+[; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17895: extern volatile __bit LATC5 __attribute__((address(0x7C5D)));
+[v _LATC5 `Vb ~T0 @X0 0 e@31837 ]
+"53 stateMachine/touchScreenSM.h
+[; ;stateMachine/touchScreenSM.h: 53: void configTouch();
+[v _configTouch `(v ~T0 @X0 0 e? ]
 "55 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 55: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -778,9 +815,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16576
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 16576: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 9: state1 sleepState;
-[v _sleepState `E6551 ~T0 @X0 1 e ]
+"4 stateMachine/sleepSM.c
+[; ;stateMachine/sleepSM.c: 4: state1 sleepState;
+[v _sleepState `E6548 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
 [v _sleepInit `(v ~T0 @X0 1 ef1`*S839 ]
@@ -796,89 +833,182 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6551 0 ]
-"14
-[; ;stateMachine/sleepSM.c: 14:     displayInit(g);
-[e ( _displayInit (1 _g ]
+[e = _sleepState . `E6548 0 ]
 "15
-[; ;stateMachine/sleepSM.c: 15:     gameControllerInit(g);
-[e ( _gameControllerInit (1 _g ]
+[; ;stateMachine/sleepSM.c: 15:     displayInit(g);
+[e ( _displayInit (1 _g ]
 "16
-[; ;stateMachine/sleepSM.c: 16:     touchScreenInit();
-[e ( _touchScreenInit ..  ]
+[; ;stateMachine/sleepSM.c: 16:     gameControllerInit(g);
+[e ( _gameControllerInit (1 _g ]
 "17
-[; ;stateMachine/sleepSM.c: 17:     sleepController();
-[e ( _sleepController ..  ]
+[; ;stateMachine/sleepSM.c: 17:     touchScreenInit();
+[e ( _touchScreenInit ..  ]
 "18
-[; ;stateMachine/sleepSM.c: 18: }
+[; ;stateMachine/sleepSM.c: 18:     sleepController();
+[e ( _sleepController ..  ]
+"19
+[; ;stateMachine/sleepSM.c: 19: }
 [e :UE 840 ]
 }
-"19
-[; ;stateMachine/sleepSM.c: 19: void sleepSM(Event ev)
+"27
+[; ;stateMachine/sleepSM.c: 27: void sleepSM(Event ev)
 [v _sleepSM `(v ~T0 @X0 1 ef1`uc ]
-"20
-[; ;stateMachine/sleepSM.c: 20: {
+"28
+[; ;stateMachine/sleepSM.c: 28: {
 {
 [e :U _sleepSM ]
-"19
-[; ;stateMachine/sleepSM.c: 19: void sleepSM(Event ev)
+"27
+[; ;stateMachine/sleepSM.c: 27: void sleepSM(Event ev)
 [v _ev `uc ~T0 @X0 1 r1 ]
-"20
-[; ;stateMachine/sleepSM.c: 20: {
+"28
+[; ;stateMachine/sleepSM.c: 28: {
 [f ]
-"52
-[; ;stateMachine/sleepSM.c: 52: }
+"29
+[; ;stateMachine/sleepSM.c: 29:     switch(sleepState)
+[e $U 843  ]
+"30
+[; ;stateMachine/sleepSM.c: 30:     {
+{
+"31
+[; ;stateMachine/sleepSM.c: 31:         case WAKEUP:
+[e :U 844 ]
+"32
+[; ;stateMachine/sleepSM.c: 32:             if(ev==evTimer30)
+[e $ ! == -> _ev `i -> . `E39 3 `i 845  ]
+"33
+[; ;stateMachine/sleepSM.c: 33:             {
+{
+"34
+[; ;stateMachine/sleepSM.c: 34:                sleepState=SLEEP;
+[e = _sleepState . `E6548 1 ]
+"35
+[; ;stateMachine/sleepSM.c: 35:                sleepController();
+[e ( _sleepController ..  ]
+"36
+[; ;stateMachine/sleepSM.c: 36:             }
+}
+[e :U 845 ]
+"37
+[; ;stateMachine/sleepSM.c: 37:             break;
+[e $U 842  ]
+"39
+[; ;stateMachine/sleepSM.c: 39:         case SLEEP:
+[e :U 846 ]
+"40
+[; ;stateMachine/sleepSM.c: 40:             break;
+[e $U 842  ]
+"42
+[; ;stateMachine/sleepSM.c: 42:         default:
+[e :U 847 ]
+"43
+[; ;stateMachine/sleepSM.c: 43:             break;
+[e $U 842  ]
+"44
+[; ;stateMachine/sleepSM.c: 44:     }
+}
+[e $U 842  ]
+[e :U 843 ]
+[e [\ -> _sleepState `ui , $ -> . `E6548 0 `ui 844
+ , $ -> . `E6548 1 `ui 846
+ 847 ]
+[e :U 842 ]
+"45
+[; ;stateMachine/sleepSM.c: 45: }
 [e :UE 841 ]
 }
-"53
-[; ;stateMachine/sleepSM.c: 53: void sleepController()
-[v _sleepController `(v ~T0 @X0 1 ef ]
 "54
-[; ;stateMachine/sleepSM.c: 54: {
+[; ;stateMachine/sleepSM.c: 54: void sleepController()
+[v _sleepController `(v ~T0 @X0 1 ef ]
+"55
+[; ;stateMachine/sleepSM.c: 55: {
 {
 [e :U _sleepController ]
 [f ]
-"55
-[; ;stateMachine/sleepSM.c: 55:     switch(sleepState)
-[e $U 844  ]
 "56
-[; ;stateMachine/sleepSM.c: 56:     {
-{
+[; ;stateMachine/sleepSM.c: 56:     switch(sleepState)
+[e $U 850  ]
 "57
-[; ;stateMachine/sleepSM.c: 57:         case WAKEUP:
-[e :U 845 ]
+[; ;stateMachine/sleepSM.c: 57:     {
+{
+"58
+[; ;stateMachine/sleepSM.c: 58:         case WAKEUP:
+[e :U 851 ]
+"59
+[; ;stateMachine/sleepSM.c: 59:             break;
+[e $U 849  ]
 "61
-[; ;stateMachine/sleepSM.c: 61:             break;
-[e $U 843  ]
+[; ;stateMachine/sleepSM.c: 61:         case SLEEP:
+[e :U 852 ]
 "62
-[; ;stateMachine/sleepSM.c: 62:         case BACKLIGHTOFF:
-[e :U 846 ]
+[; ;stateMachine/sleepSM.c: 62:             configPinSleep();
+[e ( _configPinSleep ..  ]
+"63
+[; ;stateMachine/sleepSM.c: 63:             __asm(" sleep");
+[; <"  sleep ;# ">
 "64
-[; ;stateMachine/sleepSM.c: 64:             break;
-[e $U 843  ]
+[; ;stateMachine/sleepSM.c: 64:             __asm(" reset");
+[; <"  reset ;# ">
 "65
-[; ;stateMachine/sleepSM.c: 65:         case SLEEP:
-[e :U 847 ]
+[; ;stateMachine/sleepSM.c: 65:             break;
+[e $U 849  ]
+"67
+[; ;stateMachine/sleepSM.c: 67:         default:
+[e :U 853 ]
 "68
 [; ;stateMachine/sleepSM.c: 68:             break;
-[e $U 843  ]
+[e $U 849  ]
 "69
-[; ;stateMachine/sleepSM.c: 69:         default:
-[e :U 848 ]
-"70
-[; ;stateMachine/sleepSM.c: 70:             break;
-[e $U 843  ]
-"71
-[; ;stateMachine/sleepSM.c: 71:     }
+[; ;stateMachine/sleepSM.c: 69:     }
 }
-[e $U 843  ]
-[e :U 844 ]
-[e [\ -> _sleepState `ui , $ -> . `E6551 0 `ui 845
- , $ -> . `E6551 1 `ui 846
- , $ -> . `E6551 2 `ui 847
- 848 ]
-[e :U 843 ]
-"72
-[; ;stateMachine/sleepSM.c: 72: }
-[e :UE 842 ]
+[e $U 849  ]
+[e :U 850 ]
+[e [\ -> _sleepState `ui , $ -> . `E6548 0 `ui 851
+ , $ -> . `E6548 1 `ui 852
+ 853 ]
+[e :U 849 ]
+"70
+[; ;stateMachine/sleepSM.c: 70: }
+[e :UE 848 ]
+}
+"75
+[; ;stateMachine/sleepSM.c: 75: void configPinSleep()
+[v _configPinSleep `(v ~T0 @X0 1 ef ]
+"76
+[; ;stateMachine/sleepSM.c: 76: {
+{
+[e :U _configPinSleep ]
+[f ]
+"77
+[; ;stateMachine/sleepSM.c: 77:     TRISC=0b10000010;
+[e = _TRISC -> -> 130 `i `uc ]
+"78
+[; ;stateMachine/sleepSM.c: 78:     TRISA=0;
+[e = _TRISA -> -> 0 `i `uc ]
+"79
+[; ;stateMachine/sleepSM.c: 79:     LATA=0xFF;
+[e = _LATA -> -> 255 `i `uc ]
+"80
+[; ;stateMachine/sleepSM.c: 80:     LATC0=0;
+[e = _LATC0 -> -> 0 `i `b ]
+"81
+[; ;stateMachine/sleepSM.c: 81:     CCPR2L=0;
+[e = _CCPR2L -> -> 0 `i `uc ]
+"82
+[; ;stateMachine/sleepSM.c: 82:     LATC2=1;
+[e = _LATC2 -> -> 1 `i `b ]
+"83
+[; ;stateMachine/sleepSM.c: 83:     LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
+"84
+[; ;stateMachine/sleepSM.c: 84:     LATC4=1;
+[e = _LATC4 -> -> 1 `i `b ]
+"85
+[; ;stateMachine/sleepSM.c: 85:     LATC5=1;
+[e = _LATC5 -> -> 1 `i `b ]
+"86
+[; ;stateMachine/sleepSM.c: 86:     configTouch();
+[e ( _configTouch ..  ]
+"87
+[; ;stateMachine/sleepSM.c: 87: }
+[e :UE 854 ]
 }

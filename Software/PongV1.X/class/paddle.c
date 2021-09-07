@@ -30,14 +30,14 @@ void Paddle_addX(struct Paddle* p,uint16_t value,uint16_t add)
     if(add==1)
     {
         p->x=(p->x)+value;
-        if((p->x+_PADDLE_WIDTH)>239)
+        if((p->x+_PADDLE_WIDTH)>239)//check if step is out of screen border right
         {
             p->x=239-(_PADDLE_WIDTH);
         }
     }
     else
     {
-        if((p->x)<value+1)
+        if((p->x)<value+1)//check if step is out of screen border left
         {
             p->x=0;
         }

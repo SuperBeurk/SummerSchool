@@ -9274,7 +9274,7 @@ unsigned char __t3rd16on(void);
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-
+# 41 "./xf/xf.h"
 enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
@@ -9282,7 +9282,7 @@ typedef struct Timer
     Time tm;
     Event ev;
 } Timer;
-# 36 "./xf/xf.h"
+# 56 "./xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -9313,7 +9313,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 74 "./xf/xf.h"
+# 94 "./xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -9524,8 +9524,20 @@ typedef struct Ball
     int16_t dx;
     int16_t dy;
 }Ball;
+
+
+
+
 void Ball_init(struct Ball* b);
+
+
+
+
 void Ball_Update(struct Ball* b);
+
+
+
+
 void Ball_draw(struct Ball* b);
 # 5 "./stateMachine/../class/../class/gameParameters.h" 2
 
@@ -9772,9 +9784,25 @@ typedef struct Score
     uint16_t awayScore;
     char str[2];
 }Score;
+
+
+
+
 void Score_init(struct Score* s);
+
+
+
+
 void Score_setHomeScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_setAwayScore(struct Score* s, uint16_t value);
+
+
+
+
 void Score_draw(struct Score* s);
 # 7 "./stateMachine/../class/../class/gameParameters.h" 2
 
@@ -9782,7 +9810,6 @@ void Score_draw(struct Score* s);
 typedef struct GameParameters
 {
     uint16_t backlight;
-    uint16_t player;
     uint16_t x;
     uint16_t y;
     uint16_t level;
@@ -9798,12 +9825,35 @@ typedef struct GameParameters
     Paddle p2;
     Score s1;
 }GameParameters;
+
+
+
+
 void GameParameters_init(struct GameParameters* s);
+
+
+
+
 void GameParameters_setBackLight(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setLevel(struct GameParameters* s, uint16_t value);
-void GameParameters_setPlayer(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setX(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_setY(struct GameParameters* s, uint16_t value);
+
+
+
+
 void GameParameters_resetPos(struct GameParameters* s);
 # 4 "./stateMachine/../class/menu.h" 2
 
@@ -9829,8 +9879,16 @@ void Menu_endGame(GameParameters* g);
 # 5 "./stateMachine/display.h" 2
 
 
+
+
+
+
+
+
 void displayInit(GameParameters* g);
+# 23 "./stateMachine/display.h"
 void displaySM(Event ev,GameParameters* g);
+# 33 "./stateMachine/display.h"
 void displayController(GameParameters* g,Event ev);
 # 4 "./stateMachine/sleepSM.h" 2
 
@@ -9919,9 +9977,22 @@ void configMeasure(_Bool channel);
 # 6 "./stateMachine/sleepSM.h" 2
 
 
+
+
+
+
+
+
 void sleepInit(GameParameters* g);
+# 23 "./stateMachine/sleepSM.h"
 void sleepSM(Event ev);
+# 32 "./stateMachine/sleepSM.h"
 void sleepController();
+
+
+
+
+void configPinSleep();
 # 10 "main.c" 2
 
 
@@ -11671,15 +11742,17 @@ const FONT_INFO arialNarrow_12ptFontInfo =
 
 
 
+
+
+
 void Factory_init();
+
+
+
+
 void Factory_exec();
 # 12 "main.c" 2
-
-
-
-
-
-extern const FONT_INFO arialNarrow_12ptFontInfo;
+# 23 "main.c"
 void __attribute__((picinterrupt(("")))) isr(void)
 {
     if((INT1IF==1)&&(INT1IE==1))
@@ -11696,10 +11769,7 @@ void __attribute__((picinterrupt(("")))) isr(void)
             INTEDG1=0;
             INT1IF=0;
             XF_pushEvent(evRelease,1);
-
         }
-
-
     }
     if((TMR0IF==1)&&(TMR0IE==1))
     {
@@ -11709,13 +11779,16 @@ void __attribute__((picinterrupt(("")))) isr(void)
         TMR0IF=0;
     }
 }
+
+
+
+
 void main(void)
 {
     Factory_init();
     while(1)
     {
         Factory_exec();
-
     }
     return;
 }
