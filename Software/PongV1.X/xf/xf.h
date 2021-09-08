@@ -24,12 +24,13 @@ typedef  uint8_t  TimerID;  // identifier of timer (position in buffer)
 //0.NULLEVENT
 //1.evPress             Event for detect a press on LCD
 //2.evRelease           Event for detect a release on LCD
-//3.evTimer30           Timer for no touch and turn pic in sleep mode   (20s)
+//3.evSleep             Timer for no touch and turn pic in sleep mode   (20s), 
+//                      or enter directly in sleep mode via the turn off button
 //4.evTimerpos          Timer for recalcul a position                   (90ms)
 //5.evOnePlayer         Event for play in 1 player mode
 //6.evTwoPlayer         Event for play in 2 player mode
 //7.evParameters        Event for enter in parameters mode
-//8.evLeaveParam        Event for leave parameters mode
+//8.evLeave             Event for returning to main menu
 //9.evEndGame           Event for loosing a game
 //10.evGameUpdate       Timer for updating game element                 (50ms)
 //11.evRedrawPaddle1    Event for redraw the local paddle
@@ -38,7 +39,7 @@ typedef  uint8_t  TimerID;  // identifier of timer (position in buffer)
 //14.evRedrawScore      Event for redraw the score
 //15.evNewGame          Event for playing a new game
 //------------------------------------------------------------------------------
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
+enum myEvents{NULLEVENT,evPress,evRelease,evSleep,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeave,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer        // timer structure
 {

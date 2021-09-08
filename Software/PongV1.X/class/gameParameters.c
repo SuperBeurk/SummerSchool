@@ -18,12 +18,16 @@ void GameParameters_init(struct GameParameters* s)
     Paddle_init(&(s->p1),0);
     Paddle_init(&(s->p2),1);
     
-    //create button and slider
-    LCD_ButtonCreate(130,50,90,20,WHITE,BLACK,"Parametres",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnParam),1);
-    LCD_ButtonCreate(10,250,70,20,WHITE,BLACK,"1 Player",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnOnePlayer),2);
-    LCD_ButtonCreate(150,250,70,20,WHITE,BLACK,"2 Player",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnTwoPlayer),3);
-    LCD_ButtonCreate(210,10,20,20,WHITE,RED,"X",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnLeaveParam),4);
-    LCD_ButtonCreate(150,220,70,50,BLACK,WHITE,"New Game",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnNewGame),5);
+    //create button and slider    
+    LCD_ButtonCreate(10,200,90,30,BLACK,WHITE,"1 Player",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnOnePlayer),1);
+    LCD_ButtonCreate(140,200,90,30,BLACK,WHITE,"2 Player",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnTwoPlayer),2);
+    LCD_ButtonCreate(10,250,90,30,BLACK,WHITE,"Parametres",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnParam),3);
+    LCD_ButtonCreate(140,250,90,30,BLACK,WHITE,"Turn Off",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnTurnOff),4);
+    
+    LCD_ButtonCreate(220,0,20,20,BLACK,RED,"X",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnLeave),5);
+    LCD_ButtonCreate(10,250,90,30,BLACK,WHITE,"New Game",&arialNarrow_12ptFontInfo,NULL,NULL,NULL,&(s->btnNewGame),6);
+    
+    
     LCD_SliderCreate(50,110,165,20,BLACK,WHITE,RED,0,11,NULL,&(s->sldBackLight));
     LCD_SliderCreate(50,160,165,20,BLACK,WHITE,RED,0,3,NULL,&(s->sldLevel));
 }

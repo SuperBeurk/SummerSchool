@@ -9671,8 +9671,9 @@ typedef struct GameParameters
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
-    btn_t btnLeaveParam;
+    btn_t btnLeave;
     btn_t btnNewGame;
+    btn_t btnTurnOff;
     sld_t sldBackLight;
     sld_t sldLevel;
     Ball b;
@@ -9740,11 +9741,13 @@ extern const FONT_INFO arialNarrow_12ptFontInfo;
 
 void Menu_welcomeDraw(GameParameters* g)
 {
-    LCD_Fill(0b1111111111111111);
-    LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,0b0000000000000000,0b1111111111111111);
-    LCD_ButtonDraw(&(g->btnParam));
+    LCD_Fill(0b0000000000000000);
+    LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,120,50,0b1111111111111111,0b0000000000000000);
+
     LCD_ButtonDraw(&(g->btnOnePlayer));
     LCD_ButtonDraw(&(g->btnTwoPlayer));
+    LCD_ButtonDraw(&(g->btnParam));
+    LCD_ButtonDraw(&(g->btnTurnOff));
 }
 
 
@@ -9752,15 +9755,15 @@ void Menu_welcomeDraw(GameParameters* g)
 
 void Menu_parametersDraw(GameParameters* g)
 {
-    LCD_Fill(0b1111111111111111);
-    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_LEFT,10,50,0b0000000000000000,0b1111111111111111);
-    LCD_ButtonDraw(&(g->btnLeaveParam));
+    LCD_Fill(0b0000000000000000);
+    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,120,50,0b1111111111111111,0b0000000000000000);
+    LCD_ButtonDraw(&(g->btnLeave));
     g->sldBackLight.value=g->backlight;
     LCD_SliderDraw(&(g->sldBackLight));
-    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,0b0000000000000000,0b1111111111111111);
+    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,0b1111111111111111,0b0000000000000000);
     g->sldLevel.value=g->level;
     LCD_SliderDraw(&(g->sldLevel));
-    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,0b0000000000000000,0b1111111111111111);
+    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,0b1111111111111111,0b0000000000000000);
 }
 
 
@@ -9769,6 +9772,7 @@ void Menu_parametersDraw(GameParameters* g)
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(0b0000000000000000);
+    LCD_ButtonDraw(&(g->btnLeave));
     LCD_DrawRect(0,160,239,160,1,0b1111111111111111);
     Score_draw(&g->s1);
     Paddle_draw(&g->p1);
@@ -9783,6 +9787,7 @@ void Menu_endGame(GameParameters* g)
 {
     LCD_Fill(0b0000000000000000);
     LCD_ButtonDraw(&(g->btnNewGame));
+    LCD_ButtonDraw(&(g->btnTurnOff));
 
     if(g->s1.homeScore==0)
     {

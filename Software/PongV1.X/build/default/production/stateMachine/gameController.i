@@ -125,15 +125,15 @@ typedef uint32_t uint_fast32_t;
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-# 41 "stateMachine/../xf/xf.h"
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
+# 42 "stateMachine/../xf/xf.h"
+enum myEvents{NULLEVENT,evPress,evRelease,evSleep,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeave,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
 {
     Time tm;
     Event ev;
 } Timer;
-# 56 "stateMachine/../xf/xf.h"
+# 57 "stateMachine/../xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -164,7 +164,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 94 "stateMachine/../xf/xf.h"
+# 95 "stateMachine/../xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -9725,8 +9725,9 @@ typedef struct GameParameters
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
-    btn_t btnLeaveParam;
+    btn_t btnLeave;
     btn_t btnNewGame;
+    btn_t btnTurnOff;
     sld_t sldBackLight;
     sld_t sldLevel;
     Ball b;
@@ -9956,20 +9957,21 @@ void gameControllerSM(Event ev,GameParameters* g)
 
         case PARAMETERS:
             gameControllerController(g,NULLEVENT);
-            if(ev==evLeaveParam)
+            if(ev==evLeave)
             {
                 gameStateMachine=NOGAME;
             }
             break;
 
         case LOCAL:
-            if(ev==evEndGame)
+            gameControllerController(g,ev);
+            if(ev==evLeave)
+            {
+                gameStateMachine=NOGAME;
+            }
+            else if(ev==evEndGame)
             {
                 gameStateMachine=ENDGAME;
-            }
-            else
-            {
-                gameControllerController(g,ev);
             }
             break;
 
@@ -9984,7 +9986,7 @@ void gameControllerSM(Event ev,GameParameters* g)
             break;
     }
 }
-# 88 "stateMachine/gameController.c"
+# 89 "stateMachine/gameController.c"
 void gameControllerController(GameParameters* g,Event ev)
 {
     switch(gameStateMachine)
@@ -10006,6 +10008,12 @@ void gameControllerController(GameParameters* g,Event ev)
                 XF_pushEvent(evTwoPlayer,0);
                 GameParameters_resetPos(g);
             }
+            if(LCD_InButton(&(g->btnTurnOff),g->x,g->y))
+            {
+                XF_pushEvent(evSleep,0);
+                GameParameters_resetPos(g);
+            }
+
             break;
 
         case PARAMETERS:
@@ -10023,14 +10031,20 @@ void gameControllerController(GameParameters* g,Event ev)
                 GameParameters_resetPos(g);
             }
 
-            if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
+            if(LCD_InButton(&(g->btnLeave),g->x,g->y))
             {
-                XF_pushEvent(evLeaveParam,0);
+                XF_pushEvent(evLeave,0);
                 GameParameters_resetPos(g);
             }
             break;
 
         case LOCAL:
+            if(LCD_InButton(&(g->btnLeave),g->x,g->y))
+            {
+                XF_pushEvent(evLeave,0);
+                GameParameters_resetPos(g);
+            }
+
             if (ev==evTimerPos)
             {
 
@@ -10057,6 +10071,11 @@ void gameControllerController(GameParameters* g,Event ev)
                 GameParameters_init(g);
                 XF_pushEvent(evNewGame,0);
                 gameStateMachine=NOGAME;
+            }
+            if(LCD_InButton(&(g->btnTurnOff),g->x,g->y))
+            {
+                XF_pushEvent(evSleep,0);
+                GameParameters_resetPos(g);
             }
             break;
 

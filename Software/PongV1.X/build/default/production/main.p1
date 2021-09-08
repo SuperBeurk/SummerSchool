@@ -16,19 +16,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17730
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 17730: extern volatile __bit INTEDG1 __attribute__((address(0x7F8D)));
 [v _INTEDG1 `Vb ~T0 @X0 0 e@32653 ]
-"78 ./stateMachine/../class/../xf/xf.h
+"79 ./stateMachine/../class/../xf/xf.h
 [v _XF_pushEvent `(a ~T0 @X0 0 ef2`uc`a ]
 "31 main.c
 [; ;main.c: 31:             XF_pushEvent(evPress,1);
 [c E5738 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+[n E5738 myEvents NULLEVENT evPress evRelease evSleep evTimerPos evOnePlayer evTwoPlayer evParameters evLeave evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "19290 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 19290: extern volatile __bit TMR0IF __attribute__((address(0x7F92)));
 [v _TMR0IF `Vb ~T0 @X0 0 e@32658 ]
 "19287
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 19287: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
 [v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
-"109 ./stateMachine/../class/../xf/xf.h
+"110 ./stateMachine/../class/../xf/xf.h
 [v _XF_decrementAndQueueTimers `(v ~T0 @X0 0 e? ]
 "15396 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 15396: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));

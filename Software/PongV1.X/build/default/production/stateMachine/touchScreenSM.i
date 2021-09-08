@@ -124,15 +124,15 @@ typedef uint32_t uint_fast32_t;
 typedef uint8_t Event;
 typedef uint16_t Time;
 typedef uint8_t TimerID;
-# 41 "stateMachine/../xf/xf.h"
-enum myEvents{NULLEVENT,evPress,evRelease,evTimer30,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeaveParam,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
+# 42 "stateMachine/../xf/xf.h"
+enum myEvents{NULLEVENT,evPress,evRelease,evSleep,evTimerPos,evOnePlayer,evTwoPlayer,evParameters,evLeave,evEndGame,evGameUpdate,evRedrawPaddle1,evRedrawPaddle2,evRedrawBall,evRedrawScore,evNewGame};
 
 typedef struct Timer
 {
     Time tm;
     Event ev;
 } Timer;
-# 56 "stateMachine/../xf/xf.h"
+# 57 "stateMachine/../xf/xf.h"
 typedef struct XF
 {
     Timer timerList[8];
@@ -163,7 +163,7 @@ _Bool XF_pushEvent(Event ev, _Bool inISR);
 
 
 Event XF_popEvent(_Bool inISR);
-# 94 "stateMachine/../xf/xf.h"
+# 95 "stateMachine/../xf/xf.h"
 TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 
 
@@ -9727,8 +9727,9 @@ typedef struct GameParameters
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
-    btn_t btnLeaveParam;
+    btn_t btnLeave;
     btn_t btnNewGame;
+    btn_t btnTurnOff;
     sld_t sldBackLight;
     sld_t sldLevel;
     Ball b;
@@ -9818,7 +9819,7 @@ void touchScreenInit()
 {
     touchScreenState=WAITING;
     configTouch();
-    XF_scheduleTimer(3000,evTimer30,0);
+    XF_scheduleTimer(3000,evSleep,0);
 }
 
 
@@ -9857,14 +9858,12 @@ void touchScreenSM(Event ev, GameParameters* g)
 # 67 "stateMachine/touchScreenSM.c"
 void touchScreenController(GameParameters* g)
 {
-    char s[20];
-
     switch(touchScreenState)
     {
         case WAITING:
 
             INTEDG1=0;
-            XF_scheduleTimer(3000,evTimer30,0);
+            XF_scheduleTimer(3000,evSleep,0);
             configTouch();
 
             break;
@@ -9872,7 +9871,7 @@ void touchScreenController(GameParameters* g)
         case CALCULATEPOSITION:
             for (int i=0; i<8; i++)
             {
-                if (theXF.timerList[i].ev == evTimer30)
+                if (theXF.timerList[i].ev == evSleep)
                 {
                     XF_unscheduleTimer(i, 0);
                 }
@@ -9908,11 +9907,7 @@ void touchScreenController(GameParameters* g)
 
             if(PORTBbits.RB1 == 0)
             {
-                sprintf(s,"X: %d",valueX);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,0b0000000000000000,0b1111111111111111);
                 GameParameters_setX(g,valueX);
-                sprintf(s,"Y: %d",valueY);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,0b0000000000000000,0b1111111111111111);
                 GameParameters_setY(g,valueY);
             }
 

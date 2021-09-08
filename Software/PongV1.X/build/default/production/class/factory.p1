@@ -28,8 +28,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S836 `us 1 `us 1 `uc -> 2 `i ]
 [n S836 Score homeScore awayScore str ]
 "10 ./class/gameParameters.h
-[s S837 `us 1 `us 1 `us 1 `us 1 `S829 1 `S829 1 `S829 1 `S829 1 `S829 1 `S830 1 `S830 1 `S831 1 `S832 1 `S832 1 `S836 1 ]
-[n S837 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
+[s S837 `us 1 `us 1 `us 1 `us 1 `S829 1 `S829 1 `S829 1 `S829 1 `S829 1 `S829 1 `S830 1 `S830 1 `S831 1 `S832 1 `S832 1 `S836 1 ]
+[n S837 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeave btnNewGame btnTurnOff sldBackLight sldLevel b p1 p2 s1 ]
 "18381 ../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 18381: extern volatile __bit PLLEN __attribute__((address(0x7CDE)));
 [v _PLLEN `Vb ~T0 @X0 0 e@31966 ]
@@ -125,19 +125,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12642
 [; ;../../../../../../../Program Files/Microchip/xc8/v2.32/pic/include/proc\pic18lf25k22.h: 12642: extern volatile unsigned char ADCON2 __attribute__((address(0xFC0)));
 [v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
-"70 class/../xf/xf.h
+"71 class/../xf/xf.h
 [v _XF_init `(v ~T0 @X0 0 e? ]
-"31 ./class/gameParameters.h
+"32 ./class/gameParameters.h
 [v _GameParameters_init `(v ~T0 @X0 0 ef1`*S837 ]
 "14 class/../stateMachine/sleepSM.h
 [; ;class/../stateMachine/sleepSM.h: 14: void sleepInit(GameParameters* g);
 [v _sleepInit `(v ~T0 @X0 0 ef1`*S837 ]
-"85 class/../xf/xf.h
+"86 class/../xf/xf.h
 [v _XF_popEvent `(uc ~T0 @X0 0 ef1`a ]
 "68 class/factory.c
 [; ;class/factory.c: 68:     if (ev != NULLEVENT)
-[c E6456 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E6456 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+[c E6457 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E6457 myEvents NULLEVENT evPress evRelease evSleep evTimerPos evOnePlayer evTwoPlayer evParameters evLeave evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "23 class/../stateMachine/sleepSM.h
 [; ;class/../stateMachine/sleepSM.h: 23: void sleepSM(Event ev);
 [v _sleepSM `(v ~T0 @X0 0 ef1`uc ]
@@ -2980,7 +2980,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ev ( _XF_popEvent (1 -> -> 0 `i `a ]
 "68
 [; ;class/factory.c: 68:     if (ev != NULLEVENT)
-[e $ ! != -> _ev `i -> . `E6456 0 `i 842  ]
+[e $ ! != -> _ev `i -> . `E6457 0 `i 842  ]
 "69
 [; ;class/factory.c: 69:     {
 {
