@@ -19,7 +19,7 @@ void touchScreenInit()
 {
     touchScreenState=WAITING;//default state
     configTouch();//config pin for touch
-    XF_scheduleTimer(3000,evTimer30,false);
+    XF_scheduleTimer(3000,evSleep,false);
 }
 
 //------------------------------------------------------------------------------
@@ -66,14 +66,12 @@ void touchScreenSM(Event ev, GameParameters* g)
 //------------------------------------------------------------------------------
 void touchScreenController(GameParameters* g)
 {
-    char s[20];
-
     switch(touchScreenState)
     {
         case WAITING:
             //1.Reset TimerPos
             INTEDG1=0;//Interrupt on falling edge
-            XF_scheduleTimer(3000,evTimer30,false);
+            XF_scheduleTimer(3000,evSleep,false);
             configTouch();//Pin configuration for press touch               
             //3.Create TimerSleep
             break;
@@ -81,7 +79,7 @@ void touchScreenController(GameParameters* g)
         case CALCULATEPOSITION:
             for (int i=0; i<MAXTIMER; i++)
             {
-                if (theXF.timerList[i].ev == evTimer30)
+                if (theXF.timerList[i].ev == evSleep)
                 {
                     XF_unscheduleTimer(i, false);
                 }
@@ -117,11 +115,7 @@ void touchScreenController(GameParameters* g)
                        
             if(PORTBbits.RB1 == 0)//Save value if screen still press
             {
-                sprintf(s,"X: %d",valueX);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,200,BLACK,WHITE);
-                GameParameters_setX(g,valueX);
-                sprintf(s,"Y: %d",valueY);
-                LCD_DrawText(s,&arialNarrow_12ptFontInfo,A_RIGHT,200,250,BLACK,WHITE);  
+                GameParameters_setX(g,valueX); 
                 GameParameters_setY(g,valueY);
             }            
             //------------------------------------------------------------------

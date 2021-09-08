@@ -9665,8 +9665,9 @@ typedef struct GameParameters
     btn_t btnParam;
     btn_t btnOnePlayer;
     btn_t btnTwoPlayer;
-    btn_t btnLeaveParam;
+    btn_t btnLeave;
     btn_t btnNewGame;
+    btn_t btnTurnOff;
     sld_t sldBackLight;
     sld_t sldLevel;
     Ball b;
@@ -9726,11 +9727,15 @@ void GameParameters_init(struct GameParameters* s)
     Paddle_init(&(s->p2),1);
 
 
-    LCD_ButtonCreate(130,50,90,20,0b1111111111111111,0b0000000000000000,"Parametres",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnParam),1);
-    LCD_ButtonCreate(10,250,70,20,0b1111111111111111,0b0000000000000000,"1 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnOnePlayer),2);
-    LCD_ButtonCreate(150,250,70,20,0b1111111111111111,0b0000000000000000,"2 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnTwoPlayer),3);
-    LCD_ButtonCreate(210,10,20,20,0b1111111111111111,0b1111100000000000,"X",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnLeaveParam),4);
-    LCD_ButtonCreate(150,220,70,50,0b0000000000000000,0b1111111111111111,"New Game",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnNewGame),5);
+    LCD_ButtonCreate(10,200,90,30,0b0000000000000000,0b1111111111111111,"1 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnOnePlayer),1);
+    LCD_ButtonCreate(140,200,90,30,0b0000000000000000,0b1111111111111111,"2 Player",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnTwoPlayer),2);
+    LCD_ButtonCreate(10,250,90,30,0b0000000000000000,0b1111111111111111,"Parametres",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnParam),3);
+    LCD_ButtonCreate(140,250,90,30,0b0000000000000000,0b1111111111111111,"Turn Off",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnTurnOff),4);
+
+    LCD_ButtonCreate(220,0,20,20,0b0000000000000000,0b1111100000000000,"X",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnLeave),5);
+    LCD_ButtonCreate(10,250,90,30,0b0000000000000000,0b1111111111111111,"New Game",&arialNarrow_12ptFontInfo,((void*)0),((void*)0),((void*)0),&(s->btnNewGame),6);
+
+
     LCD_SliderCreate(50,110,165,20,0b0000000000000000,0b1111111111111111,0b1111100000000000,0,11,((void*)0),&(s->sldBackLight));
     LCD_SliderCreate(50,160,165,20,0b0000000000000000,0b1111111111111111,0b1111100000000000,0,3,((void*)0),&(s->sldLevel));
 }

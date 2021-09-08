@@ -6,11 +6,13 @@ extern const FONT_INFO arialNarrow_12ptFontInfo;
 //------------------------------------------------------------------------------
 void Menu_welcomeDraw(GameParameters* g)
 {
-    LCD_Fill(WHITE);
-    LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,50,50,BLACK,WHITE);
-    LCD_ButtonDraw(&(g->btnParam));
+    LCD_Fill(BLACK);
+    LCD_DrawText("WELCOME",&arialNarrow_12ptFontInfo,A_CENTER,120,50,WHITE,BLACK);
+    
     LCD_ButtonDraw(&(g->btnOnePlayer));
     LCD_ButtonDraw(&(g->btnTwoPlayer));
+    LCD_ButtonDraw(&(g->btnParam));
+    LCD_ButtonDraw(&(g->btnTurnOff));
 }
 
 //------------------------------------------------------------------------------
@@ -18,15 +20,15 @@ void Menu_welcomeDraw(GameParameters* g)
 //------------------------------------------------------------------------------
 void Menu_parametersDraw(GameParameters* g)
 {
-    LCD_Fill(WHITE);
-    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_LEFT,10,50,BLACK,WHITE);
-    LCD_ButtonDraw(&(g->btnLeaveParam));
+    LCD_Fill(BLACK);
+    LCD_DrawText("PARAMETERS",&arialNarrow_12ptFontInfo,A_CENTER,120,50,WHITE,BLACK);
+    LCD_ButtonDraw(&(g->btnLeave));
     g->sldBackLight.value=g->backlight;
     LCD_SliderDraw(&(g->sldBackLight)); 
-    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,BLACK,WHITE);
+    LCD_DrawText("LUMINOSITY",&arialNarrow_12ptFontInfo,A_LEFT,50,95,WHITE,BLACK);
     g->sldLevel.value=g->level;
     LCD_SliderDraw(&(g->sldLevel)); 
-    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,BLACK,WHITE);
+    LCD_DrawText("LEVEL",&arialNarrow_12ptFontInfo,A_LEFT,50,145,WHITE,BLACK);
 }
 
 //------------------------------------------------------------------------------
@@ -35,6 +37,7 @@ void Menu_parametersDraw(GameParameters* g)
 void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(BLACK);
+    LCD_ButtonDraw(&(g->btnLeave));
     LCD_DrawRect(0,160,239,160,1,WHITE);
     Score_draw(&g->s1);
     Paddle_draw(&g->p1);
@@ -49,6 +52,7 @@ void Menu_endGame(GameParameters* g)
 {
     LCD_Fill(BLACK);
     LCD_ButtonDraw(&(g->btnNewGame));
+    LCD_ButtonDraw(&(g->btnTurnOff));
     
     if(g->s1.homeScore==0)
     {

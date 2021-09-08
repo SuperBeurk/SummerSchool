@@ -29,7 +29,7 @@ void sleepSM(Event ev)
     switch(sleepState)
     {
         case WAKEUP: 
-            if(ev==evTimer30)//No touch for 20s
+            if(ev==evSleep)//No touch for 20s
             {
                sleepState=SLEEP;//change state
                sleepController();//action to do

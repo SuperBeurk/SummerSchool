@@ -46,7 +46,7 @@ void displaySM(Event ev, GameParameters* g)
             break;
 //------------------------------------------------------------------------------
         case PARAMETERS:
-            if(ev==evLeaveParam)//if we want to leave parameters
+            if(ev==evLeave)//if we want to leave parameters
             {
                 displayState=WELCOME;//change state
                 displayController(g,ev);//action to do
@@ -59,9 +59,14 @@ void displaySM(Event ev, GameParameters* g)
                 displayState=ENDGAME;//change state                     
                 displayController(g,ev);//action to do
             }
+            else if(ev==evLeave)//if we want to leave parameters
+            {
+                displayState=WELCOME;//change state
+                displayController(g,ev);//action to do
+            }
             else//if we are still in game
             {
-                displayController(g,ev);//redraw elemtn that need to be redraw
+                displayController(g,ev);//redraw element that need to be redraw
             }
             break;
 //------------------------------------------------------------------------------

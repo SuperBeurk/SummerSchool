@@ -47,20 +47,21 @@ void gameControllerSM(Event ev,GameParameters* g)
 //------------------------------------------------------------------------------
         case PARAMETERS:
             gameControllerController(g,NULLEVENT);//action to do on this state
-            if(ev==evLeaveParam)//if we want to leave parameters
+            if(ev==evLeave)//if we want to leave parameters
             {
                 gameStateMachine=NOGAME;//change state
             }
             break;
 //------------------------------------------------------------------------------
         case LOCAL://1 player
-            if(ev==evEndGame)//if game is finished
+            gameControllerController(g,ev);//action to do on this state
+            if(ev==evLeave)//if we want to leave parameters
+            {
+                gameStateMachine=NOGAME;//change state
+            }
+            else if(ev==evEndGame)//if game is finished
             {
                 gameStateMachine=ENDGAME;//change state
-            }
-            else
-            {
-                gameControllerController(g,ev);//action to do on this state
             }
             break;
 //------------------------------------------------------------------------------
@@ -106,6 +107,12 @@ void gameControllerController(GameParameters* g,Event ev)
                 XF_pushEvent(evTwoPlayer,false);
                 GameParameters_resetPos(g);
             }
+            if(LCD_InButton(&(g->btnTurnOff),g->x,g->y))//Button turn Off
+            {
+                XF_pushEvent(evSleep,false);
+                GameParameters_resetPos(g);
+            }
+            
             break;
 //------------------------------------------------------------------------------
         case PARAMETERS:
@@ -122,15 +129,21 @@ void gameControllerController(GameParameters* g,Event ev)
                 LCD_SliderUpdate(&(g->sldLevel));
                 GameParameters_resetPos(g);
             }
-            //check if click is in button leave parameters
-            if(LCD_InButton(&(g->btnLeaveParam),g->x,g->y))
+            //check if click is in button leave parameters and return to menu
+            if(LCD_InButton(&(g->btnLeave),g->x,g->y))
             {
-                XF_pushEvent(evLeaveParam,false);
+                XF_pushEvent(evLeave,false);
                 GameParameters_resetPos(g);
             }
             break;
 //------------------------------------------------------------------------------
         case LOCAL: 
+            if(LCD_InButton(&(g->btnLeave),g->x,g->y))//return to menu button
+            {
+                XF_pushEvent(evLeave,false);
+                GameParameters_resetPos(g);
+            }
+            
             if (ev==evTimerPos)//if we got a click on the screen
             {
                 //Moove player 1 paddle on tsc
@@ -157,6 +170,11 @@ void gameControllerController(GameParameters* g,Event ev)
                 GameParameters_init(g);
                 XF_pushEvent(evNewGame,false);
                 gameStateMachine=NOGAME;//change state for new game                      
+            }
+            if(LCD_InButton(&(g->btnTurnOff),g->x,g->y))//Button turn Off
+            {
+                XF_pushEvent(evSleep,false);
+                GameParameters_resetPos(g);
             }
             break;
 //------------------------------------------------------------------------------

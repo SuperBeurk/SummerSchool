@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "4 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 4: state1 sleepState;
-[c E6548 0 1 .. ]
-[n E6548 state1 WAKEUP SLEEP  ]
+[c E6549 0 1 .. ]
+[n E6549 state1 WAKEUP SLEEP  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
 [s S3 `uc 1 `us 1 ]
 [n S3 . width offset ]
@@ -32,8 +32,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S18 `us 1 `us 1 `uc -> 2 `i ]
 [n S18 Score homeScore awayScore str ]
 "10 ./class/gameParameters.h
-[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
-[n S839 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeaveParam btnNewGame sldBackLight sldLevel b p1 p2 s1 ]
+[s S839 `us 1 `us 1 `us 1 `us 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S6 1 `S7 1 `S7 1 `S8 1 `S9 1 `S9 1 `S18 1 ]
+[n S839 GameParameters backlight x y level btnParam btnOnePlayer btnTwoPlayer btnLeave btnNewGame btnTurnOff sldBackLight sldLevel b p1 p2 s1 ]
 "13 stateMachine/display.h
 [; ;stateMachine/display.h: 13: void displayInit(GameParameters* g);
 [v _displayInit `(v ~T0 @X0 0 ef1`*S839 ]
@@ -47,9 +47,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/sleepSM.h: 32: void sleepController();
 [v _sleepController `(v ~T0 @X0 0 e? ]
 "32 stateMachine/sleepSM.c
-[; ;stateMachine/sleepSM.c: 32:             if(ev==evTimer30)
+[; ;stateMachine/sleepSM.c: 32:             if(ev==evSleep)
 [c E39 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E39 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+[n E39 myEvents NULLEVENT evPress evRelease evSleep evTimerPos evOnePlayer evTwoPlayer evParameters evLeave evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "37 stateMachine/sleepSM.h
 [; ;stateMachine/sleepSM.h: 37: void configPinSleep();
 [v _configPinSleep `(v ~T0 @X0 0 e? ]
@@ -817,7 +817,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "4 stateMachine/sleepSM.c
 [; ;stateMachine/sleepSM.c: 4: state1 sleepState;
-[v _sleepState `E6548 ~T0 @X0 1 e ]
+[v _sleepState `E6549 ~T0 @X0 1 e ]
 "11
 [; ;stateMachine/sleepSM.c: 11: void sleepInit(GameParameters* g)
 [v _sleepInit `(v ~T0 @X0 1 ef1`*S839 ]
@@ -833,7 +833,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;stateMachine/sleepSM.c: 13:     sleepState=WAKEUP;
-[e = _sleepState . `E6548 0 ]
+[e = _sleepState . `E6549 0 ]
 "15
 [; ;stateMachine/sleepSM.c: 15:     displayInit(g);
 [e ( _displayInit (1 _g ]
@@ -873,14 +873,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/sleepSM.c: 31:         case WAKEUP:
 [e :U 844 ]
 "32
-[; ;stateMachine/sleepSM.c: 32:             if(ev==evTimer30)
+[; ;stateMachine/sleepSM.c: 32:             if(ev==evSleep)
 [e $ ! == -> _ev `i -> . `E39 3 `i 845  ]
 "33
 [; ;stateMachine/sleepSM.c: 33:             {
 {
 "34
 [; ;stateMachine/sleepSM.c: 34:                sleepState=SLEEP;
-[e = _sleepState . `E6548 1 ]
+[e = _sleepState . `E6549 1 ]
 "35
 [; ;stateMachine/sleepSM.c: 35:                sleepController();
 [e ( _sleepController ..  ]
@@ -908,8 +908,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 842  ]
 [e :U 843 ]
-[e [\ -> _sleepState `ui , $ -> . `E6548 0 `ui 844
- , $ -> . `E6548 1 `ui 846
+[e [\ -> _sleepState `ui , $ -> . `E6549 0 `ui 844
+ , $ -> . `E6549 1 `ui 846
  847 ]
 [e :U 842 ]
 "45
@@ -962,8 +962,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 849  ]
 [e :U 850 ]
-[e [\ -> _sleepState `ui , $ -> . `E6548 0 `ui 851
- , $ -> . `E6548 1 `ui 852
+[e [\ -> _sleepState `ui , $ -> . `E6549 0 `ui 851
+ , $ -> . `E6549 1 `ui 852
  853 ]
 [e :U 849 ]
 "70

@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"44 xf/xf.h
-[; ;xf/xf.h: 44: {
+"45 xf/xf.h
+[; ;xf/xf.h: 45: {
 [s S826 `us 1 `uc 1 ]
 [n S826 Timer tm ev ]
-"57
-[; ;xf/xf.h: 57: {
+"58
+[; ;xf/xf.h: 58: {
 [s S827 `S826 -> 8 `i `uc -> 12 `i `uc 1 `uc 1 ]
 [n S827 XF timerList eventQueue in out ]
 "30 xf/xf.c
 [; ;xf/xf.c: 30:         theXF.eventQueue[i] = NULLEVENT;
 [c E5738 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E5738 myEvents NULLEVENT evPress evRelease evTimer30 evTimerPos evOnePlayer evTwoPlayer evParameters evLeaveParam evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
+[n E5738 myEvents NULLEVENT evPress evRelease evSleep evTimerPos evOnePlayer evTwoPlayer evParameters evLeave evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "17
 [; ;xf/xf.c: 17: static void ENTERCRITICAL(_Bool inISR);
 [v _ENTERCRITICAL `(v ~T0 @X0 0 sf1`a ]
