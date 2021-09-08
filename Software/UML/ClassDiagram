@@ -19,10 +19,6 @@ class class::GameParameters{
   btn_t btnTurnOff
   sld_t sldBackLight
   sld_t sldLevel
-  Ball b
-  Paddle p1
-  Paddle p2
-  Score s1
 
   void init(s :GameParameters)
   void setBackLight(s :GameParameters, value :uint16_t)
@@ -104,6 +100,16 @@ class StateMachine::TouchScreenSM{
   void configMeasure(channel :bool)
 }
 class::Factory *- class::GameParameters :g1
-class::Factory ..> xf::XF :uses
+class::Factory .left.> xf::XF :uses
+class::GameParameters *-- class::Menu :g
+class::GameParameters *-up- class::Display :g
+class::GameParameters *-down- StateMachine::GameConroller :g
+class::GameParameters *-down- StateMachine::SleepSM :g
+class::GameParameters *-up- StateMachine::TouchScreenSM :g
+class::GameParameters *-up- StateMachine::Display :g
+class::GameParameters *-right- class::Ball :b
+class::GameParameters *-down- class::Paddle :p1..2
+class::GameParameters *-up- class::Score :s1
+
 
 @enduml
