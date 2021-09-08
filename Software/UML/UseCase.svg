@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="530px" preserveAspectRatio="none" style="width:519px;height:530px;" version="1.1" viewBox="0 0 519 530" width="519px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fcdl58wapflvu" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--cluster Parameters-->
+        <rect fill="#FFFFFF" filter="url(#fcdl58wapflvu)" height="191" style="stroke: #000000; stroke-width: 1.5;" width="125" x="262.5" y="24" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="285" y="40.5332">Parameters</text>
+        <!--cluster Menu-->
+        <rect fill="#FFFFFF" filter="url(#fcdl58wapflvu)" height="216" style="stroke: #000000; stroke-width: 1.5;" width="141" x="80" y="152" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="130.5" y="168.5332">Menu</text>
+        <!--cluster Game-->
+        <rect fill="#FFFFFF" filter="url(#fcdl58wapflvu)" height="280" style="stroke: #000000; stroke-width: 1.5;" width="152" x="249" y="239" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="305" y="255.5332">Game</text>
+        <ellipse cx="324.8689" cy="85.797" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="46.3689" ry="25.797" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="291.3689" y="85.4284">Luminosity</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="306.8689" y="103.0377">Slider</text>
+        <ellipse cx="324.991" cy="172.8928" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="30.991" ry="25.3928" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="305.491" y="170.9374">Select</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="310.491" y="188.5468">level</text>
+        <ellipse cx="150.6188" cy="203.9517" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="54.6188" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="73" x="114.1188" y="209.2564">Parameters</text>
+        <ellipse cx="150.2696" cy="269.9517" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="124.2696" y="275.2564">1 Player</text>
+        <ellipse cx="150.7193" cy="335.9517" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="44.7193" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="121.2193" y="341.2564">2 Players</text>
+        <ellipse cx="324.9837" cy="300.8619" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="52.9837" ry="25.8619" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="286.4837" y="300.3913">Move player</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="303.4837" y="318.0007">paddle</text>
+        <ellipse cx="325.0276" cy="389.0254" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="55.5276" ry="27.0254" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="286.5276" y="386.7907">Manage ball</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="292.5276" y="404.4">movement</text>
+        <ellipse cx="325.2209" cy="477.1432" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="60.2209" ry="25.6432" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="280.7209" y="477.0179">Move player 2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="303.7209" y="494.6273">paddle</text>
+        <!--entity u-->
+        <ellipse cx="21" cy="237.5" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M21,245.5 L21,272.5 M8,253.5 L34,253.5 M21,272.5 L8,287.5 M21,272.5 L34,287.5 " fill="none" filter="url(#fcdl58wapflvu)" style="stroke: #A80036; stroke-width: 2.0;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="6.5" y="309.0332">User</text>
+        <!--entity c-->
+        <ellipse cx="476" cy="400.5" fill="#FEFECE" filter="url(#fcdl58wapflvu)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;" />
+        <path d="M476,408.5 L476,435.5 M463,416.5 L489,416.5 M476,435.5 L463,450.5 M476,435.5 L489,450.5 " fill="none" filter="url(#fcdl58wapflvu)" style="stroke: #A80036; stroke-width: 2.0;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="445" y="472.0332">Computer</text>
+        <!--link p to ls-->
+        <path d="M171.36,185.57 C188.91,169.78 215.6,146.98 241,130 C254.52,120.96 270.11,112.29 284.09,105.07 " fill="none" id="p-ls" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="288.77,102.68,278.935,103.2026,284.3151,104.9503,282.5674,110.3304,288.77,102.68" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="167.54,189.03,176.8931,185.9447,171.2429,185.6702,171.5174,180.02,167.54,189.03" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link p to lvl-->
+        <path d="M202.41,194.85 C230.43,189.81 264.47,183.7 289.4,179.22 " fill="none" id="p-lvl" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="294.58,178.29,285.0132,175.9498,289.6593,179.1769,286.4322,183.8229,294.58,178.29" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="197.27,195.77,206.8302,198.1371,202.1932,194.897,205.4333,190.26,197.27,195.77" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link u to p-->
+        <path d="M36.02,259.76 C45.81,252.85 59.36,243.79 72,237 C84.74,230.16 99.19,223.68 112.14,218.3 " fill="none" id="u-p" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="116.84,216.37,106.9949,216.098,112.2166,218.2737,110.0409,223.4955,116.84,216.37" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link u to 1p-->
+        <path d="M36.13,270 C52.72,270 81.03,270 105.21,270 " fill="none" id="u-1p" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="110.3,270,101.3,266,105.3,270,101.3,274,110.3,270" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link u to 2p-->
+        <path d="M36.02,280.24 C45.81,287.15 59.36,296.21 72,303 C85.54,310.27 101.02,317.14 114.57,322.7 " fill="none" id="u-2p" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="119.47,324.69,112.6444,317.59,114.8395,322.8035,109.626,324.9987,119.47,324.69" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link 1p to mp-->
+        <path d="M187.24,276.42 C211.12,280.71 242.97,286.44 269.92,291.28 " fill="none" id="1p-mp" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="274.89,292.18,266.7422,286.6471,269.9693,291.2931,265.3232,294.5202,274.89,292.18" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link p2 to c-->
+        <path d="M379.71,461.14 C401.61,454.67 426.13,447.43 444.8,441.92 " fill="none" id="p2-c" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="374.79,462.59,384.5546,463.8753,379.585,461.173,382.2874,456.2033,374.79,462.59" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link mb to c-->
+        <path d="M377.76,404.29 C400.18,410.9 425.62,418.42 444.86,424.1 " fill="none" id="mb-c" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="372.74,402.8,380.2425,409.1806,377.5361,404.2131,382.5036,401.5068,372.74,402.8" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--link 2p to p2-->
+        <path d="M162.63,350.94 C178.39,371.35 208.87,408.25 241,433 C252.28,441.69 265.51,449.57 278.06,456.18 " fill="none" id="2p-p2" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="282.65,458.56,276.4964,450.8702,278.2097,456.2613,272.8186,457.9746,282.65,458.56" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--
+@startuml
+
+left to right direction
+actor User as u
+actor Computer as c
+rectangle Parameters{
+  usecase "Luminosity\n Slider" as ls
+  usecase "Select \nlevel" as lvl
+ }
+rectangle Menu{
+  usecase "Parameters" as p
+  usecase "1 Player" as 1p
+  usecase "2 Players" as 2p
+}
+rectangle Game{
+  usecase "Move player\n paddle" as mp
+  usecase "Manage ball\n movement" as mb
+  usecase "Move player 2\n paddle" as p2
+
+}
+
+p <- -> ls
+p <- -> lvl
+
+u - -> p
+u - -> 1p
+u - -> 2p
+
+1p - -> mp
+p2 <- - c
+mb <- - c
+2p - -> p2
+
+@enduml
+
+PlantUML version 1.2018.14(Fri Dec 21 17:33:16 CET 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_291-b10
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: fr
+Country: CH
+-->
+    </g>
+</svg>
