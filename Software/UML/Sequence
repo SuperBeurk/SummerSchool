@@ -25,6 +25,7 @@ group Repeat
   xf --> fy: eventConsumed
 
   deactivate fy
+  
 end
 
 @enduml
