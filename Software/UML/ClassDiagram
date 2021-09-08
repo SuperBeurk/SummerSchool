@@ -7,40 +7,101 @@ class class::Factory{
 }
 
 class class::GameParameters{
+  uint16_t backlight
+  uint16_t x
+  uint16_t y
+  uint16_t level
+  btn_t btnParam
+  btn_t btnOnePlayer
+  btn_t btnTwoPlayer
+  btn_t btnLeave
+  btn_t btnNewGame
+  btn_t btnTurnOff
+  sld_t sldBackLight
+  sld_t sldLevel
+  Ball b
+  Paddle p1
+  Paddle p2
+  Score s1
 
+  void init(s :GameParameters)
+  void setBackLight(s :GameParameters, value :uint16_t)
+  void setLevel(s :GameParameters, value :uint16_t)
+  void setX(s :GameParameters, value :uint16_t)
+  void setY(s: GameParameters, value :uint16_t)
+  void resetPos(s :GameParameters)
 }
 
 class xf::XF{
-  void XF_init()
-  void XF_pushEvent(ev : uint8_t, inISR : bool)
   uint8_t XF_popEvent(inIRS : bool)
   uint8_t XF_scheduleTimeer(delay : uint16_t, ev : uint8_t, inISR : bool)
+
+  void XF_init()
+  void XF_pushEvent(ev : uint8_t, inISR : bool)
   void XF_unscheduleTimer(uint8_t timerID, inISR : bool)
-  voidXF_decrementAndQueueTimers()
+  void XF_decrementAndQueueTimers()
 }
 class class::Ball{
+  uint16_t x
+  uint16_t y
+  uint16_t oldx
+  uint16_t oldy
+  int16_t dx
+  int16_t dy
 
+  void init(b :Ball)
+  void update(b :Ball)
+  void draw(b :Ball)
 }
 class class::Menu{
-
+  void WelcomeDraw(g :GameParameters)
+  void ParametersDraw(g :GameParameters)
+  void inGameDraw(g :GameParameters)
+  void endGame(g :GameParameters)
 }
 class class::Paddle{
+  uint16_t x
+  uint16_t y
+  uint16_t oldx
+  uint16_t oldy
+  uint16_t color
 
+  void init(p :Paddle, team :uint16_t)
+  void addX(p :Paddle, value :uint16_t, add :uint16_t)
+  void draw(p :Paddle)
 }
 class class::Score{
+  uint16_t homeScore
+  uint16_t awayScore
+  char[] str
 
+  void init(s :Score)
+  void setHomeScore(s :Score, value :uint16_t)
+  void setAwayScore(s :Score, value :uint16_t)
+  void draw(s :Score)
 }
 class StateMachine::Display{
-
+  void init(g :GameParameters)
+  void SM(ev :Event, g :GameParameters)
+  void controller(g :GameParameters, ev :Event)
 }
 class StateMachine::GameConroller{
-
+  void init(g :GameParameters)
+  void SM(ev :Event, g :GameParameters)
+  void controller(g :GameParameters, ev :Event)
 }
 class StateMachine::SleepSM{
-
+  void init(g :GameParameters)
+  void SM(ev :Event)
+  void controller()
+  void configPinSleep()
 }
 class StateMachine::TouchScreenSM{
-
+  void screenInit()
+  void SM(ev :Event, g :GameParameters)
+  void controller(g :GameParameters)
+  void configTouch()
+  void configMeasure(channel :bool)
 }
 class::Factory *- class::GameParameters :g1
 class::Factory ..> xf::XF :uses

@@ -4,6 +4,7 @@ left to right direction
 actor User as u
 actor Computer as c
 rectangle Parameters{
+  usecase "Return to\nmenu" as rm
   usecase "Luminosity\n Slider" as ls
   usecase "Select \nlevel" as lvl
  }
@@ -11,24 +12,35 @@ rectangle Menu{
   usecase "Parameters" as p
   usecase "1 Player" as 1p
   usecase "2 Players" as 2p
+  usecase "Sleep" as sl
 }
 rectangle Game{
   usecase "Move player\n paddle" as mp
   usecase "Manage ball\n movement" as mb
   usecase "Move player 2\n paddle" as p2
-
+  usecase "Return to\nmenu" as rmg
 }
+rectangle EndGame{
+  usecase "New Game" as ng
+  usecase "Turn off" as to
+}
+rm -left-> p
+p --> lvl
+p --> ls
 
-p <--> ls
-p <--> lvl
 
 u --> p
 u --> 1p
 u --> 2p
+u --> sl
 
+rmg --> Menu
 1p --> mp
 p2 <-- c
 mb <-- c
 2p --> p2
+2p --> mp
 
+ng --> Menu
+to --> sl
 @enduml
