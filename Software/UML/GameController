@@ -42,12 +42,15 @@ title Parameters
 
 @startuml
 title Local
+(*) --> if "btnLeave" then
+      --> [true] "Leave Game"
 (*) --> if "evTimerPos" then
   --> [true] "MovePaddle"
   else
     -left-> if "evGameUpdate" then
     --> [true] "Move Ball\nMove IA Paddle\nStart Timer with level"
 
+  "Leave Game" --> (*)
   "MovePaddle" --> (*)
   "Move Ball\nMove IA Paddle\nStart Timer with level" --> (*)
 
