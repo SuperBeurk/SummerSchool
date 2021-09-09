@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/factory.h</file>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/score.h</file>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/ball.c</file>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/gameParameters.h</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/configuration_bits.c</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/main.c</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/menu.c</file>
             <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/stateMachine/touchScreenSM.c</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/stateMachine/display.c</file>
             <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/factory.c</file>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/ball.h</file>
-            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/class/gameParameters.c</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/gameFunction.c</file>
+            <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/gameFunction.h</file>
             <file>file:/C:/Users/sebastie.metral/Desktop/SummerSchool/SummerSchool/Software/PongV1.X/stateMachine/gameController.c</file>
         </group>
     </open-files>

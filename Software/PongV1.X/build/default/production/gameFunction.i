@@ -9794,6 +9794,11 @@ void mooveBall(GameParameters* g);
 
 
 
+void desactivateTimerSleep();
+
+
+
+
 void backlightController(GameParameters* g);
 
 
@@ -9807,6 +9812,7 @@ void levelController(GameParameters* g);
 void checkCollision(GameParameters* g);
 # 1 "gameFunction.c" 2
 
+extern XF theXF;
 
 
 
@@ -9845,6 +9851,19 @@ void moovePaddle2(GameParameters* g)
     }
 }
 
+
+
+
+void desactivateTimerSleep()
+{
+    for (int i=0; i<8; i++)
+    {
+        if (theXF.timerList[i].ev == evSleep)
+        {
+            XF_unscheduleTimer(i, 0);
+        }
+    }
+}
 
 
 

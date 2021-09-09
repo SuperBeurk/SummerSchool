@@ -9853,6 +9853,11 @@ void mooveBall(GameParameters* g);
 
 
 
+void desactivateTimerSleep();
+
+
+
+
 void backlightController(GameParameters* g);
 
 

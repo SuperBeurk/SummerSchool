@@ -62,6 +62,7 @@ void gameControllerSM(Event ev,GameParameters* g)
             else if(ev==evEndGame)//if game is finished
             {
                 gameStateMachine=ENDGAME;//change state
+                XF_scheduleTimer(30000,evSleep,false);
             }
             break;
 //------------------------------------------------------------------------------
@@ -152,6 +153,7 @@ void gameControllerController(GameParameters* g,Event ev)
             }
             else if(ev==evGameUpdate)//if game timer is done(50ms)
             {
+                desactivateTimerSleep();//desactivate SleepTimer
                 //Moove ball
                 mooveBall(g);
                 moovePaddle2(g);//IA Paddle  

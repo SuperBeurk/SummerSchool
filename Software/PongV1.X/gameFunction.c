@@ -1,4 +1,5 @@
 #include "gameFunction.h"
+extern XF theXF;   
 //------------------------------------------------------------------------------
 //Method that will moove the local paddle on a click on the screen depending where we clicked
 //------------------------------------------------------------------------------
@@ -37,6 +38,19 @@ void moovePaddle2(GameParameters* g)
     }
 }
 
+//------------------------------------------------------------------------------
+//Method that will desactivate the sleepEventTimer
+//------------------------------------------------------------------------------
+void desactivateTimerSleep()
+{
+    for (int i=0; i<MAXTIMER; i++)
+    {
+        if (theXF.timerList[i].ev == evSleep)
+        {
+            XF_unscheduleTimer(i, false);
+        }
+    }
+}
 
 //------------------------------------------------------------------------------
 //Method that will moove the ball

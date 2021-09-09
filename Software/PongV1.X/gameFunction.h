@@ -18,6 +18,11 @@ void moovePaddle2(GameParameters* g);
 void mooveBall(GameParameters* g);
 
 //------------------------------------------------------------------------------
+//Method that will desactivate the sleepEventTimer
+//------------------------------------------------------------------------------
+void desactivateTimerSleep();
+
+//------------------------------------------------------------------------------
 //Method that will update the luminosity
 //------------------------------------------------------------------------------
 void backlightController(GameParameters* g);
