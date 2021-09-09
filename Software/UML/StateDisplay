@@ -9,6 +9,6 @@
 "InGame" --> [evLeave] "Welcome"
 
 "EndGame" --> [evNewGame] "Welcome"
-
+"EndGame" --> (*)
 
 @enduml
