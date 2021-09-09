@@ -55,7 +55,7 @@ title Local
   "Move Ball\nMove IA Paddle\nStart Timer with level" --> (*)
 
 @enduml
-
+s
 @startuml
 title EndGame
 (*) --> "Check Button"
