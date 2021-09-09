@@ -1,9 +1,10 @@
 @startuml
-(*) -->[init] "Wake Up"
-"Wake Up" --> [evTimer30] "Backlight_off"
+(*) --> "Init"
 
-"Backlight_off" --> [evTimer60] "Sleep"
+"Init" --> "Wake Up"
 
-"Sleep" --> [evPressScreen] "Wake Up"
+"Wake Up" --> [evSleep] "Sleep"
+
+"Sleep" --> [reset()] "Init"
 
 @enduml

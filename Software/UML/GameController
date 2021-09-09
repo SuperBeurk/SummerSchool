@@ -57,21 +57,14 @@ title Local
 @enduml
 
 @startuml
-(*) --> "No Game"
-(*) --> "Parameters"
-(*) --> "Local"
-(*) --> "EndGame"
-(*) --> "Online"
+title EndGame
+(*) --> "Check Button"
 
-"No Game" --> [btnParameters] "Push evParameters"
-"No Game" --> [btnOnePlayer] "Push evOnePlayer"
-"No Game" --> [btnTwoPlayer] "Push evTwoPlayer"
-
-"Parameters" --> [sldParam] "Ajust Luminosity\nChange level"
-"Ajust Luminosity\nChange level" --> [evLeaveParam] "Parameters"
-"Local" --> [evTimerPos] "Move Paddle"
-"Local" --> [evGameUpdate] "Move Ball\nMove IA Paddle"
-
-"EndGame" --> [btnNewGame] "Push evNewGame"
-
+"Check Button" --> if "btnNewGame" then
+  --> [true] "Init game &\nPush evNewGame"
+  endif
+"Check Button" --> if "btnTurnOff" then
+  --> [true] "Reset position &\nPush evSleep"
+"Init game &\nPush evNewGame" --> (*)
+"Reset position &\nPush evSleep" --> (*)
 @enduml
