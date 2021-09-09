@@ -11720,8 +11720,8 @@ void Factory_init()
 
 
     T0CON=0b10000110;
-    TMR0H=0xFB;
-    TMR0L=0x1D;
+    TMR0H=0xFF;
+    TMR0L=0x82;
     TMR0IE=1;
 
 

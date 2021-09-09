@@ -2913,11 +2913,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;class/factory.c: 34:     T0CON=0b10000110;
 [e = _T0CON -> -> 134 `i `uc ]
 "35
-[; ;class/factory.c: 35:     TMR0H=0xFB;
-[e = _TMR0H -> -> 251 `i `uc ]
+[; ;class/factory.c: 35:     TMR0H=0xFF;
+[e = _TMR0H -> -> 255 `i `uc ]
 "36
-[; ;class/factory.c: 36:     TMR0L=0x1D;
-[e = _TMR0L -> -> 29 `i `uc ]
+[; ;class/factory.c: 36:     TMR0L=0x82;
+[e = _TMR0L -> -> 130 `i `uc ]
 "37
 [; ;class/factory.c: 37:     TMR0IE=1;
 [e = _TMR0IE -> -> 1 `i `b ]

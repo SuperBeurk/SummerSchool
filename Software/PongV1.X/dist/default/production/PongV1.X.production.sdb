@@ -1070,11 +1070,11 @@ evNewGame 15
 [v _XF_scheduleTimer XF_scheduleTimer `(uc  1 e 1 0 ]
 {
 "98
-[v XF_scheduleTimer@i i `uc  1 a 1 22 ]
+[v XF_scheduleTimer@i i `uc  1 a 1 35 ]
 "96
-[v XF_scheduleTimer@tm tm `us  1 p 2 18 ]
-[v XF_scheduleTimer@ev ev `uc  1 p 1 20 ]
-[v XF_scheduleTimer@inISR inISR `a  1 p 1 21 ]
+[v XF_scheduleTimer@tm tm `us  1 p 2 31 ]
+[v XF_scheduleTimer@ev ev `uc  1 p 1 33 ]
+[v XF_scheduleTimer@inISR inISR `a  1 p 1 34 ]
 "116
 } 0
 "546 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c

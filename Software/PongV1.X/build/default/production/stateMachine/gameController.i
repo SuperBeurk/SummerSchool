@@ -9946,13 +9946,13 @@ void gameControllerSM(Event ev,GameParameters* g)
             if(ev==evOnePlayer)
             {
                 gameStateMachine=LOCAL;
-                XF_scheduleTimer(4-g->level,evGameUpdate,1);
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
             }
             break;
             if(ev==evTwoPlayer)
             {
                 gameStateMachine=ONLINE;
-                XF_scheduleTimer(5,evGameUpdate,0);
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
             }
 
         case PARAMETERS:
@@ -10056,7 +10056,7 @@ void gameControllerController(GameParameters* g,Event ev)
 
                 mooveBall(g);
                 moovePaddle2(g);
-                XF_scheduleTimer(4-g->level,evGameUpdate,1);
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
             }
 
             break;

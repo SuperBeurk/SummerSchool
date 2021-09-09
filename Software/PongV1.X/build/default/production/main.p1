@@ -2903,11 +2903,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 43:         XF_decrementAndQueueTimers();
 [e ( _XF_decrementAndQueueTimers ..  ]
 "44
-[; ;main.c: 44:         TMR0H=0xFB;
-[e = _TMR0H -> -> 251 `i `uc ]
+[; ;main.c: 44:         TMR0H=0xFF;
+[e = _TMR0H -> -> 255 `i `uc ]
 "45
-[; ;main.c: 45:         TMR0L=0x1D;
-[e = _TMR0L -> -> 29 `i `uc ]
+[; ;main.c: 45:         TMR0L=0x82;
+[e = _TMR0L -> -> 130 `i `uc ]
 "46
 [; ;main.c: 46:         TMR0IF=0;
 [e = _TMR0IF -> -> 0 `i `b ]

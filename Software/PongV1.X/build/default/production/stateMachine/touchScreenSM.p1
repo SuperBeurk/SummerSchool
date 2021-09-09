@@ -10,7 +10,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/../xf/xf.h: 95: TimerID XF_scheduleTimer(Time tm, Event ev, _Bool inISR);
 [v _XF_scheduleTimer `(uc ~T0 @X0 0 ef3`us`uc`a ]
 "22 stateMachine/touchScreenSM.c
-[; ;stateMachine/touchScreenSM.c: 22:     XF_scheduleTimer(3000,evSleep,0);
+[; ;stateMachine/touchScreenSM.c: 22:     XF_scheduleTimer(30000,evSleep,0);
 [c E39 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
 [n E39 myEvents NULLEVENT evPress evRelease evSleep evTimerPos evOnePlayer evTwoPlayer evParameters evLeave evEndGame evGameUpdate evRedrawPaddle1 evRedrawPaddle2 evRedrawBall evRedrawScore evNewGame  ]
 "12 stateMachine/../class/../libraries/lcd_highlevel.h
@@ -925,8 +925,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/touchScreenSM.c: 21:     configTouch();
 [e ( _configTouch ..  ]
 "22
-[; ;stateMachine/touchScreenSM.c: 22:     XF_scheduleTimer(3000,evSleep,0);
-[e ( _XF_scheduleTimer (3 , , -> -> 3000 `i `us -> . `E39 3 `uc -> -> 0 `i `a ]
+[; ;stateMachine/touchScreenSM.c: 22:     XF_scheduleTimer(30000,evSleep,0);
+[e ( _XF_scheduleTimer (3 , , -> -> 30000 `i `us -> . `E39 3 `uc -> -> 0 `i `a ]
 "23
 [; ;stateMachine/touchScreenSM.c: 23: }
 [e :UE 840 ]
@@ -1053,8 +1053,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/touchScreenSM.c: 73:             INTEDG1=0;
 [e = _INTEDG1 -> -> 0 `i `b ]
 "74
-[; ;stateMachine/touchScreenSM.c: 74:             XF_scheduleTimer(3000,evSleep,0);
-[e ( _XF_scheduleTimer (3 , , -> -> 3000 `i `us -> . `E39 3 `uc -> -> 0 `i `a ]
+[; ;stateMachine/touchScreenSM.c: 74:             XF_scheduleTimer(30000,evSleep,0);
+[e ( _XF_scheduleTimer (3 , , -> -> 30000 `i `us -> . `E39 3 `uc -> -> 0 `i `a ]
 "75
 [; ;stateMachine/touchScreenSM.c: 75:             configTouch();
 [e ( _configTouch ..  ]
@@ -1170,8 +1170,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/touchScreenSM.c: 110:             valueY=(valueY-105)/2;
 [e = _valueY -> / - -> _valueY `ui -> -> 105 `i `ui -> -> 2 `i `ui `us ]
 "111
-[; ;stateMachine/touchScreenSM.c: 111:             XF_scheduleTimer(9,evTimerPos,0);
-[e ( _XF_scheduleTimer (3 , , -> -> 9 `i `us -> . `E39 4 `uc -> -> 0 `i `a ]
+[; ;stateMachine/touchScreenSM.c: 111:             XF_scheduleTimer(4,evTimerPos,0);
+[e ( _XF_scheduleTimer (3 , , -> -> 4 `i `us -> . `E39 4 `uc -> -> 0 `i `a ]
 "113
 [; ;stateMachine/touchScreenSM.c: 113:             ADCON0=0b00101000;
 [e = _ADCON0 -> -> 40 `i `uc ]

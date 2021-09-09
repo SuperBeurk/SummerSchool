@@ -11775,8 +11775,8 @@ void __attribute__((picinterrupt(("")))) isr(void)
     if((TMR0IF==1)&&(TMR0IE==1))
     {
         XF_decrementAndQueueTimers();
-        TMR0H=0xFB;
-        TMR0L=0x1D;
+        TMR0H=0xFF;
+        TMR0L=0x82;
         TMR0IF=0;
     }
 }

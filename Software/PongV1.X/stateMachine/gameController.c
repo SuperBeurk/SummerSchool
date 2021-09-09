@@ -36,13 +36,13 @@ void gameControllerSM(Event ev,GameParameters* g)
             if(ev==evOnePlayer)//if we want to play in local
             {
                 gameStateMachine=LOCAL;//change state
-                XF_scheduleTimer(4-g->level,evGameUpdate,true);//start game timer depending on level
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,false);//start game timer depending on level
             }
             break;
             if(ev==evTwoPlayer)//if we want to play in online
             {
                 gameStateMachine=ONLINE;//change state
-                XF_scheduleTimer(5,evGameUpdate,false);//start game timer
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,false);//start game timer
             }
 //------------------------------------------------------------------------------
         case PARAMETERS:
@@ -155,7 +155,7 @@ void gameControllerController(GameParameters* g,Event ev)
                 //Moove ball
                 mooveBall(g);
                 moovePaddle2(g);//IA Paddle  
-                XF_scheduleTimer(4-g->level,evGameUpdate,true);//restart game timer depending on level
+                XF_scheduleTimer(40-(g->level*10),evGameUpdate,false);//restart game timer depending on level
             }
 //------------------------------------------------------------------------------
             break;

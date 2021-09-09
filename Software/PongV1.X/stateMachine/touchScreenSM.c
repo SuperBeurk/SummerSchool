@@ -19,7 +19,7 @@ void touchScreenInit()
 {
     touchScreenState=WAITING;//default state
     configTouch();//config pin for touch
-    XF_scheduleTimer(3000,evSleep,false);
+    XF_scheduleTimer(30000,evSleep,false);
 }
 
 //------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ void touchScreenController(GameParameters* g)
         case WAITING:
             //1.Reset TimerPos
             INTEDG1=0;//Interrupt on falling edge
-            XF_scheduleTimer(3000,evSleep,false);
+            XF_scheduleTimer(30000,evSleep,false);
             configTouch();//Pin configuration for press touch               
             //3.Create TimerSleep
             break;
@@ -108,7 +108,7 @@ void touchScreenController(GameParameters* g)
                 valueY=_TSC_OFFSET_Y;
             }
             valueY=(valueY-_TSC_OFFSET_Y)/_TSC_CONV_Y;
-            XF_scheduleTimer(9,evTimerPos,false);//Create event for recalculate the pos
+            XF_scheduleTimer(4,evTimerPos,false);//Create event for recalculate the pos
             //------------------------------------------------------------------
             ADCON0=0b00101000;//turn off AD
             configTouch();//Pin configuration for realease touch

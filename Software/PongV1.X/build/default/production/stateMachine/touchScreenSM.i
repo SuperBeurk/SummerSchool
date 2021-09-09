@@ -9819,7 +9819,7 @@ void touchScreenInit()
 {
     touchScreenState=WAITING;
     configTouch();
-    XF_scheduleTimer(3000,evSleep,0);
+    XF_scheduleTimer(30000,evSleep,0);
 }
 
 
@@ -9863,7 +9863,7 @@ void touchScreenController(GameParameters* g)
         case WAITING:
 
             INTEDG1=0;
-            XF_scheduleTimer(3000,evSleep,0);
+            XF_scheduleTimer(30000,evSleep,0);
             configTouch();
 
             break;
@@ -9900,7 +9900,7 @@ void touchScreenController(GameParameters* g)
                 valueY=105;
             }
             valueY=(valueY-105)/2;
-            XF_scheduleTimer(9,evTimerPos,0);
+            XF_scheduleTimer(4,evTimerPos,0);
 
             ADCON0=0b00101000;
             configTouch();

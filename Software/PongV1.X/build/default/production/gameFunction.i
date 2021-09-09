@@ -9816,13 +9816,13 @@ void moovePaddle1(GameParameters* g)
     if((g->x>0)&&(g->x<110))
     {
         GameParameters_resetPos(g);
-        Paddle_addX(&g->p1,20,0);
+        Paddle_addX(&g->p1,1,0);
     }
 
     if(g->x>=130)
     {
         GameParameters_resetPos(g);
-        Paddle_addX(&g->p1,20,1);
+        Paddle_addX(&g->p1,1,1);
     }
     XF_pushEvent(evRedrawPaddle1,0);
 }

@@ -41,8 +41,8 @@ void __interrupt() isr(void)
     if((TMR0IF==1)&&(TMR0IE==1))//Interrupt on timer 0
     {
         XF_decrementAndQueueTimers(); //Decrement XF timerlist queue
-        TMR0H=0xFB;//reset timer for 10 ms
-        TMR0L=0x1D;
+        TMR0H=0xFF;//reset timer for 10 ms
+        TMR0L=0x82;
         TMR0IF=0;//clear flag
     }
 }

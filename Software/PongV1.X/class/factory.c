@@ -32,8 +32,8 @@ void Factory_init()
     
     //Interrupt timer 10ms
     T0CON=0b10000110;//prescaler 128
-    TMR0H=0xFB;
-    TMR0L=0x1D;
+    TMR0H=0xFF;
+    TMR0L=0x82;
     TMR0IE=1;
     
     //PWM BACKLIGHT

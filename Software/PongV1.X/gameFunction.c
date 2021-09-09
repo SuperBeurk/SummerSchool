@@ -8,13 +8,13 @@ void moovePaddle1(GameParameters* g)
     if((g->x>0)&&(g->x<110))//check if click is on the left of the screen
     {
         GameParameters_resetPos(g);//reset click
-        Paddle_addX(&g->p1,20,0);//Moove left
+        Paddle_addX(&g->p1,1,0);//Moove left
     }
     
     if(g->x>=130)//check if click is on the right of the screen
     {
         GameParameters_resetPos(g);//reset click
-        Paddle_addX(&g->p1,20,1);//Moove right
+        Paddle_addX(&g->p1,1,1);//Moove right
     }
     XF_pushEvent(evRedrawPaddle1,false);//Create redraw event for display
 }

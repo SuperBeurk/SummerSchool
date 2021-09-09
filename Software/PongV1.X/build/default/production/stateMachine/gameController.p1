@@ -877,8 +877,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/gameController.c: 38:                 gameStateMachine=LOCAL;
 [e = _gameStateMachine . `E6549 2 ]
 "39
-[; ;stateMachine/gameController.c: 39:                 XF_scheduleTimer(4-g->level,evGameUpdate,1);
-[e ( _XF_scheduleTimer (3 , , -> - -> -> 4 `i `ui -> . *U _g 3 `ui `us -> . `E39 10 `uc -> -> 1 `i `a ]
+[; ;stateMachine/gameController.c: 39:                 XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
+[e ( _XF_scheduleTimer (3 , , -> - -> -> 40 `i `ui * -> . *U _g 3 `ui -> -> 10 `i `ui `us -> . `E39 10 `uc -> -> 0 `i `a ]
 "40
 [; ;stateMachine/gameController.c: 40:             }
 }
@@ -896,8 +896,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/gameController.c: 44:                 gameStateMachine=ONLINE;
 [e = _gameStateMachine . `E6549 3 ]
 "45
-[; ;stateMachine/gameController.c: 45:                 XF_scheduleTimer(5,evGameUpdate,0);
-[e ( _XF_scheduleTimer (3 , , -> -> 5 `i `us -> . `E39 10 `uc -> -> 0 `i `a ]
+[; ;stateMachine/gameController.c: 45:                 XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
+[e ( _XF_scheduleTimer (3 , , -> - -> -> 40 `i `ui * -> . *U _g 3 `ui -> -> 10 `i `ui `us -> . `E39 10 `uc -> -> 0 `i `a ]
 "46
 [; ;stateMachine/gameController.c: 46:             }
 }
@@ -1194,8 +1194,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;stateMachine/gameController.c: 157:                 moovePaddle2(g);
 [e ( _moovePaddle2 (1 _g ]
 "158
-[; ;stateMachine/gameController.c: 158:                 XF_scheduleTimer(4-g->level,evGameUpdate,1);
-[e ( _XF_scheduleTimer (3 , , -> - -> -> 4 `i `ui -> . *U _g 3 `ui `us -> . `E39 10 `uc -> -> 1 `i `a ]
+[; ;stateMachine/gameController.c: 158:                 XF_scheduleTimer(40-(g->level*10),evGameUpdate,0);
+[e ( _XF_scheduleTimer (3 , , -> - -> -> 40 `i `ui * -> . *U _g 3 `ui -> -> 10 `i `ui `us -> . `E39 10 `uc -> -> 0 `i `a ]
 "159
 [; ;stateMachine/gameController.c: 159:             }
 }
