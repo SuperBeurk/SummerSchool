@@ -38,7 +38,7 @@ void Menu_inGameDraw(GameParameters* g)
 {
     LCD_Fill(BLACK);
     LCD_ButtonDraw(&(g->btnLeave));
-    LCD_DrawRect(0,160,239,160,1,WHITE);
+    LCD_DrawRect(0,160,239,160,1,WHITE);//Draw middle score line
     Score_draw(&g->s1);
     Paddle_draw(&g->p1);
     Paddle_draw(&g->p2);

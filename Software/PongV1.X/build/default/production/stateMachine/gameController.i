@@ -9790,6 +9790,11 @@ void mooveBall(GameParameters* g);
 
 
 
+void desactivateTimerSleep();
+
+
+
+
 void backlightController(GameParameters* g);
 
 
@@ -9972,6 +9977,7 @@ void gameControllerSM(Event ev,GameParameters* g)
             else if(ev==evEndGame)
             {
                 gameStateMachine=ENDGAME;
+                XF_scheduleTimer(30000,evSleep,0);
             }
             break;
 
@@ -9986,7 +9992,7 @@ void gameControllerSM(Event ev,GameParameters* g)
             break;
     }
 }
-# 89 "stateMachine/gameController.c"
+# 90 "stateMachine/gameController.c"
 void gameControllerController(GameParameters* g,Event ev)
 {
     switch(gameStateMachine)
@@ -10053,6 +10059,7 @@ void gameControllerController(GameParameters* g,Event ev)
             }
             else if(ev==evGameUpdate)
             {
+                desactivateTimerSleep();
 
                 mooveBall(g);
                 moovePaddle2(g);

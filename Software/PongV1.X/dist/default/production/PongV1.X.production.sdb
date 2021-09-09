@@ -47,7 +47,7 @@ A_RIGHT 1
 A_CENTER 2
 ]
 "4 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[e E6549 state1 `uc
+[e E6550 state1 `uc
 WAKEUP 0
 SLEEP 1
 ]
@@ -121,7 +121,7 @@ evRedrawScore 14
 evNewGame 15
 ]
 "4 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
-[e E6549 gameSM `uc
+[e E6550 gameSM `uc
 NOGAME 0
 PARAMETERS 1
 LOCAL 2
@@ -185,7 +185,7 @@ evRedrawBall 13
 evRedrawScore 14
 evNewGame 15
 ]
-"19 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"20 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [e E6457 myEvents `uc
 NULLEVENT 0
 evPress 1
@@ -308,17 +308,19 @@ evNewGame 15
 [v _Score_init Score_init `(v  1 e 1 0 ]
 "32
 [v _Score_draw Score_draw `(v  1 e 1 0 ]
-"5 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"6 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [v _moovePaddle1 moovePaddle1 `(v  1 e 1 0 ]
-"25
+"26
 [v _moovePaddle2 moovePaddle2 `(v  1 e 1 0 ]
 "44
+[v _desactivateTimerSleep desactivateTimerSleep `(v  1 e 1 0 ]
+"58
 [v _mooveBall mooveBall `(v  1 e 1 0 ]
-"55
+"69
 [v _checkCollision checkCollision `(v  1 e 1 0 ]
-"179
+"193
 [v _backlightController backlightController `(v  1 e 1 0 ]
-"236
+"250
 [v _levelController levelController `(v  1 e 1 0 ]
 "20 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\libraries/lcd_highlevel.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
@@ -366,7 +368,7 @@ evNewGame 15
 [v _gameControllerInit gameControllerInit `(v  1 e 1 0 ]
 "26
 [v _gameControllerSM gameControllerSM `(v  1 e 1 0 ]
-"89
+"90
 [v _gameControllerController gameControllerController `(v  1 e 1 0 ]
 "11 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
 [v _sleepInit sleepInit `(v  1 e 1 0 ]
@@ -628,9 +630,9 @@ evNewGame 15
 "8 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/display.c
 [v _displayState displayState `E6515  1 e 1 0 ]
 "4 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/gameController.c
-[v _gameStateMachine gameStateMachine `E6549  1 e 1 0 ]
+[v _gameStateMachine gameStateMachine `E6550  1 e 1 0 ]
 "4 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/sleepSM.c
-[v _sleepState sleepState `E6549  1 e 1 0 ]
+[v _sleepState sleepState `E6550  1 e 1 0 ]
 "9 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\stateMachine/touchScreenSM.c
 [v _touchScreenState touchScreenState `E6507  1 e 1 0 ]
 [s S2974 Timer 3 `us 1 tm 2 0 `uc 1 ev 1 2 ]
@@ -814,16 +816,6 @@ evNewGame 15
 [v ___fldiv@a a `d  1 p 4 35 ]
 "185
 } 0
-"125 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
-[v _XF_unscheduleTimer XF_unscheduleTimer `(v  1 e 1 0 ]
-{
-[v XF_unscheduleTimer@id id `uc  1 a 1 wreg ]
-[v XF_unscheduleTimer@id id `uc  1 a 1 wreg ]
-[v XF_unscheduleTimer@inISR inISR `a  1 p 1 18 ]
-"127
-[v XF_unscheduleTimer@id id `uc  1 a 1 19 ]
-"131
-} 0
 "79 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
 [v _GameParameters_setY GameParameters_setY `(v  1 e 1 0 ]
 {
@@ -892,9 +884,9 @@ evNewGame 15
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v gameControllerSM@g g `*.39S166  1 p 2 59 ]
 [v gameControllerSM@ev ev `uc  1 a 1 63 ]
-"78
+"79
 } 0
-"89
+"90
 [v _gameControllerController gameControllerController `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -907,9 +899,9 @@ evNewGame 15
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v gameControllerController@g g `*.39S166  1 p 2 54 ]
 [v gameControllerController@ev ev `uc  1 p 1 56 ]
-"184
+"186
 } 0
-"25 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"26 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [v _moovePaddle2 moovePaddle2 `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -921,9 +913,9 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v moovePaddle2@g g `*.39S166  1 p 2 27 ]
-"38
+"39
 } 0
-"5
+"6
 [v _moovePaddle1 moovePaddle1 `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -935,7 +927,7 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v moovePaddle1@g g `*.39S166  1 p 2 27 ]
-"20
+"21
 } 0
 "28 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/paddle.c
 [v _Paddle_addX Paddle_addX `(v  1 e 1 0 ]
@@ -960,7 +952,7 @@ evNewGame 15
 [v GameParameters_resetPos@s s `*.39S166  1 p 2 17 ]
 "66
 } 0
-"44 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"58 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [v _mooveBall mooveBall `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -972,9 +964,9 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v mooveBall@g g `*.39S166  1 p 2 36 ]
-"50
+"64
 } 0
-"55
+"69
 [v _checkCollision checkCollision `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -986,7 +978,7 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v checkCollision@g g `*.39S166  1 p 2 26 ]
-"174
+"188
 } 0
 "49 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
 [v _XF_pushEvent XF_pushEvent `(a  1 e 1 0 ]
@@ -1008,7 +1000,7 @@ evNewGame 15
 [v Ball_Update@b b `*.39S24  1 p 2 17 ]
 "22
 } 0
-"236 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"250 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [v _levelController levelController `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -1020,7 +1012,7 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v levelController@g g `*.39S166  1 p 2 21 ]
-"252
+"266
 } 0
 "54 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
 [v _GameParameters_setLevel GameParameters_setLevel `(v  1 e 1 0 ]
@@ -1037,7 +1029,24 @@ evNewGame 15
 [v GameParameters_setLevel@value value `us  1 p 2 19 ]
 "57
 } 0
-"179 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+"44 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
+[v _desactivateTimerSleep desactivateTimerSleep `(v  1 e 1 0 ]
+{
+"46
+[v desactivateTimerSleep@i i `i  1 a 2 21 ]
+"53
+} 0
+"125 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\xf/xf.c
+[v _XF_unscheduleTimer XF_unscheduleTimer `(v  1 e 1 0 ]
+{
+[v XF_unscheduleTimer@id id `uc  1 a 1 wreg ]
+[v XF_unscheduleTimer@id id `uc  1 a 1 wreg ]
+[v XF_unscheduleTimer@inISR inISR `a  1 p 1 18 ]
+"127
+[v XF_unscheduleTimer@id id `uc  1 a 1 19 ]
+"131
+} 0
+"193 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\gameFunction.c
 [v _backlightController backlightController `(v  1 e 1 0 ]
 {
 [s S96 . 3 `uc 1 width 1 0 `us 1 offset 2 1 ]
@@ -1049,7 +1058,7 @@ evNewGame 15
 [s S162 Score 6 `us 1 homeScore 2 0 `us 1 awayScore 2 2 `[2]uc 1 str 2 4 ]
 [s S166 GameParameters 240 `us 1 backlight 2 0 `us 1 x 2 2 `us 1 y 2 4 `us 1 level 2 6 `S108 1 btnParam 24 8 `S108 1 btnOnePlayer 24 32 `S108 1 btnTwoPlayer 24 56 `S108 1 btnLeave 24 80 `S108 1 btnNewGame 24 104 `S108 1 btnTurnOff 24 128 `S135 1 sldBackLight 25 152 `S135 1 sldLevel 25 177 `S24 1 b 12 202 `S65 1 p1 10 214 `S65 1 p2 10 224 `S162 1 s1 6 234 ]
 [v backlightController@g g `*.39S166  1 p 2 23 ]
-"231
+"245
 } 0
 "38 C:\Users\sebastie.metral\Desktop\SummerSchool\SummerSchool\Software\PongV1.X\class/gameParameters.c
 [v _GameParameters_setBackLight GameParameters_setBackLight `(v  1 e 1 0 ]
@@ -1307,9 +1316,9 @@ evNewGame 15
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S5431 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S5447 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S5431  1 a 6 37 ]
+[v sprintf@f f `S5447  1 a 6 37 ]
 "12
 [v sprintf@ap ap `[1]*.30v  1 a 1 36 ]
 "9
@@ -1322,9 +1331,9 @@ evNewGame 15
 {
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 63 ]
-[s S5457 _IO_FILE 0 ]
+[s S5473 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.30S5457  1 p 1 26 ]
+[v vfprintf@fp fp `*.30S5473  1 p 1 26 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 27 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 29 ]
 "1404
@@ -1334,9 +1343,9 @@ evNewGame 15
 {
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 18 ]
-[s S5457 _IO_FILE 0 ]
+[s S5473 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.30S5457  1 p 1 60 ]
+[v vfpfcnvrt@fp fp `*.30S5473  1 p 1 60 ]
 [v vfpfcnvrt@fmt fmt `*.30*.25uc  1 p 1 61 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 62 ]
 "1387
@@ -1351,9 +1360,9 @@ evNewGame 15
 [v dtoa@s s `i  1 a 2 6 ]
 [v dtoa@w w `i  1 a 2 4 ]
 [v dtoa@p p `i  1 a 2 2 ]
-[s S5457 _IO_FILE 0 ]
+[s S5473 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.30S5457  1 p 1 43 ]
+[v dtoa@fp fp `*.30S5473  1 p 1 43 ]
 [v dtoa@d d `o  1 p 8 44 ]
 "328
 } 0
@@ -1363,9 +1372,9 @@ evNewGame 15
 "74
 [v pad@w w `i  1 a 2 37 ]
 [v pad@i i `i  1 a 2 35 ]
-[s S5457 _IO_FILE 0 ]
+[s S5473 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.30S5457  1 p 1 30 ]
+[v pad@fp fp `*.30S5473  1 p 1 30 ]
 [v pad@buf buf `*.30uc  1 p 1 31 ]
 [v pad@p p `i  1 p 2 32 ]
 "95
@@ -1379,16 +1388,16 @@ evNewGame 15
 [v fputs@c c `uc  1 a 1 27 ]
 "8
 [v fputs@s s `*.30Cuc  1 p 1 25 ]
-[s S5431 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.30S5431  1 p 1 26 ]
+[s S5447 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.30S5447  1 p 1 26 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 17 ]
-[s S5431 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.30S5431  1 p 1 19 ]
+[s S5447 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.30S5447  1 p 1 19 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
